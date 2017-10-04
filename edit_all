@@ -1,0 +1,16 @@
+#!/bin/bash
+
+gvim -p \
+	elastic_2500m_cern.tex \
+	abstract.tex \
+	introduction.tex \
+	experimental_apparatus.tex \
+	beam_optics.tex \
+	data_taking.tex \
+	differential_cross_section.tex \
+	data_table.tex \
+	coulomb.tex \
+	conclusions.tex \
+	acknowledgements.tex \
+	bibliography.tex
+#	authorlist_cern.tex \

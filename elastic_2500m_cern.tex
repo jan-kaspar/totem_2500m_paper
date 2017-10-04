@@ -1,0 +1,90 @@
+\documentclass[TOTEM]{cern/cernphprep}
+
+\usepackage{color}
+\usepackage{enumitem}
+
+%----------------------------------------------------------------------------
+
+\def\d{{\rm d}}
+\def\un#1{\,{\rm #1}}
+\def\ung#1{\quad[{\rm #1}]}
+\def\unt#1{[{\rm #1}]}
+\def\e{{\rm e}}
+\def\I{{\rm i}}
+\def\T{{\rm T}}
+\def\vec#1{\mathbf{#1}}
+\def\mat#1{\mathsf{#1}}
+\def\etal{et al.}
+\def\todo#1{{\color{red}TODO: #1}}
+\def\TODO#1{{\color{red}TODO: #1}}
+
+\setbox123\hbox{$0$}
+\setbox124\hbox{$.$}
+\def\S{\hbox to\wd123{\hss}}
+\def\.{\hbox to\wd124{\hss}}
+
+\def\Name#1{#1, }
+\def\Review#1#2#3#4{{\it #1} {\bf #2} (#3) #4}
+
+%----------------------------------------------------------------------------------------------------
+
+\begin{document}
+
+\begin{titlepage}
+
+\renewcommand{\EXPLOGO}{fig/logo_totem_black.pdf}
+
+\PHnumber{TODO}
+\PHdate{TODO}
+
+\EXPnumber{TODO}
+\EXPdate{TODO}
+
+% TODO
+\title{Title}
+%\title{Measurement of Elastic pp Scattering at $\sqrt{\hbox{s}} = \hbox{8}$\,TeV in the Coulomb-Nuclear Interference Region -- Determination of the $\mathbf{\rho}$-Parameter and the Total Cross-Section}
+
+% TODO
+\ShortTitle{Short title}
+%\ShortTitle{Meas.~of Elastic pp Scatt.~at $\sqrt{\hbox{s}} = \hbox{8}$\,TeV in the CNI Region -- Determination of $\rho$ and $\sigma_{\rm tot}$}
+
+% TODO
+\Collaboration{The TOTEM Collaboration [author list to be updated]}
+
+\ShortAuthor{The TOTEM Collaboration (G.~Antchev \emph{\etal})}
+
+\input authorlist_cern
+
+
+%\newpage
+\begin{abstract}
+\input abstract
+\end{abstract}
+\end{titlepage}
+
+%--------------------------------------------------
+
+\input introduction.tex
+
+\input experimental_apparatus.tex
+
+\input beam_optics.tex
+
+\input data_taking.tex
+
+\input differential_cross_section.tex
+
+\input coulomb.tex
+
+\input conclusions.tex
+
+\section*{Acknowledgements}
+\input acknowledgements.tex
+
+%--------------------------------------------------
+
+\begin{thebibliography}{99}
+\input bibliography.tex
+\end{thebibliography}
+
+\end{document}
