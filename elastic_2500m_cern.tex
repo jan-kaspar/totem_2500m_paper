@@ -1,14 +1,22 @@
 \documentclass[TOTEM]{cern/cernphprep}
 
 \usepackage{color}
-\usepackage{enumitem}
-\usepackage{hyperref}
+\usepackage{mathptmx}
+\RequirePackage[numbers,sort&compress]{natbib}
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue,linkcolor=blue]{hyperref}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{enumitem}
 
 \iftrue % disable at the end
 	\usepackage{lineno}
 	\usepackage[inline]{showlabels}
-	\renewcommand{\showlabelfont}{\small\slshape\color{blue}}
+	\definecolor{darkgreen}{RGB}{0,160,0}
+	\renewcommand{\showlabelfont}{\small\slshape\color{darkgreen}}
 \fi
+
+% reasonable calligraphic font (CM)
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
 
 %---------------------------------------------------------------------------
 

@@ -87,7 +87,7 @@ To evaluate the impact on the $t$-distribution, it is convenient to decompose th
   \ +\ \eta_2 \underbrace{\begin{pmatrix} -5.157\cdot10^{-4}\cr +2.541\cdot10^{-5}\cr +5.566\cdot10^{-4}\cr +2.746\cdot10^{-5} \end{pmatrix}}_{\rm mode\ 2}
   \ +\ \eta_3 \underbrace{\begin{pmatrix} +3.617\cdot10^{-4}\cr +3.625\cdot10^{-4}\cr +3.006\cdot10^{-4}\cr +3.641\cdot10^{-4} \end{pmatrix}}_{\rm mode\ 3}
 \end{equation}
-normalised such that the factors $\eta_{1,2,3}$ have unit variance. The fourth eigenmode has a neglibile contribution and therefore is not explicitly mentioned.
+normalised such that the factors $\eta_{1,2,3}$ have unit variance. The fourth eigenmode has a negligible contribution and therefore is not explicitly mentioned.
 
 
 
@@ -107,12 +107,13 @@ TODO
 For a given $t$ bin, the differential cross-section is evaluated by selecting and counting elastic events:
 \begin{equation}
 {\d\sigma\over \d t}(\hbox{bin}) =
-	{\cal N}\, {\cal U}({\rm bin})\, {\cal B}\, {1\over \Delta t}
-	\sum\limits_{t\, \in\, {\rm bin}} {\cal A}(\theta^*, \theta_y^*)\ {\cal E}(\theta_y^*)
+	\mathcal{N}\, \mathcal{U}({\rm bin})\, \mathcal{B}\, {1\over \Delta t}
+	\sum\limits_{t\, \in\, {\rm bin}} \mathcal{A}(\theta^*, \theta_y^*)\ \mathcal{E}(\theta_y^*)
 	\ ,
 \end{equation}
-where $\Delta t$ is the width of the bin, ${\cal N}$ is a normalisation factor and the other symbols stand for various correction factors:
- ${\cal U}$ for unfolding of resolution effects, ${\cal B}$ for background subtraction, ${\cal A}$ for acceptance correction and ${\cal E}$ for detection and reconstruction efficiency.
+where $\Delta t$ is the width of the bin, $\mathcal{N}$ is a normalisation factor and the other symbols stand for various correction factors: $\mathcal{U}$ for unfolding of resolution effects, $\mathcal{B}$ for background subtraction, $\mathcal{A}$ for acceptance correction and $\mathcal{E}$ for detection and reconstruction efficiency.
+
+
 
 %-------------------------
 
@@ -151,7 +152,7 @@ Since a Monte-Carlo study shows that applying the three cuts at the $3\un{\sigma
 
 The tagging efficiency has been studied by applying the cuts also at the $5\un{\sigma}$-level. This selection has yielded about $0.1\un{\%}$ more events in every $|t|$-bin. This kind of inefficiency only contributes to a global scale factor, which is irrelevant for this analysis because the normalisation is taken from a different data set (cf. Section~\ref{sec:normalisation}).
 
-In the ``4RP'' analysis, thanks to the additional information from the 210-fr units, more cuts can be applied (cf. Table~2 in~\cite{epl101-el}). In particular the left-right comparison of the reconstructed horizontal vertex position, $x^*$, and vertical position-angle correlation in each arm. Furthermore, since the single-arm reconstruction can disentangle the contributions from $x^*$ and $\theta^*_x$, the angular resolution is better compared to the ``2RP'' analysis and consequently cut 1 becomes more stringent.
+In the ``4RP'' analysis, thanks to the additional information from the 210-fr units, more cuts can be applied (cf.~Table~2 in~\cite{epl101-el}). In particular the left-right comparison of the reconstructed horizontal vertex position, $x^*$, and vertical position-angle correlation in each arm. Furthermore, since the single-arm reconstruction can disentangle the contributions from $x^*$ and $\theta^*_x$, the angular resolution is better compared to the ``2RP'' analysis and consequently cut 1 becomes more stringent.
 
 \TODO{which xi values are accepted}
 
@@ -163,7 +164,31 @@ In the ``4RP'' analysis, thanks to the additional information from the 210-fr un
 \subsubsection{Background}
 \label{sec:background}
 
-TODO
+As the RPs were very close to the beam, one may expect an enhanced background from coincidence of beam halo protons hitting detectors in the two arms. Other background sources (pertinent to any elastic analysis) are: central diffraction and pile-up of two single diffraction events.
+
+The background rate (i.e.~impurity of the elastic tagging) is estimated in two steps, both based on distributions of discriminators from Table~\ref{tab:cuts} plotted in various situations, see an example in Figure~\ref{fig:tag bckg integ}. In the first step, diagonal data are studied under several cut combinations. While the central part (signal) remains essentially constant, the tails (background) are strongly suppressed when the number of cuts is increased. In the second step, the background distribution is interpolated from the tails into the signal region. The form of the interpolation is inferred from non-diagonal RP track configurations (\textit{45 bottom -- 56 bottom} or \textit{45 top -- 56 top}), artificially treated like diagonal signatures by inverting the $y$ coordinate sign in the arm 45. These non-diagonal configurations cannot contain any elastic signal and hence consist purely of background which is expected to be similar in the diagonal and non-diagonal configurations. This expectation is supported by the agreement of the tails of the blue solid and dashed curves in the figure. Since the non-diagonal distributions are flat, the comparison of the signal-peak size to the amount of interpolated background yields the estimate $1 - \mathcal{B} = \mathcal{O}(10^{-3})$.
+
+\begin{figure}
+\begin{center}
+\includegraphics{fig/cut_dist_antidgn_cmp.pdf}
+\caption{%
+Distributions of discriminator 1, i.e. the difference between the horizontal scattering angle reconstructed from the right and the left arm. Data from LHC fill 5314. Black and red curves: data from diagonal 45 bottom -- 56 top, the different colours correspond to various combinations of the selection cuts (see numbering in Table~\ref{tab:cuts}). Blue and green curves: data from anti-diagonal RP configurations, obtained by inverting track $y$ coordinate in the left arm. The vertical dashed lines represent the boundaries of the signal region ($\pm 4\un{\sigma}$).
+}
+\label{fig:tag bckg integ}
+\end{center}
+\end{figure}
+
+\TODO{describe} Figure~\ref{fig:tag bckg dist}. Apply some correction?
+
+\begin{figure}
+\begin{center}
+\includegraphics{fig/t_dist_antidgn_cmp.pdf}
+\caption{%
+$|t|$ distributions from different diagonal and anti-diagonal configurations, after all cuts and acceptance correction. Data from LHC fill 5314.
+}
+\label{fig:tag bckg dist}
+\end{center}
+\end{figure}
 
 %-------------------------
 
