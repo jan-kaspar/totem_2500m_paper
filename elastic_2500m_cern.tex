@@ -2,8 +2,15 @@
 
 \usepackage{color}
 \usepackage{enumitem}
+\usepackage{hyperref}
 
-%----------------------------------------------------------------------------
+\iftrue % disable at the end
+	\usepackage{lineno}
+	\usepackage[inline]{showlabels}
+	\renewcommand{\showlabelfont}{\small\slshape\color{blue}}
+\fi
+
+%---------------------------------------------------------------------------
 
 \def\d{{\rm d}}
 \def\un#1{\,{\rm #1}}
@@ -63,6 +70,8 @@
 \end{titlepage}
 
 %--------------------------------------------------
+
+\linenumbers
 
 \input introduction.tex
 
