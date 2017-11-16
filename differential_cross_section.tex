@@ -317,18 +317,77 @@ The bin sizes are set according to the $t$ resolution. Three different binnings 
 \subsubsection{Systematic Uncertainties}
 \label{sec:systematics}
 
-TODO
+Besides the systematic uncertainties mentioned at the above analysis steps, the beam momentum uncertainty needs to be considered when the scattering angles are translated to $t$, see Eq.~(\ref{eq:th t}). The uncertainty was estimated to $0.1\un{\%}$ \TODO{add the new reference}.
+
+Two different methods are used to propagate the systematic effects into the $t$-distribution. The first is based on a Monte-Carlo simulation which uses a fit of the final differential cross-section data to generate the true $t$-distribution. In parallel, another $t$-distribution is built, introducing one of the above mentioned systematic effects at $1\un{\sigma}$ level. The difference between the two $t$-distributions gives the systematic effect on the differential cross-section. The second method is similar, however using numerical integration techniques instead of Monte-Carlo simulations. Both methods are formally equivalent to evaluating
+\begin{equation}
+\label{eq:syst mode}
+\delta s_{q}(t) \equiv \frac{\partial(\d\sigma/\d t)}{\partial q}\ \delta q\ ,
+\end{equation}
+where $\delta q$ corresponds to a $1\un{\sigma}$ bias in the quantity $q$ responsible for a given systematic effect.
+
+\TODO{verify:}
+The Monte-Carlo simulations show that the combined effect of several systematic errors is well approximated by linear combination of the individual contributions from Eq.~(\ref{eq:syst mode}).
+
+
 
 %----------------------------------------------------------------------------------------------------
 
 \subsection{Systematic Cross-Checks}
 \label{sec:cross checks}
 
-TODO
+Compatible results have been obtained by analysing data subsets of events from different bunches, different diagonals and different time periods -- in particular those right after and right before the beam cleanings.
+
+\TODO{bunch comparison - ever done}
+
+\TODO{show plots}
+comparing 2RP and 4RP analysis
+comparing diagonals,
+comparing fills,
+comparing before/after beam cleanings,
+comparing 2.5km and 90m data,
 
 
  %----------------------------------------------------------------------------------------------------
 \subsection{Final Data Merging}
 \label{sec:final data merging}
 
-TODO
+Finally, the differential cross-section histograms from all LHC fills and both diagonals are merged. This is accomplished by a per-bin weighted average, with the weight given by inverse squared statistical uncertainty. The statistical and systematic uncertainties are propagated accordingly. For the systematic ones, the correlation between the diagonals is taken into account. For example the vertical (mis-)alignment of the RPs of one unit is almost fully correlated; thus the effect on the differential cross-section is opposite for the two diagonals and consequently its impact is strongly reduced once the diagonals are merged.
+
+The cross-section values can be found in Table~\ref{tab:data} and visualised in Figure~\ref{fig:dsdt}. The figure clearly shows a rapid cross-section rise below $|t| \lesssim 0.002\un{GeV^2}$, which will later be interpreted as an effect due to electromagnetic interaction.
+
+\input data_table.tex
+
+\begin{figure*}
+\vskip-5mm
+\begin{center}
+\includegraphics{fig/t_dist_merged_with_unc.pdf}
+\caption{%
+Differential cross-section from Table \ref{tab:data} with statistical (bars) and systematic uncertainties (bands). The blue band represents all systematic uncertainties, the green one all but normalisation. The bands are centred around a data fit including both nuclear and Coulomb components (\TODO{describe}). INSET: a low-$|t|$ zoom featuring cross-section rise due to the Coulomb interaction.
+}
+\label{fig:dsdt}
+\end{center}
+\end{figure*}
+
+\TODO{update:}
+The final systematic uncertainties, except the $4.2\un{\%}$ coming from the normalisation, are summarised in Figure~\ref{fig:syst unc} where their impact on the differential cross-section is shown. The leading uncertainties include normalisation, optics imperfections, beam momentum offset and residual misalignment. The vertical misalignment is the dominant systematic effect in the very-low $|t|$ region. The leading effects are quantified in Table~\ref{tab:data} and can be used to approximate the covariance matrix of systematic uncertainties:
+\begin{equation}
+\label{eq:covar mat}
+\mat V_{ij} = \sum_{q} \delta s_{q}(i)\ \delta s_{q}(j)\: ,
+\end{equation}
+where $i$ and $j$ are bin indices (row numbers in Table~\ref{tab:data}) and the sum goes over the leading error contributions $q$ (six right-most columns in the table).
+
+\begin{figure*}
+\begin{center}
+%TODO
+%\includegraphics{fig/systematic_uncertainties.pdf}
+\caption{%
+\TODO{update:}
+Impact of $t$-dependent systematic effects on the differential cross-section. Each curve corresponds to a systematic error of $1\un{\sigma}$, cf.~Eq.~(\ref{eq:syst mode}). The two contributions due to the optics correspond to the two vectors in Eq.~(\ref{eq:opt bias modes}). The envelope is determined by summing all shown contributions in quadrature for each $|t|$ value.
+}
+\label{fig:syst unc}
+\end{center}
+\end{figure*}
+
+\TODO{update:}
+Let us emphasize that the systematic effects with linear $t$ dependence (see Figure~\ref{fig:syst unc}) cannot alter the non-purely-exponential character of the data. This is the case for the effects of normalisation, beam momentum and to a large degree also of optics-mode 2. For the beam momentum, this can also be understood analytically: changing the value of $p$ would yield a scaling of $t$, see Eq.~(\ref{eq:th t}), and consequently also scaling of the $b_n$ parameters in Eq.~(\ref{eq:nuc mod}). However, the non-zero $b_2, b_3$ etc.~parameters (reflecting the non-exponentiality) cannot be brought to $0$ (as in purely-exponential case).

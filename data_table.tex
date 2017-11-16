@@ -1,23 +1,11 @@
-% TODO
-\iffalse
-
-\def\tableHeader{%
-	\multispan3\vrule width0pt height9pt depth3pt\hss $|t|$ bin $\unt{GeV^2}$\hss & \multispan9\hss $\d\sigma/\d t \ung{mb/GeV^2}$ \hss \cr
-	\multispan3\hrulefill\hbox to12pt{\hfil} & \multispan9\hrulefill\cr
-	left & right & represent. & value & statist.     & system.  & normal.    & optics   & optics   & beam		& alignment	& alignment\cr
-	edge & edge  & point      &       & uncert.      & uncert.  & ${\cal N}$ & mode 1   & mode 2   & momentum	& hor.~shift	& vert.~shift\cr
-}
-
-\iffalse
-Rules to set number of digits. Guide: not to introduce additional (significant) errors by presentation.
-1) ROUND_ERROR(dsdt) << EXPERIM_UNC(ds/dt) [focus on uncertainties altering shape]
-2) ds/dt slope * ROUND_ERROR(t) << EXPERIM_UNC(ds/dt) [focus on uncertainties altering shape]
-3) All uncertainties have sufficient resolution (to build reasonable covariance matrix).
-\fi
-
+%Rules to set number of digits. Guide: not to introduce additional (significant) errors by presentation.
+%1) ROUND_ERROR(dsdt) << EXPERIM_UNC(ds/dt) [focus on uncertainties altering shape]
+%2) ds/dt slope * ROUND_ERROR(t) << EXPERIM_UNC(ds/dt) [focus on uncertainties altering shape]
+%3) All uncertainties have sufficient resolution (to build reasonable covariance matrix).
 
 \begin{table*}
 \caption{%
+\TODO{update:}
 The elastic differential cross-section as determined in this analysis. The three left-most columns describe the bins in $t$. The representative point gives the $t$ value suitable for fitting~\cite{lafferty94}.
 %uncertainty due to different fit models negligible:$10^{-7}\un{GeV^2}$
 The other columns are related to the differential cross-section. The six right-most columns give the leading systematic biases in $\d\sigma/\d t$ for $1\sigma$-shifts in the respective quantities, $\delta s_q$, see Eqs.~(\ref{eq:syst mode}) and (\ref{eq:covar mat}). The two contributions due to optics correspond to the two vectors in Eq.~(\ref{eq:opt bias modes}).
@@ -32,8 +20,12 @@ The other columns are related to the differential cross-section. The six right-m
 \def\arraystretch{0.8}
 \begin{tabular}{ccc@{\hskip15pt}ccccccccc}
 \hline
-\tableHeader
+	\multispan3\vrule width0pt height9pt depth3pt\hss $|t|$ bin $\unt{GeV^2}$\hss & \multispan9\hss $\d\sigma/\d t \ung{mb/GeV^2}$ \hss \cr
+	\multispan3\hrulefill\hbox to12pt{\hfil} & \multispan9\hrulefill\cr
+	left & right & represent. & value & statist.     & system.  & normal.    & optics   & optics   & beam		& alignment	& alignment\cr
+	edge & edge  & point      &       & uncert.      & uncert.  & ${\cal N}$ & mode 1   & mode 2   & momentum	& hor.~shift	& vert.~shift\cr
 \hline
+\iffalse
 $0.000600$ & $0.000916$ & $0.000741$ & $912.13$ & $44.0\S$ & $54.7\S$ & $+36.3\S$ & $+4.18\S$ & $-0.151$ & $+0.029$ & $-0.791$ & $-40.7\S\S$ \cr
 $0.000916$ & $0.001346$ & $0.001110$ & $665.09$ & $21.0\S$ & $30.4\S$ & $+27.3\S$ & $+1.66\S$ & $+0.318$ & $+0.579$ & $+0.042$ & $-13.5\S\S$ \cr
 $0.001346$ & $0.001930$ & $0.001612$ & $564.20$ & $14.6\S$ & $24.3\S$ & $+23.8\S$ & $+0.905$ & $+0.500$ & $+0.806$ & $+0.065$ & $-\S4.87\S$ \cr
@@ -65,10 +57,9 @@ $0.1661\S\S$ & $0.1761\S\S$ & $0.1710\S\S$ & $\S18.95$ & $\S0.68$ & $\S0.84$ & $
 $0.1761\S\S$ & $0.1861\S\S$ & $0.1810\S\S$ & $\S15.86$ & $\S0.73$ & $\S0.69$ & $+\S0.67$ & $+0.082$ & $-0.056$ & $-0.079$ & $+0.111$ & $+\S0.000$ \cr
 $0.1861\S\S$ & $0.1961\S\S$ & $0.1910\S\S$ & $\S12.59$ & $\S0.77$ & $\S0.58$ & $+\S0.55$ & $+0.054$ & $-0.049$ & $-0.071$ & $+0.123$ & $+\S0.000$ \cr
 %$0.1961\S\S$ & $0.2061\S\S$ & $0.2010\S\S$ & $\S10.55$ & $\S0.82$ & $\S0.48$ & $+\S0.45$ & $+0.034$ & $-0.043$ & $-0.063$ & $+0.126$ & $+\S0.000$ \cr
+\fi
 \hline
 \end{tabular}
 \end{center}
 %\vskip-10mm
 \end{table*}
-
-\fi
