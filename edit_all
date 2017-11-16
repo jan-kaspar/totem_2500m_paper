@@ -1,6 +1,6 @@
 #!/bin/bash
 
-gvim -p \
+qvim -p \
 	elastic_2500m_cern.tex \
 	abstract.tex \
 	introduction.tex \
