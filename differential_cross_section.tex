@@ -264,7 +264,6 @@ The first term in the parentheses sums the contributions from the diagonal RPs u
 \subsubsection{Unfolding of Resolution Effects}
 \label{sec:unfolding}
 
-\TODO{update:}
 The correction for resolution effects is determined by the following iterative procedure.
 \begin{itemize}
 \item[1.] The differential cross-section data are fitted by a smooth curve.
@@ -274,22 +273,24 @@ The correction for resolution effects is determined by the following iterative p
 \end{itemize}
 As the estimate of the true $t$-distribution improves, the difference between the correction factors obtained in two successive iterations decreases. When the difference becomes negligible, the iteration stops. This is typically achieved after the second iteration. 
 
-\TODO{update:}
-The final correction is negligible ($\mathcal{U} \approx 1$) for all bins except at very low $|t|$ where the rapid cross-section growth occurs, see Figure~\ref{fig:unfolding}.
+The final correction $\mathcal{U}$ is significantly different from $1$ only at very low $|t|$ where the rapid cross-section growth occurs, see Figure~\ref{fig:unfolding}.
+
+Several fit parametrisations were tested, however yielding negligible difference in the final correction $\mathcal{U}$, see Figure~\ref{fig:unfolding}.
 
 \begin{figure}
 \begin{center}
-%\includegraphics{fig/unfolding.pdf}
+\includegraphics{fig/unfolding_num_int_model_cmp.pdf}
 \caption{%
-\TODO{update:}
-Unfolding correction for the close diagonal (45 bottom -- 56 top). The vertical dashed line indicates the position of the acceptance cut due to sensor edges.
+Unfolding correction as a function of $|t|$. The vertical dashed line indicates the position of the acceptance cut. The two correction curves were obtained with different fit parametrisations used in step 1 (see text).
 }
 \label{fig:unfolding}
 \end{center}
 \end{figure}
 
-\TODO{update:}
-For the uncertainty estimate, the uncertainties of the $\theta_x^*$ and $\theta_y^*$ resolutions (accommodating the full time variation) as well as fit-model dependence have been considered, each contribution giving a few per-mille for the lowest-$|t|$ bin.
+For the uncertainty estimate, the uncertainties of the $\theta_x^*$ and $\theta_y^*$ resolutions (accommodating the full time variation) as well as fit-model dependence have been considered.
+% each contribution giving a few per-mille for the lowest-$|t|$ bin.
+
+
 
 %-------------------------
 
