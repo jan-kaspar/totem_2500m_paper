@@ -1,7 +1,7 @@
 \section{Differential Cross-Section}
 \label{sec:differential cross-section}
 
-The analysis method is very similar to the previously published one \cite{totem-1km}. The only important difference stems from using different RPs for the measurement: unit 210-fr instead of 220-nr as in \cite{totem-1km} which was not anymore equipped with sensors. Due to the optics and beam parameters the unit 210-fr has worse low-$|t|$ acceptance, further deteriorated by the tilt of the unit. Consequently, in order to maintain the low-$|t|$ reach essential for this study, the main analysis (denoted ``2RP'') only uses the 220-fr units. Since the abandon of the 210-nr unit may, in principle, result in worse resolution and background suppression, for control reasons, the traditional analysis with all units (denoted ``4RP'') was pursued, too. In Section~\ref{sec:cross checks} the ``2RP'' and ``4RP'' will be compared showing a very good match. In what follows, the ``2RP'' analysis will be described unless stated otherwise.
+The analysis method is very similar to the previously published one \cite{totem-8tev-1km}. The only important difference stems from using different RPs for the measurement: unit 210-fr instead of 220-nr as in \cite{totem-8tev-1km} which was not anymore equipped with sensors. Due to the optics and beam parameters the unit 210-fr has worse low-$|t|$ acceptance, further deteriorated by the tilt of the unit. Consequently, in order to maintain the low-$|t|$ reach essential for this study, the main analysis (denoted ``2RP'') only uses the 220-fr units. Since the abandon of the 210-nr unit may, in principle, result in worse resolution and background suppression, for control reasons, the traditional analysis with all units (denoted ``4RP'') was pursued, too. In Section~\ref{sec:cross checks} the ``2RP'' and ``4RP'' will be compared showing a very good match. In what follows, the ``2RP'' analysis will be described unless stated otherwise.
 
 \TODO{mention that normalisation from a different dataset?}
 
@@ -43,7 +43,7 @@ Eventually, the scattering angle, $\theta^*$, and the four-momentum transfer squ
 \end{equation}
 where $p$ denotes the beam momentum.
 
-In the ``4RP'' analysis, the same reconstruction as in \cite{totem-1km} is used which allows for stronger elastic-selection cuts, see Section~\ref{sec:tagging}.
+In the ``4RP'' analysis, the same reconstruction as in \cite{totem-8tev-1km} is used which allows for stronger elastic-selection cuts, see Section~\ref{sec:tagging}.
 
 
 
@@ -297,14 +297,20 @@ For the uncertainty estimate, the uncertainties of the $\theta_x^*$ and $\theta_
 \subsubsection{Normalisation}
 \label{sec:normalisation}
 
-TODO
+The normalisation $\mathcal{N}$ is determined by requiring the same elastic cross-section $\sigma_{\rm el} = 31.0\un{mb}$ as published in \cite{totem-13tev-90m}. The elastic cross-section is extracted from the data in two components. The first component sums the $\d\sigma/\d t$ histogram bins for $0.01 < |t| < 0.5\un{GeV^2}$. The second component corresponds to the integral over $0 < |t| < 0.01\un{GeV^2}$ of an exponential fitted to the data on the interval $0.01 < |t| < 0.05\un{GeV^2}$.
+
+\TODO{note on uncertainties}
+
+
 
 %-------------------------
 
 \subsubsection{Binning}
 \label{sec:binning}
 
-TODO
+The bin sizes are set according to the $t$ resolution. Three different binnings are considered in this analysis: with bin sizes being 1, 2 or 3 times the standard deviation of $|t|$.
+
+
 
 %-------------------------
 
