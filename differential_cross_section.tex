@@ -5,6 +5,8 @@ The analysis method is very similar to the previously published one \cite{totem-
 
 \TODO{mention that normalisation from a different dataset?}
 
+\TODO{retained only data where both diagonals were working - cancellation of systematics}
+
 Section~\ref{sec:event analysis} covers all aspects related to the reconstruction of a single event. Section~\ref{sec:diff cs} describes the steps of transforming a raw $t$-distribution into the differential cross-section. The $t$-distributions are analysed separately for each LHC fill and each diagonal. After comparison (Section~\ref{sec:cross checks}) they are finally merged (Section~\ref{sec:final data merging}).
 
 %----------------------------------------------------------------------------------------------------
@@ -201,7 +203,7 @@ The acceptance of elastic protons is limited mostly by two factors: sensor cover
 \begin{center}
 \includegraphics{fig/acc_phi_lab.pdf}
 \caption{%
-Distribution of scattering angle projections $\theta_y^*$ vs.~$\theta_x^*$. The upper (lower) part comes from the diagonal 45 bottom -- 56 top (45 top -- 56 bottom). The red horizontal lines represent cuts due to the LHC apertures, the magenta lines cuts due to the RP edges. The dotted circles show contours of constant scattering angle $\theta^*$ as indicated in the middle of the plot. The parts of the contours within acceptance are emphasized in thick black.
+Distribution of scattering angle projections $\theta_y^*$ vs.~$\theta_x^*$, data from LHC fill 5317. The upper (lower) part comes from the diagonal 45 bottom -- 56 top (45 top -- 56 bottom). The red horizontal lines represent cuts due to the LHC apertures, the magenta lines cuts due to the RP edges. The dotted circles show contours of constant scattering angle $\theta^*$ as indicated in the middle of the plot. The parts of the contours within acceptance are emphasized in thick black.
 }
 \label{fig:acc corr princ}
 \end{center}
@@ -232,14 +234,62 @@ The full acceptance correction, $\mathcal{A}$, starts about $12$ in the lowest-$
 \subsubsection{Inefficiency Corrections}
 \label{sec:ineff corr}
 
-TODO
+Since the overall normalisation will be determined from another dataset (see Section~\ref{sec:normalisation}), any inefficiency correction that does not alter the $t$-distribution shape does not need to be considered in this analysis (trigger, data acquisition and pile-up inefficiency discussed in~\cite{epl101-el,prl111}). The remaining inefficiencies are related to the inability of a RP to resolve the elastic proton track.
+
+One such case is when a single RP does not detect and/or reconstruct a proton track, with no correlation to other RPs. This type of inefficiency, $\mathcal{I}_1$, is evaluated within the ``4RP'' analysis by removing the studied RP from the tagging cuts, repeating the event selection and calculating the fraction of recovered events. A typical example is given in Figure~\ref{fig:eff uncorr}, showing that the efficiency decreases gently with the vertical scattering angle. This dependence originates from the fact that protons with larger $|\theta_y^*|$ hit the RPs further from their edge and therefore the potentially created secondary particles have more chance to induce additional signal. Since the RP detectors cannot resolve multiple tracks (non-unique association between ``U'' and ``V'' track candidates), a secondary particle track prevents from using the affected RP in the analysis.
+
+\begin{figure}
+\begin{center}
+\includegraphics{fig/eff3outof4_fits.pdf}
+\caption{%
+Single-RP uncorrelated inefficiency for the 220-fr bottom RP in the right arm. The rapid drop at $\theta_y^* \approx 4\un{\mu rad}$ is due to acceptance effects at the sensor edge. The red lines represent a linear fit of the efficiency dependence on the vertical scattering angle (solid) and its extrapolation to the regions affected by acceptance effects (dashed).
+}
+\label{fig:eff uncorr}
+\end{center}
+\end{figure}
+
+Another source of inefficiency are proton interactions in a near RP affecting simultaneously the far RP downstream. The contribution from these near-far correlated inefficiencies, $\mathcal{I}_2$, is determined by evaluating the rate of events with high track multiplicity ($\gtrsim$ 5) in both near and far RPs. Events with high track multiplicity simultaneously in a near top and near bottom RP are discarded as such a shower is likely to have started upstream from the RP station and thus be unrelated to the elastic proton interacting with detectors. The outcome, $\mathcal{I}_2 \approx (1.5 \pm 0.7)\un{\%}$, is compatible between left/right arms and top/bottom RP pairs and compares well to Monte-Carlo simulations (e.g.~section 7.5 in \cite{hubert-thesis}).
+
+The full correction is calculated as
+\begin{equation}
+\label{efficiency}
+	\mathcal{E}(\theta_y^*) = {1\over 1 - \left( \sum\limits_{i\in \rm RPs} \mathcal{I}^i_1(\theta_y^*) + 2 \mathcal{I}_2 \right) } \ .
+\end{equation}
+The first term in the parentheses sums the contributions from the diagonal RPs used in the analysis. In the ``2RP'' analysis it increases from about $6.9$ to $8.5\un{\%}$ from the lowest to the highest $|\theta_y^*|$. For the ``4RP'' analysis, the range is from $10.5$ to $13.0\un{\%}$. The typical uncertainty is about $0.4\un{\%}$.
+
+
 
 %-------------------------
 
 \subsubsection{Unfolding of Resolution Effects}
 \label{sec:unfolding}
 
-TODO
+\TODO{update:}
+The correction for resolution effects is determined by the following iterative procedure.
+\begin{itemize}
+\item[1.] The differential cross-section data are fitted by a smooth curve.
+\item[2.] The fit is used in a numerical-integration calculation of the smeared $t$-distribution (using the resolution parameters determined in Section~\ref{sec:resolution}). The ratio between the smeared and the non-smeared $t$-distributions gives a set of per-bin correction factors.
+\item[3.] The corrections are applied to the observed (yet uncorrected) differential cross-section yielding a better estimate of the true $t$-distribution.
+\item[4.] The corrected differential cross-section is fed back to step 1.
+\end{itemize}
+As the estimate of the true $t$-distribution improves, the difference between the correction factors obtained in two successive iterations decreases. When the difference becomes negligible, the iteration stops. This is typically achieved after the second iteration. 
+
+\TODO{update:}
+The final correction is negligible ($\mathcal{U} \approx 1$) for all bins except at very low $|t|$ where the rapid cross-section growth occurs, see Figure~\ref{fig:unfolding}.
+
+\begin{figure}
+\begin{center}
+%\includegraphics{fig/unfolding.pdf}
+\caption{%
+\TODO{update:}
+Unfolding correction for the close diagonal (45 bottom -- 56 top). The vertical dashed line indicates the position of the acceptance cut due to sensor edges.
+}
+\label{fig:unfolding}
+\end{center}
+\end{figure}
+
+\TODO{update:}
+For the uncertainty estimate, the uncertainties of the $\theta_x^*$ and $\theta_y^*$ resolutions (accommodating the full time variation) as well as fit-model dependence have been considered, each contribution giving a few per-mille for the lowest-$|t|$ bin.
 
 %-------------------------
 
