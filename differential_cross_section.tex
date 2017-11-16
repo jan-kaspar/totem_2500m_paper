@@ -3,7 +3,9 @@
 
 The analysis method is very similar to the previously published one \cite{totem-1km}. The only important difference stems from using different RPs for the measurement: unit 210-fr instead of 220-nr as in \cite{totem-1km} which was not anymore equipped with sensors. Due to the optics and beam parameters the unit 210-fr has worse low-$|t|$ acceptance, further deteriorated by the tilt of the unit. Consequently, in order to maintain the low-$|t|$ reach essential for this study, the main analysis (denoted ``2RP'') only uses the 220-fr units. Since the abandon of the 210-nr unit may, in principle, result in worse resolution and background suppression, for control reasons, the traditional analysis with all units (denoted ``4RP'') was pursued, too. In Section~\ref{sec:cross checks} the ``2RP'' and ``4RP'' will be compared showing a very good match. In what follows, the ``2RP'' analysis will be described unless stated otherwise.
 
-Section~\ref{sec:event analysis} covers all aspects related to the reconstruction of a single event. Section~\ref{sec:diff cs} describes the steps of transforming a raw $t$-distribution into the differential cross-section. The $t$-distributions for the two diagonals are analysed separately. After comparison (Section~\ref{sec:cross checks}) they are finally merged (Section~\ref{sec:final data merging}).
+\TODO{mention that normalisation from a different dataset?}
+
+Section~\ref{sec:event analysis} covers all aspects related to the reconstruction of a single event. Section~\ref{sec:diff cs} describes the steps of transforming a raw $t$-distribution into the differential cross-section. The $t$-distributions are analysed separately for each LHC fill and each diagonal. After comparison (Section~\ref{sec:cross checks}) they are finally merged (Section~\ref{sec:final data merging}).
 
 %----------------------------------------------------------------------------------------------------
 \subsection{Event Analysis}
@@ -38,6 +40,10 @@ Eventually, the scattering angle, $\theta^*$, and the four-momentum transfer squ
 \theta^* = \sqrt{{\theta_x^*}^2 + {\theta_y^*}^2}\ ,\qquad t = - p^2 ({\theta_x^*}^2 + {\theta_y^*}^2)\ ,
 \end{equation}
 where $p$ denotes the beam momentum.
+
+In the ``4RP'' analysis, the same reconstruction as in \cite{totem-1km} is used which allows for stronger elastic-selection cuts, see Section~\ref{sec:tagging}.
+
+
 
 %------------------------------
 
@@ -92,6 +98,8 @@ normalised such that the factors $\eta_{1,2,3}$ have unit variance. The fourth e
 
 TODO
 
+
+
 %----------------------------------------------------------------------------------------------------
 \subsection{Differential Cross-Section Reconstruction}
 \label{sec:diff cs}
@@ -111,7 +119,44 @@ where $\Delta t$ is the width of the bin, ${\cal N}$ is a normalisation factor a
 \subsubsection{Event Tagging}
 \label{sec:tagging}
 
-TODO
+
+\begin{table}
+\caption{The elastic selection cuts. The superscripts R and L refer to the right and left arm. The right-most column gives a typical RMS of the cut distribution.
+}
+\label{tab:cuts}
+\begin{center}
+%\vskip-3mm
+\begin{tabular}{ccc}\hline
+number & cut & RMS ($\equiv 1\sigma$)\cr\hline
+1 & $\theta_x^{*\rm R} - \theta_x^{*\rm L}$				& $14\un{\mu rad}$	\cr
+2 & $\theta_y^{*\rm R} - \theta_y^{*\rm L}$				& $0.38\un{\mu rad}$	\cr\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+For the ``2RP'' analysis one may apply the cuts requiring the reconstructed-track collinearity between the left and right arm, see Table~\ref{tab:cuts}. The correlation plots corresponding to these cuts are shown in Figure~\ref{fig:cuts}.
+
+\begin{figure}
+\begin{center}
+\includegraphics{fig/cut_example.pdf}
+\caption{%
+Correlation plots for the event selection cuts presented in Table~\ref{tab:cuts}, showing events from LHC fill 5313 and with diagonal topology 45 bottom -- 56 top. The solid black lines delimit the signal region within $\pm 4\un{\sigma}$.
+}
+\label{fig:cuts}
+\end{center}
+\end{figure}
+
+\TODO{update:}
+Since a Monte-Carlo study shows that applying the three cuts at the $3\un{\sigma}$ level would lead to a loss of about $0.5\un{\%}$ of the elastic events, the cut threshold is set to $4\un{\sigma}$.
+
+The tagging efficiency has been studied by applying the cuts also at the $5\un{\sigma}$-level. This selection has yielded about $0.1\un{\%}$ more events in every $|t|$-bin. This kind of inefficiency only contributes to a global scale factor, which is irrelevant for this analysis because the normalisation is taken from a different data set (cf. Section~\ref{sec:normalisation}).
+
+In the ``4RP'' analysis, thanks to the additional information from the 210-fr units, more cuts can be applied (cf. Table~2 in~\cite{epl101-el}). In particular the left-right comparison of the reconstructed horizontal vertex position, $x^*$, and vertical position-angle correlation in each arm. Furthermore, since the single-arm reconstruction can disentangle the contributions from $x^*$ and $\theta^*_x$, the angular resolution is better compared to the ``2RP'' analysis and consequently cut 1 becomes more stringent.
+
+\TODO{which xi values are accepted}
+
+
+
 
 %-------------------------
 
