@@ -3,18 +3,10 @@
 %2) ds/dt slope * ROUND_ERROR(t) << EXPERIM_UNC(ds/dt) [focus on uncertainties altering shape]
 %3) All uncertainties have sufficient resolution (to build reasonable covariance matrix).
 
-\begin{table*}
-\caption{%
-\TODO{update:}
-The elastic differential cross-section as determined in this analysis. The three left-most columns describe the bins in $t$. The representative point gives the $t$ value suitable for fitting~\cite{lafferty94}.
-%uncertainty due to different fit models negligible:$10^{-7}\un{GeV^2}$
-The other columns are related to the differential cross-section. The six right-most columns give the leading systematic biases in $\d\sigma/\d t$ for $1\sigma$-shifts in the respective quantities, $\delta s_q$, see Eqs.~(\ref{eq:syst mode}) and (\ref{eq:covar mat}). The two contributions due to optics correspond to the two vectors in Eq.~(\ref{eq:opt bias modes}).
-}%
-%\vskip-5mm
-\label{tab:data}
-\begin{center}
-\tiny
-%\small
+\def\Header
+{
+%\tiny
+\small
 %\footnotesize
 %\scriptsize
 \setlength{\tabcolsep}{5pt}
@@ -26,6 +18,16 @@ The other columns are related to the differential cross-section. The six right-m
 	left & right & represent. & value & statist.     & system.  & normal.    & alignment	& optics	& vert.~beam	& beam	\cr
 	edge & edge  & point      &       & uncert.      & uncert.  & ${\cal N}$ & vert.~shift	& mode 3	& divergence	& mom.	\cr
 \hline
+}
+
+\begin{table*}
+\caption{%
+The elastic differential cross-section as determined in this analysis (medium binning). The three left-most columns describe the bins in $t$. The representative point gives the $t$ value suitable for fitting~\cite{lafferty94}. The other columns are related to the differential cross-section. The five right-most columns give the leading systematic biases in $\d\sigma/\d t$ for $1\sigma$-shifts in the respective quantities, $\delta s_q$, see Eqs.~(\ref{eq:syst mode}) and (\ref{eq:covar mat}). The contribution due to optics correspond to the third vector in Eq.~(\ref{eq:opt bias modes}).
+}%
+\vskip-10mm
+\label{tab:data}
+\begin{center}
+\Header
 $0.000800$ & $0.000966$ & $0.000879$ & $870.248$ & $12.540$ & $44.456$ & $+42.690$ & $+9.284$ & $-0.176$ & $-5.371$ & $+0.549$ \cr
 $0.000966$ & $0.001144$ & $0.001051$ & $786.164$ & $7.263$ & $39.056$ & $+38.542$ & $+5.107$ & $-0.252$ & $-1.282$ & $+0.751$ \cr
 $0.001144$ & $0.001335$ & $0.001236$ & $717.292$ & $5.951$ & $36.145$ & $+35.946$ & $+2.905$ & $-0.300$ & $-0.661$ & $+0.878$ \cr
@@ -93,6 +95,20 @@ $0.046815$ & $0.048165$ & $0.047488$ & $238.870$ & $0.860$ & $11.952$ & $+11.952
 $0.048165$ & $0.049528$ & $0.048845$ & $232.160$ & $0.843$ & $11.622$ & $+11.622$ & $-0.003$ & $+0.001$ & $+0.004$ & $-0.003$ \cr
 $0.049528$ & $0.050917$ & $0.050221$ & $226.157$ & $0.823$ & $11.298$ & $+11.298$ & $-0.003$ & $+0.005$ & $+0.004$ & $-0.015$ \cr
 $0.050917$ & $0.052322$ & $0.051618$ & $220.623$ & $0.808$ & $10.978$ & $+10.978$ & $-0.002$ & $+0.009$ & $+0.004$ & $-0.027$ \cr
+\hline
+\end{tabular}
+\end{center}
+\end{table*}
+
+
+\begin{table*}
+\caption{%
+Continuation of Table~\ref{tab:data}.
+}%
+\vskip-8mm
+\label{tab:data cont}
+\begin{center}
+\Header
 $0.052322$ & $0.053748$ & $0.053033$ & $212.462$ & $0.787$ & $10.663$ & $+10.663$ & $-0.002$ & $+0.013$ & $+0.003$ & $-0.039$ \cr
 $0.053748$ & $0.055193$ & $0.054468$ & $207.142$ & $0.772$ & $10.354$ & $+10.354$ & $-0.002$ & $+0.017$ & $+0.003$ & $-0.049$ \cr
 $0.055193$ & $0.056660$ & $0.055924$ & $200.126$ & $0.752$ & $10.049$ & $+10.049$ & $-0.002$ & $+0.021$ & $+0.003$ & $-0.060$ \cr
@@ -167,5 +183,4 @@ $0.199646$ & $0.202452$ & $0.201049$ & $10.382$ & $0.122$ & $0.527$ & $+0.522$ &
 \hline
 \end{tabular}
 \end{center}
-%\vskip-10mm
 \end{table*}
