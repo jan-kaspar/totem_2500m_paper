@@ -98,8 +98,21 @@ normalised such that the factors $\eta_{1,2,3}$ have unit variance. The fourth e
 \subsubsection{Resolution}
 \label{sec:resolution}
 
-TODO
+There are two kinds of resolution that can be distinguished. The resolution of the single-arm angular reconstruction Eq.~(\ref{eq:kin 1a}), used for selection cuts and near-edge acceptance correction, and the resolution of the double-arm reconstruction, Eq.~(\ref{eq:kin 2a}), used for unsmearing correction of the final $t$-distribution. Since the single-arm reconstruction is biased by the vertex term in the horizontal plane, the corresponding resolution is significantly worse that the double-arm reconstruction.
 
+The single-arm resolution can be studied by comparing the angles reconstructed from the left and right arm, see an example in Fig.~\ref{fig:resol x 1a}. The width of the distributions was found to grow slightly during the fills, compatible with the effect of beam emittance growth. The typical range was from $10.0$ to $14.5\un{\mu rad}$ for the horizontal projection and from $0.36$ to $0.38\un{\mu rad}$ for the vertical. The associated uncertainties were $0.3$ and $0.007$, respectively. As illustrated in Fig.~\ref{fig:resol x 1a}, the shape of the distributions is very close to Gaussian, especially in the beginning of each fill.
+
+\begin{figure}
+\begin{center}
+\includegraphics{fig/resolution_non_gaussianity.pdf}
+\caption{%
+Difference between horizontal scattering angles reconstructed in the right and left arm, for the diagonal 45 bottom - 56 top. Red: data from run start. Blue: data from run end. The solid lines represent Gaussian fits.
+}
+\label{fig:resol x 1a}
+\end{center}
+\end{figure}
+
+Since in the vertical plane the resolution is driven by the beam divergence, the double-arm resolution can be simply scaled from the single-arm value: $\sigma(\theta^*_y) = (0.185 \pm 0.010)\un{\mu rad}$ where the uncertainty accounts for the full time variation. In the horizontal plane the estimation is more complex due to several contributing smearing mechanisms. In turn a MC study was performed with two extreme sets of beam divergence, vertex size and sensor resolution values. These were tuned within the ``4RP'' analysis where they are accessible thanks to the additional information from the 210-fr units. The study yielded $\sigma(\theta^*_x) =  (0.29 \pm 0.04)\un{\mu rad}$ where the uncertainty accounts for the full time variation.
 
 
 %----------------------------------------------------------------------------------------------------
