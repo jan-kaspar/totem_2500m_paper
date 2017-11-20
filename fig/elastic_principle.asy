@@ -36,8 +36,9 @@ void DrawRect(real x, real y, real w, real h, pen bound, pen fill)
 	filldraw((x-w/2, y-h/2)--(x+w/2, y-h/2)--(x+w/2, y+h/2)--(x-w/2, y+h/2)--cycle, fill, bound);
 }
 
-real z_vert_near = z_convert(214.628);
-real z_hor_near = z_convert(215.077);
+real z_hor_near = z_convert(214.628);
+real z_vert_near = z_convert(215.077);
+
 real z_hor_far = z_convert(219.551);
 real z_vert_far = z_convert(220.000);
 
@@ -57,24 +58,24 @@ DrawRect(-z_vert_far, -offset_vert, w_vert, h_vert, black, black);
 
 offset_vert -= 2;
 
-label("top", (z_vert_near+w_vert/2, +offset_vert+h_vert/2), E);
-label("bottom", (z_vert_near+w_vert/2, -offset_vert-h_vert/2), E);
-label("horizontal", (z_hor_near+w_hor/2, -h_hor/2), E);
+label("top", (z_vert_far-w_vert/2, +offset_vert+h_vert/2), W);
+label("bottom", (z_vert_far-w_vert/2, -offset_vert-h_vert/2), W);
+label("horizontal", (z_hor_far-w_hor/2, -h_hor/2), W);
 
-label("top", (-z_vert_near-w_vert/2, +offset_vert+h_vert/2), W);
-label("bottom", (-z_vert_near-w_vert/2, -offset_vert-h_vert/2), W);
-label("horizontal", (-z_hor_near-w_hor/2, +h_hor/2), W);
+label("top", (-z_vert_far+w_vert/2, +offset_vert+h_vert/2), E);
+label("bottom", (-z_vert_far+w_vert/2, -offset_vert-h_vert/2), E);
+label("horizontal", (-z_hor_far+w_hor/2, +h_hor/2), E);
 
 label("{\bf sector 56 (right arm)}", ((z_vert_near+z_vert_far)/2, y_st), black);
-label("near", (z_vert_near, y_unit), black);
-label("far", (z_vert_far, y_unit), black);
-label("$+215\un{m}$", (z_vert_near, y_dist), black);
+label("210-fr", (z_vert_near, y_unit), black);
+label("220-fr", (z_vert_far, y_unit), black);
+label("$+213\un{m}$", (z_vert_near, y_dist), black);
 label("$+220\un{m}$", (z_vert_far, y_dist), black);
 
 label("{\bf sector 45 (left arm)}", (-(z_vert_near+z_vert_far)/2, y_st), black);
-label("near", (-z_vert_near, y_unit), black);
-label("far", (-z_vert_far, y_unit), black);
-label("$-215\un{m}$", (-z_vert_near, y_dist), black);
+label("210-fr", (-z_vert_near, y_unit), black);
+label("220-fr", (-z_vert_far, y_unit), black);
+label("$-213\un{m}$", (-z_vert_near, y_dist), black);
 label("$-220\un{m}$", (-z_vert_far, y_dist), black);
 
 shipout(bbox(0mm, nullpen));
