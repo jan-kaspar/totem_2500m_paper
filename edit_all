@@ -9,7 +9,8 @@ qvim -p \
 	data_taking.tex \
 	differential_cross_section.tex \
 	data_table.tex \
-	coulomb.tex \
+	rho.tex \
+	discussion.tex \
 	conclusions.tex \
 	acknowledgements.tex \
 	bibliography.tex
