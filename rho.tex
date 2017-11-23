@@ -14,14 +14,14 @@ The Coulomb amplitude can be derived from QED. In one-photon approximation it yi
 \label{eq:coul cs}
 	{\d\sigma^{\rm C}\over \d t} = {4\pi\alpha^2\over t^2}\,{\mathcal{F}}^4\ ,
 \end{equation}
-where $\alpha$ is the fine-structure constant and $\mathcal{F}$ represents an experimentally determined form factor -- we have used the one from Ref.~\cite{puckett10}.
+where $\alpha$ is the fine-structure constant and $\mathcal{F}$ represents an experimentally determined form factor. Several form factor determinations have been considered (by Puckett et al., Arrington et al.~and Borkowski et al., see summary in \cite{elegent}) and no difference in results has been observed.
 
 At low $|t|$, the modulus of the nuclear amplitude is modelled as
 \begin{equation}
 \label{eq:nuc mod}
 \left | {\cal A}^{\rm N}(t) \right | = \sqrt{s\over\pi} {p\over \hbar c} \sqrt{a} \exp\left( {1\over 2} \sum\limits_{n = 1}^{N_b} b_n\, t^n \right)\ ,
 \end{equation}
-in agreement with the experimental observation. The $b_1$ parameter is responsible for the leading exponential decrease, other $b_n$ parameters can describe small deviations from the leading behaviour. Since the calculation of CNI may, in principle, involve integrations (e.g.~Eq.~(\ref{eq:int kl})), it is necessary to extend the nuclear amplitude meaningfully to higher $|t|$ values, too. At that region, the amplitude is fixed to a form that describes well the dip-bump structure observed in the data, see e.g.~Figure~\ref{fig:fit exp3 0.15}, right. In order to avoid numerical problems, the intermediate $|t|$ region is modelled with a continuous and smooth interpolation between the low and high-$|t|$ parts. \TODO{check this: It will be shown that altering the extended part of the nuclear amplitude ($|t| > 0.2\un{GeV^2}$) within reasonable limits has negligible impact on the results presented later on.}
+in agreement with the experimental observation. The $b_1$ parameter is responsible for the leading exponential decrease, other $b_n$ parameters can describe small deviations from the leading behaviour. Since the calculation of CNI may, in principle, involve integrations (e.g.~Eq.~(\ref{eq:int kl})), it is necessary to extend the nuclear amplitude meaningfully to higher $|t|$ values, too. At that region, the amplitude is fixed to a form that describes well the dip-bump structure observed in the data, see e.g.~Figure~\ref{fig:fit exp3 0.15}, right. In order to avoid numerical problems, the intermediate $|t|$ region is modelled with a continuous and smooth interpolation between the low and high-$|t|$ parts. It has been checked that altering the high-$|t|$ part within reasonable limits has negligible impact on the results.
 
 Several parametrisations have been considered for the phase of the nuclear amplitude. Since one of the main goals of this analysis is to compare the newly obtained $\rho$ value with those at lower energies, we have focused parametrisations similar to the past analyses. Consequently we have considered phases with slow variation at low $|t|$: constant, Bailly and standard from \cite{totem-8tev-1km}. No dependence of the results on this choice was observed and therefore only the constant phase
 \begin{equation}
@@ -43,41 +43,84 @@ We have used the most general interference formula available so far \cite{kl94}:
 	\end{aligned}
 \end{equation}
 
+The computer code from \cite{elegent} was used to calculate the effects of CNI.
+
 
 %----------------------------------------------------------------------------------------------------
 \subsection{Data fits}
 \label{sec:rho anal}
 
-\TODO{Analysis procedure}
+The fits have been carried out with the standard least-squares method, in particular minimising
+\begin{equation}
+\label{eq:chi sq A}
+	\begin{aligned}
+		\chi^2 &= \Delta^\T \mat V^{-1} \Delta\ ,\quad
+			\Delta_i = \left.{\d\sigma\over \d t}\right|_{{\rm bin}\ i} - {\d\sigma^{\rm C+N}\over\d t}\left(t^{\rm rep}_{{\rm bin}\ i}\right)\ ,\cr
+		\mat V &= \mat V_{\rm stat} + \mat V_{\rm syst}\ ,\cr
+	\end{aligned}
+\end{equation}
+where $\Delta$ is a vector of differences between the differential cross-section data and a fit function $\d\sigma^{C+N}/\d t$ evaluated at the representative point $t^{\rm rep}$ of each bin~\cite{lafferty94}. The minimisation is repeated several times, and the representative points are updated between iterations. The covariance matrix $\mat V$ has two components. The diagonal of $\mat V_{\rm stat}$ contains the statistical uncertainty squared from Table~\ref{tab:data}, $\mat V_{\rm syst}$ includes all systematic uncertainty contributions except the normalisation, see Eq.~(\ref{eq:covar mat}). For improved fit stability, the normalisation uncertainty is not included in the $\chi^2$ definition. Instead, the uncertainty is propagated for each fit parameter. \TODO{describe how} This normalisation uncertainty is, at the end, added quadratically to the uncertainty reported by the fit with no bias.
 
-\bgroup
-\parskip=0pt
+The fits have been found to have negligible dependence on the binning used (see Section~\ref{sec:binning}), choice of electromagnetic form factor (see text below Eq.~(\ref{eq:coul cs})), high-$|t|$ nuclear amplitude (see text below Eq.~(\ref{eq:nuc mod})), choice of the nuclear amplitude phase (see text above Eq.~(\ref{eq:nuc phase con})), number of fit iterations and the choice of start parameter values for $\chi^2$ minimisation.
 
-\> show results for the "reference" matrix - no matter what we do, the ballpark is about 0.09 - 0.10
-\>> meaning of the components
-\>> meaning of the extremes
+The fit procedure has been validated with a Monte-Carlo study showing that it has negligible bias and uncertainty \TODO{some conclusion}.
 
-\> show plots for the extremes
-\>> exp3, tmax = 0.15
-\>> exp1, tmax = 0.07
+A series of fits has been performed for several degrees of the hadronic modulus polynomial, $N_b = 1, 2, 3$, and for different sub-samples of the data, constraining them by a maximal value of $|t|$, $|t|_{\rm max}$. For the latter, two values have been chosen. $|t|_{\rm max} = 0.15\un{GeV^2}$ corresponds to the largest interval before the differential cross-section accelerates its decrease towards the dip. It is the largest interval where the application of parametrisation Eq.~(\ref{eq:nuc mod}) is sensible. The other choice, $|t|_{\rm max} = 0.07\un{GeV^2}$, reflects an interval where purely-exponential ($N_b = 1$) nuclear amplitude is expected to be sufficient. A summary of the fit results is shown in Table~\ref{tab:rho ref fits}. The fit with $N_b = 1$ on the larger $|t|$ range has bad quality, thus the $\rho$ value is not displayed. This shows that the data are not compatible with pure exponential, similarly to the previous observation at $\sqrt s = 8\un{TeV}$ \cite{totem-8tev-90m,totem-8tev-1km}. Except from this case, all other fit configurations yield good quality and $\rho$ values constrained to the range $0.086$ to $0.100$.
 
-\> focus on the UA4-like case - (by accident) additional meaning most fair comparison to previous measurements
-\>> $|t|$-range
-\>> similar handling of CNI
+\begin{table*}
+\caption{%
+Summary of results for various fit configurations, using the ``coarse'' binning.
+\TODO{propagate normalisation uncertainty to the rho uncertainties}
+}%
+\vskip-5mm
+\label{tab:rho ref fits}
+\begin{center}
+\setlength{\tabcolsep}{5pt}
+\def\arraystretch{0.8}
+\begin{tabular}{c@{\hskip20pt}cc@{\hskip20pt}cc}
+\hline
+      & \multispan2\hss $|t|_{\rm max} = 0.07\un{GeV^2}$\hss & \multispan2\hss $|t|_{\rm max} = 0.15\un{GeV^2}$\hss\cr
+$N_b$ & $\chi^2/\hbox{ndf}$ & $\rho$ & $\chi^2/\hbox{ndf}$ & $\rho$\cr
+\hline
+1     & $0.67$ & $0.086\pm0.005$ &      $2.67$ & - \cr
+2     & $0.63$ & $0.093\pm0.007$ &      $1.00$ & $0.091\pm0.006$ \cr
+3     & $0.64$ & $0.092\pm0.009$ &      $0.93$ & $0.100\pm0.007$ \cr
+\hline
+\end{tabular}
+\end{center}
+\end{table*}
 
-\egroup
+The extreme cases in Table~\ref{tab:rho ref fits}, combination $N_b=1$ with $|t|_{\rm max} = 0.07\un{GeV^2}$ and $N_b=3$ with $|t|_{\rm max} = 0.15\un{GeV^2}$ have important meanings. In the latter, the largest possible sample is used and maximum flexibility is given to the fit. In that sense, this fit corresponds to the best $\rho$ determination considered. Also, in this case the fit data include many points where the CNI effects are limited. Consequently, the fit can ``learn'' the trend of the nuclear component and ``impose it'' in the region of strong CNI effects. Conversely, the fit configuration $N_b=1$ with $|t|_{\rm max} = 0.07\un{GeV^2}$ relies uniquely on data with sizeable CNI effects. This complementarity explains why these two cases give the extreme values of $\rho$ in Table~\ref{tab:rho ref fits}. Fit details for these two configurations are shown in Figures~\ref{fig:fit exp3 0.15} and \ref{fig:fit exp1 0.07}.
+
 
 \begin{figure*}
 \vskip-5mm
 \begin{center}
 \includegraphics{fig/fit_details_exp3_0p15.pdf}
 \caption{%
-fit exp3, tmax 0.15,
-\TODO{describe},
+Details of fit with $N_b = 3$ and $|t|_{\rm max} = 0.15\un{GeV^2}$.
 }
 \label{fig:fit exp3 0.15}
 \end{center}
 \end{figure*}
+
+
+
+\begin{figure*}
+\vskip-5mm
+\begin{center}
+\includegraphics{fig/fit_details_exp1_0p07.pdf}
+\caption{%
+Details of fit with $N_b = 1$ and $|t|_{\rm max} = 0.07\un{GeV^2}$.
+}
+\label{fig:fit exp1 0.07}
+\end{center}
+\end{figure*}
+
+
+The fit configuration $N_b=1$ with $|t|_{\rm max} = 0.07\un{GeV^2}$ has another important meaning. Considering the shrinkage of the forward-cone \TODO{need reference}, this $|t|$ range is similar to the one available in UA4 analysis \cite{ua4-rho}. This fact may suggest why UA4 could not observe deviations of the differential cross-section from pure exponential: the $|t|$ range was to narrow, as it is the case for the presented data, see Figure~\ref{fig:fit exp1 0.07}, left. Beyond the $|t|$ range, this fit combination shares more similarities with the UA4 fit (and in general with many other past experiments): purely exponential fit and assumption of constant hadronic phase. In that sense, this fit combination corresponds to the most fair comparison to the previous experiments.
+
+\TODO{describe figure \ref{fig:si_el rho sol}}
 
 
 \begin{figure*}
@@ -92,22 +135,7 @@ fit exp3, tmax 0.15,
 \end{figure*}
 
 
-
-
-
-\begin{figure*}
-\vskip-5mm
-\begin{center}
-\includegraphics{fig/fit_details_exp1_0p07.pdf}
-\caption{%
-fit exp1, tmax 0.07,
-\TODO{describe},
-}
-\label{fig:fit exp1 0.07}
-\end{center}
-\end{figure*}
-
-
+\TODO{describe figure \ref{fig:rho_vs_s}}
 
 
 \begin{figure*}
