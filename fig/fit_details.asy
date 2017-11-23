@@ -8,76 +8,146 @@ string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/combined/c
 
 string it_dir = "F_C+H, iteration 2";
 
+string unc_file = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/2rp/systematics/matrix.root";
+string unc_types[], unc_labels[];
+pen unc_pens[];
+unc_types.push("all"); unc_pens.push(yellow+opacity(0.5)); unc_labels.push("full syst.~unc.~band");
+unc_types.push("all-but-norm"); unc_pens.push(heavygreen); unc_labels.push("syst.~unc.~without normalisation");
+
 TGraph_errorBar = None;
+
+string ref_label = "\hbox{ref} = 633 \e^{-20.4\,|t|} + {\d\sigma^{\rm C}\over\d t}";
 
 //----------------------------------------------------------------------------------------------------
 
-void PlotRelDiff(RootObject data, RootObject fit, pen p, marker m=nomarker)
+void DrawUncBand(RootObject bc, RootObject relUnc, pen p)
 {
-	if (data.InheritsFrom("TGraph"))
+	if (relUnc.InheritsFrom("TGraph"))
 	{
-		int n_points = data.iExec("GetN");
-		for (int i = 0; i < n_points; ++i)
+		int N = bc.iExec("GetN");
+
+		guide g_u, g_b;
+		for (int i = 0; i < N; ++i)
 		{
-			real ax[] = {0.};
-			real ay[] = {0.};
-			data.vExec("GetPoint", i, ax, ay);
-	
-			real x = ax[0];
-			real y = ay[0];
-			real y_unc = data.rExec("GetErrorY", i);
-	
-			real y_fit = fit.rExec("Eval", x);
-	
-			real y_rel = (y - y_fit) / y_fit;
-			real y_rel_unc = y_unc / y_fit;
-	
-			draw((x, y_rel), m);
-			draw((x, y_rel-y_rel_unc)--(x, y_rel+y_rel_unc), p+squarecap);
+			real ta[] = {0.};
+			real sa[] = {0.};
+
+			bc.vExec("GetPoint", i, ta, sa);
+			real ru = relUnc.rExec("Eval", ta);
+
+			g_u = g_u -- Scale((ta[0], sa[0] * (1. + ru)));
+			g_b = g_b -- Scale((ta[0], sa[0] * (1. - ru)));
 		}
+
+		g_b = reverse(g_b);
+		filldraw(g_u--g_b--cycle, p, nullpen);
 	}
 
-	if (data.InheritsFrom("TH1"))
+	if (relUnc.InheritsFrom("TH1"))
 	{
-		for (int bi = 1; bi <= data.iExec("GetNbinsX"); ++bi)
+		guide g_u, g_b;
+
+		for (int bi = 1; bi < relUnc.iExec("GetNbinsX"); ++bi)
 		{
-			real x = data.rExec("GetBinCenter", bi);
+			real c = relUnc.rExec("GetBinCenter", bi);
+			real w = relUnc.rExec("GetBinWidth", bi);
+			real ru = relUnc.rExec("GetBinContent", bi);
 
-			if (x < TH1_x_min || x > TH1_x_max)
-				continue;
+			real v = bc.rExec("Eval", c);
 
-			real w = data.rExec("GetBinWidth", bi);
-			real c = data.rExec("GetBinContent", bi);
-			real u = data.rExec("GetBinError", bi);
+			g_u = g_u -- Scale((c-w/2, v*(1.+ru))) -- Scale((c+w/2, v*(1.+ru)));
+			g_b = g_b -- Scale((c-w/2, v*(1.-ru))) -- Scale((c+w/2, v*(1.-ru)));
 
-			real y_fit = fit.rExec("Eval", x);
-	
-			real y_rel = (c - y_fit) / y_fit;
-			real y_rel_unc = u / y_fit;
-	
-			//draw((x, y_rel), mCi+2pt+p);
-			draw((x-w/2, y_rel)--(x+w/2, y_rel), p+squarecap);
-			draw((x, y_rel-y_rel_unc)--(x, y_rel+y_rel_unc), p+squarecap);
+			//g_u = g_u -- Scale((c, v*(1.+ru)));
+			//g_b = g_b -- Scale((c, v*(1.-ru)));
 		}
+
+		g_b = reverse(g_b);
+		filldraw(g_u--g_b--cycle, p, nullpen);
 	}
 }
 
 //----------------------------------------------------------------------------------------------------
 
-void MakeFitPlots(string f)
+void DrawRelUncBand(RootObject bc, RootObject relUnc, RootObject ref, pen p)
+{
+	if (relUnc.InheritsFrom("TH1"))
+	{
+		guide g_u, g_b;
+
+		for (int bi = 1; bi < relUnc.iExec("GetNbinsX"); ++bi)
+		{
+			real c = relUnc.rExec("GetBinCenter", bi);
+			real w = relUnc.rExec("GetBinWidth", bi);
+			real rel_unc = relUnc.rExec("GetBinContent", bi);
+
+			real band_cen = bc.rExec("Eval", c);
+			real y_ref = ref.rExec("Eval", c);
+
+			real y_up = band_cen * (1. + rel_unc) / y_ref - 1.;
+			real y_dw = band_cen * (1. - rel_unc) / y_ref - 1.;
+
+			g_u = g_u -- Scale((c-w/2, y_up)) -- Scale((c+w/2, y_up));
+			g_b = g_b -- Scale((c-w/2, y_dw)) -- Scale((c+w/2, y_dw));
+		}
+
+		g_b = reverse(g_b);
+		filldraw(g_u--g_b--cycle, p, nullpen);
+	}
+}
+
+//----------------------------------------------------------------------------------------------------
+
+void MakeRelativePlot(string f, string binning, real t_max)
+{
+	xSizeDef = 7.5cm;
+
+	NewPad("$|t|\ung{GeV^2}$", "${\d\sigma/\d t - \hbox{ref}\over\hbox{ref}}\ ,\quad " + ref_label + "$");
+	currentpad.xTicks = LeftTicks(0.05, 0.01);
+	currentpad.yTicks = RightTicks(0.05, 0.01);
+
+	RootObject fit = RootGetObject(f, "g_fit_CH");
+	RootObject ref = RootGetObject(f, "g_refC");
+
+	for (int ui : unc_types.keys)
+	{
+		RootObject relUnc = RootGetObject(unc_file, "matrices/" + unc_types[ui] + "/" + binning + "/h_stddev");
+
+		DrawRelUncBand(fit, relUnc, ref, unc_pens[ui]);
+		AddToLegend(unc_labels[ui], mSq+6pt+unc_pens[ui]);
+	}
+
+	draw(RootGetObject(f, "fit canvas, relC|g_fit_H_relC"), "l", blue+1pt, "fit, hadronic component only");
+	draw(RootGetObject(f, "fit canvas, relC|g_fit_CH_relC"), "l", red+1pt, "fit, all components");
+
+	draw(RootGetObject(f, "fit canvas, relC|g_data_relC0"), "p", black, mCi+black+1pt, "data with stat.~unc.");	
+
+	limits((0, -0.15), (t_max, 0.05), Crop);
+
+	AttachLegend(shift(0, 10)*BuildLegend(SE, vSkip=-1mm), SE);
+}
+
+//----------------------------------------------------------------------------------------------------
+
+void MakeFitPlots(string f, string binning)
 {
 	xSizeDef = 4.5cm;
 
 	RootObject data_ih = RootGetObject(f, "h_input_dataset_0");
-	RootObject data_unc_stat = RootGetObject(f, "g_data_coll_unc_stat");
-	RootObject data_unc_full = RootGetObject(f, "g_data_coll_unc_full");
+	//RootObject data_unc_stat = RootGetObject(f, "g_data_coll_unc_stat");
+	//RootObject data_unc_full = RootGetObject(f, "g_data_coll_unc_full");
 	RootObject fit = RootGetObject(f, "fit canvas|g_fit_CH");
-
-	//----------
 
 	NewPad("$|t|\ung{GeV^2}$", "$\d\sigma/\d t \ung{mb/GeV^2}$");
 	scale(Linear, Log);
 	//currentpad.xTicks = LeftTicks(0.005, 0.001);
+
+	for (int ui : unc_types.keys)
+	{
+		RootObject relUnc = RootGetObject(unc_file, "matrices/" + unc_types[ui] + "/" + binning + "/h_stddev");
+		DrawUncBand(fit, relUnc, unc_pens[ui]);
+		//AddToLegend(unc_labels[ui], mSq+6pt+unc_pens[ui]);
+	}
 
 	draw(fit, "l", red+1pt);
 	draw(data_ih, "eb", black);
@@ -87,52 +157,6 @@ void MakeFitPlots(string f)
 	limits((0, 1e-2), (1., 1e3), Crop);
 
 	AttachLegend(NE, NE);
-
-}
-
-//----------------------------------------------------------------------------------------------------
-
-void MakeComponentPlots(string f)
-{
-	xSizeDef = 6cm;
-
-	NewPad("$|t|\ung{GeV^2}$", "$\d\sigma/\d t \ung{mb/GeV^2}$");
-	currentpad.xTicks = LeftTicks(0.005, 0.001);
-
-	AddToLegend("<{\it data}:");
-	AddToLegend("$\be^*=2500\un{m}$");
-
-	AddToLegend("<{\it fit components}:");
-
-	draw(RootGetObject(f, "g_fit_C"), "l", blue+1pt, "Coulomb only");
-	draw(RootGetObject(f, "g_fit_H"), "l", red+1pt, "hadronic only");
-	draw(RootGetObject(f, "g_fit_CH"), "l", heavygreen+1pt, "Coulomb $\oplus$ hadronic");
-
-	draw(RootGetObject(f, "g_input_data0"), "p", black+1pt, mCi+1pt);
-
-	limits((0, 400), (0.02, 900), Crop);
-
-	AttachLegend();
-}
-
-//----------------------------------------------------------------------------------------------------
-
-void MakeRelativePlot(string f, real t_max)
-{
-	xSizeDef = 7.5cm;
-
-	NewPad("$|t|\ung{GeV^2}$", "$\d\sigma/\d t - \hbox{ref}\over\hbox{ref}$");
-	currentpad.xTicks = LeftTicks(0.05, 0.01);
-
-	draw(RootGetObject(f, "fit canvas, relC|g_data_relC0"), "p", black, mCi+black+1pt);
-
-	draw(RootGetObject(f, "fit canvas, relC|g_fit_H_relC"), "l", blue+1pt);
-	draw(RootGetObject(f, "fit canvas, relC|g_fit_CH_relC"), "l", red+1pt);
-	
-
-	limits((0, -0.12), (t_max, 0.02), Crop);
-
-	//AttachLegend();
 }
 
 //----------------------------------------------------------------------------------------------------
@@ -143,9 +167,9 @@ void PlotOne(string expn, string binning, string tmax, real t_max, string f_out)
 
 	write("* " + f_in);
 
-	MakeRelativePlot(f_in, t_max);
+	MakeRelativePlot(f_in, binning, t_max);
 	//MakeComponentPlots(f_in);
-	MakeFitPlots(f_in);
+	MakeFitPlots(f_in, binning);
 
 	GShipout(f_out, margin=0.5mm, hSkip=3mm);
 }
