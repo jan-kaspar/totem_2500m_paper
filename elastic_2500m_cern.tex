@@ -41,6 +41,35 @@
 \def\Name#1{#1, }
 \def\Review#1#2#3#4{{\it #1} {\bf #2} (#3) #4}
 
+
+\newskip\itskip \itskip2mm
+\newskip\iitskip \iitskip0mm
+\newskip\iiitskip \iiitskip0mm
+
+\newdimen\itindent \itindent4mm
+\newdimen\iitindent \iitindent8mm
+\newdimen\iiitindent \iiitindent12mm
+
+\bgroup
+\catcode`\>=11
+
+\gdef\>{%
+	\par\vskip1mm
+	\par\noindent\hbox to 2mm{\hss $\bullet$}
+}
+
+\gdef\>>{%
+	\par
+	\noindent\hbox to 7mm{\hss $\circ$}
+}
+
+\gdef\>>>{%
+	\par
+	\noindent\hbox to 12mm{\hss --}
+}
+
+\egroup
+
 %----------------------------------------------------------------------------------------------------
 
 \begin{document}
@@ -80,6 +109,7 @@
 %--------------------------------------------------
 
 \linenumbers
+\catcode`\>=11
 
 \input introduction.tex
 
