@@ -2,8 +2,8 @@ import graph;
 import pad_layout;
 import style;
 
-xSizeDef = 5.5cm;
-ySizeDef = 5.5cm;
+xSizeDef = 7cm;
+ySizeDef = 5cm;
 
 //----------------------------------------------------------------------------------------------------
 
@@ -36,50 +36,66 @@ currentpad.xTicks = LeftTicks(0.1, 0.02);
 real si_el_min = 30.7;
 real si_el_max = 31.3;
 
-AddToLegend("<$\be^* = 2500\un{m}$:");
+//--------------------
 
-rho_0 = 0.0979;
-si_el_0 = 31.0;
-draw(graph(rho_2500, si_el_min, si_el_max), red, MakeLabel());
-draw((si_el_0, rho_0), mCi+red+2pt);
+AddToLegend("constraint from this publ.", red, mTD+red+2pt);
 
-/*
-rho_0 = 0.0952;
-si_el_0 = 31.5;
-draw(graph(rho_2500, si_el_min, si_el_max), magenta+dashed, MakeLabel());
-draw((si_el_0, rho_0), mCi+magenta+2pt);
-*/
+real si_el_2500_1 = 31.0;
+real rho_2500_1 = 0.09975;
 
-AddToLegend("($|t|_{\rm max} = 0.15\un{GeV^2}$, med.~binning, exp3, const.~phase)");
+real si_el_2500_2 = 31.1;
+real rho_2500_2 = 0.09926;
 
-AddToLegend("<$\be^* = 90\un{m}$:");
+real a_2500 = (rho_2500_2 - rho_2500_1) / (si_el_2500_2 - si_el_2500_1);
+real b_2500 = rho_2500_2 - a_2500 * si_el_2500_2;
 
-rho_0 = 0.10;
-si_el_0 = 31.0359;
-draw(graph(rho_90, si_el_min, si_el_max), blue, MakeLabel());
-draw((si_el_0, rho_0), mCi+blue+2pt);
+draw((si_el_min, a_2500*si_el_min + b_2500)--(si_el_max, a_2500*si_el_max + b_2500), red);
 
-rho_0 = 0.14;
-si_el_0 = 30.7437;
-draw(graph(rho_90, si_el_min, si_el_max), heavygreen+dashed, MakeLabel());
-draw((si_el_0, rho_0), mCi+heavygreen+2pt);
+draw((si_el_2500_1, rho_2500_1), mTD+red+2pt);
+draw((si_el_2500_2, rho_2500_2), mTD+red+2pt);
 
-AddToLegend("<consistent combination:");
+//--------------------
 
-real rho_sol = 0.09758;
-real si_el_sol = 31.0505;
+AddToLegend("constraint from 90m", blue, mTU+blue+2pt);
 
-real scale_factor = si_el_sol / 31.0359;
-real si_tot_sol = 110.5753 * scale_factor;
-real si_inel_sol = 79.5394 * scale_factor;
+real rho_90_1 = 0.14;
+real si_el_90_1 = 30.7437;
+rho_0 = rho_90_1;
+si_el_0 = si_el_90_1;
+draw(graph(rho_90, si_el_min, si_el_max), blue);
+draw((si_el_0, rho_0), mTU+blue+2pt);
 
-string label_sol = format("$\rh = %#.4f$, ", rho_sol) + format("$\si_{\rm el} = %#.3f\un{mb}$", si_el_sol);
-draw((si_el_sol, rho_sol), nullpen, label_sol, mSt+3pt);
+real rho_90_2 = 0.10;
+real si_el_90_2 = 31.0359;
+rho_0 = rho_90_2;
+si_el_0 = si_el_90_2;
+draw(graph(rho_90, si_el_min, si_el_max), blue);
+draw((si_el_0, rho_0), mTU+blue+2pt);
 
-AddToLegend(format("$\si_{\rm tot} = %#.3f\un{mb}$", si_tot_sol));
-AddToLegend(format("$\si_{\rm inel} = %#.3f\un{mb}$", si_inel_sol));
+
+real de_si_el = 0.01;
+real a_90 = (rho_90(si_el_90_2 + de_si_el) - rho_90(si_el_90_2 - de_si_el)) / 2 / de_si_el;
+real b_90 = rho_90(si_el_90_2) - a_90 * si_el_90_2;
+
+//draw((si_el_min, a_90*si_el_min + b_90)--(si_el_max, a_90*si_el_max + b_90), dashed);
+
+//--------------------
+
+real si_el_sol = - (b_2500 - b_90) / (a_2500 - a_90);
+real rho_sol = a_2500 * si_el_sol + b_2500;
+
+//real scale_factor = si_el_sol / 31.0359;
+//real si_tot_sol = 110.5753 * scale_factor;
+//real si_inel_sol = 79.5394 * scale_factor;
+
+//string label_sol = format("$\rh = %#.4f$, ", rho_sol) + format("$\si_{\rm el} = %#.3f\un{mb}$", si_el_sol);
+string label_sol = "consistent combination";
+draw((si_el_sol, rho_sol), nullpen, label_sol, mCi+heavygreen+2pt);
+
+//AddToLegend(format("$\si_{\rm tot} = %#.3f\un{mb}$", si_tot_sol));
+//AddToLegend(format("$\si_{\rm inel} = %#.3f\un{mb}$", si_inel_sol));
 
 limits((si_el_min, 0.08), (si_el_max, 0.145), Crop);
 //limits((31.0, 0.09), (31.1, 0.10), Crop);
 
-AttachLegend(NW, NE);
+AttachLegend(NE, NE);

@@ -10,7 +10,7 @@ string base_dir = "/home/jkaspar/publications/elastic figures/pdg/";
 fit_file = topDir + "build_uncertainty_bands.root";
 
 xSizeDef = 10cm;
-ySizeDef = 6cm;
+ySizeDef = 5.5cm;
 
 drawGridDef = false;
 
@@ -120,7 +120,8 @@ DrawPoint(7e3, 0.145, 0.091, red+0.8pt, mCi+false+2pt+red);
 DrawPoint(8e3, 0.12, 0.03, red+0.8pt, mCi+true+2pt+red);
 
 // 13 TeV
-DrawPoint(13e3, 0.0976, 0.01, red+0.8pt, mCi+true+2pt+red);
+fsh = -0.02; DrawPoint(13e3, 0.100, 0.01, red+0.8pt, mCi+true+2pt+red);
+fsh = +0.02; DrawPoint(13e3, 0.086, 0.01, red+0.8pt, mCi+true+2pt+red);
 
 // fits
 DrawFitUncBand("rho_p_ap", heavygreen+opacity(0.1));
