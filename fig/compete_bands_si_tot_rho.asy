@@ -122,7 +122,7 @@ void DrawAxes(real y_label)
 
 TGraph_x_max = 1.1e5;
 
-NewPad("$\sqrt s\ung{GeV}$", "$\si_{\rm pp}\ung{mb}$");
+NewPad("$\sqrt s\ung{GeV}$", "$\si_{\rm tot}\ung{mb}$");
 currentpad.drawGridY = true;
 currentpad.yTicks = RightTicks(10., 5.);
 scale(Log, Linear);
@@ -149,7 +149,7 @@ DrawAxes(50);
 
 //----------------------------------------------------------------------------------------------------
 
-NewPad("$\sqrt s\ung{GeV}$", "$\rh_{\rm pp}$");
+NewPad("$\sqrt s\ung{GeV}$", "$\rh$");
 currentpad.drawGridY = true;
 currentpad.yTicks = RightTicks(0.01, 0.005);
 scale(Log, Linear);
@@ -169,16 +169,16 @@ DrawAxes(0.075);
 
 NewPad(false);
 
-AddToLegend("reference TOTEM measurements", red, mCi+2pt+red);
+//AddToLegend("reference TOTEM measurements", red, mCi+2pt+red);
 
-AddToLegend("<COMPETE models:");
+//AddToLegend("<COMPETE models:");
 
 AddToLegend(GetModelsByGroup(10), GroupPen(10));
 AddToLegend(GetModelsByGroup(11), GroupPen(11));
 AddToLegend(GetModelsByGroup(20), GroupPen(20));
 AddToLegend(GetModelsByGroup(30), GroupPen(30));
 
-AttachLegend(BuildLegend(SE));
-FixPad(330, 80);
+AttachLegend(BuildLegend(SE, vSkip=-1mm));
+FixPad(310, 75);
 
-GShipout(margin=1mm, hSkip=1mm);
+GShipout(margin=1mm, hSkip=3mm);

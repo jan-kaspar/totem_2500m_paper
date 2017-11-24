@@ -54,7 +54,7 @@ void DrawAxes(real y_label)
 
 TGraph_x_max = 1.1e5;
 
-NewPad("$\sqrt s\ung{GeV}$", "$\si_{\rm pp}\ung{mb}$");
+NewPad("$\sqrt s\ung{GeV}$", "$\si_{\rm tot}\ung{mb}$");
 currentpad.drawGridY = true;
 currentpad.yTicks = RightTicks(10., 5.);
 scale(Log, Linear);
@@ -92,7 +92,7 @@ AttachLegend(BuildLegend(NW, vSkip=-1mm, lineLength=7mm), NW);
 
 //----------------------------------------------------------------------------------------------------
 
-NewPad("$\sqrt s\ung{GeV}$", "$\rh_{\rm pp}$");
+NewPad("$\sqrt s\ung{GeV}$", "$\rh$");
 currentpad.drawGridY = true;
 currentpad.yTicks = RightTicks(0.01, 0.005);
 scale(Log, Linear);
@@ -119,4 +119,4 @@ DrawAxes(0.075);
 
 //----------------------------------------------------------------------------------------------------
 
-GShipout(margin=1mm, hSkip=1mm);
+GShipout(margin=1mm, hSkip=3mm);
