@@ -19,8 +19,8 @@ string fit_obj = "g_fit_CH";
 string unc_file = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/2rp/systematics/matrix.root";
 string unc_types[], unc_labels[];
 pen unc_pens[];
-unc_types.push("all"); unc_pens.push(blue+opacity(0.5)); unc_labels.push("all");
-unc_types.push("all-but-norm"); unc_pens.push(green); unc_labels.push("all except normalisation");
+unc_types.push("all"); unc_pens.push(yellow+opacity(0.5)); unc_labels.push("all");
+unc_types.push("all-but-norm"); unc_pens.push(heavygreen); unc_labels.push("all except normalisation");
 
 drawGridDef = true;
 
@@ -89,8 +89,8 @@ void PlotEverything()
 	}
 
 	AddToLegend("<data with statistical uncertainties:");
-	draw(RootGetObject(topDir+"DS-merged/merged.root", binning + "/merged/" + diagonal + "/h_dsdt"), "d0,eb", red+0.8pt);
-	AddToLegend("data", mPl+4pt+(red+0.8pt));
+	draw(RootGetObject(topDir+"DS-merged/merged.root", binning + "/merged/" + diagonal + "/h_dsdt"), "d0,eb", black+0.8pt);
+	AddToLegend("data", mPl+4pt+(black+0.8pt));
 }
 
 //----------------------------------------------------------------------------------------------------
