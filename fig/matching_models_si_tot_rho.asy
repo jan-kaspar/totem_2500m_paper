@@ -63,9 +63,13 @@ scale(Log, Linear);
 //draw(Scale((2.76e3, 83.66))--Scale((7e3, 98.76))--Scale((8e3, 101.09))--Scale((13e3, 109.92)), nullpen, m_Nico);
 draw(RootGetObject(topDir + "model_2017.root", "g_si_tot_pp_vs_s"), p_Nico);
 
-// Durham model
+// Durham model, without Odderon
 draw(Scale((0.546e3, 62.46))--Scale((1.8e3, 77.08))--Scale((2.76e3, 83.23))--Scale((7e3, 98.82))--Scale((8e3, 101.34))
 	--Scale((13e3, 111.19)), p_Durh);
+
+// Durham model, with Odderon from note
+draw(shift(0, -0.8) * (Scale((0.546e3, 62.46))--Scale((1.8e3, 77.08))--Scale((2.76e3, 83.23))--Scale((7e3, 98.82))--Scale((8e3, 101.34))
+	--Scale((13e3, 111.19))), p_Durh+dashed);
 
 // TOTEM data
 real fshu = 0.02;
@@ -105,9 +109,17 @@ draw(RootGetObject(topDir + "model_2017.root", "g_rho_pp_vs_s"), p_Nico);
 draw(Scale((0.546e3, 0.1277))--Scale((1.8e3, 0.1228))--Scale((2.76e3, 0.1209))--Scale((7e3, 0.1166))--Scale((8e3, 0.1159))
 	--Scale((13e3, 0.1134)), p_Durh);
 
-// Durham model, with the effect of Odderon
+// Durham model, with Odderon from personal discussion
 draw(shift(0, -0.015) * (Scale((0.546e3, 0.1277))--Scale((1.8e3, 0.1228))--Scale((2.76e3, 0.1209))--Scale((7e3, 0.1166))--Scale((8e3, 0.1159))
-	--Scale((13e3, 0.1134))), p_Durh_odd);
+	--Scale((13e3, 0.1134))), p_Durh+dotted);
+
+// Durham model, with Odderon from note
+draw(Scale((0.546e3, 0.1277 - 0.8/62.46))
+	--Scale((1.8e3, 0.1228 - 0.8/77.08))
+	--Scale((2.76e3, 0.1209 - 0.8/83.23))
+	--Scale((7e3, 0.1166 - 0.8/98.82))
+	--Scale((8e3, 0.1159 - 0.8/101.34))
+	--Scale((13e3, 0.1134 - 0.8/111.19)), p_Durh+dashed);
 
 // TOTEM data
 DrawPoint(8e3, 0.12, 0.03, red+0.8pt, mCi+true+2pt+red);
