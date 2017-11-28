@@ -2,14 +2,12 @@ import root;
 import pad_layout;
 import style;
 
-xSizeDef = 4.8cm;
-ySizeDef = 4.8cm;
+xSizeDef = 6.5cm;
+ySizeDef = 5cm;
 
 string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/2rp/";
 
 include "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/2rp/plots/systematics/common_code.asy";
-
-AddAllModes();
 
 string f = topDir + "systematics/matrix.root";
 
@@ -29,10 +27,37 @@ string object_labels[] = {
 	"2nd dgn. combination",
 };
 
-real z_t_maxs[], z_t_Steps[], z_t_steps[], z_e_maxs[], z_e_Steps[], z_e_steps[];
-z_t_maxs.push(0.004); z_t_Steps.push(0.002); z_t_steps.push(0.001); z_e_maxs.push(0.02); z_e_Steps.push(0.005); z_e_steps.push(0.001);
-z_t_maxs.push(0.2); z_t_Steps.push(0.05); z_t_steps.push(0.01); z_e_maxs.push(0.02); z_e_Steps.push(0.005); z_e_steps.push(0.001);
+real z_t_mins[], z_t_maxs[], z_t_Steps[], z_t_steps[], z_e_maxs[], z_e_Steps[], z_e_steps[];
+z_t_mins.push(6e-4); z_t_maxs.push(0.004); z_t_Steps.push(0.001); z_t_steps.push(0.0002); z_e_maxs.push(0.02); z_e_Steps.push(0.005); z_e_steps.push(0.001);
+z_t_mins.push(0e-4);z_t_maxs.push(0.2); z_t_Steps.push(0.05); z_t_steps.push(0.01); z_e_maxs.push(0.02); z_e_Steps.push(0.005); z_e_steps.push(0.001);
 //z_t_maxs.push(1.0); z_t_Steps.push(0.2); z_t_steps.push(0.1); z_e_maxs.push(0.04); z_e_Steps.push(0.01); z_e_steps.push(0.005);
+
+//----------------------------------------------------------------------------------------------------
+
+void AddLeadingModes()
+{
+	AddMode("$\th_y^*$ shift, L-R sym., T-B corr.", red,
+		"", "sh-thy", 1,
+		"", "sh-thy", 1
+	);
+
+	AddMode("$\th_{x,y}^*$ scaling, mode 3", blue,
+		"", "sc-thxy-mode3", 1,
+		"", "sc-thxy-mode3", 1
+	);
+	
+	AddMode("uncert.~of vert.~beam divergence", heavygreen,
+		"", "dy-sigma", 1,
+		"", "dy-sigma", 1
+	);
+	
+	AddMode("uncert.~of beam momentum", cyan,
+		"", "beam-mom", 1,
+		"", "beam-mom", 1
+	);
+}
+
+AddLeadingModes();
 
 //----------------------------------------------------------------------------------------------------
 
@@ -48,7 +73,7 @@ void PlotAllModes()
 			RootObject obj = RootGetObject(f, pth, error=false);
 			if (obj.valid)
 			{
-				draw(scale(1, 100), obj, "vl,d0", StdPen(ci+1), modes[mi].label + " ("+ replace(object_labels[oi], "_", "\_") + ")");
+				draw(scale(1, 100), obj, "vl,d0", modes[mi].p, modes[mi].label);
 				++ci;
 			}
 		}
@@ -57,13 +82,11 @@ void PlotAllModes()
 	pen p_envelope = black+1pt;
 	draw(scale(1, +100), RootGetObject(f, "matrices/all-but-norm/"+binning+"/h_stddev"), "vl", p_envelope);
 	draw(scale(1, -100), RootGetObject(f, "matrices/all-but-norm/"+binning+"/h_stddev"), "vl", p_envelope);
-	AddToLegend("$\pm 1\un{\si}$ {\it envelope of uncertainties (without normalisation)}", p_envelope);
+	AddToLegend("$\pm 1\un{\si}$ envelope", p_envelope);
 }
 
 
 //----------------------------------------------------------------------------------------------------
-
-frame f_legend;
 
 for (int zi : z_t_maxs.keys)
 {
@@ -76,7 +99,7 @@ for (int zi : z_t_maxs.keys)
 	real e_Step = z_e_Steps[zi] * 100;
 	real e_step = z_e_steps[zi] * 100;
 
-	real t_min = 0;
+	real t_min = z_t_mins[zi];
 	real t_max = z_t_maxs[zi];
 	real e_min = -z_e_maxs[zi] * 100;
 	real e_max = z_e_maxs[zi] * 100;
@@ -84,18 +107,13 @@ for (int zi : z_t_maxs.keys)
 	currentpad.xTicks = LeftTicks(t_Step, t_step);
 	currentpad.yTicks = RightTicks(e_Step, e_step);
 
-	limits((0, -e_max), (t_max, e_max), Crop);
+	limits((t_min, -e_max), (t_max, e_max), Crop);
 
 	xaxis(YEquals(0, false), dashed);
 	yaxis(XEquals(8e-4, false), dashed);
 
-	f_legend = BuildLegend(2, lineLength=5mm);
-	currentpicture.legend.delete();
+	if (zi == 0)
+		AttachLegend(BuildLegend(lineLength=5mm, NE, vSkip=-1.5mm, ymargin=0mm), NE);
 }
-
-NewPad(false);
-add(f_legend);
-FixPad(300, -100);
-
 
 GShipout(hSkip=0mm, margin=0mm);

@@ -1,13 +1,9 @@
 \section{Differential Cross-Section}
 \label{sec:differential cross-section}
 
-The analysis method is very similar to the previously published one \cite{totem-8tev-1km}. The only important difference stems from using different RPs for the measurement: unit 210-fr instead of 220-nr as in \cite{totem-8tev-1km} which was not anymore equipped with sensors. Due to the optics and beam parameters the unit 210-fr has worse low-$|t|$ acceptance, further deteriorated by the tilt of the unit. Consequently, in order to maintain the low-$|t|$ reach essential for this study, the main analysis (denoted ``2RP'') only uses the 220-fr units. Since the abandon of the 210-nr unit may, in principle, result in worse resolution and background suppression, for control reasons, the traditional analysis with all units (denoted ``4RP'') was pursued, too. In Section~\ref{sec:cross checks} the ``2RP'' and ``4RP'' will be compared showing a very good match. In what follows, the ``2RP'' analysis will be described unless stated otherwise.
+The analysis method is very similar to the previously published one \cite{totem-8tev-1km}. The only important difference stems from using different RPs for the measurement: unit 210-fr instead of 220-nr as in \cite{totem-8tev-1km} which was not anymore equipped with sensors. Due to the optics and beam parameters the unit 210-fr has worse low-$|t|$ acceptance, further deteriorated by the tilt of the unit. Consequently, in order to maintain the low-$|t|$ reach essential for this study, the main analysis (denoted ``2RP'') only uses the 220-fr units. Since the abandon of the 210-nr unit may, in principle, result in worse resolution and background suppression, for control reasons, the traditional analysis with 4 units per diagonal (denoted ``4RP'') was pursued, too. In Section~\ref{sec:cross checks} the ``2RP'' and ``4RP'' will be compared showing a very good agreement. In what follows, the ``2RP'' analysis will be described unless stated otherwise.
 
-\TODO{mention that normalisation from a different dataset?}
-
-\TODO{retained only data where both diagonals were working - cancellation of systematics}
-
-Section~\ref{sec:event analysis} covers all aspects related to the reconstruction of a single event. Section~\ref{sec:diff cs} describes the steps of transforming a raw $t$-distribution into the differential cross-section. The $t$-distributions are analysed separately for each LHC fill and each diagonal. After comparison (Section~\ref{sec:cross checks}) they are finally merged (Section~\ref{sec:final data merging}).
+Section~\ref{sec:event analysis} covers all aspects related to the reconstruction of a single event. Section~\ref{sec:diff cs} describes the steps of transforming a raw $t$-distribution into the differential cross-section. The $t$-distributions are analysed separately for each LHC fill and each diagonal, they are only merged at the end, see Section~\ref{sec:data merging}. Section~\ref{sec:systematics} describes the evaluation of systematic uncertainties and Section~\ref{sec:cross checks} presents several comparison plots used as systematic cross checks.
 
 %----------------------------------------------------------------------------------------------------
 \subsection{Event Analysis}
@@ -328,19 +324,80 @@ The bin sizes are set according to the $t$ resolution. Three different binnings 
 
 
 
-%-------------------------
+%----------------------------------------------------------------------------------------------------
 
-\subsubsection{Systematic Uncertainties}
+\subsection{Data Merging}
+\label{sec:data merging}
+
+After analysing data in each diagonal and LHC fill separately, the individual differential cross-section distributions are merged. This is accomplished by a per-bin weighted average, with the weight given by inverse squared statistical uncertainty. The final cross-section values can be found in Table~\ref{tab:data} and are visualised in Figure~\ref{fig:dsdt}. The figure clearly shows a rapid cross-section rise below $|t| \lesssim 0.002\un{GeV^2}$, which will later be interpreted as an effect due to electromagnetic interaction.
+
+\begin{figure*}
+\vskip-5mm
+\begin{center}
+\includegraphics{fig/t_dist_merged_with_unc.pdf}
+\caption{%
+Differential cross-section from Table \ref{tab:data} with statistical (bars) and systematic uncertainties (bands). The yellow band represents all systematic uncertainties, the green one all but normalisation. The bands are centred around a data fit including both nuclear and Coulomb components (the fit presented in Figure~\ref{fig:fit exp3 0.15}). INSET: a low-$|t|$ zoom featuring cross-section rise due to the Coulomb interaction.
+}
+\label{fig:dsdt}
+\end{center}
+\end{figure*}
+
+
+%----------------------------------------------------------------------------------------------------
+
+\subsection{Systematic Uncertainties}
 \label{sec:systematics}
 
-Besides the systematic uncertainties mentioned at the above analysis steps, the beam momentum uncertainty needs to be considered when the scattering angles are translated to $t$, see Eq.~(\ref{eq:th t}). The uncertainty was estimated by LHC experts to $0.1\un{\%}$ \cite{beam-mom-unc}.
+The following sources of systematic uncertainties have been considered.
+\begin{itemize}
 
-Two different methods are used to propagate the systematic effects into the $t$-distribution. The first is based on a Monte-Carlo simulation which uses a fit of the final differential cross-section data to generate the true $t$-distribution. In parallel, another $t$-distribution is built, introducing one of the above mentioned systematic effects at $1\un{\sigma}$ level. The difference between the two $t$-distributions gives the systematic effect on the differential cross-section. The second method is similar, however using numerical integration techniques instead of Monte-Carlo simulations. Both methods are formally equivalent to evaluating
+\item Alignment: shifts in $\theta^*_{x,y}$ (see Section~\ref{sec:alignment}). Both left-right symmetric and anti-symmetric modes have been considered. In the vertical plane, both contributions correlated and uncorrelated between the diagonals have been considered.
+
+\item Alignment and optics $x-y$ tilts: mixing between $\theta^*_{x}$ and $\theta^*_{y}$ (see Section~\ref{sec:alignment}). Both left-right symmetric and anti-symmetric modes have been considered.
+
+\item Optics uncertainties: scaling of $\theta^*_{x,y}$ (see Section~\ref{sec:optics}). The three relevant modes in Eq.~(\ref{eq:opt bias}) have been considered.
+
+\item Background subtraction (see Section~\ref{sec:background}): the $t$-dependent uncertainty of the correction factor $\mathcal{B}$.
+
+\item Acceptance correction (see Section~\ref{sec:acc corr}): the uncertainty of resolution parameters, non-gaussianity of the resolution distributions, left-right assymetry of the beam divergence.
+
+\item Inefficiency corrections (see Section~\ref{sec:ineff corr}): for the uncorrelated inefficiency $\mathcal{I}_1$ both uncertainties for the fit slope and intercept have been considered. For the correlated inefficiency $\mathcal{I}_2$ the uncertainty of its value has been considered.
+
+\item The beam momentum uncertainty needs to be considered when the scattering angles are translated to $t$, see Eq.~(\ref{eq:th t}). The uncertainty was estimated by LHC experts to $0.1\un{\%}$ \cite{beam-mom-unc} in agreement with a previous assessment by TOTEM (Section~5.2.8.~in \cite{totem-8tev-90m}).
+
+\item Unsmearing (see Section~\ref{sec:unfolding}): uncertainty of resolution parameters and fit-model dependence.
+
+\item Normalisation (see Section~\ref{sec:normalisation}): overall multiplicative factor.
+
+\end{itemize}
+
+For each error source, its effect on the $|t|$-distribution is evaluated with a Monte-Carlo simulation. It uses a fit of the final differential cross-section data to generate the true $t$-distribution and, in parallel, builds another $t$-distribution where the systematic error at $1\un{\sigma}$ level is introduced. The difference between the two $t$-distributions gives the systematic effect on the differential cross-section. This procedure is formally equivalent to evaluating
 \begin{equation}
 \label{eq:syst mode}
 \delta s_{q}(t) \equiv \frac{\partial(\d\sigma/\d t)}{\partial q}\ \delta q\ ,
 \end{equation}
 where $\delta q$ corresponds to a $1\un{\sigma}$ bias in the quantity $q$ responsible for a given systematic effect.
+
+The systematic uncertainty corresponding to the final differential cross-section merged from all analysed LHC fills and both diagonals is propagated according to the same method as applied to the data, see Section~\ref{sec:data merging}. To be conservative, the systematic errors are assumed fully correlated among the four analysed LHC fills. The per-effect correlations between the two diagonals are respected. This is particularly important for the vertical (mis)-alignment which is predominantly anti-correlated between the diagonals. While the uncertainty in the lowest $|t|$ bin is about $7\un{\%}$ for a single diagonal, once the diagonals are merged the impact drops to about $1.2\un{\%}$.
+
+The leading uncertainties (except normalisation) are shown in Figure~\ref{fig:syst unc}. At low $|t|$ they include vertical alignment and uncertainty of vertical beam divergence. At higher $|t|$ values, the uncertainties are dominated by beam momentum and optics uncertainties. These leading effects are quantified in Table~\ref{tab:data} which can be used to approximate the covariance matrix of systematic uncertainties:
+\begin{equation}
+\label{eq:covar mat}
+\mat V_{ij} = \sum_{q} \delta s_{q}(i)\ \delta s_{q}(j)\: ,
+\end{equation}
+where $i$ and $j$ are bin indices (row numbers in Table~\ref{tab:data}) and the sum goes over the leading error contributions $q$ (five right-most columns in the table).
+
+
+\begin{figure*}
+\begin{center}
+\includegraphics{fig/systematics_dgn_combination_summary.pdf}
+\caption{%
+Relative variation of differential cross-section due to systematic errors. The colourful histograms represent the leading uncertainties, each of them corresponds to a $1\un{\sigma}$ bias, cf.~Eq.~(\ref{eq:syst mode}). The envelope is determined by summing all considered contributions (except normalisation) in quadrature for each $|t|$ value.
+}
+\label{fig:syst unc}
+\end{center}
+\end{figure*}
+
 
 
 
@@ -349,7 +406,9 @@ where $\delta q$ corresponds to a $1\un{\sigma}$ bias in the quantity $q$ respon
 \subsection{Systematic Cross-Checks}
 \label{sec:cross checks}
 
-Compatible results have been obtained by analysing data subsets of events from different bunches, different diagonals (Figure~\ref{fig:dsdt checks} top left), different fills and different time periods -- in particular those right after and right before the beam cleanings (Figure~\ref{fig:dsdt checks} top right). Figure~\ref{fig:dsdt checks} bottom left shows that both analysis approaches, ``2RP'' and ``4RP'', yield compatible results. \TODO{Comment on Figure~\ref{fig:dsdt checks} bottom right}.
+Compatible results have been obtained by analysing data subsets of events from different bunches, different diagonals (Figure~\ref{fig:dsdt checks} top left), different fills and different time periods -- in particular those right after and right before the beam cleanings (Figure~\ref{fig:dsdt checks} top right). Figure~\ref{fig:dsdt checks} bottom left shows that both analysis approaches, ``2RP'' and ``4RP'', yield compatible results. The relatively large difference between the diagonals at very low $|t|$ (Figure~\ref{fig:dsdt checks} top left) is fully within the uncertainty due to vertical misalignment, see Section~\ref{sec:systematics}.
+
+\TODO{Comment on Figure~\ref{fig:dsdt checks} bottom right}.
 
 \begin{figure*}
 \vskip-5mm
@@ -366,41 +425,6 @@ Collection of cross-check plots.
 \end{center}
 \end{figure*}
 
-
- %----------------------------------------------------------------------------------------------------
-\subsection{Final Data Merging}
-\label{sec:final data merging}
-
-Finally, the differential cross-section histograms from all LHC fills and both diagonals are merged. This is accomplished by a per-bin weighted average, with the weight given by inverse squared statistical uncertainty. The statistical and systematic uncertainties are propagated accordingly. For the systematic ones, the correlation between the diagonals is taken into account. Most importantly, the vertical (mis-)alignment of the RPs of one unit is almost fully correlated; thus the effect on the differential cross-section is opposite for the two diagonals and consequently its impact is strongly reduced once the diagonals are merged.
-
-The cross-section values can be found in Table~\ref{tab:data} and are visualised in Figure~\ref{fig:dsdt}. The figure clearly shows a rapid cross-section rise below $|t| \lesssim 0.002\un{GeV^2}$, which will later be interpreted as an effect due to electromagnetic interaction.
+%----------------------------------------------------------------------------------------------------
 
 \input data_table.tex
-
-\begin{figure*}
-\vskip-5mm
-\begin{center}
-\includegraphics{fig/t_dist_merged_with_unc.pdf}
-\caption{%
-Differential cross-section from Table \ref{tab:data} with statistical (bars) and systematic uncertainties (bands). The blue band represents all systematic uncertainties, the green one all but normalisation. The bands are centred around a data fit including both nuclear and Coulomb components (\TODO{describe}). INSET: a low-$|t|$ zoom featuring cross-section rise due to the Coulomb interaction.
-}
-\label{fig:dsdt}
-\end{center}
-\end{figure*}
-
-The final systematic uncertainties, except the $TODO\un{\%}$ coming from the normalisation, are summarised in Figure~\ref{fig:syst unc} where their impact on the differential cross-section is shown. The leading uncertainties include normalisation, optics imperfections, beam momentum offset and residual misalignment. The vertical misalignment is the dominant systematic effect in the very-low $|t|$ region. The leading effects are quantified in Table~\ref{tab:data} and can be used to approximate the covariance matrix of systematic uncertainties:
-\begin{equation}
-\label{eq:covar mat}
-\mat V_{ij} = \sum_{q} \delta s_{q}(i)\ \delta s_{q}(j)\: ,
-\end{equation}
-where $i$ and $j$ are bin indices (row numbers in Table~\ref{tab:data}) and the sum goes over the leading error contributions $q$ (six right-most columns in the table).
-
-\begin{figure*}
-\begin{center}
-\includegraphics{fig/systematics_dgn_combination_summary.pdf}
-\caption{%
-Impact of $t$-dependent systematic effects on the differential cross-section. Each curve corresponds to a systematic error of $1\un{\sigma}$, cf.~Eq.~(\ref{eq:syst mode}). The three $\theta*_{x,y}$ scaling contributions correspond to the three vectors in Eq.~(\ref{eq:opt bias modes}). The envelope is determined by summing all shown contributions in quadrature for each $|t|$ value.
-}
-\label{fig:syst unc}
-\end{center}
-\end{figure*}
