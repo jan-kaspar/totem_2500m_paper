@@ -50,15 +50,13 @@ In the ``4RP'' analysis, the same reconstruction as in \cite{totem-8tev-1km} is 
 
 TOTEM's usual three-stage procedure (Section 3.4 in~\cite{totem-ijmp}) for correcting the detector positions and rotation angles has been applied: a beam-based alignment prior to the run followed by two offline methods. First, track-based alignment for relative positions among RPs, and second, alignment with elastic events for absolute position with respect to the beam -- repeated in 20 minutes time intervals to check for possible beam movements.
 
-Exploiting all the methods, the alignment uncertainties have been estimated to $25\un{\mu m}$ (horizontal shift), $100\un{\mu m}$ (vertical shift) and $2\un{m rad}$ (rotation about the beam axis). Propagating them through Eq.~(\ref{eq:kin 2a}) to reconstructed scattering angles yields $0.50\un{\mu rad}$ ($0.35\un{\mu rad}$) for the horizontal (vertical) angle. RP rotations induce a bias in the reconstructed scattering angles:
+The alignment uncertainties have been estimated to $25\un{\mu m}$ (horizontal shift), $100\un{\mu m}$ (vertical shift) and $2\un{m rad}$ (rotation about the beam axis). Propagating them through Eq.~(\ref{eq:kin 2a}) to reconstructed scattering angles yields $0.50\un{\mu rad}$ ($0.35\un{\mu rad}$) for the horizontal (vertical) angle. RP rotations induce a bias in the reconstructed scattering angles:
 \begin{equation}
 \label{eq:alig rot bias}
 	\theta_x^* \rightarrow \theta_x^* + c \theta_y^*\ ,\quad
 	\theta_y^* \rightarrow \theta_y^* + d \theta_x^*\ ,
 \end{equation}
-where the proportionality constants $c$ and $d$ have a mean of 0 and a standard deviations of $0.013$ and $3.9\cdot10^{-4}$, respectively.
-
-\TODO{Mention that y misalignment is mostly top-bottom correlated? Mention the uncorrelated contribution}
+where the proportionality constants $c$ and $d$ have zero mean and standard deviations of $0.013$ and $3.9\cdot10^{-4}$, respectively.
 
 
 
@@ -75,9 +73,7 @@ In each arm, the residual errors induce a bias in the reconstructed scattering a
 	\theta_x^* \rightarrow (1 + b_x)\, \theta_x^*\ ,\qquad
 	\theta_y^* \rightarrow (1 + b_y)\, \theta_y^*\ .
 \end{equation}
-the biases $b_x$ and $b_y$ have uncertainties of $0.17\un{\%}$ and $0.15\un{\%}$, respectively, and a correlation factor of $-0.90$. \TODO{true?:} These estimates include the effects of magnet harmonics.
-
-To evaluate the impact on the $t$-distribution, it is convenient to decompose the correlated biases $b_x$ and $b_y$ into eigenvectors of the covariance matrix:
+the biases $b_x$ and $b_y$ have uncertainties of $0.17\un{\%}$ and $0.15\un{\%}$, respectively, and a correlation factor of $-0.90$. To evaluate the impact on the $t$-distribution, it is convenient to decompose the correlated biases $b_x$ and $b_y$ into eigenvectors of the covariance matrix:
 \begin{equation}
 \label{eq:opt bias modes}
 \begin{pmatrix} b_x^{\rm L}\cr b_y^{\rm L} \cr b_x^{\rm R}\cr b_y^{\rm R} \end{pmatrix} =
@@ -85,7 +81,7 @@ To evaluate the impact on the $t$-distribution, it is convenient to decompose th
   \ +\ \eta_2 \underbrace{\begin{pmatrix} -5.157\cdot10^{-4}\cr +2.541\cdot10^{-5}\cr +5.566\cdot10^{-4}\cr +2.746\cdot10^{-5} \end{pmatrix}}_{\rm mode\ 2}
   \ +\ \eta_3 \underbrace{\begin{pmatrix} +3.617\cdot10^{-4}\cr +3.625\cdot10^{-4}\cr +3.006\cdot10^{-4}\cr +3.641\cdot10^{-4} \end{pmatrix}}_{\rm mode\ 3}
 \end{equation}
-normalised such that the factors $\eta_{1,2,3}$ have unit variance. The fourth eigenmode has a negligible contribution and therefore is not explicitly mentioned.
+normalised such that the factors $\eta_{1,2,3}$ have unit variance. The fourth eigenmode has a negligible contribution and therefore is not explicitly listed.
 
 
 
@@ -117,8 +113,8 @@ Since in the vertical plane the resolution is driven by the beam divergence, the
 
 For a given $t$ bin, the differential cross-section is evaluated by selecting and counting elastic events:
 \begin{equation}
-{\d\sigma\over \d t}(\hbox{bin}) =
-	\mathcal{N}\, \mathcal{U}({\rm bin})\, \mathcal{B}\, {1\over \Delta t}
+{\d\sigma\over \d t} =
+	\mathcal{N}\, \mathcal{U}(t)\, \mathcal{B}(t)\, {1\over \Delta t}
 	\sum\limits_{t\, \in\, {\rm bin}} \mathcal{A}(\theta^*_x, \theta_y^*)\ \mathcal{E}(\theta_y^*)
 	\ ,
 \end{equation}
@@ -237,7 +233,7 @@ The correction $\mathcal{A}_{\rm fluct}$ is calculated analytically from the pro
 
 The full acceptance correction, $\mathcal{A}$, starts about $12$ in the lowest-$|t|$ bin and decreases smoothly towards about $2.1$ at $|t| = 0.2\un{GeV^2}$. Since a single diagonal cannot cover more than half of the phase space, the minimum value of the correction is $2$.
 
-\TODO{Comment on uncertainty.}
+The uncertainties related to $\mathcal{A}_{\rm fluct}$ follow from the uncertainties of the resolution parameters: standard deviation and distribution shape, see Section~\ref{sec:resolution}. Since $\mathcal{A}_{\rm geom}$ is calculated from a trivial trigonometric formula, there is no uncertainty directly associated with it. However, indirectly, biases can be arise from effects that affect the assumed azimuthal symmetry like misalignments or optics perturbations already covered above.
 
 
 
