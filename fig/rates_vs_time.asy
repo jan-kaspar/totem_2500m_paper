@@ -1,14 +1,13 @@
 import root;
 import pad_layout;
+import style;
 
 include "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/alignment/plots/run_info.asy";
-
-texpreamble("\SetFontSizesX");
 
 string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/common/rates/";
 
 xSizeDef = 14.5cm;
-ySizeDef = 5cm;
+ySizeDef = 4.5cm;
 
 TGraph_errorBar = None;
 
