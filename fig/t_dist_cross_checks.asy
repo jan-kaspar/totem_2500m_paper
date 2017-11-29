@@ -2,7 +2,7 @@ import root;
 import pad_layout;
 import style;
 
-xSizeDef = 6.0cm;
+xSizeDef = 6.3cm;
 ySizeDef = 4.8cm;
 
 string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/2rp/";
