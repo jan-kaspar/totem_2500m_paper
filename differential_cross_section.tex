@@ -90,7 +90,7 @@ normalised such that the factors $\eta_{1,2,3}$ have unit variance. The fourth e
 \subsubsection{Resolution}
 \label{sec:resolution}
 
-There are two kinds of resolution that can be distinguished. The resolution of the single-arm angular reconstruction Eq.~(\ref{eq:kin 1a}), used for selection cuts and near-edge acceptance correction, and the resolution of the double-arm reconstruction, Eq.~(\ref{eq:kin 2a}), used for unsmearing correction of the final $t$-distribution. Since the single-arm reconstruction is biased by the vertex term in the horizontal plane, the corresponding resolution is significantly worse that the double-arm reconstruction.
+There are two kinds of resolution that can be distinguished. The resolution of the single-arm angular reconstruction Eq.~(\ref{eq:kin 1a}), used for selection cuts and near-edge acceptance correction, and the resolution of the double-arm reconstruction, Eq.~(\ref{eq:kin 2a}), used for unsmearing correction of the final $t$-distribution. Since the single-arm reconstruction is biased by the vertex term in the horizontal plane, the corresponding resolution is significantly worse than the double-arm reconstruction.
 
 The single-arm resolution can be studied by comparing the angles reconstructed from the left and right arm, see an example in Fig.~\ref{fig:resol x 1a}. The width of the distributions was found to grow slightly during the fills, compatible with the effect of beam emittance growth. The typical range was from $10.0$ to $14.5\un{\mu rad}$ for the horizontal projection and from $0.36$ to $0.38\un{\mu rad}$ for the vertical. The associated uncertainties were $0.3$ and $0.007$, respectively. As illustrated in Fig.~\ref{fig:resol x 1a}, the shape of the distributions is very close to Gaussian, especially in the beginning of each fill.
 
@@ -104,7 +104,7 @@ Difference between horizontal scattering angles reconstructed in the right and l
 \end{center}
 \end{figure}
 
-Since in the vertical plane the resolution is driven by the beam divergence, the double-arm resolution can be simply scaled from the single-arm value: $\sigma(\theta^*_y) = (0.185 \pm 0.010)\un{\mu rad}$ where the uncertainty accounts for the full time variation. In the horizontal plane the estimation is more complex due to several contributing smearing mechanisms. In turn a MC study was performed with two extreme sets of beam divergence, vertex size and sensor resolution values. These were tuned within the ``4RP'' analysis where they are accessible thanks to the additional information from the 210-fr units. The study yielded $\sigma(\theta^*_x) =  (0.29 \pm 0.04)\un{\mu rad}$ where the uncertainty accounts for the full time variation.
+Since in the vertical plane the resolution is driven by the beam divergence, the double-arm resolution can be simply scaled from the single-arm value: $\sigma(\theta^*_y) = (0.185 \pm 0.010)\un{\mu rad}$ where the uncertainty accounts for the full variation in time. In the horizontal plane the estimation is more complex due to several contributing smearing mechanisms. In turn a MC study was performed with two extreme sets of beam divergence, vertex size and sensor resolution values. These were tuned within the ``4RP'' analysis where they are accessible thanks to the additional information from the 210-fr units. The study yielded $\sigma(\theta^*_x) =  (0.29 \pm 0.04)\un{\mu rad}$ where the uncertainty accounts for the full time variation.
 
 
 %----------------------------------------------------------------------------------------------------
@@ -231,7 +231,7 @@ The calculation of the geometrical correction $\mathcal{A}_{\rm geom}$ is based 
 
 The correction $\mathcal{A}_{\rm fluct}$ is calculated analytically from the probability that any of the two elastic protons leaves the region of acceptance due to the beam divergence. The beam divergence distribution is modelled as a Gaussian with the spread determined by the method described in Section~\ref{sec:resolution}. This contribution is sizeable only close to the acceptance limitations. Data from regions with corrections larger than $2$ are discarded.
 
-The full acceptance correction, $\mathcal{A}$, starts about $12$ in the lowest-$|t|$ bin and decreases smoothly towards about $2.1$ at $|t| = 0.2\un{GeV^2}$. Since a single diagonal cannot cover more than half of the phase space, the minimum value of the correction is $2$.
+The full acceptance correction, $\mathcal{A}$, has a value of $12$ in the lowest-$|t|$ bin and decreases smoothly towards about $2.1$ at $|t| = 0.2\un{GeV^2}$. Since a single diagonal cannot cover more than half of the phase space, the minimum value of the correction is $2$.
 
 The uncertainties related to $\mathcal{A}_{\rm fluct}$ follow from the uncertainties of the resolution parameters: standard deviation and distribution shape, see Section~\ref{sec:resolution}. Since $\mathcal{A}_{\rm geom}$ is calculated from a trivial trigonometric formula, there is no uncertainty directly associated with it. However, indirectly, biases can be arise from effects that affect the assumed azimuthal symmetry like misalignments or optics perturbations already covered above.
 
@@ -256,14 +256,14 @@ Single-RP uncorrelated inefficiency for the 220-fr bottom RP in the right arm. T
 \end{center}
 \end{figure}
 
-Another source of inefficiency are proton interactions in an upstream RP affecting simultaneously the RP downstream. The contribution from these upstream-downstream correlated inefficiencies, $\mathcal{I}_2$, is determined by evaluating the rate of events with high track multiplicity ($\gtrsim$ 5) in both upstream and downstream RPs. Events with high track multiplicity simultaneously in a upstream top and upstream bottom RP are discarded as such a shower is likely to have started upstream from the RP station and thus be unrelated to the elastic proton interacting with detectors. The outcome, $\mathcal{I}_2 \approx (1.5 \pm 0.7)\un{\%}$, is compatible between left/right arms and top/bottom RP pairs and compares well to Monte-Carlo simulations (e.g.~section 7.5 in \cite{hubert-thesis}).
+Another source of inefficiency are proton interactions in a RP affecting simultaneously another RP downstream. The contribution from these correlated inefficiencies, $\mathcal{I}_2$, is determined by evaluating the rate of events with high track multiplicity ($\gtrsim$ 5) in both 210-fr and 220-fr RP units. Events with high track multiplicity simultaneously in the top and bottom RP of the 210-fr units are discarded as such a shower is likely to have started upstream from the RP station and thus be unrelated to the elastic proton interacting with detectors. The outcome, $\mathcal{I}_2 \approx (1.5 \pm 0.7)\un{\%}$, is compatible between left/right arms and top/bottom RP pairs and compares well to Monte-Carlo simulations (e.g.~section 7.5 in \cite{hubert-thesis}).
 
 The full correction is calculated as
 \begin{equation}
 \label{efficiency}
 	\mathcal{E}(\theta_y^*) = {1\over 1 - \left( \sum\limits_{i\in \rm RPs} \mathcal{I}^i_1(\theta_y^*) + 2 \mathcal{I}_2 \right) } \ .
 \end{equation}
-The first term in the parentheses sums the contributions from the diagonal RPs used in the analysis. In the ``2RP'' analysis it increases from about $6.9$ to $8.5\un{\%}$ from the lowest to the highest $|\theta_y^*|$. For the ``4RP'' analysis, the range is from $10.5$ to $13.0\un{\%}$. The typical uncertainty is about $0.4\un{\%}$.
+The first term in the parentheses sums the contributions from the diagonal RPs used in the analysis. In the ``2RP'' analysis it increases from about $6.9$ to $8.5\un{\%}$ from the lowest to the highest $|\theta_y^*|$, with an uncertainty of about $0.4\un{\%}$. For the ``4RP'' analysis, since more RPs contribute, the sum is greater: from $10.5$ to $13.0\un{\%}$ between the lowest to the highest $|\theta_y^*|$.
 
 
 
@@ -305,7 +305,7 @@ For the uncertainty estimate, the uncertainties of the $\theta_x^*$ and $\theta_
 \subsubsection{Normalisation}
 \label{sec:normalisation}
 
-The normalisation factor $\mathcal{N}$ is determined by requiring the same elastic cross-section $\sigma_{\rm el} = 31.0\un{mb}$ as published in \cite{totem-13tev-90m}. The elastic cross-section is extracted from the data in two components. The first component sums the $\d\sigma/\d t$ histogram bins for $0.01 < |t| < 0.5\un{GeV^2}$. The second component corresponds to the integral over $0 < |t| < 0.01\un{GeV^2}$ of an exponential fitted to the data on the interval $0.01 < |t| < 0.05\un{GeV^2}$.
+The normalisation factor $\mathcal{N}$ is determined by requiring integrated elastic cross-section $\sigma_{\rm el} = 31.0\un{mb}$ as recently determined by TOTEM from a different $\sqrt s = 13\un{TeV}$ dataset \cite{totem-13tev-90m}. The elastic cross-section is extracted from the data in two components. The first component sums the $\d\sigma/\d t$ histogram bins for $0.01 < |t| < 0.5\un{GeV^2}$. The second component corresponds to the integral over $0 < |t| < 0.01\un{GeV^2}$ of an exponential fitted to the data on the interval $0.01 < |t| < 0.05\un{GeV^2}$.
 
 The uncertainty of $\mathcal{N}$ is dominated by the $5.5\un{\%}$ uncertainty of $\sigma_{\rm el}$ in \cite{totem-13tev-90m}.
 
@@ -324,7 +324,7 @@ The bin sizes are set according to the $t$ resolution. Three different binnings 
 \subsection{Data Merging}
 \label{sec:data merging}
 
-After analysing data in each diagonal and LHC fill separately, the individual differential cross-section distributions are merged. This is accomplished by a per-bin weighted average, with the weight given by inverse squared statistical uncertainty. The final cross-section values can be found in Table~\ref{tab:data} and are visualised in Figure~\ref{fig:dsdt}. The figure clearly shows a rapid cross-section rise below $|t| \lesssim 0.002\un{GeV^2}$, which will later be interpreted as an effect due to electromagnetic interaction.
+After analysing data in each diagonal and LHC fill separately, the individual differential cross-section distributions are merged. This is accomplished by a per-bin weighted average, with the weight given by inverse squared statistical uncertainty. The final cross-section values can be found in Table~\ref{tab:data} and are visualised in Figure~\ref{fig:dsdt}. The figure clearly shows a rapid cross-section rise below $|t| \lesssim 0.002\un{GeV^2}$ which, as interpreted later, is an effect due to electromagnetic interaction.
 
 \begin{figure*}
 \vskip-5mm
