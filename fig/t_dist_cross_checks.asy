@@ -63,18 +63,20 @@ AttachLegend();
 
 //----------------------------------------------------------------------------------------------------
 
-// TODO: 90 vs 2500m data comparison
 NewPad("$|t|\ung{GeV^2}$", "$\d\si/\d t\ung{mb/GeV^2}$");
-currentpad.xTicks = LeftTicks(0.005, 0.001);
-currentpad.yTicks = RightTicks(100., 50.);
+scale(Linear, Log);
+
+currentpad.xTicks = LeftTicks(0.05, 0.01);
 
 draw(RootGetObject(topDir_2RP+"/DS-merged/merged.root", binning + "/merged/combined/h_dsdt"), "d0,eb", red, "$\beta^* = 2500\un{m}$");
 
+TH1_x_min = 0.011;
+TH1_x_max = 0.2;
+draw(RootGetObject("dsigma_dt_90_m.root", "Canvas 1|dsigma_dt_90_m"), "d0,eb", blue, "$\beta^* = 90\un{m}$");
 
-limits((x_min, y_min), (x_max, y_max), Crop);
+limits((0, 1e1), (0.2, 1e3), Crop);
 AttachLegend();
 
 //----------------------------------------------------------------------------------------------------
-
 
 GShipout(hSkip=1mm, vSkip=1mm, margin=0mm);
