@@ -82,12 +82,12 @@ fsh = +1.0fshu; DrawPoint(7e3, 98.6, 2.2, red, mCi+2pt+red);
 fsh = -1.0fshu; DrawPoint(8e3, 101.5, 2.1, red, mCi+2pt+red);
 fsh = +1.0fshu; DrawPoint(8e3, 102.9, 2.3, red, mCi+2pt+red);
 
-fsh = +0fshu; DrawPoint(13e3, 110.6, 3.4, red, mCi+2pt+red);
-// TODO: add point from 2.5km optics
+fsh = -1fshu; DrawPoint(13e3, 110.6, 3.4, red, mCi+2pt+red);
+fsh = +1fshu; DrawPoint(13e3, 112.1, 3.0, red, mCi+2pt+red);
 
-limits((1e2, 40), (2e4, 120), Crop);
+limits((1e2, 35), (2e4, 120), Crop);
 
-DrawAxes(50);
+DrawAxes(47);
 
 AddToLegend("ref.~TOTEM measurements", red, mCi+2pt+red);
 AddToLegend("model by Nicolescu et al.", p_Nico);
@@ -124,11 +124,13 @@ draw(Scale((0.546e3, 0.1277 - 0.8/62.46))
 
 // TOTEM data
 DrawPoint(8e3, 0.12, 0.03, red+0.8pt, mCi+true+2pt+red);
-DrawPoint(13e3, 0.0976, 0.01, 0.01, red+0.8pt, mCi+true+2pt+red);
 
-limits((1e2, 0.06), (2e4, 0.16), Crop);
+fsh = -1fshu; DrawPoint(13e3, 0.102, 0.012, red+0.8pt, mCi+true+2pt+red);
+fsh = +1fshu; DrawPoint(13e3, 0.088, 0.010, red+0.8pt, mCi+true+2pt+red);
 
-DrawAxes(0.075);
+limits((1e2, 0.05), (2e4, 0.16), Crop);
+
+DrawAxes(0.065);
 
 //----------------------------------------------------------------------------------------------------
 

@@ -120,8 +120,8 @@ DrawPoint(7e3, 0.145, 0.091, red+0.8pt, mCi+false+2pt+red);
 DrawPoint(8e3, 0.12, 0.03, red+0.8pt, mCi+true+2pt+red);
 
 // 13 TeV
-fsh = -0.02; DrawPoint(13e3, 0.100, 0.01, red+0.8pt, mCi+true+2pt+red);
-fsh = +0.02; DrawPoint(13e3, 0.086, 0.01, red+0.8pt, mCi+true+2pt+red);
+fsh = -0.02; DrawPoint(13e3, 0.102, 0.012, red+0.8pt, mCi+true+2pt+red);	// exp3
+fsh = +0.02; DrawPoint(13e3, 0.088, 0.010, red+0.8pt, mCi+true+2pt+red);	// exp1
 
 // fits
 DrawFitUncBand("rho_p_ap", heavygreen+opacity(0.1));
