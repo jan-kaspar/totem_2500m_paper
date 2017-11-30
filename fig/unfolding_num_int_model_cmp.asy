@@ -11,9 +11,9 @@ string diagonals[] = { "45t_56b" };
 string diagonal_labels[] = { "45t -- 56b" };
 
 string models[] = {
-	//"fit2-1",
-	"fit2-2",
-	"fit2-4",
+	//"fitN-1",
+	"fitN-2",
+	"fitN-4",
 };
 
 string m_labels[] = { "parametrisation 1", "parametrisation 2" };
@@ -28,7 +28,7 @@ TGraph_x_min = 8e-4;
 
 for (int dgni : diagonals.keys)
 {
-	NewPad("$|t|\ung{GeV^2}$", "mutiplicative correction");
+	NewPad("$|t|\ung{GeV^2}$", "unfolding correction ${\cal U}$");
 	currentpad.xTicks = LeftTicks(0.005, 0.001);
 	currentpad.yTicks = RightTicks(0.001, 0.0005);
 

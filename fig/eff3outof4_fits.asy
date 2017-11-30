@@ -60,7 +60,7 @@ for (int dsi : datasets.keys)
 			string d = diagonals[dgi] + "/" + rps[rpi];
 
 			++gx;
-			NewPad("$\th_y^*\ung{\mu rad}$", "\ung{\%}", gx, gy);
+			NewPad("$\th_y^*\ung{\mu rad}$", "$\hbox{efficiency, }1 - {\cal I}_{1}\ung{\%}$", gx, gy);
 			currentpad.yTicks = RightTicks(1., 0.5);
 			draw(scale(1e6, 100), RootGetObject(f, d+"/h_refined_ratio.th_y"), opt, blue, "efficiency histogram");
 

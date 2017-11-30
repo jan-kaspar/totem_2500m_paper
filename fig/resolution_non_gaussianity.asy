@@ -44,16 +44,18 @@ for (int dsi : datasets.keys)
 
 			pen p = StdPen(peri+1);
 
-			draw(scale(1e6, 1), RootGetObject(f, bP), "eb", p);
+			real sh = (peri == 0) ? 0. : log10(5);
+
+			draw(shift(0, sh)*scale(1e6, 1), RootGetObject(f, bP), "eb", p);
 
 			TF1_x_min = -q_fit_maxs[qi]*1e-6;
 			TF1_x_max = +q_fit_maxs[qi]*1e-6;
-			draw(scale(1e6, 1), RootGetObject(f, bP+"|gaus"), p);
+			draw(shift(0, sh)*scale(1e6, 1), RootGetObject(f, bP+"|gaus"), p);
 		}
 
 	}
 
-	limits((-q_ranges[qi], 1e6), (+q_ranges[qi], 1e10), Crop);
+	limits((-q_ranges[qi], 1e6), (+q_ranges[qi], 1e11), Crop);
 
 	//AttachLegend("period" + format("%u", period));
 }

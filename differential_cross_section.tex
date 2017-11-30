@@ -1,9 +1,9 @@
 \section{Differential Cross-Section}
 \label{sec:differential cross-section}
 
-The analysis method is very similar to the previously published one \cite{totem-8tev-1km}. The only important difference stems from using different RPs for the measurement: unit 210-fr instead of 220-nr as in \cite{totem-8tev-1km} which was not anymore equipped with sensors. Due to the optics and beam parameters the unit 210-fr has worse low-$|t|$ acceptance, further deteriorated by the tilt of the unit. Consequently, in order to maintain the low-$|t|$ reach essential for this study, the main analysis (denoted ``2RP'') only uses the 220-fr units. Since the abandon of the 210-nr unit may, in principle, result in worse resolution and background suppression, for control reasons, the traditional analysis with 4 units per diagonal (denoted ``4RP'') was pursued, too. In Section~\ref{sec:cross checks} the ``2RP'' and ``4RP'' will be compared showing a very good agreement. In what follows, the ``2RP'' analysis will be described unless stated otherwise.
+The analysis method is very similar to the previously published one \cite{totem-8tev-1km}. The only important difference stems from using different RPs for the measurement: unit 210-fr instead of 220-nr as in \cite{totem-8tev-1km} as the latter was not equipped with sensors anymore. Due to the optics and beam parameters the unit 210-fr has worse low-$|t|$ acceptance, further deteriorated by the tilt of the unit. Consequently, in order to maintain the low-$|t|$ reach essential for this study, the main analysis (denoted ``2RP'') only uses the 220-fr units (thus 2 RPs per diagonal). Since the abandon of the 210-nr unit may, in principle, result in worse resolution and background suppression, for control reasons, the traditional analysis with 4 units per diagonal (denoted ``4RP'') was pursued, too. In Section~\ref{sec:cross checks} the ``2RP'' and ``4RP'' will be compared showing a very good agreement. In what follows, the ``2RP'' analysis will be described unless stated otherwise.
 
-Section~\ref{sec:event analysis} covers all aspects related to the reconstruction of a single event. Section~\ref{sec:diff cs} describes the steps of transforming a raw $t$-distribution into the differential cross-section. The $t$-distributions are analysed separately for each LHC fill and each diagonal, they are only merged at the end, see Section~\ref{sec:data merging}. Section~\ref{sec:systematics} describes the evaluation of systematic uncertainties and Section~\ref{sec:cross checks} presents several comparison plots used as systematic cross checks.
+Section~\ref{sec:event analysis} covers all aspects related to the reconstruction of a single event. Section~\ref{sec:diff cs} describes the steps of transforming a raw $t$-distribution into the differential cross-section. The $t$-distributions are analysed separately for each LHC fill and each diagonal, they are only merged at the end as detailed Section~\ref{sec:data merging}. Section~\ref{sec:systematics} describes the evaluation of systematic uncertainties and Section~\ref{sec:cross checks} presents several comparison plots used as systematic cross checks.
 
 %----------------------------------------------------------------------------------------------------
 \subsection{Event Analysis}
@@ -71,9 +71,9 @@ In each arm, the residual errors induce a bias in the reconstructed scattering a
 \begin{equation}
 \label{eq:opt bias}
 	\theta_x^* \rightarrow (1 + b_x)\, \theta_x^*\ ,\qquad
-	\theta_y^* \rightarrow (1 + b_y)\, \theta_y^*\ .
+	\theta_y^* \rightarrow (1 + b_y)\, \theta_y^*\ ,
 \end{equation}
-the biases $b_x$ and $b_y$ have uncertainties of $0.17\un{\%}$ and $0.15\un{\%}$, respectively, and a correlation factor of $-0.90$. To evaluate the impact on the $t$-distribution, it is convenient to decompose the correlated biases $b_x$ and $b_y$ into eigenvectors of the covariance matrix:
+where the biases $b_x$ and $b_y$ have uncertainties of $0.17\un{\%}$ and $0.15\un{\%}$, respectively, and a correlation factor of $-0.90$. To evaluate the impact on the $t$-distribution, it is convenient to decompose the correlated biases $b_x$ and $b_y$ into eigenvectors of the covariance matrix:
 \begin{equation}
 \label{eq:opt bias modes}
 \begin{pmatrix} b_x^{\rm L}\cr b_y^{\rm L} \cr b_x^{\rm R}\cr b_y^{\rm R} \end{pmatrix} =
@@ -90,7 +90,7 @@ normalised such that the factors $\eta_{1,2,3}$ have unit variance. The fourth e
 \subsubsection{Resolution}
 \label{sec:resolution}
 
-There are two kinds of resolution that can be distinguished. The resolution of the single-arm angular reconstruction Eq.~(\ref{eq:kin 1a}), used for selection cuts and near-edge acceptance correction, and the resolution of the double-arm reconstruction, Eq.~(\ref{eq:kin 2a}), used for unsmearing correction of the final $t$-distribution. Since the single-arm reconstruction is biased by the vertex term in the horizontal plane, the corresponding resolution is significantly worse than the double-arm reconstruction.
+There are two kinds of resolution that can be distinguished. The resolution of the single-arm angular reconstruction, Eq.~(\ref{eq:kin 1a}), used for selection cuts and near-edge acceptance correction, and the resolution of the double-arm reconstruction, Eq.~(\ref{eq:kin 2a}), used for unsmearing correction of the final $t$-distribution. Since the single-arm reconstruction is biased by the vertex term in the horizontal plane, the corresponding resolution is significantly worse than the double-arm reconstruction.
 
 The single-arm resolution can be studied by comparing the angles reconstructed from the left and right arm, see an example in Fig.~\ref{fig:resol x 1a}. The width of the distributions was found to grow slightly during the fills, compatible with the effect of beam emittance growth. The typical range was from $10.0$ to $14.5\un{\mu rad}$ for the horizontal projection and from $0.36$ to $0.38\un{\mu rad}$ for the vertical. The associated uncertainties were $0.3$ and $0.007$, respectively. As illustrated in Fig.~\ref{fig:resol x 1a}, the shape of the distributions is very close to Gaussian, especially in the beginning of each fill.
 
@@ -98,13 +98,13 @@ The single-arm resolution can be studied by comparing the angles reconstructed f
 \begin{center}
 \includegraphics{fig/resolution_non_gaussianity.pdf}
 \caption{%
-Difference between horizontal scattering angles reconstructed in the right and left arm, for the diagonal 45 bottom - 56 top. Red: data from run start. Blue: data from run end. The solid lines represent Gaussian fits.
+Difference between horizontal scattering angles reconstructed in the right and left arm, for the diagonal 45 bottom - 56 top. Red: data from the beginning of fill 5317, blue: data from the fill end (scaled $5\times$). The solid lines represent Gaussian fits.
 }
 \label{fig:resol x 1a}
 \end{center}
 \end{figure}
 
-Since in the vertical plane the resolution is driven by the beam divergence, the double-arm resolution can be simply scaled from the single-arm value: $\sigma(\theta^*_y) = (0.185 \pm 0.010)\un{\mu rad}$ where the uncertainty accounts for the full variation in time. In the horizontal plane the estimation is more complex due to several contributing smearing mechanisms. In turn a MC study was performed with two extreme sets of beam divergence, vertex size and sensor resolution values. These were tuned within the ``4RP'' analysis where they are accessible thanks to the additional information from the 210-fr units. The study yielded $\sigma(\theta^*_x) =  (0.29 \pm 0.04)\un{\mu rad}$ where the uncertainty accounts for the full time variation.
+Since in the vertical plane the resolution is driven by the beam divergence, the double-arm resolution can simply be scaled from the single-arm value: $\sigma(\theta^*_y) = (0.185 \pm 0.010)\un{\mu rad}$ where the uncertainty accounts for the full variation in time. In the horizontal plane the estimation is more complex due to several contributing smearing mechanisms. In turn, a MC study was performed with two extreme sets of beam divergence, vertex size and sensor resolution values. These parameters were tuned within the ``4RP'' analysis where they are accessible thanks to the additional information from the 210-fr units. The study yielded $\sigma(\theta^*_x) =  (0.29 \pm 0.04)\un{\mu rad}$ where the uncertainty accounts for the full time variation.
 
 
 %----------------------------------------------------------------------------------------------------
@@ -129,26 +129,26 @@ where $\Delta t$ is the width of the bin, $\mathcal{N}$ is a normalisation facto
 
 
 \begin{table}
-\caption{The elastic selection cuts. The superscripts R and L refer to the right and left arm. The right-most column gives a typical RMS of the cut distribution.
+\caption{The elastic selection cuts. The superscripts R and L refer to the right and left arm. The right-most column gives a typical standard deviation of the cut distribution.
 }
 \label{tab:cuts}
 \begin{center}
 %\vskip-3mm
 \begin{tabular}{ccc}\hline
-number & cut & RMS ($\equiv 1\sigma$)\cr\hline
+number & cut & std.~dev.~($\equiv 1\sigma$)\cr\hline
 1 & $\theta_x^{*\rm R} - \theta_x^{*\rm L}$				& $14\un{\mu rad}$	\cr
 2 & $\theta_y^{*\rm R} - \theta_y^{*\rm L}$				& $0.38\un{\mu rad}$	\cr\hline
 \end{tabular}
 \end{center}
 \end{table}
 
-For the ``2RP'' analysis one may apply the cuts requiring the reconstructed-track collinearity between the left and right arm, see Table~\ref{tab:cuts}. The correlation plots corresponding to these cuts are shown in Figure~\ref{fig:cuts}. 
+Within the ``2RP'' analysis one may apply the cuts requiring the reconstructed-track collinearity between the left and right arm, see Table~\ref{tab:cuts}. The correlation plots corresponding to these cuts are shown in Figure~\ref{fig:cuts}. 
 
 \begin{figure}
 \begin{center}
 \includegraphics{fig/cut_example.pdf}
 \caption{%
-Correlation plots for the event selection cuts presented in Table~\ref{tab:cuts}, showing events from LHC fill 5313 and with diagonal topology 45 bottom -- 56 top. The solid black lines delimit the signal region within $\pm 4\un{\sigma}$.
+Correlation plots for the elastic event selection cuts presented in Table~\ref{tab:cuts}, showing events from the LHC fill 5313 and with diagonal topology 45 bottom -- 56 top. The solid black lines delimit the signal region within $\pm 4\un{\sigma}$.
 }
 \label{fig:cuts}
 \end{center}
@@ -156,7 +156,7 @@ Correlation plots for the event selection cuts presented in Table~\ref{tab:cuts}
 
 In order to limit the selection inefficiency, the cut thresholds are set to $4\un{\sigma}$. Applying the cuts at the $5\un{\sigma}$-level would yield about $0.1\un{\%}$ more events almost uniformly in every $|t|$-bin. This kind of inefficiency only contributes to a global scale factor, which is irrelevant for this analysis because the normalisation is taken from a different data set (cf. Section~\ref{sec:normalisation}).
 
-In the ``4RP'' analysis, thanks to the additional information from the 210-fr units, more cuts can be applied (cf.~Table~2 in~\cite{epl101-el}). In particular the left-right comparison of the reconstructed horizontal vertex position, $x^*$, and vertical position-angle correlation in each arm. Furthermore, since the single-arm reconstruction can disentangle the contributions from $x^*$ and $\theta^*_x$, the angular resolution is better compared to the ``2RP'' analysis and consequently cut 1 becomes more stringent.
+In the ``4RP'' analysis, thanks to the additional information from the 210-fr units, more cuts can be applied (cf.~Table~2 in~\cite{epl101-el}). In particular the left-right comparison of the reconstructed horizontal vertex position, $x^*$, and vertical position-angle correlation in each arm. Furthermore, since the single-arm reconstruction can disentangle the contributions from $x^*$ and $\theta^*_x$, the angular resolution is better compared to the ``2RP'' analysis and consequently cut 1 becomes more efficient against background.
 
 % * cut 1 is not very powerful to suppers protons with non-zero xi
 % th_x_R - th_x_L = D_x / L_x * (xi_R + xi_L)
@@ -172,7 +172,7 @@ In the ``4RP'' analysis, thanks to the additional information from the 210-fr un
 
 As the RPs were very close to the beam, one may expect an enhanced background from coincidence of beam halo protons hitting detectors in the two arms. Other background sources (pertinent to any elastic analysis) are: central diffraction and pile-up of two single diffraction events.
 
-The background rate (i.e.~impurity of the elastic tagging) is estimated in two steps, both based on distributions of discriminators from Table~\ref{tab:cuts} plotted in various situations, see an example in Figure~\ref{fig:tag bckg integ}. In the first step, diagonal data are studied under several cut combinations. While the central part (signal) remains essentially constant, the tails (background) are strongly suppressed when the number of cuts is increased. In the second step, the background distribution is interpolated from the tails into the signal region. The form of the interpolation is inferred from non-diagonal RP track configurations (\textit{45 bottom -- 56 bottom} or \textit{45 top -- 56 top}), artificially treated like diagonal signatures by inverting the $y$ coordinate sign in the arm 45. These non-diagonal configurations cannot contain any elastic signal and hence consist purely of background which is expected to be similar in the diagonal and non-diagonal configurations. This expectation is supported by the agreement of the tails of the blue solid and dashed curves in the figure. Since the non-diagonal distributions are flat, the comparison of the signal-peak size to the amount of interpolated background yields the order-of-magnitue estimate $1 - \mathcal{B} = \mathcal{O}(10^{-3})$.
+The background rate (i.e.~impurity of the elastic tagging) is estimated in two steps, both based on distributions of discriminators from Table~\ref{tab:cuts} plotted in various situations, see an example in Figure~\ref{fig:tag bckg integ}. In the first step, diagonal data are studied under several cut combinations. While the central part (signal) remains essentially constant, the tails (background) are suppressed when the number of cuts is increased. In the second step, the background distribution is interpolated from the tails into the signal region. The form of the interpolation is inferred from non-diagonal RP track configurations (\textit{45 bottom -- 56 bottom} or \textit{45 top -- 56 top}), artificially treated like diagonal signatures by inverting the $y$ coordinate sign in the arm 45. These non-diagonal configurations cannot contain any elastic signal and hence consist purely of background which is expected to be similar in the diagonal and non-diagonal configurations. This expectation is supported by the agreement of the tails of the red, blue and green curves in the figure. Since the non-diagonal distributions are flat, the comparison of the signal-peak size to the amount of interpolated background yields the order-of-magnitue estimate $1 - \mathcal{B} = \mathcal{O}(10^{-3})$.
 
 \begin{figure}
 \begin{center}
@@ -184,13 +184,13 @@ Distributions of discriminator 1, i.e. the difference between the horizontal sca
 \end{center}
 \end{figure}
 
-The $t$-distribution of the background can also be estimated by comparing data from diagonal and anti-diagonal configurations, as illustrated in Figure~\ref{fig:tag bckg dist}. The ratio background / (signal + background) can be obtained by dividing the blue or green histograms by the red or magenta histograms. Consequently, the background correction factor, $\mathcal{B}$, is estimated to $0.9975 \pm 0.0010$ at $|t| = 0.001\un{GeV^2}$, $0.9992 \pm 0.0003$ at $|t| = 0.05\un{GeV^2}$ and $0.998 \pm 0.001$ at $|t| = 0.02\un{GeV^2}$. The uncertainty comes from statistical fluctuations in the histograms and from considering different diagonals and anti-diagonals.
+The $t$-distribution of the background can also be estimated by comparing data from diagonal and anti-diagonal configurations, as illustrated in Figure~\ref{fig:tag bckg dist}. The ratio background / (signal + background) can be obtained by dividing the blue or green histograms by the red or magenta histograms. Consequently, the background correction factor, $\mathcal{B}$, is estimated to $0.9975 \pm 0.0010$ at $|t| = 0.001\un{GeV^2}$, $0.9992 \pm 0.0003$ at $|t| = 0.05\un{GeV^2}$ and $0.998 \pm 0.001$ at $|t| = 0.2\un{GeV^2}$. The uncertainty comes from statistical fluctuations in the histograms and from considering different diagonals and anti-diagonals.
 
 \begin{figure}
 \begin{center}
 \includegraphics{fig/t_dist_antidgn_cmp.pdf}
 \caption{%
-$|t|$ distributions from different diagonal and anti-diagonal configurations, after all cuts and acceptance correction. Data from LHC fill 5314.
+Comparison of $|t|$-distributions from different diagonal (signal + background) and anti-diagonal (background) configurations, after all cuts and acceptance correction. Data from the LHC fill 5314.
 }
 \label{fig:tag bckg dist}
 \end{center}
@@ -233,7 +233,7 @@ The correction $\mathcal{A}_{\rm fluct}$ is calculated analytically from the pro
 
 The full acceptance correction, $\mathcal{A}$, has a value of $12$ in the lowest-$|t|$ bin and decreases smoothly towards about $2.1$ at $|t| = 0.2\un{GeV^2}$. Since a single diagonal cannot cover more than half of the phase space, the minimum value of the correction is $2$.
 
-The uncertainties related to $\mathcal{A}_{\rm fluct}$ follow from the uncertainties of the resolution parameters: standard deviation and distribution shape, see Section~\ref{sec:resolution}. Since $\mathcal{A}_{\rm geom}$ is calculated from a trivial trigonometric formula, there is no uncertainty directly associated with it. However, indirectly, biases can be arise from effects that affect the assumed azimuthal symmetry like misalignments or optics perturbations already covered above.
+The uncertainties related to $\mathcal{A}_{\rm fluct}$ follow from the uncertainties of the resolution parameters: standard deviation and distribution shape, see Section~\ref{sec:resolution}. Since $\mathcal{A}_{\rm geom}$ is calculated from a trivial trigonometric formula, there is no uncertainty directly associated with it. However, indirectly, biases can arise from effects that affect the assumed azimuthal symmetry like misalignments or optics perturbations already covered above.
 
 
 
@@ -295,7 +295,7 @@ Unfolding correction as a function of $|t|$. The vertical dashed line indicates 
 \end{center}
 \end{figure}
 
-For the uncertainty estimate, the uncertainties of the $\theta_x^*$ and $\theta_y^*$ resolutions (see Section~\ref{sec:resolution}) as well as fit-model dependence have been considered.
+For the uncertainty estimate, the uncertainties of the $\theta_x^*$ and $\theta_y^*$ resolutions (see Section~\ref{sec:resolution}) as well as fit-model dependence have been taken into account.
 % each contribution giving a few per-mille for the lowest-$|t|$ bin.
 
 
@@ -305,7 +305,7 @@ For the uncertainty estimate, the uncertainties of the $\theta_x^*$ and $\theta_
 \subsubsection{Normalisation}
 \label{sec:normalisation}
 
-The normalisation factor $\mathcal{N}$ is determined by requiring integrated elastic cross-section $\sigma_{\rm el} = 31.0\un{mb}$ as recently determined by TOTEM from a different $\sqrt s = 13\un{TeV}$ dataset \cite{totem-13tev-90m}. The elastic cross-section is extracted from the data in two components. The first component sums the $\d\sigma/\d t$ histogram bins for $0.01 < |t| < 0.5\un{GeV^2}$. The second component corresponds to the integral over $0 < |t| < 0.01\un{GeV^2}$ of an exponential fitted to the data on the interval $0.01 < |t| < 0.05\un{GeV^2}$.
+The normalisation factor $\mathcal{N}$ is determined by requiring integrated elastic cross-section $\sigma_{\rm el} = 31.0\un{mb}$ as recently obtained by TOTEM from a different $\sqrt s = 13\un{TeV}$ dataset \cite{totem-13tev-90m}. The elastic cross-section is extracted from the data in two components. The first component sums the $\d\sigma/\d t$ histogram bins for $0.01 < |t| < 0.5\un{GeV^2}$. The second component corresponds to the integral over $0 < |t| < 0.01\un{GeV^2}$ of an exponential fitted to the data on the interval $0.01 < |t| < 0.05\un{GeV^2}$.
 
 The uncertainty of $\mathcal{N}$ is dominated by the $5.5\un{\%}$ uncertainty of $\sigma_{\rm el}$ in \cite{totem-13tev-90m}.
 
@@ -315,7 +315,7 @@ The uncertainty of $\mathcal{N}$ is dominated by the $5.5\un{\%}$ uncertainty of
 \subsubsection{Binning}
 \label{sec:binning}
 
-The bin sizes are set according to the $t$ resolution. Three different binnings are considered in this analysis: with bin sizes being 1, 2 or 3 times the standard deviation of $|t|$.
+The bin sizes are set according to the $t$ resolution. Three different binnings are considered in this analysis: ``dense'' where the bin size is as large as the standard deviation of $|t|$, ``medium'' with bins twice larger and ``coarse'' with bins three times larger than the standard deviation of $|t|$.
 
 
 
@@ -348,17 +348,17 @@ The following sources of systematic uncertainties have been considered.
 
 \item Alignment: shifts in $\theta^*_{x,y}$ (see Section~\ref{sec:alignment}). Both left-right symmetric and anti-symmetric modes have been considered. In the vertical plane, both contributions correlated and uncorrelated between the diagonals have been considered.
 
-\item Alignment and optics $x-y$ tilts: mixing between $\theta^*_{x}$ and $\theta^*_{y}$ (see Section~\ref{sec:alignment}). Both left-right symmetric and anti-symmetric modes have been considered.
+\item Alignment $x$-$y$ tilts and optics: mixing between $\theta^*_{x}$ and $\theta^*_{y}$ (see Section~\ref{sec:alignment}). Both left-right symmetric and anti-symmetric modes have been considered.
 
 \item Optics uncertainties: scaling of $\theta^*_{x,y}$ (see Section~\ref{sec:optics}). The three relevant modes in Eq.~(\ref{eq:opt bias}) have been considered.
 
 \item Background subtraction (see Section~\ref{sec:background}): the $t$-dependent uncertainty of the correction factor $\mathcal{B}$.
 
-\item Acceptance correction (see Section~\ref{sec:acc corr}): the uncertainty of resolution parameters, non-gaussianity of the resolution distributions, left-right assymetry of the beam divergence.
+\item Acceptance correction (see Section~\ref{sec:acc corr}): the uncertainty of resolution parameters, non-gaussianity of the resolution distributions, left-right asymmetry of the beam divergence.
 
-\item Inefficiency corrections (see Section~\ref{sec:ineff corr}): for the uncorrelated inefficiency $\mathcal{I}_1$ both uncertainties for the fit slope and intercept have been considered. For the correlated inefficiency $\mathcal{I}_2$ the uncertainty of its value has been considered.
+\item Inefficiency corrections (see Section~\ref{sec:ineff corr}): for the uncorrelated inefficiency $\mathcal{I}_1$ both uncertainties of the fit slope and intercept have been considered. For the correlated inefficiency $\mathcal{I}_2$ the uncertainty of its value has been considered.
 
-\item The beam momentum uncertainty needs to be considered when the scattering angles are translated to $t$, see Eq.~(\ref{eq:th t}). The uncertainty was estimated by LHC experts to $0.1\un{\%}$ \cite{beam-mom-unc} in agreement with a previous assessment by TOTEM (Section~5.2.8.~in \cite{totem-8tev-90m}).
+\item The beam-momentum uncertainty needs to be considered when the scattering angles are translated to $t$, see Eq.~(\ref{eq:th t}). The uncertainty was estimated by LHC experts to $0.1\un{\%}$ \cite{beam-mom-unc} in agreement with a previous assessment by TOTEM (Section~5.2.8.~in \cite{totem-8tev-90m}).
 
 \item Unsmearing (see Section~\ref{sec:unfolding}): uncertainty of resolution parameters and fit-model dependence.
 
@@ -373,9 +373,9 @@ For each error source, its effect on the $|t|$-distribution is evaluated with a 
 \end{equation}
 where $\delta q$ corresponds to a $1\un{\sigma}$ bias in the quantity $q$ responsible for a given systematic effect.
 
-The systematic uncertainty corresponding to the final differential cross-section merged from all analysed LHC fills and both diagonals is propagated according to the same method as applied to the data, see Section~\ref{sec:data merging}. To be conservative, the systematic errors are assumed fully correlated among the four analysed LHC fills. The per-effect correlations between the two diagonals are respected. This is particularly important for the vertical (mis)-alignment which is predominantly anti-correlated between the diagonals. While the uncertainty in the lowest $|t|$ bin is about $7\un{\%}$ for a single diagonal, once the diagonals are merged the impact drops to about $1.2\un{\%}$.
+The systematic uncertainty corresponding to the final differential cross-section merged from all analysed LHC fills and both diagonals is propagated according to the same method as applied to the data, see Section~\ref{sec:data merging}. To be conservative, the systematic errors are assumed fully correlated among the four analysed LHC fills. The per-effect correlations between the two diagonals are respected. This is particularly important for the vertical (mis)-alignment which is predominantly anti-correlated between the diagonals. While this uncertainty in the lowest $|t|$ bin reaches about $7\un{\%}$ for a single diagonal, once the diagonals are merged the impact drops to about $1.2\un{\%}$.
 
-The leading uncertainties (except normalisation) are shown in Figure~\ref{fig:syst unc}. At low $|t|$ they include vertical alignment and uncertainty of vertical beam divergence. At higher $|t|$ values, the uncertainties are dominated by beam momentum and optics uncertainties. These leading effects are quantified in Table~\ref{tab:data} which can be used to approximate the covariance matrix of systematic uncertainties:
+The leading uncertainties (except normalisation) are shown in Figure~\ref{fig:syst unc}. At low $|t|$ they include vertical alignment (left-right symmetric, top-bottom correlated) and uncertainty of vertical beam divergence. At higher $|t|$ values, the uncertainties are dominated by beam momentum and optics uncertainties (mode 3 in Eq.~(\ref{eq:opt bias modes})). These leading effects are quantified in Table~\ref{tab:data} which can be used to approximate the covariance matrix of systematic uncertainties:
 \begin{equation}
 \label{eq:covar mat}
 \mat V_{ij} = \sum_{q} \delta s_{q}(i)\ \delta s_{q}(j)\: ,
@@ -387,7 +387,7 @@ where $i$ and $j$ are bin indices (row numbers in Table~\ref{tab:data}) and the 
 \begin{center}
 \includegraphics{fig/systematics_dgn_combination_summary.pdf}
 \caption{%
-Relative variation of differential cross-section due to systematic errors. The colourful histograms represent the leading uncertainties, each of them corresponds to a $1\un{\sigma}$ bias, cf.~Eq.~(\ref{eq:syst mode}). The envelope is determined by summing all considered contributions (except normalisation) in quadrature for each $|t|$ value.
+Relative variation of the final differential cross-section due to systematic errors. The colourful histograms represent the leading uncertainties, each of them corresponds to a $1\un{\sigma}$ bias, cf.~Eq.~(\ref{eq:syst mode}). The envelope is determined by summing all considered contributions (except normalisation) in quadrature for each $|t|$ value.
 }
 \label{fig:syst unc}
 \end{center}
@@ -410,7 +410,7 @@ Compatible results have been obtained by analysing data subsets of events from d
 \begin{center}
 \includegraphics{fig/t_dist_cross_checks.pdf}
 \caption{%
-Collection of cross-check plots.
+Collection of cross-check plots (only statistical uncertainties are plotted).
 {\bf Top left}: comparison of results from the two diagonals, data from all LHC fills.
 {\bf Top right}: comparison of results from time periods after and before beam cleanings, data from all LHC fills and both diagonals.
 {\bf Bottom left}: comparison of results from ``2RP'' and ``4RP'' analyses, data from all LHC fills and both diagonals.

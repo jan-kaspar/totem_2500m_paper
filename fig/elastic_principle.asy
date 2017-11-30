@@ -66,13 +66,13 @@ label("top", (-z_vert_far+w_vert/2, +offset_vert+h_vert/2), E);
 label("bottom", (-z_vert_far+w_vert/2, -offset_vert-h_vert/2), E);
 label("horizontal", (-z_hor_far+w_hor/2, +h_hor/2), E);
 
-label("{\bf sector 56 (right arm)}", ((z_vert_near+z_vert_far)/2, y_st), black);
+label("{\bf LHC sector 56 (right arm)}", ((z_vert_near+z_vert_far)/2, y_st), black);
 label("210-fr", (z_vert_near, y_unit), black);
 label("220-fr", (z_vert_far, y_unit), black);
 label("$+213\un{m}$", (z_vert_near, y_dist), black);
 label("$+220\un{m}$", (z_vert_far, y_dist), black);
 
-label("{\bf sector 45 (left arm)}", (-(z_vert_near+z_vert_far)/2, y_st), black);
+label("{\bf LHC sector 45 (left arm)}", (-(z_vert_near+z_vert_far)/2, y_st), black);
 label("210-fr", (-z_vert_near, y_unit), black);
 label("220-fr", (-z_vert_far, y_unit), black);
 label("$-213\un{m}$", (-z_vert_near, y_dist), black);
