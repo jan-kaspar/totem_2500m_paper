@@ -41,10 +41,10 @@ real si_el_max = 31.3;
 AddToLegend("constraint from this publ.", red, mTD+red+2pt);
 
 real si_el_2500_1 = 31.0;
-real rho_2500_1 = 0.09975;
+real rho_2500_1 = 1.018064e-01;
 
 real si_el_2500_2 = 31.1;
-real rho_2500_2 = 0.09926;
+real rho_2500_2 = 1.012493e-01;
 
 real a_2500 = (rho_2500_2 - rho_2500_1) / (si_el_2500_2 - si_el_2500_1);
 real b_2500 = rho_2500_2 - a_2500 * si_el_2500_2;
