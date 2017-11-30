@@ -59,14 +59,14 @@ draw((si_el_2500_2, rho_2500_2), mTD+red+2pt);
 AddToLegend("constraint from 90m", blue, mTU+blue+2pt);
 
 real rho_90_1 = 0.14;
-real si_el_90_1 = 30.7437;
+real si_el_90_1 = 30.72028;
 rho_0 = rho_90_1;
 si_el_0 = si_el_90_1;
 draw(graph(rho_90, si_el_min, si_el_max), blue);
 draw((si_el_0, rho_0), mTU+blue+2pt);
 
 real rho_90_2 = 0.10;
-real si_el_90_2 = 31.0359;
+real si_el_90_2 = 31.01227;
 rho_0 = rho_90_2;
 si_el_0 = si_el_90_2;
 draw(graph(rho_90, si_el_min, si_el_max), blue);
