@@ -57,9 +57,9 @@ The fits have been carried out with the standard least-squares method, in partic
 	\Delta_i = \left.{\d\sigma\over \d t}\right|_{{\rm bin}\ i} - {\d\sigma^{\rm C+N}\over\d t}\left(t^{\rm rep}_{{\rm bin}\ i}\right)\ ,\quad
 	\mat V = \mat V_{\rm stat} + \mat V_{\rm syst}\ ,\
 \end{equation}
-where $\Delta$ is a vector of differences between the differential cross-section data and a fit function $\d\sigma^{C+N}/\d t$ evaluated at the representative point $t^{\rm rep}$ of each bin~\cite{lafferty94}. The minimisation is repeated several times, and the representative points are updated between iterations. The covariance matrix $\mat V$ has two components. The diagonal of $\mat V_{\rm stat}$ contains the statistical uncertainty squared from Table~\ref{tab:data}, $\mat V_{\rm syst}$ includes all systematic uncertainty contributions except the normalisation, see Eq.~(\ref{eq:covar mat}). For improved fit stability, the normalisation uncertainty is not included in the $\chi^2$ definition. Instead, the uncertainty is propagated for each fit parameter. \TODO{describe how} This normalisation uncertainty is, at the end, added quadratically to the uncertainty reported by the fit with no bias.
+where $\Delta$ is a vector of differences between the differential cross-section data and a fit function $\d\sigma^{C+N}/\d t$ evaluated at the representative point $t^{\rm rep}$ of each bin~\cite{lafferty94}. The minimisation is repeated several times, and the representative points are updated between iterations. The covariance matrix $\mat V$ has two components. The diagonal of $\mat V_{\rm stat}$ contains the statistical uncertainty squared from Table~\ref{tab:data}, $\mat V_{\rm syst}$ includes all systematic uncertainty contributions except the normalisation, see Eq.~(\ref{eq:covar mat}). For improved fit stability, the normalisation uncertainty is not included in the $\chi^2$ definition. In order to propagate this uncertainty to the fit results, the fit is repeated with the normalisation adjusted by $+5.5$ and $-5.5\un{\%}$. For each fit parameter, the mean deviation from the fit result with no normalisation adjustment is taken as the effect of normalisation uncertainty, which is added quadratically at the end to the uncertainty reported by the fit with no bias.
 
-The complete fit procedure has been validated with a Monte-Carlo study confirming that it has negligible bias and uncertainty \TODO{some conclusion}.
+The complete fit procedure has been validated with a Monte-Carlo study confirming that it has negligible bias. It also indicates the composition of the fit parameter uncertainties. For example, for fit with $N_b = 3$ using data in the ``coarse binning'' up to $|t| = 0.15\un{GeV^2}$, the $\rho$ uncertainty due to the statistical uncertainties is about $0.0052$, due the systematic uncertainties $0.0039$ and due to the normalisation uncertainty $0.0097$.
 
 The fits have been found to have negligible dependence on the binning used (see Section~\ref{sec:binning}), choice of electromagnetic form factor (see text below Eq.~(\ref{eq:coul cs})), high-$|t|$ nuclear amplitude (see text below Eq.~(\ref{eq:nuc mod})), choice of the nuclear amplitude phase (see text above Eq.~(\ref{eq:nuc phase con})), number of fit iterations and the choice of start parameter values for the $\chi^2$ minimisation.
 
@@ -103,7 +103,6 @@ Details of fit with $N_b = 3$ and $|t|_{\rm max} = 0.15\un{GeV^2}$.
 \end{figure*}
 
 
-
 \begin{figure*}
 \vskip-5mm
 \begin{center}
@@ -114,9 +113,6 @@ Details of fit with $N_b = 1$ and $|t|_{\rm max} = 0.07\un{GeV^2}$.
 \label{fig:fit exp1 0.07}
 \end{center}
 \end{figure*}
-
-
-The fit configuration $N_b=1$ with $|t|_{\rm max} = 0.07\un{GeV^2}$ has another important meaning. Considering the shrinkage of the ``forward-cone'' \TODO{need reference}, this $|t|$ range is similar to the one available in the UA4 analysis \cite{ua4-rho}. This fact may suggest why UA4 could not observe deviations of the differential cross-section from pure exponential: the $|t|$ range was too narrow, as it would be for the present data, had the acceptance stop at $t = 0.07\un{GeV^2}$, see Figure~\ref{fig:fit exp1 0.07}, left. Beyond the $|t|$ range, this fit combination shares more similarities with the UA4 fit (and in general with many other past experiments): purely exponential fit and assumption of constant hadronic phase. In that sense, this fit combination corresponds to the most fair comparison to the previous experiments, as e.g.~in Figure \ref{fig:rho_vs_s}.
 
 \begin{figure*}
 \vskip-5mm
@@ -130,9 +126,11 @@ Dependence of the $\rho$ parameter on energy. The $\rm pp$ (blue) and $\rm p\bar
 \end{figure*}
 
 
+The fit configuration $N_b=1$ with $|t|_{\rm max} = 0.07\un{GeV^2}$ has another important meaning. Considering the shrinkage of the ``forward-cone'' \TODO{need reference}, this $|t|$ range is similar to the one available in the UA4 analysis \cite{ua4-rho}. This fact may suggest why UA4 could not observe deviations of the differential cross-section from pure exponential: the $|t|$ range was too narrow, as it would be for the present data, had the acceptance stop at $t = 0.07\un{GeV^2}$, see Figure~\ref{fig:fit exp1 0.07}, left. Beyond the $|t|$ range, this fit combination shares more similarities with the UA4 fit (and in general with many other past experiments): purely exponential fit and assumption of constant hadronic phase. In that sense, this fit combination corresponds to the most fair comparison to the previous experiments, as e.g.~in Figure \ref{fig:rho_vs_s}. Moreover, as shown in Ref.~\cite{totem-8tev-1km}, the ``KL'' interference formula used in this report \cite{kl94} gives for this fit configuration very similar results as the ``SWY'' interference formula \cite{wy68} used in many past data analyses.
 
-Figure \ref{fig:si_el rho sol} illustrates a small correction due to a conceptual improvement in combining the data from this publication and from Ref.~\cite{totem-13tev-90m}. The latter assumes certain values of $\rho$ in order to calculate cross-section estimates which are in turn used in this analysis (see Section~\ref{sec:normalisation}) to estimate $\rho$. This circular dependence can be resolved by considering simultaneously the $\rho$ dependence of $\sigma_{\rm el}$ in Ref.~\cite{totem-13tev-90m} (blue line) and the $\sigma_{\rm el}$ dependence of $\rho$ determined in this analysis (red line). The latter is done as linear interpolation of $\rho$ values extracted assuming $\sigma_{\rm el} = 31.0$ and $31.1\un{mb}$. The linear dependence is confirmed with Monte-Carlo studies. The solution consistent with both datasets (green dot) brings correction to $\rho$ negligible to other uncertainties and is yields $\sigma_{\rm el}$ almost identical to the $\rho=0.10$ published in Ref.~\cite{totem-13tev-90m}.
+\TODO{0.088 point is N sigmas from the COMPETE curve}
 
+\TODO{describe additional test - learning the nuclear part at high t, imposing it at low t}
 
 \begin{figure*}
 \vskip-5mm
@@ -144,6 +142,11 @@ Constraints to relation between $\rho$ and $\sigma_{\rm el}$ derived from this d
 \label{fig:si_el rho sol}
 \end{center}
 \end{figure*}
+
+
+Figure \ref{fig:si_el rho sol} illustrates a small correction due to a conceptual improvement in combining the data from this publication and from Ref.~\cite{totem-13tev-90m}. The latter assumes certain values of $\rho$ in order to calculate cross-section estimates which are in turn used in this analysis (see Section~\ref{sec:normalisation}) to estimate $\rho$. This circular dependence can be resolved by considering simultaneously the $\rho$ dependence of $\sigma_{\rm el}$ in Ref.~\cite{totem-13tev-90m} (blue line) and the $\sigma_{\rm el}$ dependence of $\rho$ determined in this analysis (red line). The latter is done as linear interpolation of $\rho$ values extracted assuming $\sigma_{\rm el} = 31.0$ and $31.1\un{mb}$. The linear dependence is confirmed with Monte-Carlo studies. The solution consistent with both datasets (green dot) brings negligible correction to $\rho$ and $-0.03\un{\%}$ correction to $\sigma_{\rm el}$ published in Ref.~\cite{totem-13tev-90m} for $\rho=0.10$.
+
+
 
 The total cross-section can be derived from the fits by using the optical theorem:
 \begin{equation}
