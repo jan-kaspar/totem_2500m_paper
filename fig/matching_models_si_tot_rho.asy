@@ -111,8 +111,8 @@ draw(Scale((0.546e3, 0.1277))--Scale((1.8e3, 0.1228))--Scale((2.76e3, 0.1209))--
 	--Scale((13e3, 0.1134)), p_Durh);
 
 // Durham model, with Odderon from personal discussion
-draw(shift(0, -0.015) * (Scale((0.546e3, 0.1277))--Scale((1.8e3, 0.1228))--Scale((2.76e3, 0.1209))--Scale((7e3, 0.1166))--Scale((8e3, 0.1159))
-	--Scale((13e3, 0.1134))), p_Durh+dotted);
+//draw(shift(0, -0.015) * (Scale((0.546e3, 0.1277))--Scale((1.8e3, 0.1228))--Scale((2.76e3, 0.1209))--Scale((7e3, 0.1166))--Scale((8e3, 0.1159))
+//	--Scale((13e3, 0.1134))), p_Durh+dotted);
 
 // Durham model, with Odderon from note
 draw(Scale((0.546e3, 0.1277 - 0.8/62.46))
