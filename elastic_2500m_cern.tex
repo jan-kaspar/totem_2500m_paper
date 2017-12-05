@@ -10,10 +10,9 @@
 
 \iftrue % disable at the end
 	\usepackage{lineno}
-	% TODO
-	%\usepackage[inline]{showlabels}
-	%\definecolor{darkgreen}{RGB}{0,160,0}
-	%\renewcommand{\showlabelfont}{\small\slshape\color{darkgreen}}
+	\usepackage[inline]{showlabels}
+	\definecolor{darkgreen}{RGB}{0,160,0}
+	\renewcommand{\showlabelfont}{\small\slshape\color{darkgreen}}
 \fi
 
 % reasonable calligraphic font (CM)
@@ -32,9 +31,8 @@
 \def\mat#1{\mathsf{#1}}
 \def\etal{et al.}
 
-% TODO
-%\def\TODO#1{{\color{red}TODO: #1}}
-\def\TODO#1{}
+\def\TODO#1{{\color{red}TODO: #1}}
+%\def\TODO#1{}
 
 \setbox123\hbox{$0$}
 \setbox124\hbox{$.$}
