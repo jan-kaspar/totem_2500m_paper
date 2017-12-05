@@ -1,0 +1,488 @@
+Valentina, 3 Dec
+----------------------------------------------------------------------------------------------------
+
+oral suggestions
+
+* si_el, rho solution: add point at 30.9 is makes all points visible
+
+* make a summary plot
+ - with all models
+ - with TOTEM and PDG points
+
+
+
+
+
+
+
+
+
+Marco, 4 Dec 2017
+----------------------------------------------------------------------------------------------------
+
+Title: complete by adding as last word exchange, after “three-gluon bound…”
+Line 9: Why do we cite PDG edition of 2010? Shouldn’t we cite the most recent? 2016 has CITATION: C. Patrignani et al. (Particle Data Group), Chin. Phys. C, 40, 100001 (2016) and 2017 update.
+Editorial comment: citation should be numbered following the order with which they appear in the article.
+Line 19: citation 4 and 9 should be moved after the part of the sentence they specifically refer to.  We refer to many features and we should find a quote for each one of them.
+Line 28 these models are associated to the concept… in the 70’ by Nicolescu[7] and later confirmed…. By Lipatov[10] , as well as etc.   may be move citation [27] to the end of the sentence.
+**Line 34 to 46: the argument here is a bit confused (hard to follow).  The idea of “where is best to look for the Odderon” is extensively and nicely explained in lines 527-542.  Either we move that paragraph here (still quite general) or we drop some of this 
+A possible way:    Line 46: “at low energies the amplitudes for this additional channels are dominated by those of the Pomeron(s) exchange ﬁrst, and by the Pomeron-photon exchange then, which explains the reasons why their effect has been difﬁcult to be detected experimentally.   The best experimental situation to detect these effects that are easily masked by larger ones in pp elastic scattering is to look at regions in which the Pomeron contribution is small (like in the region of the dip of the cross section) or at very small angles where it appears in the interference term when the nuclear and the coulomb cross section become equal.   This is the main reason for which the 2.5 km optics was designed.
+
+Line 36 space after energy,   and then “is” instead of was complicated
+Line 52: the theoretical models which are not excluded by this measurement require signiﬁcantly lower ρ  (the sentence bites itself…( non-excluded and consistent are almost… synonyms)
+Line 55: “besides” instead of “in addition to”
+Line 90: add a “the” before magnification and Dispersion and the same , add “the” before  vertex and momentum.
+Line 96: I would rearrange as “… with a new, special optics, the β ∗ = 2500m, speciﬁcally developed for measuring low-|t| elastic scattering and conventionally labelled by the value of the β -function at the interaction point.”  (puts more emphasis that it was designed for this measurement… but it is also simply a style matter, though motivated).
+Line 151: should we explain here in clear what the meaning of the “asterisks”? It is the first moment we “use” angles.
+Line 135: either add a “of the” before elastic (or remove it before optics)
+Line 164: two offline methods: (colon) first etc.  otherwise next sentence has no “verb”. Then instead of  the “dash” in line 165 put a “full stop” and continue with: The alignment procedure is repeated… 
+Line 185 has no verb:   we want to say that “ The resolution… IS used for The selection…THE   etc.”
+Line 195 “especially AT the”
+Line 200  These par >>> The parameters were tuned “with” 
+Table 2: separator line overlaps with superscripts
+Line 210 the left and THE right arm
+Line 212 The thresholds for the cuts
+Line 213 add a “distributed” almost uniformly
+Line 218 add THE before vertical.
+Line 219  is better compared to…. >>> is better if compared with 
+Line 220>>>  cut 1 in the 4RP analysis is more efficient(useful to remind we are back to the 4RP case)
+Line 240 estimated to BE
+Line 245: Since >>> Beisdes
+Line 246 remove comma after therefore
+Line 251: I would put the formula (9) before and explain it after… : The correction for phase-space limitations can be written as …(9)
+Line 267: However biases can arise indirectly from
+Line 280: “… their edge and possibly secondary particles from showers have more chance to be detected. (I would not use the term “induced” for the additional particle track)
+Line 282 “…, the presence of a second particle track…
+Line 287 are discarded as such  since a shower, remove "as such"
+Line 288 “elastic proton interacting with detectors.” >>>  “elastic proton measured in the detectors”
+Line 289:  “The value for T_2” (I would try not to use “outcome”)
+Line 311 : Figure 9 shows the case for two of those  (or at the beginning of the sentence say simply “two parametrisations”)
+Line 315 >>> setting the integrated “( or eventually “requiring AN integrated”.)
+Line 317: instead of “components” I would say “two parts” or “two steps”
+Line 320 :  uncertainty FROM [6].
+Line 323: “twice as large” … (or if you prefer “two times larger”)
+Line 326 THE data
+Line 328:” values are listed in Table 3
+Figure 10 caption: (the ﬁt shown or reproduced in Figure 13)… replace “featuring” with “of”
+Line 345: do you want to say “the uncertainties of the fitted slope or the uncertainties on the intercept from the fit?
+Line 347 (to keep the same style of the list) “ The beam-momentum uncertainty needs to be considered when” >>> The beam-momentum uncertainty: considered when…”
+Line 350: why a dash between fit and model? … or better “model dependence of the fit”
+Line 358 from all THE analysed…
+Line 361: per-effect… I would just expand it …the correlations..respected for each systematic uncertainty.
+figure 11: caption: use “due to systematic uncertainties.”   Then “ The colour in the plot …” 
+line 365”include THE vertical… and THE uncertainty  of  THE…”
+Line 368 are listed in tabke 3 and are used to approximate.  (why do you say” can be used” is it just a possibility?)
+Line 374: “before and then after” or “after then before”?  I am for following the time sequence since this wants to show a possible evolution. (in case modify caption of fig 12 too)
+Line 377 due to THE vertical…
+Line 379 AN excellent agreement between this analysis and previous…
+Table 3 caption : why don’t we add” leading systematic biases and their sign”? Editorial: the table top line overlaps with the caption, as do other horizontal lines. To fit it better in the page one might use slightly smaller fonts.
+Line 382 considering the effects 
+Line 396 In that region…  “fixed to a form”? approximated by a function?”
+Line 417: I would put a % to both 5.5
+Line 418 remove the “comma”
+Line 419 which is THEN added (and remove at the end)
+Line 424: add is about before systematic and before normalization.
+Line 426: the fits have negligible… add THE in front each item of this list (not onle for the first and the last)
+Line 431:data, constraining them by a maximal value of |t| >>> data for two different value of |t_max|.  The value of … 0.15    corresponds   The value of 0.7 (remove some of the too many commas)
+Line 439: good quality rho values in the small range…
+Line 440: the two limiting values in Table.
+Line 441 :To obtain the second value we used the largest… in the fit, and corresponds to the best rho determination.  In this case the fit…
+Line 448: is interesting also for another reason.
+Line 449: the one available in the UA4 >>> to the one used by UA4/2  (use UA4/2 everywhere)
+Line 452: had the acceptance stopped
+Line 455: configuration results very similar to the ones obtained with the “SWY”…
+Line 456: In that sense, >>> from this point of view this 
+Line 458: yields the ρ value incompatible  >>>  yields a rho value incompatible at the level of about 4.8σ with…
+Line 460: Another set of tests was performed in order   >>> Further tests were performed to probe     
+Line 462: otimise rho with all THE data keeping the hadronic modulus fixed to the value obtained from the first step.
+Line 469: For the minimum weight possible ﬁts where the higher-|t| data are not used at all have already been discussed previously for the case with |t_max| =0.07 
+Line 472: from Ref. [6]. The latter assumes” >>> from Ref. [6] which assumes
+Line 478:correction to the value of σ_el published in
+Line 480: For our best ﬁt (combination N   >>> Our best fit (combination with N…) yields   mb, value compatible even if slightly higher with our publication Ref [6].
+Line 481: This order is expected  (remove order)
+Line 487 existing data.   Extrapolations from these COMPETE models are confronted with the new TOTEM measurements in figure 17, which shows they are grouped in 3 bands.
+Line 500: remove well 
+Line 506: replace “the ensemble of” with “both TOTEM measurements of s_tot and rho discussed in this paper.”
+Line 508: Another, even less model-dependent, relation between σ_tot and ρ can be obtained from dispersion relations …. >>> Dispersion relation provide another less model-dependent relation between σ_tot and ρ
+Line 509 and following: If only crossing-even component of the amplitude is considered, it can be shown that ρ is proportional to the rate of growth of σtot with energy. >>> Considering only crossing-even component of the scattering amplitude shows that ρ is proportional to the rate of growth of σ_tot with energy that show a sustained growth of σtot with a low value of ρ.
+This contradiction may be solved if also odd-signature objects can be exchanged by protons.
+Line 513: may naturally come >> might have naturally come from secondary Reggeons, their contribution is generally …
+Line 519 : crossing-even (remove final T) trajectories were also studied with the framework of  Regge Theory as a counterpart of the crossing-even Pomeron.
+Line 522 with THE other particle
+Line 524 Editorial: put no space between last word of sentence and a full stop.
+Line 528: (move immediately after sentence ending in line 531) “there are 3 regions argued to be sensitive.” >>> 3 regions may be particularly favoured (or sensitive)  for the study of this component.”
+Line 530  exchanges (plural to match those)
+Line 534 described by >>> described as 
+Line 535: tend to be   >>>   are  (want to add a quote to ISR and SppS publications?) either here or in the detailed discussion of following sentences.
+Line 540: Besides since the contribution from 2-gluon exchanges is rapidly dropping the high |t| region may also be sensitive to 3-gluon exchanges [ref  Landshoff?] 
+Line 542: [reference?] for my culture: which is the yet another pertutbative QCD?
+Line 543: Figure 18 shows two models that are compatible with the TOTEM data   >>> Figure 18 compares the TOTEM data with two compatible models, Nicolescu[ ] and the Durham …
+Line 544: a crossing (not AN)
+Line 545: the existing data and the models.    The effect of the Nicolescu model is negligible at √s ≈ 500GeV but its size grows with energy making it very signiﬁcant at 13TeV.
+Line 548: the Nicolescu model which shows a stronger energy…
+Line 549: make it more affirmative: a new line for the last sentence:  (remove in turn) and say  “for example a precise rho measurement …
+Line 553: >>> Given the low-|t|
+Line 556: >>> A ﬁt with over a maximum of data points and with the largest reasonable…
+Line 561: For each of the two models f >>> for both models found to be …
+
+REFERENCES:
+I think we should add the title of each paper.
+We should quote ATLAS in the list of measurements performed at the LHC…  the plot in the range 8 to 13 TeV  does already do sufficient justice.
+
+
+
+----------------------------------------------------------------------------------------------------
+Simone, 4 Dec 2017
+----------------------------------------------------------------------------------------------------
+
+Quantitive finalisation
+* significant digits of the uncertainties;
+* total cross-section numerical value (if we will decide to include it);
+* quantitative numbers describing dip region,
+
+Use all the following references.
+
+1. L. Lukaszuk and B. Nicolescu, Nuovo Cimento Letters 8 (1973) 405.
+2. D. Joynson, E. Leader, C. Lopez and B. Nicolescu, Nuovo Cimento 30A (1975) 345.
+3. R. F. Avila, P. Gauron and B. Nicolescu, Eur. Phys. J. C49 (2007) 581.
+4. E. Martynov and B. Nicolescu, arXiv:1711.03288 [hep-ph], 21 November 2017.
+5. P. Gauron, L. Lukaszuk and B. Nicolescu, Phys. Lett. B294 (1992) 298.
+
+
+
+----------------------------------------------------------------------------------------------------
+Fredrik, 4 Dec 2017
+----------------------------------------------------------------------------------------------------
+
+Figures 1-16: 
+-> in text references, mostly referred to as "Figure N", only Fig.s 1&2 as "Fig.N"
+-> however, Figure label always calls itself "Fig.N"
+
+-> invert these, spell out "Figure ##" in figure label, and abbreviate "Fig.##" in text, except at the beginning of sentences.
+
+empty page 2: placeholder for names?
+
+L4: This allowed to access the Coulomb-
+-> allowed us to
+
+
+L15: Such conventional modelling ... is based on various forms
+-> These conventional models (of the low-|t|...)
+
+L16: various forms of Pomeron exchanges
+-> Pomeron exchange
+
+L24: oscillatory behaviour, the growth rate
+-> oscillatory behaviour, and the growth rate 
+[last item in list]
+
+L25: Such theoretical frameworks foresee the possibility of
+-> These theoretical frameworks allow the possibility of
+
+L28: associated to the concept
+-> associated with
+
+L29: prediction [10], as well as they can be quantified in modern QCD [27] where they are represented
+-> prediction [10]. In modern QCD [27], it can be represented (in its most
+
+L31: Such state would have naturally
+-> Such a state would naturally have
+
+L34-36: Normally the amplitudes related to such additional channels are dominated by those of the Pomeron(s)
+exchange first, and by the Pomeron-photon exchange then, which explains the reasons why their effect
+has been difficult to be detected experimentally.
+
+-> Normally the amplitudes related to such additional channels are dominated by those of the Pomeron exchange(s),
+followed by the Pomeron-photon exchange, which explains why their effects have been so difficult to detect experimentally.
+
+L36: At lower energythe matter was further complicated by the presence of secondary Regge trajectories influencing the potential observation of 
+differences between the proton-proton and proton-antiproton scattering.
+-> At lower energy, a further complication is secondary Regge trajectories contributing to the difference between proton-proton and proton-antiproton scattering.
+
+L38: , one could investigate for both proton-proton and proton-antiproton scattering the diffractive dip,
+-> , one could investigate the diffractive dip in both proton-proton and proton-antiproton scattering,
+
+L40: amplitude vanishes, however there are no
+-> amplitude vanishes; however, there are no
+
+L47: LHC. \rho being an analytical function
+-> rho at beginning of sentence, do we want to reformulate to avoid?, or write 
+-> LHC. Rho (\rho) [but we already defined rho on L5]
+-> LHC. \Rho being [but capital rho=P, confusing]
+
+L50: have made sensitive predictions via the evolution of \rho
+-> predictions of the evolution
+
+L53: at 13 TeV, consistently with the
+-> consistent with
+
+L56: the QCD predicted
+-> the QCD-predicted
+
+L57: the generalization of Pomeranchuk theorem
+-> of the Pomeranchuk
+
+L67: A RP
+-> An RP
+
+L79: two topologies, called “diagonals”
+-> later in the paper, if we use either of these diagonals as labels, call them the same as in the 13TeV total cross section paper, diag "1" & "2"
+-> See Fig.2 point legend: blue/green is diag 1/2 (or 2/1, check 13TeV-tot-paper), and likewise Figs 4-7
+-> although you talk also of the antidiagonals, so might not be worth the effort to change all this terminology (antidiagonal names=upper & lower, for example?)
+
+
+L84: The beam optics relates the proton kinematical states at the IP and at the RP location.
+-> relate (plural) the proton kinematical state at the IP to that at the RP detector.
+
+L96: a new, special optics,
+-> a new, special optics configuration,
+
+
+L142: each diagonal, they are only merged at the end as detailed Section 5.3
+->  each diagonal, and only merged at the end as detailed in Section 5.3
+
+L167: The alignment uncertainties have been estimated to
+-> estimated as
+
+Equation 7:
+-> the last Eigenvalue, is it O(1E-5), or much smaller? When you say the eigenvalue factors have unit variance, do you mean (eta_i=0 +- 1)?
+
+
+L199: In turn, a MC study was performed
+-> Therefore, an MC study 
+
+Fig.3 caption: Red:..., blue: data from the fill end (scaled 5×)
+-> I assume you mean blue data y is scaled up, not thX_blue, might be best to clarify here
+
+L224: are: central diffraction
+-> are central diffraction [two items, itemization not necessary]
+
+L236: yields the order-of-magnitue estimate
+-> yields an order-of-magnitude estimate
+
+L236: 1-B=0.001
+-> B=0.999 & S=0.001 ??
+-> you don't define B until L240, 2 pages later, as background correction factor
+-> now ok, S/N=1000, not 0.001
+
+
+
+L240: background correction factor, B, is estimated to 0.9975
+-> to be 0.9975
+
+L244: The acceptance of elastic protons
+-> acceptance for
+
+L268: effects that affect the ... symmetry like
+->  effects that break the ... symmetry, like
+
+
+L282: a secondary particle track prevents from using
+-> prevents using
+
+L284: Another source of inefficiency are proton interactions
+-> is proton interactions
+
+L310: Several fit parametrisations were tested, however yielding negligible difference
+-> , ultimately yielding
+
+
+L330: is an effect due to electromagnetic interaction.
+-> due to the 
+
+L348: estimated by LHC experts to 0.1 %
+-> estimated as / estimated to be
+
+L375 & 379: Figure 12 bottom left shows
+-> Figure 12 (bottom left) shows
+-> or italize/bold the subplot descriptor
+
+
+page 17: is Table 4 respecting the right margin?
+
+L383: is described in Section 6.1 and Section 6.2 describes
+->  , and Section 6.2 describes
+
+L388: In one-photon approximation it yields cross-section
+-> In the one-photon ... yields a cross-section
+
+L396: At that region, the amplitude
+
+-> In that region
+
+
+L422: for fit with N b = 3
+-> for a fit
+
+L424: 0.0052, due the systematic uncertainties 0.0039 and due
+-> 0.0052, with systematic uncertainties of 0.0039 and a normalisation uncertainty of 0.0097.
+
+
+
+L426: The fits have been found to have
+-> The fits were found to have
+
+
+L427: see text below Eq. 15
+-> text after
+
+L428:
+-> text before Eq. 16
+
+
+L433: where the application of parametrisation from Eq. (15)
+-> where application of the parametrisation
+
+
+L436: (Nb1) fit has bad quality
+-> The fit with Nb1 ... is bad
+
+
+
+L437: with pure exponential, similarly
+-> with a pure exponential, similar
+
+
+L438: Except from this case,
+-> Except for 
+-> all other fits are good, with \rho-values constrained
+
+
+L451: , had the acceptance stop at t=0.07
+-> stopped at ...; see Fig. 14, left.
+-> (isn't t negative? -> |t|=0.07 )
+
+Figure 15 data legend: pbar isn't \overbar, it's \strikethrough
+label: the lhs. point ..., while the rhs. point
+-> the left point to ..., and the right point to ...
+
+
+Fig 16 label: Constraints to relation between
+-> the relation
+
+L458: fit configuration yields the \rho value incompatible
+-> a \rho value
+
+
+L480: sigma_tot = XXX.X +- X.X mb
+-> fill in value
+
+L484: One of very comprehensive (and therefore representative) studies
+-> One very comprehensive (and therefore representative) study
+
+L485: In total 256 models have been considered
+-> were considered
+
+L486: their anti-reactions
+-> [don't you mean mixed matter-antimatter reactions? pbar+pbar seems like it should be trivially = p+p, except for any CP violation]
+
+L486: 23 have been found to give reasonable description
+-> a reasonable
+
+
+
+
+L490: right most point
+-> rightmost
+
+L509: dispersion relations .
+-> [remove space in front of period]
+-> [likewise L520: Pomeron .]
+
+L509: If only crossing-even component ... is considered
+-> only the crossing-even
+
+
+L510: This again presents a contradiction to the presented data
+-> This is in contradiction
+
+L511:while low value of \rho
+-> with a low value
+
+L512: an odd-signature objects
+-> an ... object
+
+L520: shown that such object must exist
+-> such an 
+
+
+Fig17 label: the left point to fit with N b = 1
+-> to the fit with
+
+L522: These 3 gluons are bound together more strongly than their interaction with other particle is.
+-> [is this saying they form a real particle, or that the 3 are not bound hierarchially as 2+1g?]
+
+
+L523: known under names
+-> the names
+& “vector glueball”\n .
+-> [a space between the quotes and the period?]
+
+L524: can be exchanged in t-channel
+-> the t-channel
+-> contributes to the elastic-scattering amplitude
+
+L525: , as well as can be created in the s-channel
+-> It can also be created in the s-channel and thus 
+
+L527: There are multiple ways how a(n ...) may manifest in observable data.
+->  multiple ways an ... may manifest in the data.
+
+L528: there are 3 regions argued to be sensitive.
+-> there are three (arguably) sensitive regions.
+
+
+L537: there are data showing very significant difference
+-> showing a significant difference
+
+L540: Sometimes high |t| region is also argued as sensitive
+-> the high-|t|
+-> argued to be sensitive
+
+
+L542: yeat another pQCD amplitude
+(hinting at even 4-gluon?)
+
+
+Fig18 label: the left point to fit
+-> the fit
+
+L548: The energy dependence of \rho is predicted rather flat unlike the Nicolescu model
+-> [this looks like a new paragraph, so flat \rho implies : for both models] 
+->  [if not,]-> predicted to be rather flat
+-> unlike the strong energy dependence in the Nicolescu model
+
+
+L549: \sqrt{s}
+-> \overbar over sqrt, not over {s}
+
+L552: The measurement of elastic differential cross-section allows to disfavour
+-> of the elastic differential cross-section disfavours the purely
+
+L553: similarly
+-> similar
+
+
+
+L554: was made exploiting
+-> made by
+
+L556: with maximum of data points
+-> with a maximum..., and with maximal reasonable flexibility
+
+SigmaTot XXX.X
+-> fill in value
+
+
+L561: For each of the two models found to be consistent with TOTEM’s data, the inclusion of a crossing-odd
+component leads to an improved agreement with the data.
+
+-> very short paragraph, maybe merge with the previous?
+
+
+
+
+Refs: add DOI or hyperlinks (in addition to the 3 extant links)?
+-> add (year) even to Hubert's thesis & arXiv links?
+
+-> Ref 29 malformed, 2 refs concatenated?
