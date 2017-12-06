@@ -130,7 +130,7 @@ DrawFitUncBand("rho_p_p", blue+opacity(0.1));
 DrawFit("rho_p_p", blue);
 
 //AddToLegend("<COMPETE model $\rm R^{qc}RL^{qc}$:");
-//draw(graph(rho_app_compete_R_qc_RL_qc, 1e1, 2e4), black, "$\rm\bar pp$");
+//draw(graph(rho_app_compete_R_qc_RL_qc, 1e1, 2e4), black, "$\rm\overline pp$");
 //draw(graph(rho_pp_compete_R_qc_RL_qc, 1e1, 2e4), red, "$\rm pp$");
 
 // limits
@@ -156,7 +156,7 @@ label(rotate(90)*Label("\SmallerFonts$13\un{TeV}$"), Scale((13e3, y_label)), Fil
 
 // legend
 AddToLegend("<PDG:");
-AddToLegend("$\rm \bar pp$", mTU+false+3pt+heavygreen);
+AddToLegend("$\rm \overline pp$", mTU+false+3pt+heavygreen);
 AddToLegend("$\rm pp$", mTD+true+3pt+blue);
 //AddToLegend("\break");
 
@@ -167,7 +167,7 @@ AddToLegend("via CNI", mCi+true+3pt+red);
 
 AddToLegend("<COMPETE");
 AddToLegend("<(pre-LHC model $\rm RRP_{nf}L2_{u}$):");
-AddToLegend("$\rm\bar pp$", heavygreen);
+AddToLegend("$\rm\overline pp$", heavygreen);
 AddToLegend("$\rm pp$", blue);
 
 AttachLegend(shift(0, 0)*BuildLegend(1, NW, stretch=false, hSkip=5mm, lineLength=5mm), NE);
