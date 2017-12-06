@@ -50,7 +50,7 @@ In the ``4RP'' analysis, the same reconstruction as in \cite{totem-8tev-1km} is 
 
 TOTEM's usual three-stage procedure (Section 3.4 in~\cite{totem-ijmp}) for correcting the detector positions and rotation angles has been applied: a beam-based alignment prior to the run followed by two offline methods. The first method uses straight tracks to determine the relative position among the RPs by minimising track-hit residuals. The second method exploits the symmetries of elastic scattering to determine the positions of RPs with respect to the beam. This determination is repeated in 20 minutes time intervals to check for possible beam movements.
 
-The alignment uncertainties have been estimated to $25\un{\mu m}$ (horizontal shift), $100\un{\mu m}$ (vertical shift) and $2\un{m rad}$ (rotation about the beam axis). Propagating them through Eq.~(\ref{eq:kin 2a}) to reconstructed scattering angles yields $0.50\un{\mu rad}$ ($0.35\un{\mu rad}$) for the horizontal (vertical) angle. RP rotations induce a bias in the reconstructed scattering angles:
+The alignment uncertainties have been estimated as $25\un{\mu m}$ (horizontal shift), $100\un{\mu m}$ (vertical shift) and $2\un{m rad}$ (rotation about the beam axis). Propagating them through Eq.~(\ref{eq:kin 2a}) to reconstructed scattering angles yields $0.50\un{\mu rad}$ ($0.35\un{\mu rad}$) for the horizontal (vertical) angle. RP rotations induce a bias in the reconstructed scattering angles:
 \begin{equation}
 \label{eq:alig rot bias}
 	\theta_x^* \rightarrow \theta_x^* + c \theta_y^*\ ,\quad
@@ -79,9 +79,9 @@ where the biases $b_x$ and $b_y$ have uncertainties of $0.17\un{\%}$ and $0.15\u
 \begin{pmatrix} b_x^{\rm L}\cr b_y^{\rm L} \cr b_x^{\rm R}\cr b_y^{\rm R} \end{pmatrix} =
 	   \eta_1 \underbrace{\begin{pmatrix} -1.608\times10^{-3}\cr +1.473\times10^{-3}\cr -1.630\times10^{-3}\cr +1.477\times10^{-3} \end{pmatrix}}_{\rm mode\ 1}
   \ +\ \eta_2 \underbrace{\begin{pmatrix} -5.157\times10^{-4}\cr +2.541\times10^{-5}\cr +5.566\times10^{-4}\cr +2.746\times10^{-5} \end{pmatrix}}_{\rm mode\ 2}
-  \ +\ \eta_3 \underbrace{\begin{pmatrix} +3.617\times10^{-4}\cr +3.625\times10^{-4}\cr +3.006\times10^{-4}\cr +3.641\times10^{-4} \end{pmatrix}}_{\rm mode\ 3}
+  \ +\ \eta_3 \underbrace{\begin{pmatrix} +3.617\times10^{-4}\cr +3.625\times10^{-4}\cr +3.006\times10^{-4}\cr +3.641\times10^{-4} \end{pmatrix}}_{\rm mode\ 3}\ ,
 \end{equation}
-normalised such that the factors $\eta_{1,2,3}$ have unit variance. The fourth eigenmode has a negligible contribution and therefore is not explicitly listed.
+where the factors $\eta_{1,2,3}$ have zero mean and unit variance. The fourth eigenmode has a negligible contribution and therefore is not explicitly listed.
 
 
 
@@ -92,19 +92,19 @@ normalised such that the factors $\eta_{1,2,3}$ have unit variance. The fourth e
 
 Two kinds of resolution can be distinguished: the resolution of the single-arm angular reconstruction, Eq.~(\ref{eq:kin 1a}), used for selection cuts and near-edge acceptance correction, and the resolution of the double-arm reconstruction, Eq.~(\ref{eq:kin 2a}), used for unsmearing correction of the final $t$-distribution. Since the single-arm reconstruction is biased by the vertex term in the horizontal plane, the corresponding resolution is significantly worse than the double-arm reconstruction.
 
-The single-arm resolution can be studied by comparing the angles reconstructed from the left and right arm, see an example in Fig.~\ref{fig:resol x 1a}. The width of the distributions was found to grow slightly during the fills, compatible with the effect of beam emittance growth. The typical range was from $10.0$ to $14.5\un{\mu rad}$ for the horizontal projection and from $0.36$ to $0.38\un{\mu rad}$ for the vertical. The associated uncertainties were $0.3$ and $0.007$, respectively. As illustrated in Fig.~\ref{fig:resol x 1a}, the shape of the distributions is very close to Gaussian, especially at the beginning of each fill.
+The single-arm resolution can be studied by comparing the angles reconstructed from the left and right arm, see an example in Figure~\ref{fig:resol x 1a}. The width of the distributions was found to grow slightly during the fills, compatible with the effect of beam emittance growth. The typical range was from $10.0$ to $14.5\un{\mu rad}$ for the horizontal projection and from $0.36$ to $0.38\un{\mu rad}$ for the vertical. The associated uncertainties were $0.3$ and $0.007$, respectively. As illustrated in Figure~\ref{fig:resol x 1a}, the shape of the distributions is very close to Gaussian, especially at the beginning of each fill.
 
 \begin{figure}
 \begin{center}
 \includegraphics{fig/resolution_non_gaussianity.pdf}
 \caption{%
-Difference between horizontal scattering angles reconstructed in the right and left arm, for the diagonal 45 bottom - 56 top. Red: data from the beginning of fill 5317, blue: data from the fill end (scaled $5\times$). The solid lines represent Gaussian fits.
+Difference between horizontal scattering angles reconstructed in the right and left arm, for the diagonal 45 bottom - 56 top. Red: data from the beginning of fill 5317, blue: data from the fill end (vertically scaled $5\times$). The solid lines represent Gaussian fits.
 }
 \label{fig:resol x 1a}
 \end{center}
 \end{figure}
 
-Since in the vertical plane the resolution is driven by the beam divergence, the double-arm resolution can simply be scaled from the single-arm value: $\sigma(\theta^*_y) = (0.185 \pm 0.010)\un{\mu rad}$ where the uncertainty accounts for the full variation in time. In the horizontal plane the estimation is more complex due to several contributing smearing mechanisms. In turn, a MC study was performed with two extreme sets of beam divergence, vertex size and sensor resolution values. These parameters were tuned within the ``4RP'' analysis where they are accessible thanks to the additional information from the 210-fr units. The study yielded $\sigma(\theta^*_x) =  (0.29 \pm 0.04)\un{\mu rad}$ where the uncertainty accounts for the full time variation.
+Since in the vertical plane the resolution is driven by the beam divergence, the double-arm resolution can simply be scaled from the single-arm value: $\sigma(\theta^*_y) = (0.185 \pm 0.010)\un{\mu rad}$ where the uncertainty accounts for the full variation in time. In the horizontal plane the estimation is more complex due to several contributing smearing mechanisms. Therefore, a MC study was performed with two extreme sets of beam divergence, vertex size and sensor resolution values. These parameters were tuned within the ``4RP'' analysis where they are accessible thanks to the additional information from the 210-fr units. The study yielded $\sigma(\theta^*_x) =  (0.29 \pm 0.04)\un{\mu rad}$ where the uncertainty accounts for the full time variation.
 
 
 %----------------------------------------------------------------------------------------------------
@@ -171,9 +171,9 @@ In the ``4RP'' analysis, thanks to the additional information from the 210-fr un
 \subsubsection{Background}
 \label{sec:background}
 
-As the RPs were very close to the beam, one may expect an enhanced background from coincidence of beam halo protons hitting detectors in the two arms. Other background sources (pertinent to any elastic analysis) are: central diffraction and pile-up of two single diffraction events.
+As the RPs were very close to the beam, one may expect an enhanced background from coincidence of beam halo protons hitting detectors in the two arms. Other background sources (pertinent to any elastic analysis) are central diffraction and pile-up of two single diffraction events.
 
-The background rate (i.e.~impurity of the elastic tagging) is estimated in two steps, both based on distributions of discriminators from Table~\ref{tab:cuts} plotted in various situations, see an example in Figure~\ref{fig:tag bckg integ}. In the first step, diagonal data are studied under several cut combinations. While the central part (signal) remains essentially constant, the tails (background) are suppressed when the number of cuts is increased. In the second step, the background distribution is interpolated from the tails into the signal region. The form of the interpolation is inferred from non-diagonal RP track configurations (\textit{45 bottom -- 56 bottom} or \textit{45 top -- 56 top}), artificially treated like diagonal signatures by inverting the $y$ coordinate sign in the arm 45. These non-diagonal configurations cannot contain any elastic signal and hence consist purely of background which is expected to be similar in the diagonal and non-diagonal configurations. This expectation is supported by the agreement of the tails of the red, blue and green curves in the figure. Since the non-diagonal distributions are flat, the comparison of the signal-peak size to the amount of interpolated background yields the order-of-magnitue estimate $1 - \mathcal{B} = \mathcal{O}(10^{-3})$.
+The background rate (i.e.~impurity of the elastic tagging) is estimated in two steps, both based on distributions of discriminators from Table~\ref{tab:cuts} plotted in various situations, see an example in Figure~\ref{fig:tag bckg integ}. In the first step, diagonal data are studied under several cut combinations. While the central part (signal) remains essentially constant, the tails (background) are suppressed when the number of cuts is increased. In the second step, the background distribution is interpolated from the tails into the signal region. The form of the interpolation is inferred from non-diagonal RP track configurations (\textit{45 bottom -- 56 bottom} or \textit{45 top -- 56 top}), artificially treated like diagonal signatures by inverting the $y$ coordinate sign in the arm 45. These non-diagonal configurations cannot contain any elastic signal and hence consist purely of background which is expected to be similar in the diagonal and non-diagonal configurations. This expectation is supported by the agreement of the tails of the red, blue and green curves in the figure. Since the non-diagonal distributions are flat, the comparison of the signal-peak size to the amount of interpolated background yields an order-of-magnitue estimate of $1 - \mathcal{B} = \mathcal{O}(10^{-3})$.
 
 \begin{figure}
 \begin{center}
@@ -204,7 +204,7 @@ Comparison of $|t|$-distributions from different diagonal (signal + background) 
 \subsubsection{Acceptance Correction}
 \label{sec:acc corr}
 
-The acceptance of elastic protons is limited mostly by two factors: sensor coverage (relevant for low $|\theta^*_y|$) and LHC beam aperture (at $|\theta^*_y| \approx 100\un{\mu rad}$). Since the 210-fr units are tilted, while the 220-fr not, the thin windows do not overlap perfectly. Therefore there are phase space regions where protons need to traverse thick walls of 210-fr RP before being detected in 220-fr RP. This induces reduced detection efficiency difficult to determine precisely. Consequently these regions (close to the sensor edge facing the beam) have been excluded from the fiducial region used in the analysis, see the magenta lines in Figure~\ref{fig:acc corr princ}.
+The acceptance for elastic protons is limited mostly by two factors: sensor coverage (relevant for low $|\theta^*_y|$) and LHC beam aperture (at $|\theta^*_y| \approx 100\un{\mu rad}$). Since the 210-fr units are tilted, while the 220-fr not, the thin windows do not overlap perfectly. Therefore there are phase space regions where protons need to traverse thick walls of 210-fr RP before being detected in 220-fr RP. This induces reduced detection efficiency difficult to determine precisely. Consequently these regions (close to the sensor edge facing the beam) have been excluded from the fiducial region used in the analysis, see the magenta lines in Figure~\ref{fig:acc corr princ}.
 
 \begin{figure}
 \begin{center}
@@ -234,7 +234,7 @@ The correction $\mathcal{A}_{\rm fluct}$ is calculated analytically from the pro
 
 The full acceptance correction, $\mathcal{A}$, has a value of $12$ in the lowest-$|t|$ bin and decreases smoothly towards about $2.1$ at $|t| = 0.2\un{GeV^2}$. Since a single diagonal cannot cover more than half of the phase space, the minimum value of the correction is $2$.
 
-The uncertainties related to $\mathcal{A}_{\rm fluct}$ follow from the uncertainties of the resolution parameters: standard deviation and distribution shape, see Section~\ref{sec:resolution}. Since $\mathcal{A}_{\rm geom}$ is calculated from a trivial trigonometric formula, there is no uncertainty directly associated with it. However biases can arise indirectly from effects that affect the assumed azimuthal symmetry like misalignments or optics perturbations already covered above.
+The uncertainties related to $\mathcal{A}_{\rm fluct}$ follow from the uncertainties of the resolution parameters: standard deviation and distribution shape, see Section~\ref{sec:resolution}. Since $\mathcal{A}_{\rm geom}$ is calculated from a trivial trigonometric formula, there is no uncertainty directly associated with it. However biases can arise indirectly from effects that break the assumed azimuthal symmetry like misalignments or optics perturbations already covered above.
 
 
 
@@ -257,7 +257,7 @@ Single-RP uncorrelated inefficiency for the 220-fr bottom RP in the right arm. T
 \end{center}
 \end{figure}
 
-Another source of inefficiency are proton interactions in a RP affecting simultaneously another RP downstream. The contribution from these correlated inefficiencies, $\mathcal{I}_2$, is determined by evaluating the rate of events with high track multiplicity ($\gtrsim$ 5) in both 210-fr and 220-fr RP units. Events with high track multiplicity simultaneously in the top and bottom RP of the 210-fr units are discarded as such a shower is likely to have started upstream from the RP station and thus be unrelated to the elastic proton interacting with detectors. The value, $\mathcal{I}_2 \approx (1.5 \pm 0.7)\un{\%}$, is compatible between left/right arms and top/bottom RP pairs and compares well to Monte-Carlo simulations (e.g.~section 7.5 in \cite{hubert-thesis}).
+Proton interactions in a RP affecting simultaneously another RP downstream represent another source of inefficiency. The contribution from these correlated inefficiencies, $\mathcal{I}_2$, is determined by evaluating the rate of events with high track multiplicity ($\gtrsim$ 5) in both 210-fr and 220-fr RP units. Events with high track multiplicity simultaneously in the top and bottom RP of the 210-fr units are discarded as such a shower is likely to have started upstream from the RP station and thus be unrelated to the elastic proton interacting with detectors. The value, $\mathcal{I}_2 \approx (1.5 \pm 0.7)\un{\%}$, is compatible between left/right arms and top/bottom RP pairs and compares well to Monte-Carlo simulations (e.g.~section 7.5 in \cite{hubert-thesis}).
 
 The full correction is calculated as
 \begin{equation}
@@ -325,7 +325,7 @@ The bin sizes are set according to the $t$ resolution. Three different binnings 
 \subsection{Data Merging}
 \label{sec:data merging}
 
-After analysing the data in each diagonal and LHC fill separately, the individual differential cross-section distributions are merged. This is accomplished by a per-bin weighted average, with the weight given by inverse squared statistical uncertainty. The final cross-section values are listed in Table~\ref{tab:data} and are visualised in Figure~\ref{fig:dsdt}. The figure clearly shows a rapid cross-section rise below $|t| \lesssim 0.002\un{GeV^2}$ which, as interpreted later, is an effect due to electromagnetic interaction.
+After analysing the data in each diagonal and LHC fill separately, the individual differential cross-section distributions are merged. This is accomplished by a per-bin weighted average, with the weight given by inverse squared statistical uncertainty. The final cross-section values are listed in Table~\ref{tab:data} and are visualised in Figure~\ref{fig:dsdt}. The figure clearly shows a rapid cross-section rise below $|t| \lesssim 0.002\un{GeV^2}$ which, as interpreted later, is an effect due to the electromagnetic interaction.
 
 \begin{figure*}
 \vskip-5mm
@@ -359,7 +359,7 @@ The following sources of systematic uncertainties have been considered.
 
 \item Inefficiency corrections (see Section~\ref{sec:ineff corr}): for the uncorrelated inefficiency $\mathcal{I}_1$ both uncertainties of the fitted slope and intercept have been considered. For the correlated inefficiency $\mathcal{I}_2$ the uncertainty of its value has been considered.
 
-\item The beam-momentum uncertainty: considered when the scattering angles are translated to $t$, see Eq.~(\ref{eq:th t}). The uncertainty was estimated by LHC experts to $0.1\un{\%}$ \cite{beam-mom-unc} in agreement with a previous assessment by TOTEM (Section~5.2.8.~in \cite{totem-8tev-90m}).
+\item The beam-momentum uncertainty: considered when the scattering angles are translated to $t$, see Eq.~(\ref{eq:th t}). The uncertainty was estimated by LHC experts as $0.1\un{\%}$ \cite{beam-mom-unc} in agreement with a previous assessment by TOTEM (Section~5.2.8.~in \cite{totem-8tev-90m}).
 
 \item Unsmearing (see Section~\ref{sec:unfolding}): uncertainty of resolution parameters and model dependence of the fit.
 
@@ -402,9 +402,9 @@ Relative variation of the final differential cross-section due to systematic unc
 \subsection{Systematic Cross-Checks}
 \label{sec:cross checks}
 
-Compatible results have been obtained by analysing data subsets of events from different bunches, different diagonals (Figure~\ref{fig:dsdt checks} top left), different fills and different time periods -- in particular those right after and right before the beam cleanings (Figure~\ref{fig:dsdt checks} top right). Figure~\ref{fig:dsdt checks} bottom left shows that both analysis approaches, ``2RP'' and ``4RP'', yield compatible results. The relatively large difference between the diagonals at very low $|t|$ (Figure~\ref{fig:dsdt checks} top left) is fully within the uncertainty due to the vertical misalignment, see Section~\ref{sec:systematics}.
+Compatible results have been obtained by analysing data subsets of events from different bunches, different diagonals (Figure~\ref{fig:dsdt checks}, top left), different fills and different time periods -- in particular those right after and right before the beam cleanings (Figure~\ref{fig:dsdt checks}, top right). Figure~\ref{fig:dsdt checks}, bottom left, shows that both analysis approaches, ``2RP'' and ``4RP'', yield compatible results. The relatively large difference between the diagonals at very low $|t|$ (Figure~\ref{fig:dsdt checks}, top left) is fully within the uncertainty due to the vertical misalignment, see Section~\ref{sec:systematics}.
 
-Figure~\ref{fig:dsdt checks} bottom right shows an excellent agreement between the data from this analysis and previous results obtained with $\beta^* = 90\un{m}$ optics \cite{totem-13tev-90m}.
+Figure~\ref{fig:dsdt checks}, bottom right, shows an excellent agreement between the data from this analysis and previous results obtained with $\beta^* = 90\un{m}$ optics \cite{totem-13tev-90m}.
 
 
 \begin{figure*}
