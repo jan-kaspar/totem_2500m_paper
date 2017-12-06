@@ -38,13 +38,13 @@ real si_el_max = 31.3;
 
 //--------------------
 
-AddToLegend("constraint from this publ.", red, mTD+red+2pt);
+AddToLegend("constraint from this publication", red, mTD+red+2pt);
 
-real si_el_2500_1 = 31.0;
-real rho_2500_1 = 1.018064e-01;
+real si_el_2500_1 = 30.9;
+real rho_2500_1 = 0.10242;
 
 real si_el_2500_2 = 31.1;
-real rho_2500_2 = 1.012493e-01;
+real rho_2500_2 = 0.10132;
 
 real a_2500 = (rho_2500_2 - rho_2500_1) / (si_el_2500_2 - si_el_2500_1);
 real b_2500 = rho_2500_2 - a_2500 * si_el_2500_2;
@@ -98,4 +98,4 @@ draw((si_el_sol, rho_sol), nullpen, label_sol, mCi+heavygreen+2pt);
 limits((si_el_min, 0.08), (si_el_max, 0.145), Crop);
 //limits((31.0, 0.09), (31.1, 0.10), Crop);
 
-AttachLegend(NE, NE);
+AttachLegend(BuildLegend(NE, lineLength=5mm), NE);
