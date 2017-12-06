@@ -102,11 +102,13 @@ for (int dsi : dataSets.keys)
 	draw((-160, 130)--(-140, +100), red, EndArrow);
 	draw((-160, 130)--(-190, -100), red, EndArrow);
 
+	/*
 	real o = 0.;
 	label("$\th^*\!=$", (50, 0), 0.5W, Fill(white+opacity(o)));
 	label(rotate(-90)*Label("\SmallerFonts $\rm\mu rad$"), (165, 0), 0.5E, Fill(white+opacity(o)));
 	for (real th : thetas)
 		label(rotate(-90)*Label(format("\SmallerFonts $%.0f$", th)), (th, 0), 0.5E, Fill(white+opacity(o)));
+	*/
 
 	limits((-200, -200), (200, 200), Crop);
 	//AttachLegend(dataSets[dsi]);
