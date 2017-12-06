@@ -5,41 +5,34 @@
 
 using namespace std;
 
+//----------------------------------------------------------------------------------------------------
+
 struct Entry
 {
+	string tag;
+
 	double meas;
 	double meas_unc;
 
 	vector<double> bands;
 };
 
+//----------------------------------------------------------------------------------------------------
 
-int main()
+void CopyEntries(const vector<Entry> &src, const string &tag, vector<Entry> &dest)
 {
-	vector<string> bands = {
-		"blue",
-		"magenta",
-		"green"
-	};
+	for (const auto &e : src)
+	{
+		if (e.tag == tag)
+			dest.push_back(e);
+	}
+}
 
-	vector<Entry> entries = {
-		{ 84.7, 3.3, {83.5, 81.2, 79.5} },			// si_tot, 2.76 TeV	
+//----------------------------------------------------------------------------------------------------
 
-		{ 98.0, 2.5, {99.0, 94.0, 90.5} },			// si_tot, 7 TeV
-		//{ 98.6, 2.2, {99.0, 94.0, 90.5} },			// si_tot, 7 TeV
-
-		{ 101.5, 2.1, {101.5, 96.0, 92.0} },		// si_tot, 8 TeV
-		//{ 102.9, 2.3, {101.5, 96.0, 92.0} },		// si_tot, 8 TeV, CNI separated
-
-		{ 110.6, 3.4, {110.5, 103.2, 98.0} },		// si_tot, 13 TeV
-		//{ 112.1, 3.0, {110.5, 103.2, 98.0} },		// si_tot, 13 TeV, CNI separated
-
-		//{ 0.12, 0.03, {0.142, 0.120, 0.103} },		// rho, 8 TeV
-
-		/*
-		{ 0.088, 0.010, {0.137, 0.116, 0.098} },		// rho, 13 TeV
-		*/
-	};
+void Evaluate(const vector<Entry> &entries, const vector<string> bands)
+{
+	printf("* entries: %lu\n", entries.size());
 
 	for (unsigned int bi = 0; bi < bands.size(); bi++)
 	{
@@ -59,6 +52,57 @@ int main()
 		printf("    N = %u, S2 = %.3f, S2 / N = %.3f\n", N, S2, S2 / N);
 		printf("    prob = %.3E\n", TMath::Prob(S2, N));
 	}
+}
+
+//----------------------------------------------------------------------------------------------------
+
+int main()
+{
+	vector<string> bands = {
+		"blue",
+		"magenta",
+		"green"
+	};
+
+	vector<Entry> entries = {
+		{ "si_tot, 2.76TeV", 84.7, 3.3, {83.5, 81.2, 79.5} },
+
+		{ "si_tot, 7TeV, 1", 98.0, 2.5, {99.0, 94.0, 90.5} },
+		{ "si_tot, 7TeV, 2", 98.6, 2.2, {99.0, 94.0, 90.5} },
+
+		{ "si_tot, 8TeV, 1", 101.5, 2.1, {101.5, 96.0, 92.0} },
+		{ "si_tot, 8TeV, 2", 102.9, 2.3, {101.5, 96.0, 92.0} },
+
+		{ "si_tot, 13TeV, 1", 110.6, 3.4, {110.5, 103.2, 98.0} },
+		//{ "si_tot, 13TeV, 2", 112.1, 3.0, {110.5, 103.2, 98.0} },
+
+		{ "rho, 8TeV", 0.12, 0.03, {0.142, 0.120, 0.103} },
+
+		{ "rho, 13TeV, exp1", 0.09, 0.010, {0.137, 0.116, 0.098} },
+	};
+
+	printf("\n----- si_tot, all points -----\n");
+	vector<Entry> e_si_tot_all;
+	CopyEntries(entries, "si_tot, 2.76TeV", e_si_tot_all);
+	CopyEntries(entries, "si_tot, 7TeV, 1", e_si_tot_all);
+	CopyEntries(entries, "si_tot, 7TeV, 2", e_si_tot_all);
+	CopyEntries(entries, "si_tot, 8TeV, 1", e_si_tot_all);
+	CopyEntries(entries, "si_tot, 8TeV, 2", e_si_tot_all);
+	CopyEntries(entries, "si_tot, 13TeV, 1", e_si_tot_all);
+	Evaluate(e_si_tot_all, bands);
+
+	printf("\n----- si_tot, 1 point per energy -----\n");
+	vector<Entry> e_si_tot_sel;
+	CopyEntries(entries, "si_tot, 2.76TeV", e_si_tot_sel);
+	CopyEntries(entries, "si_tot, 7TeV, 1", e_si_tot_sel);
+	CopyEntries(entries, "si_tot, 8TeV, 1", e_si_tot_sel);
+	CopyEntries(entries, "si_tot, 13TeV, 1", e_si_tot_sel);
+	Evaluate(e_si_tot_sel, bands);
+
+	printf("\n----- rho, 13TeV, exp1 -----\n");
+	vector<Entry> e_rho_sel;
+	CopyEntries(entries, "rho, 13TeV, exp1", e_rho_sel);
+	Evaluate(e_rho_sel, bands);
 
 	return 0;
 }
