@@ -1,7 +1,7 @@
 \section{Differential Cross-Section}
 \label{sec:differential cross-section}
 
-The analysis method is very similar to the previously published one \cite{totem-8tev-1km}. The only important difference stems from using different RPs for the measurement: unit 210-fr instead of 220-nr as in \cite{totem-8tev-1km} as the latter was not equipped with sensors anymore. Due to the optics and beam parameters the unit 210-fr has worse low-$|t|$ acceptance, further deteriorated by the tilt of the unit. Consequently, in order to maintain the low-$|t|$ reach essential for this study, the main analysis (denoted ``2RP'') only uses the 220-fr units (thus 2 RPs per diagonal). Since not using the 210-nr units may, in principle, result in worse resolution and background suppression, for control reasons, the traditional analysis with 4 units per diagonal (denoted ``4RP'') was pursued, too. In Section~\ref{sec:cross checks} the ``2RP'' and ``4RP'' will be compared showing a very good agreement. In what follows, the ``2RP'' analysis will be described unless stated otherwise.
+The analysis method is very similar to the previously published one \cite{totem-8tev-1km}. The only important difference stems from using different RPs for the measurement: unit 210-fr instead of 220-nr as in \cite{totem-8tev-1km} since the latter was not equipped with sensors anymore. Due to the optics and beam parameters the unit 210-fr has worse low-$|t|$ acceptance, further deteriorated by the tilt of the unit (effectively increasing the RP distance from the beam). Consequently, in order to maintain the low-$|t|$ reach essential for this study, the main analysis (denoted ``2RP'') only uses the 220-fr units (thus 2 RPs per diagonal). Since not using the 210-nr units may, in principle, result in worse resolution and background suppression, for control reasons, the traditional analysis with 4 units per diagonal (denoted ``4RP'') was pursued, too. In Section~\ref{sec:cross checks} the ``2RP'' and ``4RP'' will be compared showing a very good agreement. In what follows, the ``2RP'' analysis will be described unless stated otherwise.
 
 Section~\ref{sec:event analysis} covers all aspects related to the reconstruction of a single event. Section~\ref{sec:diff cs} describes the steps of transforming a raw $t$-distribution into the differential cross-section. The $t$-distributions are analysed separately for each LHC fill and each diagonal, they are only merged at the end as detailed in Section~\ref{sec:data merging}. Section~\ref{sec:systematics} describes the evaluation of systematic uncertainties and Section~\ref{sec:cross checks} presents several comparison plots used as systematic cross checks.
 
@@ -31,7 +31,7 @@ Once a proton pair has been selected, both arms are used to reconstruct the kine
 \end{equation}
 Thanks to the left-right symmetry of the optics and elastic events, this combination leads to cancellation of the vertex terms (cf.~Eq.~(\ref{eq:prot trans})) and thus to improvement of the angular resolution (see Section \ref{sec:resolution}).
 
-Eventually, the scattering angle, $\theta^*$, and the four-momentum transfer squared, $t$, are calculated:
+Finally, the scattering angle, $\theta^*$, and the four-momentum transfer squared, $t$, are calculated:
 
 \begin{equation}
 \label{eq:th t}
@@ -113,9 +113,9 @@ Since in the vertical plane the resolution is driven by the beam divergence, the
 
 For a given $t$ bin, the differential cross-section is evaluated by selecting and counting elastic events:
 \begin{equation}
-{\d\sigma\over \d t} =
+{\d\sigma\over \d t}(\hbox{bin}) =
 	\mathcal{N}\, \mathcal{U}(t)\, \mathcal{B}(t)\, {1\over \Delta t}
-	\sum\limits_{t\, \in\, {\rm bin}} \mathcal{A}(\theta^*_x, \theta_y^*)\ \mathcal{E}(\theta_y^*)
+	\sum\limits_{\vbox{\scriptsize\hbox{\hskip0.7mm events}\vskip-1mm\hbox{$t\, \in\, {\rm bin}$}}} \mathcal{A}(\theta^*_x, \theta_y^*)\ \mathcal{E}(\theta_y^*)
 	\ ,
 \end{equation}
 where $\Delta t$ is the width of the bin, $\mathcal{N}$ is a normalisation factor and the other symbols stand for various correction factors: $\mathcal{U}$ for unfolding of resolution effects, $\mathcal{B}$ for background subtraction, $\mathcal{A}$ for acceptance correction and $\mathcal{E}$ for detection and reconstruction efficiency.
@@ -149,7 +149,7 @@ Within the ``2RP'' analysis one may apply the cuts requiring the reconstructed-t
 \begin{center}
 \includegraphics{fig/cut_example.pdf}
 \caption{%
-Correlation plots for the elastic event selection cuts presented in Table~\ref{tab:cuts}, showing events from the LHC fill 5313 and with diagonal topology 45 bottom -- 56 top. The solid black lines delimit the signal region within $\pm 4\un{\sigma}$.
+Correlation plots for the elastic event selection cuts presented in Table~\ref{tab:cuts} (``2RP'' analysis), showing events from the LHC fill 5313 and with diagonal topology 45 bottom -- 56 top. The solid black lines delimit the signal region within $\pm 4\un{\sigma}$.
 }
 \label{fig:cuts}
 \end{center}
@@ -204,7 +204,7 @@ Comparison of $|t|$-distributions from different diagonal (signal + background) 
 \subsubsection{Acceptance Correction}
 \label{sec:acc corr}
 
-The acceptance for elastic protons is limited mostly by two factors: sensor coverage (relevant for low $|\theta^*_y|$) and LHC beam aperture (at $|\theta^*_y| \approx 100\un{\mu rad}$). Since the 210-fr units are tilted, while the 220-fr not, the thin windows do not overlap perfectly. Therefore there are phase space regions where protons need to traverse thick walls of 210-fr RP before being detected in 220-fr RP. This induces reduced detection efficiency difficult to determine precisely. Consequently these regions (close to the sensor edge facing the beam) have been excluded from the fiducial region used in the analysis, see the magenta lines in Figure~\ref{fig:acc corr princ}.
+The acceptance for elastic protons is limited mostly by two factors: sensor coverage (relevant for low $|\theta^*_y|$) and LHC beam aperture (at $|\theta^*_y| \approx 100\un{\mu rad}$). Since the 210-fr unit is tilted with respect to the 220-fr unit, the thin windows around sensors do not overlap perfectly. Therefore there are phase space regions where protons need to traverse thick walls of 210-fr RP before being detected in 220-fr RP. This induces reduced detection efficiency difficult to determine precisely. Consequently these regions (close to the sensor edge facing the beam) have been excluded from the fiducial region used in the analysis, see the magenta lines in Figure~\ref{fig:acc corr princ}.
 
 \begin{figure}
 \begin{center}
@@ -306,7 +306,7 @@ For the uncertainty estimate, the uncertainties of the $\theta_x^*$ and $\theta_
 \subsubsection{Normalisation}
 \label{sec:normalisation}
 
-The normalisation factor $\mathcal{N}$ is determined by requiring an integrated elastic cross-section $\sigma_{\rm el} = 31.0\un{mb}$ as recently obtained by TOTEM from a different $\sqrt s = 13\un{TeV}$ dataset \cite{totem-13tev-90m}. The elastic cross-section is extracted from the data in two parts. The first part sums the $\d\sigma/\d t$ histogram bins for $0.01 < |t| < 0.5\un{GeV^2}$. The second part corresponds to the integral over $0 < |t| < 0.01\un{GeV^2}$ of an exponential fitted to the data on the interval $0.01 < |t| < 0.05\un{GeV^2}$.
+The normalisation factor $\mathcal{N}$ is determined by requiring the integrated nuclear elastic cross-section to be $\sigma_{\rm el} = 31.0\un{mb}$ as recently obtained by TOTEM from a different $\sqrt s = 13\un{TeV}$ dataset \cite{totem-13tev-90m}. The elastic cross-section is extracted from the data in two parts. The first part sums the $\d\sigma/\d t$ histogram bins for $0.01 < |t| < 0.5\un{GeV^2}$. The second part corresponds to the integral over $0 < |t| < 0.01\un{GeV^2}$ of an exponential fitted to the data on the interval $0.01 < |t| < 0.05\un{GeV^2}$.
 
 The uncertainty of $\mathcal{N}$ is dominated by the $5.5\un{\%}$ uncertainty of $\sigma_{\rm el}$ from Ref.~\cite{totem-13tev-90m}.
 

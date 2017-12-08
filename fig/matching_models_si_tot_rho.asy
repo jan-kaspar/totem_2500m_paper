@@ -71,6 +71,9 @@ draw(Scale((0.546e3, 62.46))--Scale((1.8e3, 77.08))--Scale((2.76e3, 83.23))--Sca
 draw(shift(0, -0.8) * (Scale((0.546e3, 62.46))--Scale((1.8e3, 77.08))--Scale((2.76e3, 83.23))--Scale((7e3, 98.82))--Scale((8e3, 101.34))
 	--Scale((13e3, 111.19))), p_Durh+dashed);
 
+draw(shift(0, -1.3) * (Scale((0.546e3, 62.46))--Scale((1.8e3, 77.08))--Scale((2.76e3, 83.23))--Scale((7e3, 98.82))--Scale((8e3, 101.34))
+	--Scale((13e3, 111.19))), p_Durh+dashdotted);
+
 // TOTEM data
 real fshu = 0.02;
 
@@ -103,7 +106,7 @@ currentpad.yTicks = RightTicks(0.01, 0.005);
 scale(Log, Linear);
 
 // Nicolescu's 2017 paper
-draw(Scale((2.76e3, 0.123))--Scale((7e3, 0.109))--Scale((8e3, 0.106))--Scale((13e3, 0.0976)), nullpen, m_Nico);
+//draw(Scale((2.76e3, 0.123))--Scale((7e3, 0.109))--Scale((8e3, 0.106))--Scale((13e3, 0.0976)), nullpen, m_Nico);
 draw(RootGetObject(topDir + "model_2017.root", "g_rho_pp_vs_s"), p_Nico);
 
 // Durham model
@@ -115,12 +118,21 @@ draw(Scale((0.546e3, 0.1277))--Scale((1.8e3, 0.1228))--Scale((2.76e3, 0.1209))--
 //	--Scale((13e3, 0.1134))), p_Durh+dotted);
 
 // Durham model, with Odderon from note
-draw(Scale((0.546e3, 0.1277 - 0.8/62.46))
-	--Scale((1.8e3, 0.1228 - 0.8/77.08))
-	--Scale((2.76e3, 0.1209 - 0.8/83.23))
-	--Scale((7e3, 0.1166 - 0.8/98.82))
-	--Scale((8e3, 0.1159 - 0.8/101.34))
-	--Scale((13e3, 0.1134 - 0.8/111.19)), p_Durh+dashed);
+real si_tot_diff = 0.8;
+draw(Scale((0.546e3, 0.1277 - si_tot_diff/62.46))
+	--Scale((1.8e3, 0.1228 - si_tot_diff/77.08))
+	--Scale((2.76e3, 0.1209 - si_tot_diff/83.23))
+	--Scale((7e3, 0.1166 - si_tot_diff/98.82))
+	--Scale((8e3, 0.1159 - si_tot_diff/101.34))
+	--Scale((13e3, 0.1134 - si_tot_diff/111.19)), p_Durh+dashed);
+
+real si_tot_diff = 1.3;
+draw(Scale((0.546e3, 0.1277 - si_tot_diff/62.46))
+	--Scale((1.8e3, 0.1228 - si_tot_diff/77.08))
+	--Scale((2.76e3, 0.1209 - si_tot_diff/83.23))
+	--Scale((7e3, 0.1166 - si_tot_diff/98.82))
+	--Scale((8e3, 0.1159 - si_tot_diff/101.34))
+	--Scale((13e3, 0.1134 - si_tot_diff/111.19)), p_Durh+dashdotted);
 
 // TOTEM data
 DrawPoint(8e3, 0.12, 0.03, red+0.8pt, mCi+true+2pt+red);

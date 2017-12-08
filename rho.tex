@@ -1,10 +1,7 @@
-%TODO
-\newpage
-
 \section{Determination of $\rho$}
 \label{sec:rho}
 
-The value of the $\rho$ parameter can be extracted from the differential cross-section thanks to the effects of Coulomb-nuclear interference (CNI). Our modelling of these effects is summarised in Section \ref{sec:rho cni} and Section \ref{sec:rho anal} describes data fits and results.
+The value of the $\rho$ parameter can be extracted from the differential cross-section thanks to the effects of Coulomb-nuclear interference (CNI). Our modelling of these effects is summarised in Section \ref{sec:rho cni}, and Section \ref{sec:rho anal} describes data fits and results.
 
 %----------------------------------------------------------------------------------------------------
 \subsection{Coulomb-Nuclear Interference}
@@ -12,7 +9,7 @@ The value of the $\rho$ parameter can be extracted from the differential cross-s
 
 A detailed overview of different CNI descriptions was given in Ref.~\cite{totem-8tev-1km}, Section 6. Here we briefly summarise the choices used for the presented analysis.
 
-The Coulomb amplitude can be derived from QED. In the one-photon approximation it yields cross-section
+The Coulomb amplitude can be derived from QED. In the one-photon approximation it yields the cross-section
 \begin{equation}
 \label{eq:coul cs}
 	{\d\sigma^{\rm C}\over \d t} = {4\pi\alpha^2\over t^2}\,{\mathcal{F}}^4\ ,
@@ -33,7 +30,7 @@ Several parametrisations have been considered for the phase of the nuclear ampli
 \end{equation}
 will be retained in what follows. 
 
-We have used the most general interference formula available in the literature \cite{kl94}:
+We have used the most general interference formula available in the literature -- the ``KL'' formula \cite{kl94}:
 \begin{equation}
 \label{eq:int kl}
 	\begin{aligned}
@@ -42,18 +39,17 @@ We have used the most general interference formula available in the literature \
 		G(t) =& \int\limits_{-4p^2}^0 \d t'\, \log {t'\over t} {\d\phantom{t'}\over \d t'} {\cal F}^2(t')
 			  - \int\limits_{-4p^2}^0 \d t' \left( {{\cal A}^{\rm N}(t') \over {\cal A}^{\rm N}(t)} - 1 \right) { I(t, t')\over 2\pi }\ , \cr
 		I(t, t') =& \int_0^{2\pi} \d\phi\ {{\cal F}^2(t'')\over t''}\ ,\cr
-		t'' =& t + t' + 2\sqrt{t\, t'} \cos\phi\ .\cr
+		t'' =& t + t' + 2\sqrt{t\, t'} \cos\phi\ ,\cr
 	\end{aligned}
 \end{equation}
-
-The computer code from \cite{elegent} was used to calculate the effects of CNI.
+which is numerically almost identical to the formula by Cahn \cite{cahn82} as shown in \cite{totem-8tev-1km}. The CNI effects were calculated by the computer code from Ref.~\cite{elegent}.
 
 
 %----------------------------------------------------------------------------------------------------
 \subsection{Data fits}
 \label{sec:rho anal}
 
-The fits have been carried out with the standard least-squares method, in particular minimising
+The fits have been carried out with the standard least-squares method, minimising
 \begin{equation}
 \label{eq:chi sq A}
 	\chi^2 = \Delta^\T \mat V^{-1} \Delta\ ,\quad
@@ -62,7 +58,7 @@ The fits have been carried out with the standard least-squares method, in partic
 \end{equation}
 where $\Delta$ is a vector of differences between the differential cross-section data and a fit function $\d\sigma^{C+N}/\d t$ evaluated at the representative point $t^{\rm rep}$ of each bin~\cite{lafferty94}. The minimisation is repeated several times, and the representative points are updated between iterations. The covariance matrix $\mat V$ has two components. The diagonal of $\mat V_{\rm stat}$ contains the statistical uncertainty squared from Table~\ref{tab:data}, $\mat V_{\rm syst}$ includes all systematic uncertainty contributions except the normalisation, see Eq.~(\ref{eq:covar mat}). For improved fit stability, the normalisation uncertainty is not included in the $\chi^2$ definition. In order to propagate this uncertainty to the fit results, the fit is repeated with the normalisation adjusted by $+5.5\un{\%}$ and $-5.5\un{\%}$. For each fit parameter the mean deviation from the fit result with no normalisation adjustment is taken as the effect of normalisation uncertainty, which is then added quadratically to the uncertainty reported by the fit with no bias.
 
-The complete fit procedure has been validated with a Monte-Carlo study confirming that it has negligible bias. It also indicates the composition of the fit parameter uncertainties. For example, for a fit with $N_b = 1$ using data in the ``coarse binning'' up to $|t| = 0.07\un{GeV^2}$, the $\rho$ uncertainty due to the statistical uncertainties is about $0.004$, due the systematic uncertainties is about $0.003$ and due to the normalisation uncertainty is about $0.009$.
+The complete fit procedure has been validated with a Monte-Carlo study confirming that it has negligible bias. It also indicates the composition of the fit parameter uncertainties. For example, for a fit with $N_b = 1$ using data in the ``coarse binning'' up to $|t| = 0.07\un{GeV^2}$, the $\rho$ uncertainty due to the statistical uncertainties is about $0.004$, due to the systematic uncertainties is about $0.003$ and due to the normalisation uncertainty is about $0.009$.
 
 The fits have negligible dependence on the binning used (see Section~\ref{sec:binning}), the choice of electromagnetic form factor (see text below Eq.~(\ref{eq:coul cs})), the high-$|t|$ nuclear amplitude (see text below Eq.~(\ref{eq:nuc mod})), the choice of the nuclear amplitude phase (see text above Eq.~(\ref{eq:nuc phase con})), the number of fit iterations and the choice of start parameter values for the $\chi^2$ minimisation.
 
