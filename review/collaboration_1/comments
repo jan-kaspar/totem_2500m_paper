@@ -2,6 +2,8 @@
 
 * a more complete exploration (including peripherality) will be given in a forthcoming paper
 
+* line 21: B --> cross-section
+
 
 ----------------------------------------------------------------------------------------------------
 Valentina, 3 Dec
@@ -18,20 +20,16 @@ oral suggestions
 Marco, 4 Dec 2017
 ----------------------------------------------------------------------------------------------------
 
-> Title: complete by adding as last word exchange, after “three-gluon bound…”
-
 > Line 9: Why do we cite PDG edition of 2010? Shouldn’t we cite the most recent? 2016 has CITATION: C. Patrignani et al. (Particle Data Group), Chin. Phys. C, 40, 100001 (2016) and 2017 update.
 
 We quote what we use. The newer data (TOTEM, ALFA) are anyway treated separately.
 
 > Line 19: citation 4 and 9 should be moved after the part of the sentence they specifically refer to.  We refer to many features and we should find a quote for each one of them.
 
-> Line 28 these models are associated to the concept… in the 70’ by Nicolescu[7] and later confirmed…. By Lipatov[10] , as well as etc. may be move citation [27] to the end of the sentence.
-
 > Line 34 to 46: the argument here is a bit confused (hard to follow).  The idea of “where is best to look for the Odderon” is extensively and nicely explained in lines 527-542.  Either we move that paragraph here (still quite general) or we drop some of this 
-A possible way:    Line 46: “at low energies the amplitudes for this additional channels are dominated by those of the Pomeron(s) exchange ﬁrst, and by the Pomeron-photon exchange then, which explains the reasons why their effect has been difﬁcult to be detected experimentally.   The best experimental situation to detect these effects that are easily masked by larger ones in pp elastic scattering is to look at regions in which the Pomeron contribution is small (like in the region of the dip of the cross section) or at very small angles where it appears in the interference term when the nuclear and the coulomb cross section become equal.   This is the main reason for which the 2.5 km optics was designed.
+A possible way:    Line 46: “at low energies the amplitudes for this additional channels are dominated by those of the Pomeron(s) exchange first, and by the Pomeron-photon exchange then, which explains the reasons why their effect has been difficult to be detected experimentally.   The best experimental situation to detect these effects that are easily masked by larger ones in pp elastic scattering is to look at regions in which the Pomeron contribution is small (like in the region of the dip of the cross section) or at very small angles where it appears in the interference term when the nuclear and the coulomb cross section become equal.   This is the main reason for which the 2.5 km optics was designed.
 
-> Line 52: the theoretical models which are not excluded by this measurement require signiﬁcantly lower ρ  (the sentence bites itself…( non-excluded and consistent are almost… synonyms)
+> Line 52: the theoretical models which are not excluded by this measurement require significantly lower rho (the sentence bites itself…( non-excluded and consistent are almost… synonyms)
 
 
 
@@ -79,9 +77,6 @@ Simone, 8 Dec 2017
 
 4. The swap of two sentences in the Discussion section, in order to conclude it with the same concept as we make to conclude the Summary.
 
-5. Using the figure shown by Valery at the workshop: I think it is doable exactly because he has shown it at the workshop by himself
-    (otherwise we should have used the one of the preprint).
-
 7. Quote characterizing values of our t-distribution: dip position and its ordinate; first max position and its ordinate.
 
 I guess all (or almost all) the above has already been implemented. 
@@ -118,8 +113,6 @@ However, this is nearly not mentioned in the paper at the moment (title, abstrac
 
 4) L35, the explanation is not clear from the text, the whole paragraph should be accompanied by a reference (+ maybe pages, section) where a reader may find corresponding discussion  
 
-5) L36, "energythe" --> "energy the"
-
 6) Paragraph L42, it would be good to at least add a reference (+ maybe pages, section) where the authors discuss it and provide corresponding arguments. The Coulomb-hadronic interference is traditionally used for different things: subtraction of the Coulomb effect from data, constraining hadronic phase, determination of integrated hadronic cross sections, study t-dependence of hadronic amplitude and also dependence of hadronic collisions on impact parameter (in the eikonal model), etc. 
 
 7) Paragraph L50, which theoretical models? reference? Not all models are QCD based. It is not clear from the text what is meant by "non-excluded" theoretical models? 
@@ -128,60 +121,17 @@ However, this is nearly not mentioned in the paper at the moment (title, abstrac
 
 9) At the end of the introduction a paragraph explaining to a reader content of the paper (what is discussed in each section) could help improve readability. It is also good opportunity to clearly distinguish between measurement of dsigma/dt and different interpretations/fits of data.
 
-10) table 3, line 4, "The contribution...corresponds" or "The contributions...correspond"
-
-11) L386, better to write something like this: A detailed overview of different CNI descriptions including historical context was recently given in [A1], see also Section 6 in Ref. [5].
-
-12) L391, ...has been observed (see also [A1]).
-
-13) L392, "is modelled as" --> "may be parameterized as"
-
 14) L393, "in agreement with the experimental data" - it would be better to discuss it after performing the fits (some combination of the fits with this parameterization are later denoted as "not good").
 
 15) L402, it is not clear what is "the newly obtained rho value", it is discussed later in the text. Also here is the first place where motivation behind the simplified fits is mentioned. The motivation behind these simplified fits should be clearly explained in the introduction and in the summary.
 
-16) L407, ...in the literature [22] (see also recent revision in [A1]):
-
 17) It could be useful to move eq. 17 before parameterizations (15) and (16), explain that the hadronic amplitude may be parameterized and then discuss the parameterizations. Eq. 17 is now mentioned already at line 395
-
-18) Paragraph L421, uncertainties of rho are mentioned without context of central values.
-
-19) Figs 13a and 14a are difficult to discuss in public, figs similar to 13b and 14b in the region of low |t| values and showing separation of the Coulomb and hadronic interaction are easier to discuss.
 
 20) L455, formula [24] (as to the values of rho and sigma_tot)
 
-21) L546, L490, "fair comparison", should be better explained
-
-22) L480, missing value of sigma_tot
-23) L485, L487 (two times), L489: "data" --> "points"
-
-24) L487, "to give reasonable description of the data" --> "to give description of the points"
-
-25) L495, "The only correlation" there are also at least extrapolations outside measured region
-
-26) L507, "measurement" --> "values"
-
-27) L508, ", even less model dependent," --> ""; this paragraph should be accompanied by a reference or detailed explanation should be given
-
 28) Paragraph L512, a reference where it is discussed in details is needed 
 
-29) Paragraph L527, again a reference is missing
-
 29) L534, "often described" --> "often described (without any reasoning)"
-
-30) L544, "Durham model [31]", [31] is unpublished and it is not clear why it should be discussed in this paper at all. It is unclear what kind of a model it is (will be). While COMPETE and Nicolescu  models are pre-LHC (not fitted to LHC points, published much earlier, right?) the Durham model is to be published. A Durham model prediction, see fig 18, is made also in more limited region then the COMPETE or Nicolescu models. Can the Durham model describe also region of lower energies or not? One way or another, it looks like the Durham model is not treated on an equal footing as the other models. 
-
-31) As to the odderon and [30], see pages 4,5 and 6 in [B1]
-
-32) L557, missing value of sigma_tot
-
-33) L558 "data" --> "points"
-
-34) L561 "data" --> values of sigma_tot and rho; L562 "data" --> "determined values"
-
-35) Summary (Section 8): I would add a paragraph summarizing, in little bit more words, the performed measurement of dsigma/dt. It could be maybe useful to also mention at the end of this section that there are several open questions. E.g., at least, behaviour of elastic hadronic collisions in dependence on impact parameter and corresponding determination of t-dependence of hadronic phase (as discussed in [5]). 
-
-36) references are unsorted in the text, list of references: missing ending dots
 
 37) Title of the paper. I would recommend to use more descriptive, e.g., similar to [5]. In my opinion main result of the paper is related to the measured differential cross section (which will be reanalyzed in the future by many people).
 
