@@ -13,5 +13,5 @@ qvim -p \
 	discussion.tex \
 	conclusions.tex \
 	acknowledgements.tex \
-	bibliography.tex
+	bibliography.bib
 #	authorlist_cern.tex \
