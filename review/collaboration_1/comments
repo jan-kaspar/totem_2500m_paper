@@ -26,30 +26,6 @@ We quote what we use. The newer data (TOTEM, ALFA) are anyway treated separately
 
 > Line 19: citation 4 and 9 should be moved after the part of the sentence they specifically refer to.  We refer to many features and we should find a quote for each one of them.
 
-> Line 34 to 46: the argument here is a bit confused (hard to follow).  The idea of “where is best to look for the Odderon” is extensively and nicely explained in lines 527-542.  Either we move that paragraph here (still quite general) or we drop some of this 
-A possible way:    Line 46: “at low energies the amplitudes for this additional channels are dominated by those of the Pomeron(s) exchange first, and by the Pomeron-photon exchange then, which explains the reasons why their effect has been difficult to be detected experimentally.   The best experimental situation to detect these effects that are easily masked by larger ones in pp elastic scattering is to look at regions in which the Pomeron contribution is small (like in the region of the dip of the cross section) or at very small angles where it appears in the interference term when the nuclear and the coulomb cross section become equal.   This is the main reason for which the 2.5 km optics was designed.
-
-> Line 52: the theoretical models which are not excluded by this measurement require significantly lower rho (the sentence bites itself…( non-excluded and consistent are almost… synonyms)
-
-
-
-----------------------------------------------------------------------------------------------------
-Fredrik, 4 Dec 2017
-----------------------------------------------------------------------------------------------------
-
-> Figures 1-16: 
-> -> in text references, mostly referred to as "Figure N", only Fig.s 1&2 as "Fig.N"
-> -> however, Figure label always calls itself "Fig.N"
-> -> invert these, spell out "Figure ##" in figure label, and abbreviate "Fig.##" in text, except at the beginning of sentences.
-
-"Figure" used consistently in the text. The rest is question of style and will be done according to the guidelines of the selected journal.
-
-> L79: two topologies, called “diagonals”
-> -> later in the paper, if we use either of these diagonals as labels, call them the same as in the 13TeV total cross section paper, diag "1" & "2"
-> -> See Fig.2 point legend: blue/green is diag 1/2 (or 2/1, check 13TeV-tot-paper), and likewise Figs 4-7
-> -> although you talk also of the antidiagonals, so might not be worth the effort to change all this terminology (antidiagonal names=upper & lower, for example?)
-
-We have rather long tradition of referring to the diagonals as e.g.~"45 top - 56 bottom" and I don't think it has any benefits to introduce another scheme.
 
 
 
@@ -138,3 +114,10 @@ However, this is nearly not mentioned in the paper at the moment (title, abstrac
 [A1] J. Prochazka and V. Kundrat, arXiv:1606.09479
 
 [B1] J. Prochazka, M. V. Lokajicek, V. Kundrat, Description of elastic pp scattering at high energies - open problems and questions, last collaboration week, https://indico.cern.ch/event/684050/contributions/2804039/attachments/1567976/2473194/2017_11_prochazka_es_problems_and_questions.pdf
+
+----------------------------------------------------------------------------------------------------
+Ken, 11 Dec 2017
+----------------------------------------------------------------------------------------------------
+
+By the way shouldn't we also quote P-values for the Durham model without the Odderon.
+
