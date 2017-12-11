@@ -20,10 +20,6 @@ oral suggestions
 Marco, 4 Dec 2017
 ----------------------------------------------------------------------------------------------------
 
-> Line 9: Why do we cite PDG edition of 2010? Shouldn’t we cite the most recent? 2016 has CITATION: C. Patrignani et al. (Particle Data Group), Chin. Phys. C, 40, 100001 (2016) and 2017 update.
-
-We quote what we use. The newer data (TOTEM, ALFA) are anyway treated separately.
-
 > Line 19: citation 4 and 9 should be moved after the part of the sentence they specifically refer to.  We refer to many features and we should find a quote for each one of them.
 
 
@@ -74,46 +70,7 @@ Then the following point, which we discussed at the beginning but we have practi
      the first evidence for all of them. Please feel free to elaborate on the sentence above and improve it as you wish
      (also because if it has to appear in more than one place we should better have several different wordings).
 
-----------------------------------------------------------------------------------------------------
-Jiří, 8 Dec 2017
-----------------------------------------------------------------------------------------------------
 
-1) 2/3 of the paper are devoted to the measurement of dsigma/dt at 13 TeV in the given t-region including very detailed explanation of individual steps, all the very interesting plots openly showing the details, etc.  These 2/3 are clearly and very well written in my opinion. I see here big progress with respect to the past measurements (e.g., ISR) as many details are documented now (in this paper and/or in the previous papers by TOTEM, as far as I know it is the most detailed explanation of the measurement of elastic dsigma/dt). The final values together with discussion of the method of measurement represent important result by itself. It is also the main result of this paper in my opinion - this experimental info will serve as an input to many future analyses.
-
-However, this is nearly not mentioned in the paper at the moment (title, abstract, summary...). In my opinion it would deserve clear highlight (title, abstract, summary...).
-
-2) It is already mentioned in the abstract that determination of the rho parameter is based on several assumptions (many more then measured dsigma/dt). Therefore, "measurement of rho" is quite misleading (3 times in the abstract). It would be better to rather write "determination of rho". It is also misleading to denote is as "data" (similarly as for sigma_tot); this concerns, e.g., L6, L8, L13 (and probably more).
-
-
-3) Paragraph L18: It is not clear from where the sophistication should come from. In recent paper [30] there are many unexplained aspects of the whole model (based on Regge theory), see pages 4,5 and 6 in [B1] (similar problems may be identified and questions asked in many similar approaches). As to the "modern QCD [8]" - I don't see any plot in [8] (comparison/application of the model to experimental data given by dsigma/dt) where one could find demonstration of the aspects mentioned in this paragraph.
-
-4) L35, the explanation is not clear from the text, the whole paragraph should be accompanied by a reference (+ maybe pages, section) where a reader may find corresponding discussion  
-
-6) Paragraph L42, it would be good to at least add a reference (+ maybe pages, section) where the authors discuss it and provide corresponding arguments. The Coulomb-hadronic interference is traditionally used for different things: subtraction of the Coulomb effect from data, constraining hadronic phase, determination of integrated hadronic cross sections, study t-dependence of hadronic amplitude and also dependence of hadronic collisions on impact parameter (in the eikonal model), etc. 
-
-7) Paragraph L50, which theoretical models? reference? Not all models are QCD based. It is not clear from the text what is meant by "non-excluded" theoretical models? 
-
-8) L55, "evidence", testing of models of elastic scattering is much more delicate than just comparing values of rho (and/or sigma_tot). Again, a reference to a paper where the authors see it like this and make corresponding conclusions would be surely useful to a reader. Note, that inverse scattering problem is extremely complicated (structure of collided particles are not known but looked for). One necessary needs to introduce some simplifications and approximation in description. If new ideas are tested already very rough fits of data may be sufficient to make progress (often just changing e.g. parameterization or adding some extra terms do not really solve or show anything useful even if chi**2 may decrease and one can have "good" fit).
-
-9) At the end of the introduction a paragraph explaining to a reader content of the paper (what is discussed in each section) could help improve readability. It is also good opportunity to clearly distinguish between measurement of dsigma/dt and different interpretations/fits of data.
-
-14) L393, "in agreement with the experimental data" - it would be better to discuss it after performing the fits (some combination of the fits with this parameterization are later denoted as "not good").
-
-15) L402, it is not clear what is "the newly obtained rho value", it is discussed later in the text. Also here is the first place where motivation behind the simplified fits is mentioned. The motivation behind these simplified fits should be clearly explained in the introduction and in the summary.
-
-17) It could be useful to move eq. 17 before parameterizations (15) and (16), explain that the hadronic amplitude may be parameterized and then discuss the parameterizations. Eq. 17 is now mentioned already at line 395
-
-20) L455, formula [24] (as to the values of rho and sigma_tot)
-
-28) Paragraph L512, a reference where it is discussed in details is needed 
-
-29) L534, "often described" --> "often described (without any reasoning)"
-
-37) Title of the paper. I would recommend to use more descriptive, e.g., similar to [5]. In my opinion main result of the paper is related to the measured differential cross section (which will be reanalyzed in the future by many people).
-
-[A1] J. Prochazka and V. Kundrat, arXiv:1606.09479
-
-[B1] J. Prochazka, M. V. Lokajicek, V. Kundrat, Description of elastic pp scattering at high energies - open problems and questions, last collaboration week, https://indico.cern.ch/event/684050/contributions/2804039/attachments/1567976/2473194/2017_11_prochazka_es_problems_and_questions.pdf
 
 ----------------------------------------------------------------------------------------------------
 Ken, 11 Dec 2017
