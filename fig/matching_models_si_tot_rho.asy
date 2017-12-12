@@ -9,8 +9,7 @@ ySizeDef = 4.8cm;
 
 drawGridDef = false;
 
-pen p_Nico = blue, p_Durh = heavygreen, p_Durh_odd = p_Durh+dashed;
-mark m_Nico = mTU + 2pt + blue, m_Durh = mTD + 2pt + heavygreen;
+pen p_Nico = blue, p_Durh = black, p_Durh_odd08 = magenta, p_Durh_odd13 = heavygreen;
 
 //----------------------------------------------------------------------------------------------------
 
@@ -64,15 +63,18 @@ scale(Log, Linear);
 draw(RootGetObject(topDir + "model_2017.root", "g_si_tot_pp_vs_s"), p_Nico);
 
 // Durham model, without Odderon
-draw(Scale((0.546e3, 62.46))--Scale((1.8e3, 77.08))--Scale((2.76e3, 83.23))--Scale((7e3, 98.82))--Scale((8e3, 101.34))
-	--Scale((13e3, 111.19)), p_Durh);
+draw(
+	Scale((0.546e3, 62.46))--Scale((1.8e3, 77.08))--Scale((2.76e3, 83.23))--Scale((7e3, 98.82))--Scale((8e3, 101.34))--Scale((13e3, 111.19))--Scale((100e3, 166.2))
+	, p_Durh);
 
 // Durham model, with Odderon from note
-draw(shift(0, -0.8) * (Scale((0.546e3, 62.46))--Scale((1.8e3, 77.08))--Scale((2.76e3, 83.23))--Scale((7e3, 98.82))--Scale((8e3, 101.34))
-	--Scale((13e3, 111.19))), p_Durh+dashed);
+draw(shift(0, -0.8) * (
+	Scale((0.546e3, 62.46))--Scale((1.8e3, 77.08))--Scale((2.76e3, 83.23))--Scale((7e3, 98.82))--Scale((8e3, 101.34))--Scale((13e3, 111.19))--Scale((100e3, 166.2))
+	), p_Durh_odd08);
 
-draw(shift(0, -1.3) * (Scale((0.546e3, 62.46))--Scale((1.8e3, 77.08))--Scale((2.76e3, 83.23))--Scale((7e3, 98.82))--Scale((8e3, 101.34))
-	--Scale((13e3, 111.19))), p_Durh+dashdotted);
+draw(shift(0, -1.3) * (
+	Scale((0.546e3, 62.46))--Scale((1.8e3, 77.08))--Scale((2.76e3, 83.23))--Scale((7e3, 98.82))--Scale((8e3, 101.34))--Scale((13e3, 111.19))--Scale((100e3, 166.2))
+	), p_Durh_odd13);
 
 // TOTEM data
 real fshu = 0.02;
@@ -92,10 +94,12 @@ limits((1e2, 35), (2e4, 120), Crop);
 
 DrawAxes(47);
 
-AddToLegend("ref.~TOTEM measurements", red, mCi+2pt+red);
-AddToLegend("model by Nicolescu et al.", p_Nico);
-AddToLegend("Durham model", p_Durh);
-AttachLegend(BuildLegend(NW, vSkip=-1mm, lineLength=7mm), NW);
+AddToLegend("ref.~TOTEM meas.", red, mCi+2pt+red);
+AddToLegend("Nicolescu et al.", p_Nico);
+AddToLegend("Durham, no Odderon", p_Durh);
+AddToLegend("Durham, Odd.~$0.8\un{mb}$", p_Durh_odd08);
+AddToLegend("Durham, Odd.~$1.3\un{mb}$", p_Durh_odd13);
+AttachLegend(BuildLegend(NW, vSkip=-1mm, lineLength=6mm, ymargin=0), NW);
 
 
 //----------------------------------------------------------------------------------------------------
@@ -111,11 +115,7 @@ draw(RootGetObject(topDir + "model_2017.root", "g_rho_pp_vs_s"), p_Nico);
 
 // Durham model
 draw(Scale((0.546e3, 0.1277))--Scale((1.8e3, 0.1228))--Scale((2.76e3, 0.1209))--Scale((7e3, 0.1166))--Scale((8e3, 0.1159))
-	--Scale((13e3, 0.1134)), p_Durh);
-
-// Durham model, with Odderon from personal discussion
-//draw(shift(0, -0.015) * (Scale((0.546e3, 0.1277))--Scale((1.8e3, 0.1228))--Scale((2.76e3, 0.1209))--Scale((7e3, 0.1166))--Scale((8e3, 0.1159))
-//	--Scale((13e3, 0.1134))), p_Durh+dotted);
+	--Scale((13e3, 0.1134))--Scale((100e3, 0.102)), p_Durh);
 
 // Durham model, with Odderon from note
 real si_tot_diff = 0.8;
@@ -124,7 +124,9 @@ draw(Scale((0.546e3, 0.1277 - si_tot_diff/62.46))
 	--Scale((2.76e3, 0.1209 - si_tot_diff/83.23))
 	--Scale((7e3, 0.1166 - si_tot_diff/98.82))
 	--Scale((8e3, 0.1159 - si_tot_diff/101.34))
-	--Scale((13e3, 0.1134 - si_tot_diff/111.19)), p_Durh+dashed);
+	--Scale((13e3, 0.1134 - si_tot_diff/111.19))
+	--Scale((100e3, 0.102 - si_tot_diff/166.2))
+		, p_Durh_odd08);
 
 real si_tot_diff = 1.3;
 draw(Scale((0.546e3, 0.1277 - si_tot_diff/62.46))
@@ -132,7 +134,9 @@ draw(Scale((0.546e3, 0.1277 - si_tot_diff/62.46))
 	--Scale((2.76e3, 0.1209 - si_tot_diff/83.23))
 	--Scale((7e3, 0.1166 - si_tot_diff/98.82))
 	--Scale((8e3, 0.1159 - si_tot_diff/101.34))
-	--Scale((13e3, 0.1134 - si_tot_diff/111.19)), p_Durh+dashdotted);
+	--Scale((13e3, 0.1134 - si_tot_diff/111.19))
+	--Scale((100e3, 0.102 - si_tot_diff/166.2))
+		, p_Durh_odd13);
 
 // TOTEM data
 DrawPoint(8e3, 0.12, 0.03, red+0.8pt, mCi+true+2pt+red);
