@@ -1,15 +1,3 @@
-* emphasize/explicitly mention: rho is not a direct measurement, but a determination based on assumptions => thus we want to do an exploration
-
-* a more complete exploration (including peripherality) will be given in a forthcoming paper
-
-* from Simone:
-anyway please look at the way D0 actually published their data, how they quoted us, and indeed it represents evidence of the difference between pp and ppbar in the dip
-IN THE TEV ENERGY RANGE (no low energy "excuses").
-I think we should refer to this paper explicitly, e.g. wherever we mention the effects in the dip region to be a classic possibility to probe the Odderon.
-Note also that Burrelly reproduces well the ppbar data (soft dip) failing with the 7 TeV pp data (deep dip),
-while Durham reproduces well the pp data at 7 TeV (deep dip) failing clearly with the ppbar D0 data (soft dip),
-therefore the "split" (filling ppbar and deepening pp) due to the Odderon seems needed to explain everything.
-
 * from Marco: using paper WHY THE REAL PART OF THE PROTON-PROTON FORWARD SCATTERING AMPLITUDE SHOULD BE MEASURED AT THE LHC ?
 
 
@@ -34,29 +22,3 @@ Simone, 8 Dec 2017
 ----------------------------------------------------------------------------------------------------
 
 4. The swap of two sentences in the Discussion section, in order to conclude it with the same concept as we make to conclude the Summary.
-
-Then the following point, which we discussed at the beginning but we have practically not used anymore due to the promising results for the Odderon:
-
-8. The slides (and the talk) of Valery yesterday have shown that we have to be more careful trusting the support they will give to the Odderon,
-    they are very motivated to show that Nicolescu is wrong with the maximal Odderon, and we cannot exclude that after analyzing the
-    differential cross-section Ryskin will say that after all they can do pretty well also without the Odderon.
-    Remember that Durham is also proud of their rescattering effects which have to saturate the cross-section growth differently from asymptotic limits,
-    and I saw several times they are tempted to say that the lower rho values we are finding could indicate just a slowing down of the total cross-section
-    at higher energies (there are counter-arguments for that, I discussed with Valery yesterday and he fully agreed, but again you never know what they will write).
-    ON THE BASIS OF ALL THE ABOVE, IN ORDER NOT TO LEAVE GROUND NEITHER TO THEORISTS NOR TO Alfa, WE SHOULD KEEP THE SCIENTIFIC PRIORITY
-    AND OWNERSHIP ALSO FOR THIS POSSIBILITY, IN CASE IT WILL TURN OUT IN 100 YEARS THAT THE ODDERON DOES NOT EXIST.
-    THEREFORE WE SHOULD FIT A SENTENCE IN FEW KEY PLACES (INTRODUCTION, DISCUSSION AND SUMMARY ?) STATING THAT :
-    "IF IT WILL BE DEMONSTRATED THAT THE ODDERON EFFECT DOES NOT EXIST, THE PRESENT TOTEM RESULTS AT 13 TEV REPRESENT THE FIRST
-     EXPERIMENTAL EVIDENCE FOR, AND PREDICT THAT, THE TOTAL CROSS-SECTION GROWTH SLOWS DOWN AT HIGHER ENERGIES DEVIATING FROM
-     CURRENT ASYMPTOTIC-LIKE BEHAVIOUR".
-     Of course this should be made without weakening the 3-gluons case, however we should really close the ground for all possibilities and our data should be
-     the first evidence for all of them. Please feel free to elaborate on the sentence above and improve it as you wish
-     (also because if it has to appear in more than one place we should better have several different wordings).
-
-
-
-----------------------------------------------------------------------------------------------------
-Ken, 11 Dec 2017
-----------------------------------------------------------------------------------------------------
-
-By the way shouldn't we also quote P-values for the Durham model without the Odderon.
