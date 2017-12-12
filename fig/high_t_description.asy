@@ -131,7 +131,9 @@ void MakeRelativePlot(string f, string binning, real t_max)
 
 void MakeFitPlots(string f, string binning)
 {
-	xSizeDef = 4.5cm;
+	xSizeDef = 7.5cm;
+
+	TH1_x_max = 0.99;
 
 	RootObject data_ih = RootGetObject(f, "h_input_dataset_0");
 	//RootObject data_unc_stat = RootGetObject(f, "g_data_coll_unc_stat");
@@ -142,21 +144,23 @@ void MakeFitPlots(string f, string binning)
 	scale(Linear, Log);
 	//currentpad.xTicks = LeftTicks(0.005, 0.001);
 
+	/*
 	for (int ui : unc_types.keys)
 	{
 		RootObject relUnc = RootGetObject(unc_file, "matrices/" + unc_types[ui] + "/" + binning + "/h_stddev");
 		DrawUncBand(fit, relUnc, unc_pens[ui]);
-		//AddToLegend(unc_labels[ui], mSq+6pt+unc_pens[ui]);
+		AddToLegend(unc_labels[ui], mSq+6pt+unc_pens[ui]);
 	}
+	*/
 
-	draw(fit, "l", red+1pt);
-	draw(data_ih, "eb", black);
+	draw(fit, "l", red+1pt, "fit");
+	draw(data_ih, "eb", black, "data with statistical uncertainty");
 	//draw(data_unc_full, "p", heavygreen+squarecap+3pt);
 	//draw(data_unc_stat, "p", blue+squarecap, mCi+blue+1pt);
 
-	limits((0, 1e-2), (1., 1e3), Crop);
+	limits((0.2, 1e-2), (1., 1e1), Crop);
 
-	AttachLegend(NE, NE);
+	AttachLegend(BuildLegend(NE, lineLength=6mm, vSkip=-1mm), NE);
 }
 
 //----------------------------------------------------------------------------------------------------
@@ -167,17 +171,17 @@ void PlotOne(string expn, string binning, string tmax, real t_max, string f_out)
 
 	write("* " + f_in);
 
-	MakeRelativePlot(f_in, binning, t_max);
+	//MakeRelativePlot(f_in, binning, t_max);
 	//MakeComponentPlots(f_in);
-	//MakeFitPlots(f_in, binning);
+	MakeFitPlots(f_in, binning);
 
-	GShipout(f_out, margin=0.5mm, hSkip=3mm);
+	GShipout(margin=0.5mm, hSkip=3mm);
 }
 
 //----------------------------------------------------------------------------------------------------
 
 string binning = "ob-2-10-0.05";
 
-PlotOne("exp1", binning, "0.07", 0.07, "fit_details_exp1_0p07.pdf");
+//PlotOne("exp1", binning, "0.07", 0.07, "fit_details_exp1_0p07.pdf");
 
 PlotOne("exp3", binning, "0.15", 0.15, "fit_details_exp3_0p15.pdf");

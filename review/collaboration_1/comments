@@ -2,8 +2,6 @@
 
 * a more complete exploration (including peripherality) will be given in a forthcoming paper
 
-* line 21: B --> cross-section
-
 * from Simone:
 anyway please look at the way D0 actually published their data, how they quoted us, and indeed it represents evidence of the difference between pp and ppbar in the dip
 IN THE TEV ENERGY RANGE (no low energy "excuses").
@@ -13,7 +11,6 @@ while Durham reproduces well the pp data at 7 TeV (deep dip) failing clearly wit
 therefore the "split" (filling ppbar and deepening pp) due to the Odderon seems needed to explain everything.
 
 * from Marco: using paper WHY THE REAL PART OF THE PROTON-PROTON FORWARD SCATTERING AMPLITUDE SHOULD BE MEASURED AT THE LHC ?
-
 
 
 ----------------------------------------------------------------------------------------------------
@@ -28,7 +25,8 @@ Mario, 7 Dec 2017
 Karsten, 8 Dec 2017
 ----------------------------------------------------------------------------------------------------
 
-> Fig. 13 and 14: show the high-t part just once; separate figure would help the readability
+> Fig. 18: Durham model in diff. colours
+ + cross-check: overlap with original plot from Durham
 
 > add a reference to O. Nachtman(n)
 
@@ -40,9 +38,6 @@ Simone, 8 Dec 2017
 
 4. The swap of two sentences in the Discussion section, in order to conclude it with the same concept as we make to conclude the Summary.
 
-7. Quote characterizing values of our t-distribution: dip position and its ordinate; first max position and its ordinate.
-
-I guess all (or almost all) the above has already been implemented. 
 Then the following point, which we discussed at the beginning but we have practically not used anymore due to the promising results for the Odderon:
 
 8. The slides (and the talk) of Valery yesterday have shown that we have to be more careful trusting the support they will give to the Odderon,
@@ -68,4 +63,3 @@ Ken, 11 Dec 2017
 ----------------------------------------------------------------------------------------------------
 
 By the way shouldn't we also quote P-values for the Durham model without the Odderon.
-
