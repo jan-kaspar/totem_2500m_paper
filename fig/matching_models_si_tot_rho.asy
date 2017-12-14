@@ -9,7 +9,8 @@ ySizeDef = 4.8cm;
 
 drawGridDef = false;
 
-pen p_Nico = blue, p_Durh = black, p_Durh_odd08 = magenta, p_Durh_odd13 = heavygreen;
+pen p_Nico_2007 = blue + dashed, p_Nico_2017 = blue;
+pen p_Durh = black, p_Durh_odd08 = magenta, p_Durh_odd13 = heavygreen;
 
 //----------------------------------------------------------------------------------------------------
 
@@ -60,7 +61,8 @@ scale(Log, Linear);
 
 // Nicolescu's 2017 paper
 //draw(Scale((2.76e3, 83.66))--Scale((7e3, 98.76))--Scale((8e3, 101.09))--Scale((13e3, 109.92)), nullpen, m_Nico);
-draw(RootGetObject(topDir + "model_2017.root", "g_si_tot_pp_vs_s"), p_Nico);
+draw(RootGetObject(topDir + "model_2007.root", "g_si_tot_pp_vs_s"), p_Nico_2007);
+draw(RootGetObject(topDir + "model_2017.root", "g_si_tot_pp_vs_s"), p_Nico_2017);
 
 // Durham model, without Odderon
 draw(
@@ -94,8 +96,9 @@ limits((1e2, 35), (2e4, 120), Crop);
 
 DrawAxes(47);
 
-AddToLegend("ref.~TOTEM meas.", red, mCi+2pt+red);
-AddToLegend("Nicolescu et al.", p_Nico);
+//AddToLegend("ref.~TOTEM meas.", red, mCi+2pt+red);
+AddToLegend("Nicolescu et al. (2007)", p_Nico_2007);
+AddToLegend("Nicolescu et al. (2017)", p_Nico_2017);
 AddToLegend("Durham, no Odderon", p_Durh);
 AddToLegend("Durham, Odd.~$0.8\un{mb}$", p_Durh_odd08);
 AddToLegend("Durham, Odd.~$1.3\un{mb}$", p_Durh_odd13);
@@ -110,8 +113,9 @@ currentpad.yTicks = RightTicks(0.01, 0.005);
 scale(Log, Linear);
 
 // Nicolescu's 2017 paper
+draw(RootGetObject(topDir + "model_2007.root", "g_rho_pp_vs_s"), p_Nico_2007);
 //draw(Scale((2.76e3, 0.123))--Scale((7e3, 0.109))--Scale((8e3, 0.106))--Scale((13e3, 0.0976)), nullpen, m_Nico);
-draw(RootGetObject(topDir + "model_2017.root", "g_rho_pp_vs_s"), p_Nico);
+draw(RootGetObject(topDir + "model_2017.root", "g_rho_pp_vs_s"), p_Nico_2017);
 
 // Durham model
 draw(Scale((0.546e3, 0.1277))--Scale((1.8e3, 0.1228))--Scale((2.76e3, 0.1209))--Scale((7e3, 0.1166))--Scale((8e3, 0.1159))
@@ -147,6 +151,9 @@ fsh = +1fshu; DrawPoint(13e3, 0.09, 0.01, red+0.8pt, mCi+true+2pt+red);
 limits((1e2, 0.05), (2e4, 0.16), Crop);
 
 DrawAxes(0.065);
+
+AddToLegend("ref.~TOTEM meas.", red, mCi+2pt+red);
+AttachLegend(BuildLegend(NE, vSkip=-1mm, lineLength=6mm, ymargin=0), NE);
 
 //----------------------------------------------------------------------------------------------------
 
