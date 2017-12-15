@@ -36,12 +36,12 @@ z_t_mins.push(0e-4);z_t_maxs.push(0.2); z_t_Steps.push(0.05); z_t_steps.push(0.0
 
 void AddLeadingModes()
 {
-	AddMode("$\th_y^*$ shift, L-R sym., T-B corr.", red,
+	AddMode("$\theta_y^*$ shift, L-R sym., T-B corr.", red,
 		"", "sh-thy", 1,
 		"", "sh-thy", 1
 	);
 
-	AddMode("$\th_{x,y}^*$ scaling, mode 3", blue,
+	AddMode("$\theta_{x,y}^*$ scaling, mode 3", blue,
 		"", "sc-thxy-mode3", 1,
 		"", "sc-thxy-mode3", 1
 	);

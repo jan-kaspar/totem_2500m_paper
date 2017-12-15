@@ -58,7 +58,7 @@ void DrawFullArc(real th)
 
 for (int dsi : dataSets.keys)
 {
-	NewPad("$\th_x^{*}\ung{\mu rad}$", "$\th_y^{*}\ung{\mu rad}$");
+	NewPad("$\theta_x^{*}\ung{\mu rad}$", "$\theta_y^{*}\ung{\mu rad}$");
 	scale(Linear, Linear, Log);
 	//TH2_zLabel = "(corrected) events per bin";
 	//TH2_paletteBarWidth = 0.05;
@@ -104,7 +104,7 @@ for (int dsi : dataSets.keys)
 
 	/*
 	real o = 0.;
-	label("$\th^*\!=$", (50, 0), 0.5W, Fill(white+opacity(o)));
+	label("$\theta^*\!=$", (50, 0), 0.5W, Fill(white+opacity(o)));
 	label(rotate(-90)*Label("\SmallerFonts $\rm\mu rad$"), (165, 0), 0.5E, Fill(white+opacity(o)));
 	for (real th : thetas)
 		label(rotate(-90)*Label(format("\SmallerFonts $%.0f$", th)), (th, 0), 0.5E, Fill(white+opacity(o)));

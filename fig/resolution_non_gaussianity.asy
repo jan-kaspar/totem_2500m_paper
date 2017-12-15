@@ -21,8 +21,8 @@ diagonals.push("45b_56t"); dgn_labels.push("45b -- 56t"); dgn_pens.push(red);
 
 string quantities[], q_file_tags[], q_labels[];
 real q_fit_maxs[], q_ranges[];
-quantities.push("th_x"); q_file_tags.push("_dx"); q_labels.push("\th^{*\rm R}_x - \th^{*\rm L}_x"); q_fit_maxs.push(50); q_ranges.push(60);
-//quantities.push("th_y"); q_file_tags.push("_dy"); q_labels.push("\th^{*R}_y - \th^{*L}_y"); q_fit_maxs.push(1.5); q_ranges.push(2);
+quantities.push("th_x"); q_file_tags.push("_dx"); q_labels.push("\theta^{*\rm R}_x - \theta^{*\rm L}_x"); q_fit_maxs.push(50); q_ranges.push(60);
+//quantities.push("th_y"); q_file_tags.push("_dy"); q_labels.push("\theta^{*R}_y - \theta^{*L}_y"); q_fit_maxs.push(1.5); q_ranges.push(2);
 
 //----------------------------------------------------------------------------------------------------
 

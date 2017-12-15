@@ -15,7 +15,7 @@ string dgn_labels[] = { "45 bot -- 56 top", "45 bot -- 56 bot", "45 top -- 56 to
 //----------------------------------------------------------------------------------------------------
 
 
-NewPad("$\th_x^{*\rm R} - \th_x^{*\rm L}\ung{\mu rad}$", "events per bin", xTicks=LeftTicks(50., 10.));
+NewPad("$\theta_x^{*\rm R} - \theta_x^{*\rm L}\ung{\mu rad}$", "events per bin", xTicks=LeftTicks(50., 10.));
 scale(Linear, Log(true));
 
 AddToLegend("<no cuts:");
