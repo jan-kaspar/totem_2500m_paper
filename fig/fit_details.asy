@@ -81,6 +81,9 @@ void DrawRelUncBand(RootObject bc, RootObject relUnc, RootObject ref, pen p)
 			real w = relUnc.rExec("GetBinWidth", bi);
 			real rel_unc = relUnc.rExec("GetBinContent", bi);
 
+			if (c > TH1_x_max)
+				break;
+
 			real band_cen = bc.rExec("Eval", c);
 			real y_ref = ref.rExec("Eval", c);
 
@@ -100,6 +103,9 @@ void DrawRelUncBand(RootObject bc, RootObject relUnc, RootObject ref, pen p)
 
 void MakeRelativePlot(string f, string binning, real t_max)
 {
+	TGraph_x_max = t_max * 1.1;
+	TH1_x_max = t_max * 1.1;
+
 	xSizeDef = 7.5cm;
 
 	NewPad("$|t|\ung{GeV^2}$", "${\d\sigma/\d t - \hbox{ref}\over\hbox{ref}}\ ,\quad " + ref_label + "$");
