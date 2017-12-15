@@ -79,7 +79,7 @@ void PlotAllModes()
 		}
 	}
 
-	pen p_envelope = black+1pt;
+	pen p_envelope = black;
 	draw(scale(1, +100), RootGetObject(f, "matrices/all-but-norm/"+binning+"/h_stddev"), "vl", p_envelope);
 	draw(scale(1, -100), RootGetObject(f, "matrices/all-but-norm/"+binning+"/h_stddev"), "vl", p_envelope);
 	AddToLegend("$\pm 1\un{\si}$ envelope", p_envelope);

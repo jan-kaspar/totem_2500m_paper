@@ -77,7 +77,7 @@ void DrawUncBand(RootObject bc, RootObject relUnc, pen p)
 
 //----------------------------------------------------------------------------------------------------
 
-void PlotEverything()
+void PlotEverything(pen p_data = black + 0.8pt)
 {
 	AddToLegend("<systematic uncertainties:");
 	for (int ui : unc_types.keys)
@@ -89,7 +89,7 @@ void PlotEverything()
 	}
 
 	AddToLegend("<data with statistical uncertainties:");
-	draw(RootGetObject(topDir+"DS-merged/merged.root", binning + "/merged/" + diagonal + "/h_dsdt"), "d0,eb", black+0.8pt);
+	draw(RootGetObject(topDir+"DS-merged/merged.root", binning + "/merged/" + diagonal + "/h_dsdt"), "d0,eb", p_data);
 	AddToLegend("data", mPl+4pt+(black+0.8pt));
 }
 
@@ -100,7 +100,7 @@ currentpicture = inset;
 
 unitsize(4500mm, 0.055mm);
 
-PlotEverything();
+PlotEverything(black + 0.5pt);
 
 currentpad.xTicks = LeftTicks(0.002, 0.001);
 limits((0, 400), (0.01, 1000), Crop);

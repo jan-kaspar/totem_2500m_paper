@@ -3,7 +3,7 @@
 
 The analysis method is very similar to the previously published one \cite{totem-8tev-1km}. The only important difference stems from using different RPs for the measurement: unit 210-fr instead of 220-nr as in \cite{totem-8tev-1km} since the latter was not equipped with sensors anymore. Due to the optics and beam parameters the unit 210-fr has worse low-$|t|$ acceptance, further deteriorated by the tilt of the unit (effectively increasing the RP distance from the beam). Consequently, in order to maintain the low-$|t|$ reach essential for this study, the main analysis (denoted ``2RP'') only uses the 220-fr units (thus 2 RPs per diagonal). Since not using the 210-nr units may, in principle, result in worse resolution and background suppression, for control reasons, the traditional analysis with 4 units per diagonal (denoted ``4RP'') was pursued, too. In Section~\ref{sec:cross checks} the ``2RP'' and ``4RP'' will be compared showing a very good agreement. In what follows, the ``2RP'' analysis will be described unless stated otherwise.
 
-Section~\ref{sec:event analysis} covers all aspects related to the reconstruction of a single event. Section~\ref{sec:diff cs} describes the steps of transforming a raw $t$-distribution into the differential cross-section. The $t$-distributions are analysed separately for each LHC fill and each diagonal, they are only merged at the end as detailed in Section~\ref{sec:data merging}. Section~\ref{sec:systematics} describes the evaluation of systematic uncertainties and Section~\ref{sec:cross checks} presents several comparison plots used as systematic cross checks.
+Section~\ref{sec:event analysis} covers all aspects related to the reconstruction of a single event. Section~\ref{sec:diff cs} describes the steps of transforming a raw $t$-distribution into the differential cross-section. The $t$-distributions are analysed separately for each LHC fill and each diagonal, and are only merged at the end as detailed in Section~\ref{sec:data merging}. Section~\ref{sec:systematics} describes the evaluation of systematic uncertainties and Section~\ref{sec:cross checks} presents several comparison plots used as systematic cross checks.
 
 %----------------------------------------------------------------------------------------------------
 \subsection{Event Analysis}
@@ -48,7 +48,7 @@ In the ``4RP'' analysis, the same reconstruction as in \cite{totem-8tev-1km} is 
 \subsubsection{Alignment}
 \label{sec:alignment}
 
-TOTEM's usual three-stage procedure (Section 3.4 in~\cite{totem-ijmp}) for correcting the detector positions and rotation angles has been applied: a beam-based alignment prior to the run followed by two offline methods. The first method uses straight tracks to determine the relative position among the RPs by minimising track-hit residuals. The second method exploits the symmetries of elastic scattering to determine the positions of RPs with respect to the beam. This determination is repeated in 20 minutes time intervals to check for possible beam movements.
+TOTEM's usual three-stage procedure (Section 3.4 in~\cite{totem-ijmp}) for correcting the detector positions and rotation angles has been applied: a beam-based alignment prior to the run followed by two offline methods. The first method uses straight tracks to determine the relative position among the RPs by minimising track-hit residuals. The second method exploits the symmetries of elastic scattering to determine the positions of RPs with respect to the beam. This determination is repeated in 20-minute time intervals to check for possible beam movements.
 
 The alignment uncertainties have been estimated as $25\un{\mu m}$ (horizontal shift), $100\un{\mu m}$ (vertical shift) and $2\un{m rad}$ (rotation about the beam axis). Propagating them through Eq.~(\ref{eq:kin 2a}) to reconstructed scattering angles yields $0.50\un{\mu rad}$ ($0.35\un{\mu rad}$) for the horizontal (vertical) angle. RP rotations induce a bias in the reconstructed scattering angles:
 \begin{equation}
@@ -56,7 +56,7 @@ The alignment uncertainties have been estimated as $25\un{\mu m}$ (horizontal sh
 	\theta_x^* \rightarrow \theta_x^* + c \theta_y^*\ ,\quad
 	\theta_y^* \rightarrow \theta_y^* + d \theta_x^*\ ,
 \end{equation}
-where the proportionality constants $c$ and $d$ have zero mean and standard deviations of $0.013$ and $3.9\times10^{-4}$, respectively.
+where the proportionality constants $c$ and $d$ have zero mean and standard deviations of $0.013$ and $0.00039$, respectively.
 
 
 
@@ -90,7 +90,7 @@ where the factors $\eta_{1,2,3}$ have zero mean and unit variance. The fourth ei
 \subsubsection{Resolution}
 \label{sec:resolution}
 
-Two kinds of resolution can be distinguished: the resolution of the single-arm angular reconstruction, Eq.~(\ref{eq:kin 1a}), used for selection cuts and near-edge acceptance correction, and the resolution of the double-arm reconstruction, Eq.~(\ref{eq:kin 2a}), used for unsmearing correction of the final $t$-distribution. Since the single-arm reconstruction is biased by the vertex term in the horizontal plane, the corresponding resolution is significantly worse than the double-arm reconstruction.
+Two kinds of resolution can be distinguished: the resolution of the single-arm angular reconstruction, Eq.~(\ref{eq:kin 1a}), used for selection cuts and near-edge acceptance correction, and the resolution of the double-arm reconstruction, Eq.~(\ref{eq:kin 2a}), used for the unsmearing correction of the final $t$-distribution. Since the single-arm reconstruction is biased by the vertex term in the horizontal plane, the corresponding resolution is significantly worse than the double-arm reconstruction.
 
 The single-arm resolution can be studied by comparing the angles reconstructed from the left and right arm, see an example in Figure~\ref{fig:resol x 1a}. The width of the distributions was found to grow slightly during the fills, compatible with the effect of beam emittance growth. The typical range was from $10.0$ to $14.5\un{\mu rad}$ for the horizontal projection and from $0.36$ to $0.38\un{\mu rad}$ for the vertical. The associated uncertainties were $0.3$ and $0.007$, respectively. As illustrated in Figure~\ref{fig:resol x 1a}, the shape of the distributions is very close to Gaussian, especially at the beginning of each fill.
 
@@ -129,7 +129,7 @@ where $\Delta t$ is the width of the bin, $\mathcal{N}$ is a normalisation facto
 
 
 \begin{table}
-\caption{The elastic selection cuts. The superscripts R and L refer to the right and left arm. The right-most column gives a typical standard deviation of the cut distribution.
+\caption{The elastic selection cuts. The superscripts R and L refer to the right and left arm. The rightmost column gives a typical standard deviation of the cut distribution.
 }
 \label{tab:cuts}
 \begin{center}
@@ -282,7 +282,7 @@ The correction for resolution effects is determined by the following iterative p
 \end{itemize}
 As the estimate of the true $t$-distribution improves, the difference between the correction factors obtained in two successive iterations decreases. When the difference becomes negligible, the iteration stops. This is typically achieved after the second iteration. 
 
-The final correction $\mathcal{U}$ is significantly different from $1$ only at very low $|t|$ where the rapid cross-section growth occurs, see Figure~\ref{fig:unfolding}.
+The final correction $\mathcal{U}$ is significantly different from $1$ only at very low $|t|$ where a rapid cross-section growth occurs, see Figure~\ref{fig:unfolding}.
 
 Several fit parametrisations were tested, however yielding negligible difference in the final correction $\mathcal{U}$. Figure~\ref{fig:unfolding} shows the case for two of those.
 
@@ -381,7 +381,7 @@ The leading uncertainties (except normalisation) are shown in Figure~\ref{fig:sy
 \label{eq:covar mat}
 \mat V_{ij} = \sum_{q} \delta s_{q}(i)\ \delta s_{q}(j)\: ,
 \end{equation}
-where $i$ and $j$ are bin indices (row numbers in Table~\ref{tab:data}) and the sum goes over the leading error contributions $q$ (five right-most columns in the table).
+where $i$ and $j$ are bin indices (row numbers in Table~\ref{tab:data}) and the sum goes over the leading error contributions $q$ (five rightmost columns in the table).
 
 
 \begin{figure*}
