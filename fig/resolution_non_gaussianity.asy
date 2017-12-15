@@ -30,7 +30,7 @@ int qi = 0;
 
 for (int dsi : datasets.keys)
 {
-	NewPad("$" + q_labels[qi] + "\ung{\mu rad}$");
+	NewPad("$" + q_labels[qi] + "\ung{\mu rad}$", "events per bin");
 	scale(Linear, Log);
 
 	for (int peri : dataset_periods[dsi].keys)
@@ -46,16 +46,16 @@ for (int dsi : datasets.keys)
 
 			real sh = (peri == 0) ? 0. : log10(5);
 
-			draw(shift(0, sh)*scale(1e6, 1), RootGetObject(f, bP), "eb", p);
+			draw(shift(0, log10(0.6e-6) + sh)*scale(1e6, 1.), RootGetObject(f, bP), "eb", p);
 
 			TF1_x_min = -q_fit_maxs[qi]*1e-6;
 			TF1_x_max = +q_fit_maxs[qi]*1e-6;
-			draw(shift(0, sh)*scale(1e6, 1), RootGetObject(f, bP+"|gaus"), p);
+			draw(shift(0, log10(0.6e-6) + sh)*scale(1e6, 1), RootGetObject(f, bP+"|gaus"), p);
 		}
 
 	}
 
-	limits((-q_ranges[qi], 1e6), (+q_ranges[qi], 1e11), Crop);
+	limits((-q_ranges[qi], 1e0), (+q_ranges[qi], 2e4), Crop);
 
 	//AttachLegend("period" + format("%u", period));
 }
