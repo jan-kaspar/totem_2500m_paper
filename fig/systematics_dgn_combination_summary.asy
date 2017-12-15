@@ -2,7 +2,7 @@ import root;
 import pad_layout;
 import style;
 
-xSizeDef = 6.5cm;
+xSizeDef = 6.3cm;
 ySizeDef = 5cm;
 
 string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/2rp/";
@@ -46,7 +46,7 @@ void AddLeadingModes()
 		"", "sc-thxy-mode3", 1
 	);
 	
-	AddMode("uncert.~of vert.~beam divergence", heavygreen,
+	AddMode("uncert.~of vert.~beam diverg.", heavygreen,
 		"", "dy-sigma", 1,
 		"", "dy-sigma", 1
 	);
@@ -79,7 +79,7 @@ void PlotAllModes()
 		}
 	}
 
-	pen p_envelope = black;
+	pen p_envelope = black + 0.7pt;
 	draw(scale(1, +100), RootGetObject(f, "matrices/all-but-norm/"+binning+"/h_stddev"), "vl", p_envelope);
 	draw(scale(1, -100), RootGetObject(f, "matrices/all-but-norm/"+binning+"/h_stddev"), "vl", p_envelope);
 	AddToLegend("$\pm 1\un{\si}$ envelope", p_envelope);
