@@ -4,7 +4,7 @@ import style;
 
 string topDir = "/home/jkaspar/publications/elastic figures/nicolescu/";
 
-xSizeDef = 6.5cm;
+xSizeDef = 6.6cm;
 ySizeDef = 4.8cm;
 
 drawGridDef = false;
@@ -99,9 +99,9 @@ DrawAxes(47);
 //AddToLegend("ref.~TOTEM meas.", red, mCi+2pt+red);
 AddToLegend("Nicolescu et al. (2007)", p_Nico_2007);
 AddToLegend("Nicolescu et al. (2017)", p_Nico_2017);
-AddToLegend("Durham, no Odderon", p_Durh);
-AddToLegend("Durham, Odd.~$0.8\un{mb}$", p_Durh_odd08);
-AddToLegend("Durham, Odd.~$1.3\un{mb}$", p_Durh_odd13);
+AddToLegend("Durham, no 3-gluon ex.\hskip-1mm", p_Durh);
+AddToLegend("Durham, 3-gl.~$0.8\un{mb}$", p_Durh_odd08);
+AddToLegend("Durham, 3-gl.~$1.3\un{mb}$", p_Durh_odd13);
 AttachLegend(BuildLegend(NW, vSkip=-1mm, lineLength=6mm, ymargin=0), NW);
 
 
