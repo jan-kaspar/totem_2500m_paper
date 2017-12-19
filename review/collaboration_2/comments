@@ -1,1 +1,61 @@
+----------------------------------------------------------------------------------------------------
+Tamas, 19 Dec 2017
+----------------------------------------------------------------------------------------------------
 
+
+- in Line 590,
+EFOP EFOP
+-->
+EFOP
+(name of the funding agency to be listed only once).
+
+- in line 38, the manuscript referes to [16], while esentially the same point was made earlier in
+%\cite{Ster:2015esa}
+\bibitem{Ster:2015esa} 
+  A.~Ster, L.~Jenkovszky and T.~Cs\"org\H{o},
+  %``Extracting the Odderon from $pp$ and $\bar pp$ scattering data,''
+  Phys.\ Rev.\ D {\bf 91}, no. 7, 074018 (2015)
+  doi:10.1103/PhysRevD.91.074018
+  [arXiv:1501.03860 [hep-ph]].
+  %%CITATION = doi:10.1103/PhysRevD.91.074018;%%
+  %4 citations counted in INSPIRE as of 17 Dec 2017
+
+ 
+so I recommend to quote this work also in line 38.
+In particular, Fig. 1 of the above paper indicates that at ISR there were three three different energies,
+where pp and ppbar data are published at the same energy, the trouble was the low statistics and
+also the strong contributions from Reggeon exchange, as discussed later also in line 551.
+
+Similarly, in the end of the paper, in line 556, I recommend to include this reference as
+
+
+Sometimes high |t| region is also argued to be sensitive 
+-->
+Sometimes the |t\ dependence both at intermediate~\cite{Ster:2015esa} 
+and at high |t| region is also argued to be sensitive ...
+
+see in particular Fig 5 of the above paper, where the t dependence of the Pomeron and Odderon
+contribution is explicitely demonstrated (perhaos for the first time?)
+from fits with the Philips-Barger model to earlier data.
+
+I am trying to send more detailed comments but perhaps these are the really important observations.
+Please kindly consider them when finalizing the rho - odderon paper.
+Frici presented these results at the Zimanyi Winter School 
+basically repeating the TOTEM talk at the last LHCC, and these results are 
+received with great interest, so I suggest to consider referring to the above results, that move away from the t= 0 point
+for the  Odderon's contribution to dsigma/dt.
+
+
+
+----------------------------------------------------------------------------------------------------
+Ken, 19 Dec 2017
+----------------------------------------------------------------------------------------------------
+
+* first to remove the mentioning of the Odderon when discussing the predictions of the Durham model both in the legend and figure caption. Use instead 3-gluon exchange or something equivalent.
+
+* second to add a comment in the text saying that the reason why the Nicolescu 2007 overestimate the sigma_tot at LHC is likely connected with the ambiguities in prolonging the amplitudes in the non-forward region referring to Nicolescu 2017. This is what he states in the 2017 paper in the introduction so we can refer to it.
+ 
+Another change would be to remove the mentioning of the oddball (page 1 and 23) and only stick to the vector glueball, which is accepted terminology for the J^PC = 1^-- glueball. If one goes through literature, oddball seem
+mostly to be used for a glueball with J^PC state not allowed for qqbar for example O^-- but not 1^-- that is a perfectly valid J^PC state also for a qqbar.
+ 
+Depending whether there is feedback from PH that requires changes in the paper, I would suggest you make them at the same time. Otherwise we might postpone them to after the feedback from the journal.
