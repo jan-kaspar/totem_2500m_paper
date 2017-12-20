@@ -99,10 +99,10 @@ DrawAxes(47);
 //AddToLegend("ref.~TOTEM meas.", red, mCi+2pt+red);
 AddToLegend("Nicolescu et al. (2007)", p_Nico_2007);
 AddToLegend("Nicolescu et al. (2017)", p_Nico_2017);
-AddToLegend("Durham, no 3-gluon ex.\hskip-1mm", p_Durh);
-AddToLegend("Durham, 3-gl.~$0.8\un{mb}$", p_Durh_odd08);
-AddToLegend("Durham, 3-gl.~$1.3\un{mb}$", p_Durh_odd13);
-AttachLegend(BuildLegend(NW, vSkip=-1mm, lineLength=6mm, ymargin=0), NW);
+AddToLegend("Durham, no 3g exch.", p_Durh);
+AddToLegend("Durham, 3g exch.~$0.8\un{mb}$\hskip-1mm", p_Durh_odd08);
+AddToLegend("Durham, 3g exch.~$1.3\un{mb}$\hskip-1mm", p_Durh_odd13);
+AttachLegend(BuildLegend(NW, vSkip=-1mm, lineLength=4.5mm, ymargin=0mm), NW);
 
 
 //----------------------------------------------------------------------------------------------------
