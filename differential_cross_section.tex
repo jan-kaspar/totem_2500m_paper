@@ -273,7 +273,7 @@ The first term in the parentheses sums the contributions from the diagonal RPs u
 \subsubsection{Unfolding of Resolution Effects}
 \label{sec:unfolding}
 
-The correction for resolution effects is determined by the following iterative procedure.
+Thanks to the very good resolution, the following iterative procedure can be safely used to evaluate the correction for resolution effects.
 \begin{itemize}
 \item[1.] The differential cross-section data are fitted by a smooth curve.
 \item[2.] The fit is used in a numerical-integration calculation of the smeared $t$-distribution (using the resolution parameters determined in Section~\ref{sec:resolution}). The ratio between the smeared and the non-smeared $t$-distributions gives a set of per-bin correction factors.
@@ -282,9 +282,9 @@ The correction for resolution effects is determined by the following iterative p
 \end{itemize}
 As the estimate of the true $t$-distribution improves, the difference between the correction factors obtained in two successive iterations decreases. When the difference becomes negligible, the iteration stops. This is typically achieved after the second iteration. 
 
-The final correction $\mathcal{U}$ is significantly different from $1$ only at very low $|t|$ where a rapid cross-section growth occurs, see Figure~\ref{fig:unfolding}.
+The final correction $\mathcal{U}$ is significantly different from $1$ only at very low $|t|$ (where a rapid cross-section growth occurs, see Figure~\ref{fig:unfolding}) and in the dip-bump region (cf.~Figure~\ref{fig:high t desc}). The relative effect is never greater than $0.4\un{\%}$.
 
-Several fit parametrisations were tested, however yielding negligible difference in the final correction $\mathcal{U}$. Figure~\ref{fig:unfolding} shows the case for two of those.
+Several fit parametrisations were tested, however yielding negligible difference in the final correction $\mathcal{U}$ for $|t| \lesssim 0.3\un{GeV^2}$. Figure~\ref{fig:unfolding} shows the case for two of those.
 
 \begin{figure}
 \begin{center}
@@ -296,8 +296,7 @@ Unfolding correction as a function of $|t|$. The vertical dashed line indicates 
 \end{center}
 \end{figure}
 
-For the uncertainty estimate, the uncertainties of the $\theta_x^*$ and $\theta_y^*$ resolutions (see Section~\ref{sec:resolution}) as well as fit-model dependence have been taken into account.
-% each contribution giving a few per-mille for the lowest-$|t|$ bin.
+For the uncertainty estimate, the uncertainties of the $\theta_x^*$ and $\theta_y^*$ resolutions (see Section~\ref{sec:resolution}) as well as fit-model dependence have been taken into account. Altogether, the uncertainty is smaller than $0.1\un{\%}$.
 
 
 

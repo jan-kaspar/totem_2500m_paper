@@ -2,21 +2,6 @@
 discussion with Ken and Simone, 12 Jan 2018
 ----------------------------------------------------------------------------------------------------
 
-* unfolding
-
-Due to feedback from Eckhard Elsen on the PH preprint of the 2.5 km paper regarding the unfolding
-(paragraph 5.2.5), I think it would be appropriate to add a few lines to the text to avoid similar feedback
-during the journal submission (or afterwards). These are essentially things that were explicitly written in
-the 1 km paper but are missing in the 2.5 km paper.  
- 
--        Add “Due to the very small beam divergence” (or something similar) before “The correction for
-resolution effects is determined …” (now motivation for the chosen method  missing in paper)
--        At the end of the paragraph, explicitly state the remaining uncertainty estimate after unfolding
-correction independently how small it is (now only description of how the estimate is made in
-paper but not the numerical estimate itself)
-
-  - add also a protective statement on the dip
-
 * page 21: use differences, round to 2 digits, use \approx sign
 
 * where we write that si_tot growth slows down - write wrt. what, add reference to the Froissart bound
