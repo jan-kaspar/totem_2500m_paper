@@ -69,15 +69,6 @@ draw(
 	Scale((0.546e3, 62.46))--Scale((1.8e3, 77.08))--Scale((2.76e3, 83.23))--Scale((7e3, 98.82))--Scale((8e3, 101.34))--Scale((13e3, 111.19))--Scale((100e3, 166.2))
 	, p_Durh);
 
-// Durham model, with Odderon from note
-draw(shift(0, -0.8) * (
-	Scale((0.546e3, 62.46))--Scale((1.8e3, 77.08))--Scale((2.76e3, 83.23))--Scale((7e3, 98.82))--Scale((8e3, 101.34))--Scale((13e3, 111.19))--Scale((100e3, 166.2))
-	), p_Durh_odd08);
-
-draw(shift(0, -1.3) * (
-	Scale((0.546e3, 62.46))--Scale((1.8e3, 77.08))--Scale((2.76e3, 83.23))--Scale((7e3, 98.82))--Scale((8e3, 101.34))--Scale((13e3, 111.19))--Scale((100e3, 166.2))
-	), p_Durh_odd13);
-
 // TOTEM data
 real fshu = 0.02;
 
