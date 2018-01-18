@@ -17,45 +17,8 @@ paper but not the numerical estimate itself)
 
   - add also a protective statement on the dip
 
-
-* page 2: non-corfirmation --> if it is insignificant
-
 * page 21: use differences, round to 2 digits, use \approx sign
 
-* page 1: where used [13], add also
-  Levin Ryskin Physics Reports 189, No 6, 1990
-
-* page 1: where used [12], add also
- - Three Gluon Integral Equation and Odd c Singlet Regge Singularities in QCD J. Kwiecinski (Cracow, INP), M. Praszalowicz (Jagiellonian U.). Published in Phys.Lett. 94B (1980) 413-416
- - Odd C Gluonic Regge Singularities of Perturbative {QCD} and Their Decoupling From Deep Inelastic Neutrino Scattering T. Jaroszewicz (Cracow, INP), J. Kwiecinski (Orsay, LPT). Jun 1981. 25 pp. Published in Z.Phys. C12 (1982) 167
- -   J.~Bartels,
-  %``High-Energy Behavior in a Nonabelian Gauge Theory (II) : First Corrections to $T_{n\to m}$ Beyond the Leading $\ln s$ Approximation,''
-  Nucl.\ Phys.\ B {\bf 175}, 365 (1980).
-  doi:10.1016/0550-3213(80)90019-X
-
-* optional: move current refs [12] and [13] to a more suitable place
-
-* page 23: remove the propto log s
-
-* ref [35]: add also hep-ph /0306137
-
-* page 8 or 23 (when discussing that Odderon naturally appears in QCD): add ref
-  B.~L.~Ioffe, V.~S.~Fadin and L.~N.~Lipatov,
-  ``Quantum chromodynamics: Perturbative and nonperturbative aspects,''
-  Camb.\ Monogr.\ Part.\ Phys.\ Nucl.\ Phys.\ Cosmol.\  {\bf 30} (2010).
-  doi:10.1017/CBO9780511711817
-
-* abstract: remove "modern"
-
-* page 1
- - Regge-like: add axiomatic field theory
- - remove modern
-
-* page 22: COMPETE no odd-signature included, say explicitely
- - e.g. In total 256 models were considered" --> "In total 256 models, all without Odderon contributions, were considered"
-
 * where we write that si_tot growth slows down - write wrt. what, add reference to the Froissart bound
-
-* Fig 16, caption: "measurements" --> "points" or so
 
 * add reference to Tamas's paper?
