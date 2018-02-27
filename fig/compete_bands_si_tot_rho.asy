@@ -12,33 +12,52 @@ string f = topDir + "/compete/distributions.root";
 string models[];
 int m_groups[];
 
-models.push("Model_RPdPL2_20"); m_groups.push(10);
-models.push("Model_RPdPL2u_17"); m_groups.push(10);
-models.push("Model_RPdPL2u_19"); m_groups.push(10);
-models.push("Model_RPdPqcL2u_16"); m_groups.push(10);
-models.push("Model_RqcRcL2qc_12"); m_groups.push(20);
-models.push("Model_RqcRcLqc_12"); m_groups.push(30);
-models.push("Model_RqcRLqc_14"); m_groups.push(30);
+models.push("Model_RRdPL2_20"); m_groups.push(10);
+models.push("Model_RRdPL2u_17"); m_groups.push(10);
+models.push("Model_RRdPL2u_19"); m_groups.push(10);
+models.push("Model_RRdPqcL2u_16"); m_groups.push(10);
 models.push("Model_RRcdPL2u_15"); m_groups.push(10);
 models.push("Model_RRcdPqcL2u_14"); m_groups.push(10);
+models.push("Model_RRPL2u_19"); m_groups.push(10);
+models.push("Model_RRPL2u_21"); m_groups.push(10);
+
+models.push("Model_RRPEu_19"); m_groups.push(11);
+
+models.push("Model_RqcRcL2qc_12"); m_groups.push(20);
 models.push("Model_RRcL2qc_15"); m_groups.push(20);
+models.push("Model_RRL2_18"); m_groups.push(20);
+models.push("Model_RRL2qc_17"); m_groups.push(20);
+
+models.push("Model_RqcRcLqc_12"); m_groups.push(30);
+models.push("Model_RqcRLqc_14"); m_groups.push(30);
 models.push("Model_RRcLqc_15"); m_groups.push(30);
 models.push("Model_RRcPL_19"); m_groups.push(30);
 models.push("Model_RRL_18"); m_groups.push(30);
 models.push("Model_RRL_19"); m_groups.push(30);
-models.push("Model_RRL2_18"); m_groups.push(20);
-models.push("Model_RRL2qc_17"); m_groups.push(20);
 models.push("Model_RRLqc_17"); m_groups.push(30);
-models.push("Model_RRPEu_19"); m_groups.push(11);
 models.push("Model_RRPL_21"); m_groups.push(30);
-models.push("Model_RRPL2_20"); m_groups.push(30);
-models.push("Model_RRPL2qc_18"); m_groups.push(30);
-models.push("Model_RRPL2u_19"); m_groups.push(10);
-models.push("Model_RRPL2u_21"); m_groups.push(10);
+
+models.push("Model_RRPL2_20"); m_groups.push(31);
+models.push("Model_RRPL2qc_18"); m_groups.push(31);
 
 legendLabelPen = fontcommand("\SetFontSizesVIII");
 
 drawGridDef = false;
+
+//----------------------------------------------------------------------------------------------------
+
+string m_labels[];
+
+void LoadLabels()
+{
+	for (int mi : models.keys)
+	{
+		RootObject dir = RootGetObject(f, models[mi] + "/g_label");
+		m_labels.push(dir.sExec("GetTitle"));
+	}
+}
+
+LoadLabels();
 
 //----------------------------------------------------------------------------------------------------
 
@@ -48,6 +67,7 @@ pen GroupPen(int g)
 	if (g == 11) return blue+dashed;
 	if (g == 20) return magenta;
 	if (g == 30) return heavygreen;
+	if (g == 31) return heavygreen + dashed;
 
 	return black;
 }
@@ -59,7 +79,8 @@ string GetModelsByGroup(int g, int ga = g)
 	{
 		if (m_groups[mi] == g || m_groups[mi] == ga)
 		{
-			string m = replace(substr(models[mi], 6), "_", "\_");
+			//string m = replace(substr(models[mi], 6), "_", "\_");
+			string m = "$\rm " + m_labels[mi] + "$";
 
 			if (length(l) != 0)
 				l += ", ";
@@ -167,7 +188,6 @@ limits((1e2, 0.05), (2e4, 0.16), Crop);
 
 DrawAxes(0.065);
 
-
 //----------------------------------------------------------------------------------------------------
 
 NewPad(false);
@@ -180,8 +200,9 @@ AddToLegend(GetModelsByGroup(10), GroupPen(10));
 AddToLegend(GetModelsByGroup(11), GroupPen(11));
 AddToLegend(GetModelsByGroup(20), GroupPen(20));
 AddToLegend(GetModelsByGroup(30), GroupPen(30));
+AddToLegend(GetModelsByGroup(31), GroupPen(31));
 
-AttachLegend(BuildLegend(SE, vSkip=-1mm));
-FixPad(310, 75);
+AttachLegend(BuildLegend(SE, vSkip=-1mm, colWidth=14.2cm));
+FixPad(317, 75);
 
 GShipout(margin=1mm, hSkip=3mm);
