@@ -181,12 +181,12 @@ DrawAll("g_rho_p_p");
 // TOTEM measurements
 DrawPoint(8e3, 0.12, 0.03, red+0.8pt, mCi+true+2pt+red);
 
-fsh = -1fshu; DrawPoint(13e3, 0.10, 0.01, red+0.8pt, mCi+true+2pt+red);
-fsh = +1fshu; DrawPoint(13e3, 0.09, 0.01, red+0.8pt, mCi+true+2pt+red);
+fsh = -1fshu; DrawPoint(13e3, 0.09, 0.01, red+0.8pt, mCi+true+2pt+red);
+fsh = +1fshu; DrawPoint(13e3, 0.08, 0.01, red+0.8pt, mCi+true+2pt+red);
 
-limits((1e2, 0.05), (2e4, 0.16), Crop);
+limits((1e2, 0.04), (2e4, 0.16), Crop);
 
-DrawAxes(0.065);
+DrawAxes(0.058);
 
 //----------------------------------------------------------------------------------------------------
 
