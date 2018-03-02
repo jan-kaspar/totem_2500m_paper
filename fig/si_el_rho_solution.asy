@@ -41,10 +41,10 @@ real si_el_max = 31.3;
 AddToLegend("constraint from this publication", red, mTD+red+2pt);
 
 real si_el_2500_1 = 30.9;
-real rho_2500_1 = 0.10242;
+real rho_2500_1 = 0.09013;
 
 real si_el_2500_2 = 31.1;
-real rho_2500_2 = 0.10132;
+real rho_2500_2 = 0.08883;
 
 real a_2500 = (rho_2500_2 - rho_2500_1) / (si_el_2500_2 - si_el_2500_1);
 real b_2500 = rho_2500_2 - a_2500 * si_el_2500_2;
@@ -73,9 +73,10 @@ draw(graph(rho_90, si_el_min, si_el_max), blue);
 draw((si_el_0, rho_0), mTU+blue+2pt);
 
 
+real si_el_90_expan = 31.08;
 real de_si_el = 0.01;
-real a_90 = (rho_90(si_el_90_2 + de_si_el) - rho_90(si_el_90_2 - de_si_el)) / 2 / de_si_el;
-real b_90 = rho_90(si_el_90_2) - a_90 * si_el_90_2;
+real a_90 = (rho_90(si_el_90_expan + de_si_el) - rho_90(si_el_90_expan - de_si_el)) / 2 / de_si_el;
+real b_90 = rho_90(si_el_90_expan) - a_90 * si_el_90_expan;
 
 //draw((si_el_min, a_90*si_el_min + b_90)--(si_el_max, a_90*si_el_max + b_90), dashed);
 
@@ -83,6 +84,9 @@ real b_90 = rho_90(si_el_90_2) - a_90 * si_el_90_2;
 
 real si_el_sol = - (b_2500 - b_90) / (a_2500 - a_90);
 real rho_sol = a_2500 * si_el_sol + b_2500;
+
+write("si_el_sol = ", si_el_sol);
+write("rho_sol = ", rho_sol);
 
 //real scale_factor = si_el_sol / 31.0359;
 //real si_tot_sol = 110.5753 * scale_factor;
