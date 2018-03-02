@@ -1,0 +1,59 @@
+%----------------------------------------------------------------------------------------------------
+% Add an author
+% USAGE: \AddAuthor{name}{primary affiliation}{secondary affiliation}{external affiliation}
+
+%\author{G.~Antchev}
+%\altaffiliation{INRNE-BAS, Institute for Nuclear Research and Nuclear Energy, Bulgarian Academy of Sciences, Sofia, Bulgaria.}
+%\affiliation{INFN Sezione di Pisa, Italy.}
+%\affiliation{Universit\`{a} degli Studi di Siena and Gruppo Collegato INFN di Siena, Italy.}
+
+\def\AddAuthor#1#2#3#4{%
+	\def\PriAf{#2}%
+	\def\SecAf{#3}%
+	\def\ExtAf{#4}%
+	\def\empty{}%
+
+	\author{#1}%
+	
+	\ifx\PriAf\empty
+	\else
+		\affiliation{\csname inst:#2\endcsname}%
+	\fi
+	
+	\ifx\SecAf\empty
+	\else
+		\affiliation{\csname inst:#3\endcsname}%
+	\fi
+	
+	\ifx\ExtAf\empty
+	\else
+		\affiliation{\csname einst:#4\endcsname}%
+	\fi
+}
+
+%----------------------------------------------------------------------------------------------------
+% Add a TOTEM institute
+% USAGE: \AddInstitute{reference as in AddAuthor}{address}
+
+\def\AddInstitute#1#2{%
+	\global\expandafter\edef\csname inst:#1\endcsname{#2}%
+}
+
+%----------------------------------------------------------------------------------------------------
+% Add an institute not in the TOTEM collaboration
+% USAGE: \AddExternalInstitute{reference as in AddAuthor}{address}
+
+\def\AddExternalInstitute#1#2{%
+	\global\expandafter\edef\csname einst:#1\endcsname{#2}%
+}
+
+%----------------------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------------------
+% include the actual data
+
+\input authorlist_data
+
+\DeclareInstitutes
+\DeclareExternalInstitutes
+
+\DeclareAuthors

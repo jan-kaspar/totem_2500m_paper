@@ -1,7 +1,7 @@
 #!/bin/bash
 
 qvim -p \
-	elastic_2500m_cern.tex \
+	elastic_2500m_prd.tex \
 	abstract.tex \
 	introduction.tex \
 	experimental_apparatus.tex \
@@ -12,6 +12,4 @@ qvim -p \
 	rho.tex \
 	discussion.tex \
 	conclusions.tex \
-	acknowledgements.tex \
-	bibliography.bib
-#	authorlist_cern.tex \
+	acknowledgements.tex

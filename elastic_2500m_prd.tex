@@ -1,0 +1,77 @@
+\documentclass[twocolumn,a4paper,superscriptaddress,preprintnumbers,showpacs,showkeys,nofootinbib]{revtex4-1}
+
+\RequirePackage{graphics}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{enumitem}
+\RequirePackage[colorlinks,citecolor=blue,urlcolor=blue,linkcolor=blue]{hyperref}
+
+%---------------------------------------------------------------------------
+
+\def\d{{\rm d}}
+\def\un#1{\,{\rm #1}}
+\def\ung#1{\quad[{\rm #1}]}
+\def\unt#1{[{\rm #1}]}
+\def\e{{\rm e}}
+\def\I{{\rm i}}
+\def\T{{\rm T}}
+\def\vec#1{\mathbf{#1}}
+\def\mat#1{\mathsf{#1}}
+\def\etal{et al.}
+
+\def\TODO#1{{\color{red}TODO: #1}}
+%\def\TODO#1{}
+
+
+%----------------------------------------------------------------------------------------------------
+
+\begin{document}
+
+\title{First determination of the $\mathbf{\rho}$ parameter at $\mathbf{\sqrt s = 13}$ TeV -- probing the existence of a colourless three-gluon bound state}
+
+\collaboration{The TOTEM Collaboration}
+\noaffiliation
+
+\input authorlist_prd
+
+\begin{abstract}
+\input abstract
+\end{abstract}
+
+% TODO
+\pacs{some-pac}
+
+% TODO
+\keywords{some-keyword}
+
+\preprint{CERN-EP-2017-335}
+
+\maketitle
+
+%--------------------------------------------------
+
+\input introduction.tex
+
+\input experimental_apparatus.tex
+
+\input beam_optics.tex
+
+\input data_taking.tex
+
+\input differential_cross_section.tex
+
+\input rho.tex
+
+\input discussion.tex
+
+\input conclusions.tex
+
+\acknowledgements
+\input acknowledgements.tex
+
+%--------------------------------------------------
+
+\bibliographystyle{apsrmp4-1}
+\bibliography{bibliography}
+
+\end{document}
