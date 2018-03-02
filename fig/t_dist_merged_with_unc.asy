@@ -13,7 +13,7 @@ string binning = "ob-2-10-0.05";
 
 string diagonal = "combined";
 
-string fit_file = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/combined/coulomb_analysis_1/fits/2500-2rp-ob-2-10-0.05/exp3,t_max=0.15/fit.root";
+string fit_file = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/combined/coulomb_analysis_1_weighted/fits/2500-2rp-ob-2-10-0.05/exp1,t_max=0.07/fit.root";
 string fit_obj = "g_fit_CH";
 
 string unc_file = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/2rp/systematics/matrix.root";
@@ -113,7 +113,7 @@ yaxis(LeftRight, RightTicks(100., 20.).GetTicks());
 NewPad("$|t|\ung{GeV^2}$", "$\d\si/\d t\ung{mb/GeV^2}$");
 scale(Linear, Log);
 
-attach(bbox(inset, 1mm, nullpen, FillDraw(white)), (0.125, 1.33));
+attach(bbox(inset, 1mm, nullpen, FillDraw(white)), (0.123, 1.33));
 
 PlotEverything();
 
