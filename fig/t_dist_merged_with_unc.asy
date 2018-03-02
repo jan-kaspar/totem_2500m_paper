@@ -53,8 +53,6 @@ void DrawUncBand(RootObject bc, RootObject relUnc, pen p)
 
 	if (relUnc.InheritsFrom("TH1"))
 	{
-		guide g_u, g_b;
-
 		for (int bi = 1; bi < relUnc.iExec("GetNbinsX"); ++bi)
 		{
 			real c = relUnc.rExec("GetBinCenter", bi);
@@ -63,15 +61,12 @@ void DrawUncBand(RootObject bc, RootObject relUnc, pen p)
 
 			real v = bc.rExec("Eval", c);
 
-			g_u = g_u -- Scale((c-w/2, v*(1.+ru))) -- Scale((c+w/2, v*(1.+ru)));
-			g_b = g_b -- Scale((c-w/2, v*(1.-ru))) -- Scale((c+w/2, v*(1.-ru)));
+			real t_min = c-w/2, t_max = c+w/2;
+			real v_min = v*(1.-ru), v_max = v*(1.+ru);
 
-			//g_u = g_u -- Scale((c, v*(1.+ru)));
-			//g_b = g_b -- Scale((c, v*(1.-ru)));
+			filldraw(Scale((t_min, v_min))--Scale((t_max, v_min))--Scale((t_max, v_max))--Scale((t_min, v_max))--cycle,
+				p, nullpen);
 		}
-
-		g_b = reverse(g_b);
-		filldraw(g_u--g_b--cycle, p, nullpen);
 	}
 }
 
@@ -89,7 +84,7 @@ void PlotEverything(pen p_data = black + 0.8pt)
 	}
 
 	AddToLegend("<data with statistical uncertainties:");
-	draw(RootGetObject(topDir+"DS-merged/merged.root", binning + "/merged/" + diagonal + "/h_dsdt"), "d0,eb", p_data);
+	draw(RootGetObject(topDir+"DS-merged/merged.root", binning + "/merged/" + diagonal + "/h_dsdt"), "d0,eb", p_data + squarecap);
 	AddToLegend("data", mPl+4pt+(black+0.8pt));
 }
 
@@ -98,12 +93,12 @@ void PlotEverything(pen p_data = black + 0.8pt)
 picture inset = new picture;
 currentpicture = inset;
 
-unitsize(4500mm, 0.055mm);
+unitsize(4500mm, 0.066mm);
 
 PlotEverything(black + 0.5pt);
 
 currentpad.xTicks = LeftTicks(0.002, 0.001);
-limits((0, 400), (0.01, 1000), Crop);
+limits((0, 450), (0.01, 950), Crop);
 
 xaxis(BottomTop, LeftTicks(0.005, 0.001).GetTicks());
 yaxis(LeftRight, RightTicks(100., 20.).GetTicks());
@@ -113,7 +108,7 @@ yaxis(LeftRight, RightTicks(100., 20.).GetTicks());
 NewPad("$|t|\ung{GeV^2}$", "$\d\si/\d t\ung{mb/GeV^2}$");
 scale(Linear, Log);
 
-attach(bbox(inset, 1mm, nullpen, FillDraw(white)), (0.123, 1.33));
+attach(bbox(inset, 1mm, nullpen, FillDraw(white)), (0.123, 1.1));
 
 PlotEverything();
 
