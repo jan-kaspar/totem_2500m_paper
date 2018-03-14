@@ -19,7 +19,7 @@ models.push("Model_RRdPqcL2u_16"); m_groups.push(10);
 models.push("Model_RRcdPL2u_15"); m_groups.push(10);
 models.push("Model_RRcdPqcL2u_14"); m_groups.push(10);
 models.push("Model_RRPL2u_19"); m_groups.push(10);
-models.push("Model_RRPL2u_21"); m_groups.push(10);
+models.push("Model_RRPnfL2u_21"); m_groups.push(10);
 
 models.push("Model_RRPEu_19"); m_groups.push(11);
 
@@ -33,7 +33,7 @@ models.push("Model_RqcRLqc_14"); m_groups.push(30);
 models.push("Model_RRcLqc_15"); m_groups.push(30);
 models.push("Model_RRcPL_19"); m_groups.push(30);
 models.push("Model_RRL_18"); m_groups.push(30);
-models.push("Model_RRL_19"); m_groups.push(30);
+models.push("Model_RRLnf_19"); m_groups.push(30);
 models.push("Model_RRLqc_17"); m_groups.push(30);
 models.push("Model_RRPL_21"); m_groups.push(30);
 
