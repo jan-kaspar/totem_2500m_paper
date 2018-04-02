@@ -1,0 +1,33 @@
+* update rho fits
+
+
+* add reference to Odderon in AdS/CFT
+
+@article{1126-6708-2009-07-063,
+	author={Richard C. Brower and Marko Djurić and Chung-I Tan},
+	title={Odderon in gauge/string duality},
+	journal={Journal of High Energy Physics},
+	volume={2009},
+	number={07},
+	pages={063},
+	year={2009},
+}
+
+
+* add reference to paper by Tamas (in some place of the text where we discuss the combination of total cross-section and rho)
+
+@article{doi:10.1142/S0217751X15500761,
+	author = {Nemes, F. and Csörgő, T. and Csanád, M.},
+	title = {Excitation function of elastic pp scattering from a unitarily extended Bialas–Bzdak model},
+	journal = {International Journal of Modern Physics A},
+	volume = {30},
+	number = {14},
+	pages = {1550076},
+	year = {2015},
+	doi = {10.1142/S0217751X15500761},
+}
+
+
+* uncertainties of magenta models
+ - evaluate uncertainty bands for magenta models, evaluate correlations of Delta si_tot vs Delta rho
+ - add protective statement to the paper
