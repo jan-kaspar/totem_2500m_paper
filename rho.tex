@@ -21,9 +21,9 @@ Motivated by the observed differential cross-section, at low $|t|$ the modulus o
 \label{eq:nuc mod}
 \left | {\cal A}^{\rm N}(t) \right | = \sqrt{s\over\pi} {p\over \hbar c} \sqrt{a} \exp\left( {1\over 2} \sum\limits_{n = 1}^{N_b} b_n\, t^n \right)\ .
 \end{equation}
-The $b_1$ parameter is responsible for the leading exponential decrease, the other $b_n$ parameters can describe small deviations from the leading behaviour. Since the calculation of CNI may, in principle, involve integrations (e.g.~Eq.~(\ref{eq:int kl})), it is necessary to extend the nuclear amplitude meaningfully to higher $|t|$ values, too. In that region, the amplitude is fixed to a function that describes well the dip-bump structure observed in the data. In order to avoid numerical problems, the intermediate $|t|$ region is modelled with a continuous and smooth interpolation between the low and high-$|t|$ parts. It has been checked that altering the high-$|t|$ part within reasonable limits has negligible impact on the results.
+The $b_1$ parameter is responsible for the leading exponential decrease, the other $b_n$ parameters can describe small deviations from the leading behaviour. Since the calculation of CNI may, in principle, involve integrations (e.g.~Eq.~(\ref{eq:int kl})), it is necessary to extend the nuclear amplitude meaningfully to higher $|t|$ values, too. In that region, we fix the amplitude to a function that describes well the dip-bump structure observed in the data. In order to avoid numerical problems, the intermediate $|t|$ region is modelled with a continuous and smooth interpolation between the low and high-$|t|$ parts. It has been checked that altering the high-$|t|$ part within reasonable limits has negligible impact on the results.
 
-Several parametrisations have been considered for the phase of the nuclear amplitude. Since one of the main goals of this analysis is to compare the newly obtained $\rho$ value with those at lower energies, we have focused on parametrisations similar to past analyses. Consequently we have considered phases with slow variation at low $|t|$: constant, Bailly and standard from \cite{totem-8tev-1km}. No dependence of the results on this choice was observed and therefore only the constant phase
+Several parametrisations have been considered for the phase of the nuclear amplitude. Since one of the main goals of this analysis is to compare the newly obtained $\rho$ value with those at lower energies, we have focused on parametrisations similar to past analyses. Consequently we have considered phases with slow variation at low $|t|$: constant, Bailly and standard from Ref.~\cite{totem-8tev-1km}. No dependence of the results on this choice was observed and therefore only the constant phase
 \begin{equation}
 \label{eq:nuc phase con}
 \arg {\cal A}^{\rm N}(t) = {\pi\over 2} - \arctan\rho = \hbox{const} \ .
@@ -42,7 +42,7 @@ We have used the most general interference formula available in the literature -
 		t'' =& t + t' + 2\sqrt{t\, t'} \cos\phi\ ,\cr
 	\end{aligned}
 \end{equation}
-which is numerically almost identical to the formula by Cahn \cite{cahn82} as shown in \cite{totem-8tev-1km}. The CNI effects were calculated by the computer code from Ref.~\cite{elegent}.
+which is numerically almost identical to the formula by Cahn \cite{cahn82} as shown in Ref.~\cite{totem-8tev-1km}. The CNI effects were calculated by the computer code from Ref.~\cite{elegent}.
 
 
 %----------------------------------------------------------------------------------------------------
@@ -56,7 +56,7 @@ The fits have been carried out with the standard least-squares method, minimisin
 	\Delta_i = \left.{\d\sigma\over \d t}\right|_{{\rm bin}\ i} - {\d\sigma^{\rm C+N}\over\d t}\left(t^{\rm rep}_{{\rm bin}\ i}\right)\ ,\quad
 	\mat V = \mat V_{\rm stat} + \mat V_{\rm syst}\ ,\
 \end{equation}
-where $\Delta$ is a vector of differences between the differential cross-section data and a fit function $\d\sigma^{C+N}/\d t$ evaluated at the representative point $t^{\rm rep}$ of each bin~\cite{lafferty94}. The minimisation is repeated several times, and the representative points are updated between iterations. The covariance matrix $\mat V$ has two components. The diagonal of $\mat V_{\rm stat}$ contains the statistical uncertainty squared from Table~\ref{tab:data}, $\mat V_{\rm syst}$ includes all systematic uncertainty contributions except the normalisation, see Eq.~(\ref{eq:covar mat}). For improved fit stability, the normalisation uncertainty is not included in the $\chi^2$ definition. In order to propagate this uncertainty to the fit results, the fit is repeated with the normalisation adjusted by $+5.5\un{\%}$ and $-5.5\un{\%}$. For each fit parameter the mean deviation from the fit result with no normalisation adjustment is taken as the effect of normalisation uncertainty, which is then added quadratically to the uncertainty reported by the fit with no bias.
+where $\Delta$ is a vector of differences between the differential cross-section data and a fit function $\d\sigma^{\rm C+N}/\d t$ evaluated at the representative point $t^{\rm rep}$ of each bin~\cite{lafferty94}. The minimisation is repeated several times, and the representative points are updated between iterations. The covariance matrix $\mat V$ has two components. The diagonal of $\mat V_{\rm stat}$ contains the statistical uncertainty squared from Table~\ref{tab:data}, $\mat V_{\rm syst}$ includes all systematic uncertainty contributions except the normalisation, see Eq.~(\ref{eq:covar mat}). For improved fit stability, the normalisation uncertainty is not included in the $\chi^2$ definition. In order to propagate this uncertainty to the fit results, the fit is repeated with the normalisation adjusted by $+5.5\un{\%}$ and $-5.5\un{\%}$. For each fit parameter the mean deviation from the fit result with no normalisation adjustment is taken as the effect of normalisation uncertainty, which is then added quadratically to the uncertainty reported by the fit with no bias.
 
 The complete fit procedure has been validated with a Monte-Carlo study confirming that it has negligible bias. It also indicates the composition of the fit parameter uncertainties. For example, for a fit with $N_b = 1$ using data in the ``coarse binning'' up to $|t| = 0.07\un{GeV^2}$, the $\rho$ uncertainty due to the statistical uncertainties is about $0.004$, due to the systematic uncertainties is about $0.003$ and due to the normalisation uncertainty is about $0.009$.
 
@@ -128,7 +128,7 @@ Dependence of the $\rho$ parameter on energy. The $\rm pp$ (blue) and $\rm p\bar
 \end{center}
 \end{figure*}
 
-Further tests were performed in order to probe the stability of the $\rho$ extraction. Since at higher $|t|$ values the effects of CNI are limited, one may conceive a two-step fit: first, use only the higher $|t|$ data to determine the parameters of the hadronic modulus, cf.~Eq.~(\ref{eq:nuc mod}), and second, optimise only $\rho$ with all the data but the hadronic modulus fixed from the first step. Figure~\ref{fig:fit exp3 0.15} indicates that for the first step one needs to include points down to about $|t| = 0.04\un{GeV^2}$ in order to describe correctly the concavity of the data. Performing the two-step fit with $N_b=3$ and with ansatz $\rho = 0.10$ (or $0.14$) yields, at the end, $\rho = 0.103$ (or $0.116$). Although there is a non-zero $\rho$ difference (CNI effects cannot be fully neglected at higher $|t|$), these results demonstrate the pull of the data towards $\rho \approx 0.10$. A logical counterpart of the procedure just described would be to give the higher-$|t|$ data less weight. In its extreme, where the higher-$|t|$ data are not used at all, this has already been covered by fits with $|t|_{\rm max} = 0.07\un{GeV^2}$ discussed above.
+Further tests were performed in order to probe the stability of the $\rho$ extraction. Since at higher $|t|$ values the effects of CNI are limited, one may conceive a two-step fit: first, use only the higher $|t|$ data to determine the parameters of the hadronic modulus, cf.~Eq.~(\ref{eq:nuc mod}), and second, optimise only $\rho$ with all the data but the hadronic modulus fixed from the first step. Figure~\ref{fig:fit exp3 0.15} indicates that for the first step one needs to include points down to about $|t| = 0.04\un{GeV^2}$ in order to describe correctly the concavity of the data. Performing the two-step fit with $N_b=3$ and with ansatz $\rho = 0.10$ (or $0.14$) yields, at the end, $\rho = 0.103$ (or $0.116$). Although there is a non-zero $\rho$ difference (CNI effects cannot be fully neglected at higher $|t|$), these results demonstrate the pull of the data towards $\rho \approx 0.10$. A logical counterpart of the procedure just described would be to give the higher-$|t|$ data less weight. In its extreme, where the higher-$|t|$ data are not used at all, this has already been covered by fits with $|t|_{\rm max} = 0.07\un{GeV^2}$ discussed above, also showing the preference for lower $\rho$ values.
 
 \begin{figure*}
 \vskip-5mm
@@ -136,12 +136,13 @@ Further tests were performed in order to probe the stability of the $\rho$ extra
 \includegraphics{fig/si_el_rho_solution.pdf}
 \vskip-3mm
 \caption{%
-Constraints to the relation between $\rho$ and $\sigma_{\rm el}$ derived from this data set (red line) and from Ref.~\cite{totem-13tev-90m}. The solution consistent with both constraints is marked with a green dot.
+Constraints to the relation between $\rho$ and $\sigma_{\rm el}$ derived from this data set (red line) and from Ref.~\cite{totem-13tev-90m} (blue line). The solution consistent with both constraints is marked with a green dot.
 }
 \label{fig:si_el rho sol}
 \end{center}
 \vskip-2mm
 \end{figure*}
 
-
 Figure \ref{fig:si_el rho sol} illustrates a small correction due to a conceptual improvement in combining the data from this publication and from Ref.~\cite{totem-13tev-90m}. The latter assumes certain values of $\rho$ in order to evaluate cross-section estimates which are in turn used in this analysis (see Section~\ref{sec:normalisation}) to estimate $\rho$. This circular dependence can be resolved by considering simultaneously the $\rho$ dependence of $\sigma_{\rm el}$ in Ref.~\cite{totem-13tev-90m} (blue line) and the $\sigma_{\rm el}$ dependence of $\rho$ determined in this analysis (red line). The latter is done as linear interpolation of $\rho$ values extracted assuming $\sigma_{\rm el} = 30.9$ and $31.1\un{mb}$. The linear dependence is confirmed with Monte-Carlo studies. The solution consistent with both datasets (green dot) brings negligible correction to $\rho$ and $-0.03\un{\%}$ correction to the value of $\sigma_{\rm el}$ published in Ref.~\cite{totem-13tev-90m} for $\rho=0.10$.
+
+\TODO{add section on fits with variable normalisation}
