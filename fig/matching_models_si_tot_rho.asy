@@ -136,8 +136,8 @@ draw(Scale((0.546e3, 0.1277 - si_tot_diff/62.46))
 // TOTEM data
 DrawPoint(8e3, 0.12, 0.03, red+0.8pt, mCi+true+2pt+red);
 
-fsh = -1fshu; DrawPoint(13e3, 0.09, 0.01, red+0.8pt, mCi+true+2pt+red);
-fsh = +1fshu; DrawPoint(13e3, 0.08, 0.01, red+0.8pt, mCi+true+2pt+red);
+fsh = -1fshu; DrawPoint(13e3, 0.10, 0.01, red+0.8pt, mCi+true+2pt+red);
+fsh = +1fshu; DrawPoint(13e3, 0.09, 0.01, red+0.8pt, mCi+true+2pt+red);
 
 limits((1e2, 0.04), (2e4, 0.16), Crop);
 
