@@ -75,15 +75,15 @@ Summary of results for various fit configurations (medium binning).
 \begin{center}
 \setlength{\tabcolsep}{5pt}
 %\def\arraystretch{0.8}
-\begin{tabular}{ccccccc}
+\begin{tabular}{ccccccccc}
 \hline
-      & \hbox to10pt{} &\multispan2\hss $|t|_{\rm max} = 0.07\un{GeV^2}$\hss & \hbox to10pt{} & \multispan2\hss $|t|_{\rm max} = 0.15\un{GeV^2}$\hss\cr
-$N_b$ && $\chi^2/\hbox{ndf}$ & $\rho$ && $\chi^2/\hbox{ndf}$ & $\rho$\cr
+      & \hbox to10pt{} &\multispan3\hss $|t|_{\rm max} = 0.07\un{GeV^2}$\hss & \hbox to10pt{} & \multispan3\hss $|t|_{\rm max} = 0.15\un{GeV^2}$\hss\cr
+$N_b$ && $\chi^2/\hbox{ndf}$ & $\rho$ & $\sigma_{\rm tot}\ung{mb}$ && $\chi^2/\hbox{ndf}$ & $\rho$ & $\sigma_{\rm tot}\ung{mb}$\cr
 \hline
 \vrule width0pt height10pt
-1     && $0.9$ & $0.09\pm0.01$  &&     $2.1$ & -             \cr
-2     && $0.9$ & $0.10\pm0.01$  &&     $1.0$ & $0.09\pm0.01$ \cr
-3     && $0.9$ & $0.09\pm0.01$  &&     $0.9$ & $0.10\pm0.01$ \cr
+1     && $0.9$ & $0.09\pm0.01$ & $ 111.8 \pm $  &&     $2.1$ & -              & - \cr
+2     && $0.9$ & $0.10\pm0.01$ & $ 111.9 \pm $  &&     $1.0$ & $0.09\pm0.01$  & $ 111.9 \pm $\cr
+3     && $0.9$ & $0.09\pm0.01$ & $ 111.9 \pm $  &&     $0.9$ & $0.10\pm0.01$  & $ 112.1 \pm $\cr
 \hline
 \end{tabular}
 \end{center}
@@ -147,6 +147,8 @@ Constraints to the relation between $\rho$ and $\sigma_{\rm el}$ derived from th
 
 Figure \ref{fig:si_el rho sol} illustrates a small correction due to a conceptual improvement in combining the data from this publication and from Ref.~\cite{totem-13tev-90m}. The latter assumes certain values of $\rho$ in order to evaluate cross-section estimates which are in turn used in this analysis (see Section~\ref{sec:normalisation}) to estimate $\rho$. This circular dependence can be resolved by considering simultaneously the $\rho$ dependence of $\sigma_{\rm el}$ in Ref.~\cite{totem-13tev-90m} (blue line) and the $\sigma_{\rm el}$ dependence of $\rho$ determined in this analysis (red line). The latter is done as linear interpolation of $\rho$ values extracted assuming $\sigma_{\rm el} = 30.9$ and $31.1\un{mb}$. The linear dependence is confirmed with Monte-Carlo studies. The solution consistent with both datasets (green dot) brings negligible correction to $\rho$ and $-0.03\un{\%}$ correction to the value of $\sigma_{\rm el}$ published in Ref.~\cite{totem-13tev-90m} for $\rho=0.10$.
 
+\TODO{formula for si tot calculation, ref to si tot values in table 5}
+
 
 %----------------------------------------------------------------------------------------------------
 \subsection{Data fits with variable normalisation}
@@ -154,17 +156,56 @@ Figure \ref{fig:si_el rho sol} illustrates a small correction due to a conceptua
 
 \TODO{Why variable normalisation -- QED sensitivity}
 
-\TODO{The three approaches, basic explanation}
+\TODO{The three approaches, basic explanation, why focus on exp1 (exp3 can equally be used), only medium binning used}
 
 \TODO{Implementation of approach 2, results}
+\>> step a (determine $b_1$): $0.005 < |t| < 0.07\un{GeV^2}$, CNI effects small, PH fit (model independence), exp1 reasonable
+\>> step b (determine $\eta$): $|t|_{\rm max} = 0.0015\un{GeV^2}$, $b_1$ fixed from step a, $\eta$ without limit with its $\chi^2$ term
+\>> step c (determine $\rho$ and $a$): $|t|_{\rm max} = 0.07\un{GeV^2}$, $b_1$ fixed from step a, $\eta$ fixed from step b
 
 \TODO{Implementation of approach 3, results}
+\>> step a (determine $\eta a^2$ and $b_1$): $0.015 < |t| < 0.05\un{GeV^2}$, CNI effects small, PH fit (model independence), exp1 reasonable
+\>> step b (determine $\eta$): $|t| < 0.0023\un{GeV^2}$, $b_1$ and product $\eta a^2$ fixed from step a, $a$ also determined
+\>> step c (determine $\rho$): $|t| < 0.015\un{GeV^2}$, $b_1$ fixed from step a, $\eta$ and $a$ fixed from step b
+\>> step d (check of fit quality over the full $t$ range): $|t| < 0.05\un{GeV^2}$
+
+\TODO{Implementation of approach 3 -- single fit, results}
+\>> $|t|_{\rm max} = 0.05\un{GeV^2}$
+\>> all parameters ($\eta$, $a$, $b_1$ and $\rho$) free, initialised to values from the previous paragraph
+\>> fit potentially fragile, but results reasonable
+\>> case shown for completeness, the step-by-step fit trusted more
 
 \TODO{Uncertainty estimation}
 
-\TODO{Table}
+\TODO{ref to Table~\ref{tab:rho si tot summary}}
+
+\begin{table}
+\caption{%
+Summary of $\rho$ and total cross-section results \TODO{exp1 used, round numbers, improve method desc.}.
+}%
+\vskip-5mm
+\label{tab:rho si tot summary}
+\begin{center}
+\setlength{\tabcolsep}{5pt}
+%\def\arraystretch{0.8}
+\begin{tabular}{ccc}
+\hline
+method									& $\rho$				& $\sigma_{\rm tot}\ung{mb}$ \cr
+\hline
+Ref.~\cite{totem-13tev-90m}				& -						& $110.6 \pm 3.4$		\cr
+\hline
+\hbox{approach 1: norm.~fixed}			& $0.08795 \pm 0.0081$	& $111.777 \pm 3.158$	\cr
+\hbox{approach 2: norm.~constrained}	& $0.08597 \pm 0.0075$	& $111.347 \pm 3.175$	\cr
+\hbox{approach 3: norm.~free, step d}	& $0.08478 \pm 0.0104$	& $110.318 \pm 3.954$	\cr
+\hbox{approach 3: norm.~free, step f}	& $0.09906 \pm 0.0092$	& $109.349 \pm 3.005$	\cr
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
 
 \TODO{Average}
+
 
 \TODO{ref to Figure~\ref{fig:si tot inel el}}
 
