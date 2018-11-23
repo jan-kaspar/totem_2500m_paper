@@ -11,7 +11,7 @@ include "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/2rp/plots
 
 string f = topDir + "systematics/matrix.root";
 
-string binning = "ob-1-20-0.05";
+string binning = "ob-2-10-0.05";
 
 string objects[] = {
 //	"input/45b_56t/<binning>",
@@ -31,6 +31,8 @@ real z_t_mins[], z_t_maxs[], z_t_Steps[], z_t_steps[], z_e_maxs[], z_e_Steps[], 
 z_t_mins.push(6e-4); z_t_maxs.push(0.004); z_t_Steps.push(0.001); z_t_steps.push(0.0002); z_e_maxs.push(0.02); z_e_Steps.push(0.005); z_e_steps.push(0.001);
 z_t_mins.push(0e-4);z_t_maxs.push(0.2); z_t_Steps.push(0.05); z_t_steps.push(0.01); z_e_maxs.push(0.02); z_e_Steps.push(0.005); z_e_steps.push(0.001);
 //z_t_maxs.push(1.0); z_t_Steps.push(0.2); z_t_steps.push(0.1); z_e_maxs.push(0.04); z_e_Steps.push(0.01); z_e_steps.push(0.005);
+
+TH1_x_min = 8.01e-4;
 
 //----------------------------------------------------------------------------------------------------
 
@@ -110,7 +112,7 @@ for (int zi : z_t_maxs.keys)
 	limits((t_min, -e_max), (t_max, e_max), Crop);
 
 	xaxis(YEquals(0, false), dashed);
-	yaxis(XEquals(8e-4, false), dashed);
+	//yaxis(XEquals(8e-4, false), dashed);
 
 	if (zi == 0)
 		AttachLegend(BuildLegend(lineLength=5mm, NE, vSkip=-1.5mm, ymargin=0mm), NE);

@@ -9,7 +9,8 @@ string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/2
 string topDir_2RP = topDir;
 string topDir_4RP = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/4rp/";
 
-string binning = "ob-3-5-0.05";
+//string binning = "ob-3-5-0.05";
+string binning = "ob-2-10-0.05";
 
 real x_min = 0;
 real x_max = 0.02;

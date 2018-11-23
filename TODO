@@ -6,11 +6,7 @@
  - add protective statement to the paper
 
 
-* Fig 11: same binning as in Tab 3, alternatively indicate which binning used in Fig. 11
-
-
-* Tab 3: add "other uncertainties"
-
-
-* Tab 3: when calculating absolute uncertainties: which "y value" to use -- bin content or fit ??
+* Tab 3
+ - add "other uncertainties"
+ - when calculating absolute uncertainties: which "y value" to use -- bin content or fit ??
 
