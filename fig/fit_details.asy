@@ -4,7 +4,7 @@ import style;
 
 ySizeDef = 4.5cm;
 
-string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/combined/coulomb_analysis_1_weighted/";
+string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/combined/coulomb_analysis_1/default/";
 
 string it_dir = "F_C+H, iteration 2";
 
