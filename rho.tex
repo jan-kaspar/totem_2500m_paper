@@ -1,4 +1,4 @@
-\section{Determination of $\rho$}
+\section{Determination of $\rho$ and total cross-section}
 \label{sec:rho}
 
 The value of the $\rho$ parameter can be extracted from the differential cross-section thanks to the effects of Coulomb-nuclear interference (CNI). Our modelling of these effects is summarised in Section \ref{sec:rho cni}, and Section \ref{sec:rho anal} describes data fits and results.
@@ -21,13 +21,14 @@ Motivated by the observed differential cross-section, at low $|t|$ the modulus o
 \label{eq:nuc mod}
 \left | {\cal A}^{\rm N}(t) \right | = \sqrt{s\over\pi} {p\over \hbar c} \sqrt{a} \exp\left( {1\over 2} \sum\limits_{n = 1}^{N_b} b_n\, t^n \right)\ .
 \end{equation}
-The $b_1$ parameter is responsible for the leading exponential decrease, the other $b_n$ parameters can describe small deviations from the leading behaviour. Since the calculation of CNI may, in principle, involve integrations (e.g.~Eq.~(\ref{eq:int kl})), it is necessary to extend the nuclear amplitude meaningfully to higher $|t|$ values, too. In that region, the amplitude is fixed to a function that describes well the dip-bump structure observed in the data, see the red curve in Figure~\ref{fig:high t desc}. In order to avoid numerical problems, the intermediate $|t|$ region is modelled with a continuous and smooth interpolation between the low and high-$|t|$ parts. It has been checked that altering the high-$|t|$ part within reasonable limits has negligible impact on the results.
+The $b_1$ parameter is responsible for the leading exponential decrease, the other $b_n$ parameters can describe small deviations from the leading behaviour. Since the calculation of CNI may, in principle, involve integrations (e.g.~Eq.~(\ref{eq:int kl})), it is necessary to extend the nuclear amplitude meaningfully to higher $|t|$ values, too. In that region, the amplitude is fixed to a function that describes well the dip-bump structure observed in the data, see the red curve in Figure~\ref{fig:high t desc} \TODO{update}. In order to avoid numerical problems, the intermediate $|t|$ region is modelled with a continuous and smooth interpolation between the low and high-$|t|$ parts. It has been checked that altering the high-$|t|$ part within reasonable limits has negligible impact on the results.
 
 \begin{figure*}
 \vskip-5mm
 \begin{center}
 \includegraphics{fig/high_t_description.pdf}
 \caption{%
+\TODO{remove ??}
 Differential cross-section at higher $|t|$ values as determined in the ``2RP'' analysis (black points) with a fit (red line) used for the evaluation of the CNI effects. The fit also allows for a first dip-bump characterisation at $13\un{TeV}$: the dip is located at $|t| \approx 0.47\un{GeV^2}$, the bump at $|t|\approx 0.62\un{GeV^2}$ and the bump/dip cross-section ratio is about $1.8$. A precise quantification will be given in a forthcoming TOTEM publication using a dedicated high-statistics dataset. For comparison: at $7\un{TeV}$ the dip was found at $0.53\un{GeV^2}$ and the bump/dip ratio $\lesssim 1.7$ \cite{totem-7tev-first}.
 }
 \label{fig:high t desc}
@@ -77,7 +78,7 @@ Since the extracted value of $\rho$ may depend on the assumed fit parametrisatio
 
 \begin{table}
 \caption{%
-Summary of results for various fit configurations, using the ``medium'' binning.
+Summary of results for various fit configurations, using the ``coarse'' binning. \TODO{tell about binning independence}
 }%
 \vskip-5mm
 \label{tab:rho ref fits}
@@ -90,9 +91,9 @@ Summary of results for various fit configurations, using the ``medium'' binning.
 $N_b$ && $\chi^2/\hbox{ndf}$ & $\rho$ && $\chi^2/\hbox{ndf}$ & $\rho$\cr
 \hline
 \vrule width0pt height10pt
-1     && $1.0$ & $0.08\pm0.01$  &&     $2.1$ & -             \cr
-2     && $1.0$ & $0.08\pm0.01$  &&     $1.0$ & $0.09\pm0.01$ \cr
-3     && $1.0$ & $0.08\pm0.01$  &&     $1.0$ & $0.09\pm0.01$ \cr
+1     && $0.7$ & $0.09\pm0.01$  &&     $2.6$ & -             \cr
+2     && $0.6$ & $0.10\pm0.01$  &&     $1.0$ & $0.09\pm0.01$ \cr
+3     && $0.6$ & $0.09\pm0.01$  &&     $0.9$ & $0.10\pm0.01$ \cr
 \hline
 \end{tabular}
 \end{center}
@@ -125,7 +126,7 @@ Details of fit with $N_b = 1$ and $|t|_{\rm max} = 0.07\un{GeV^2}$.
 
 The extreme cases in Table~\ref{tab:rho ref fits}, combination $N_b=1$ with $|t|_{\rm max} = 0.07\un{GeV^2}$ and $N_b=3$ with $|t|_{\rm max} = 0.15\un{GeV^2}$ have important meanings. In the latter, the largest possible sample is used and maximum flexibility is given to the fit. In that sense, this fit corresponds to the best $\rho$ determination considered. Also, in this case the fit data include many points where the CNI effects are limited. Consequently, the fit can ``learn'' the trend of the nuclear component and ``impose it'' in the region of strong CNI effects. Conversely, the fit configuration $N_b=1$ with $|t|_{\rm max} = 0.07\un{GeV^2}$ relies uniquely on data with sizeable CNI effects. This complementarity explains why these two cases give the extreme values of $\rho$ in Table~\ref{tab:rho ref fits}. Fit details for these two configurations are shown in Figures~\ref{fig:fit exp3 0.15} and \ref{fig:fit exp1 0.07}.
 
-The fit configuration $N_b=1$ with $|t|_{\rm max} = 0.07\un{GeV^2}$ has another important meaning. Considering the shrinkage of the ``forward-cone'', this $|t|$ range is similar to the one used in the UA4/2 analysis \cite{ua4-rho}. This fact may suggest why UA4/2 could not observe deviations of the differential cross-section from pure exponential: the $|t|$ range was too narrow, as it would be for the present data, had the acceptance stopped at $|t| = 0.07\un{GeV^2}$, see Figure~\ref{fig:fit exp1 0.07}. Beyond the $|t|$ range, this fit combination shares more similarities with the UA4/2 fit (and in general with many other past experiments): purely exponential fit and assumption of constant hadronic phase. Moreover, as shown in Ref.~\cite{totem-8tev-1km}, the ``KL'' interference formula \cite{kl94} used in this report gives for this fit configuration very similar $\rho$ results as the ``SWY'' interference formula \cite{wy68} used in many past data analyses. From this point of view this fit combination corresponds to the most fair comparison to previous $\rho$ determinations and their extrapolations, as e.g.~in Figure \ref{fig:rho_vs_s}. It is worth noting that this fit configuration yields a $\rho$ value incompatible at the level of about $5.7\un{\sigma}$
+The fit configuration $N_b=1$ with $|t|_{\rm max} = 0.07\un{GeV^2}$ has another important meaning. Considering the shrinkage of the ``forward-cone'', this $|t|$ range is similar to the one used in the UA4/2 analysis \cite{ua4-rho}. This fact may suggest why UA4/2 could not observe deviations of the differential cross-section from pure exponential: the $|t|$ range was too narrow, as it would be for the present data, had the acceptance stopped at $|t| = 0.07\un{GeV^2}$, see Figure~\ref{fig:fit exp1 0.07}. Beyond the $|t|$ range, this fit combination shares more similarities with the UA4/2 fit (and in general with many other past experiments): purely exponential fit and assumption of constant hadronic phase. Moreover, as shown in Ref.~\cite{totem-8tev-1km}, the ``KL'' interference formula \cite{kl94} used in this report gives for this fit configuration very similar $\rho$ results as the ``SWY'' interference formula \cite{wy68} used in many past data analyses. From this point of view this fit combination corresponds to the most fair comparison to previous $\rho$ determinations and their extrapolations, as e.g.~in Figure \ref{fig:rho_vs_s}. It is worth noting that this fit configuration yields a $\rho$ value incompatible at the level of about $4.7\un{\sigma}$
 with the preferred COMPETE model (blue curve in the figure).
 
 \begin{figure*}
@@ -139,7 +140,7 @@ Dependence of the $\rho$ parameter on energy. The $\rm pp$ (blue) and $\rm p\bar
 \end{center}
 \end{figure*}
 
-Further tests were performed in order to probe the stability of the $\rho$ extraction. Since at higher $|t|$ values the effects of CNI are limited, one may conceive a two-step fit: first, use only the higher $|t|$ data to determine the parameters of the hadronic modulus, cf.~Eq.~(\ref{eq:nuc mod}), and second, optimise only $\rho$ with all the data but the hadronic modulus fixed from the first step. Figure~\ref{fig:fit exp3 0.15} indicates that for the first step one needs to include points down to about $|t| = 0.04\un{GeV^2}$ in order to describe correctly the concavity of the data. Performing the two-step fit with $N_b=3$ and with ansatz $\rho = 0.10$ (or $0.14$) yields, at the end, $\Delta\rho \approx 0.01$ (or $0.02$) wrt.~the standard $N_b=3$ fit presented above. Although there is a non-zero $\rho$ difference (CNI effects cannot be fully neglected at higher $|t|$), these results demonstrate the pull of the data towards $\rho \approx 0.09$. A logical counterpart of the procedure just described would be to give the higher-$|t|$ data less weight. In its extreme, where the higher-$|t|$ data are not used at all, this has already been covered by fits with $|t|_{\rm max} = 0.07\un{GeV^2}$ discussed above.
+Further tests were performed in order to probe the stability of the $\rho$ extraction. Since at higher $|t|$ values the effects of CNI are limited, one may conceive a two-step fit: first, use only the higher $|t|$ data to determine the parameters of the hadronic modulus, cf.~Eq.~(\ref{eq:nuc mod}), and second, optimise only $\rho$ with all the data but the hadronic modulus fixed from the first step. Figure~\ref{fig:fit exp3 0.15} indicates that for the first step one needs to include points down to about $|t| = 0.04\un{GeV^2}$ in order to describe correctly the concavity of the data. Performing the two-step fit with $N_b=3$ and with ansatz $\rho = 0.10$ (or $0.14$) yields, at the end, $\rho = 0.103$ (or $0.116$). Although there is a non-zero $\rho$ difference (CNI effects cannot be fully neglected at higher $|t|$), these results demonstrate the pull of the data towards $\rho \approx 0.10$. A logical counterpart of the procedure just described would be to give the higher-$|t|$ data less weight. In its extreme, where the higher-$|t|$ data are not used at all, this has already been covered by fits with $|t|_{\rm max} = 0.07\un{GeV^2}$ discussed above.
 
 \begin{figure*}
 \vskip-5mm
@@ -155,4 +156,4 @@ Constraints to the relation between $\rho$ and $\sigma_{\rm el}$ derived from th
 \end{figure*}
 
 
-Figure \ref{fig:si_el rho sol} illustrates a small correction due to a conceptual improvement in combining the data from this publication and from Ref.~\cite{totem-13tev-90m}. The latter assumes certain values of $\rho$ in order to evaluate cross-section estimates which are in turn used in this analysis (see Section~\ref{sec:normalisation}) to estimate $\rho$. This circular dependence can be resolved by considering simultaneously the $\rho$ dependence of $\sigma_{\rm el}$ in Ref.~\cite{totem-13tev-90m} (blue line) and the $\sigma_{\rm el}$ dependence of $\rho$ determined in this analysis (red line). The latter is done as linear interpolation of $\rho$ values extracted assuming $\sigma_{\rm el} = 30.9$ and $31.1\un{mb}$. The linear dependence is confirmed with Monte-Carlo studies. The solution consistent with both datasets (green dot) brings negligible correction to $\rho$ and $+0.2\un{\%}$ correction to the value of $\sigma_{\rm el}$ published in Ref.~\cite{totem-13tev-90m} for $\rho=0.10$.
+Figure \ref{fig:si_el rho sol} illustrates a small correction due to a conceptual improvement in combining the data from this publication and from Ref.~\cite{totem-13tev-90m}. The latter assumes certain values of $\rho$ in order to evaluate cross-section estimates which are in turn used in this analysis (see Section~\ref{sec:normalisation}) to estimate $\rho$. This circular dependence can be resolved by considering simultaneously the $\rho$ dependence of $\sigma_{\rm el}$ in Ref.~\cite{totem-13tev-90m} (blue line) and the $\sigma_{\rm el}$ dependence of $\rho$ determined in this analysis (red line). The latter is done as linear interpolation of $\rho$ values extracted assuming $\sigma_{\rm el} = 30.9$ and $31.1\un{mb}$. The linear dependence is confirmed with Monte-Carlo studies. The solution consistent with both datasets (green dot) brings negligible correction to $\rho$ and $-0.03\un{\%}$ correction to the value of $\sigma_{\rm el}$ published in Ref.~\cite{totem-13tev-90m} for $\rho=0.10$.
