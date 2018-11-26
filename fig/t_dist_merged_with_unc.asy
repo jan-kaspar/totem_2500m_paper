@@ -13,7 +13,7 @@ string binning = "ob-2-10-0.05";
 
 string diagonal = "combined";
 
-string fit_file = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/combined/coulomb_analysis_1/default/fits/2500-2rp-ob-2-10-0.05/exp1,t_max=0.07/fit.root";
+string fit_file = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/combined/coulomb_analysis_1/default-plots/fits/2500-2rp-ob-2-10-0.05/exp1,t_max=0.07/fit.root";
 string fit_obj = "g_fit_CH";
 
 string unc_file = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/2rp/systematics/matrix.root";
