@@ -1,7 +1,10 @@
 \section{Determination of $\rho$ and total cross-section}
 \label{sec:rho}
 
-The value of the $\rho$ parameter can be extracted from the differential cross-section thanks to the effects of Coulomb-nuclear interference (CNI). Our modelling of these effects is summarised in Section \ref{sec:rho cni}, and Section \ref{sec:rho anal} describes data fits and results.
+The value of the $\rho$ parameter can be extracted from the differential cross-section thanks to the effects of Coulomb-nuclear interference (CNI). Explicit treatment of these effects allows also for a conceptually more accurate determination of the total cross-section. 
+
+
+Our modelling of the CNI effects is summarised in Section \ref{sec:rho cni}, Sections~\ref{sec:rho anal} and \ref{sec:rho anal norm var} describe data fits and results. In Section~\ref{sec:rho anal} the differential cross-section normalisation is fixed by the $\beta^* = 90\un{m}$ data \cite{totem-13tev-90m} (see Section~\ref{sec:normalisation}). In Section~\ref{sec:rho anal norm var} the normalisation is adjusted or entirely determined from the $\beta^* = 2500\un{m}$ data presented in this publication. This allows for different or even completely independent total cross-section determination with respect Ref.~\cite{totem-13tev-90m}.
 
 %----------------------------------------------------------------------------------------------------
 \subsection{Coulomb-Nuclear Interference}
@@ -46,12 +49,10 @@ which is numerically almost identical to the formula by Cahn \cite{cahn82} as sh
 
 
 %----------------------------------------------------------------------------------------------------
-\subsection{Data fits}
+\subsection{Data fits with fixed normalisation}
 \label{sec:rho anal}
 
-\TODO{Update to fits with ``normalisation'' fixed}
-
-The fits have been carried out with the standard least-squares method, minimising
+The fits of the data from Table~\ref{tab:data} have been carried out with the standard least-squares method, minimising
 \begin{equation}
 \label{eq:chi sq A}
 	\chi^2 = \Delta^\T \mat V^{-1} \Delta\ ,\quad
@@ -68,7 +69,7 @@ Since the extracted value of $\rho$ may depend on the assumed fit parametrisatio
 
 \begin{table}
 \caption{%
-Summary of results for various fit configurations (medium binning).
+Summary of results for various fit configurations (medium binning). \TODO{si tot uncertainties}
 }%
 \vskip-5mm
 \label{tab:rho ref fits}
@@ -154,16 +155,22 @@ Figure \ref{fig:si_el rho sol} illustrates a small correction due to a conceptua
 \subsection{Data fits with variable normalisation}
 \label{sec:rho anal norm var}
 
-\TODO{Why variable normalisation -- QED sensitivity, equation with eta}
+Beyond the determination of the $\rho$ parameter, the very low $|t|$ data offer a normalisation method, too. Suppose that the nuclear amplitude in Eq.~(\ref{eq:int kl}) were negligible, then the normalisation of the differential cross-section could be performed with respect to the Coulomb amplitude, known from QED. While such an extreme situation does not occur within the available dataset, Table~\ref{tab:data}, the lowest $|t|$ points receive large contribution from the Coulomb amplitude and can thus be used for normalisation adjustment or determination. In practice, we extend the fit function in Eq.~(\ref{eq:int kl}) with parameter $\eta$
+\begin{equation}
+\label{eq:fit fcn eta}
+{\d\sigma^{C+N}\over \d t} = \eta\ {\pi (\hbar c)^2 \over s p^2} \left | {\alpha s\over t} {\cal F}^2
+			+ {\cal A}^{\rm N}\, \Big[1 - \I\alpha G(t)\Big] \right |^2\ ,
+\end{equation}
+which represents normalisation adjustments with respect the $\beta^* = 90\un{m}$ result \cite{totem-13tev-90m} (corresponding to $\eta = 1$).
 
-The normalisation can be determined from the $\beta^* = 90\un{m}$ data (Section~\ref{sec:normalisation}), from the $\beta^* = 2500\un{m}$ data (this publication) or their combination. This is formalised in the following three approaches.
+In turn, the normalisation can be determined from the $\beta^* = 90\un{m}$ data (Ref.~\cite{totem-13tev-90m} and Section~\ref{sec:normalisation}), from the $\beta^* = 2500\un{m}$ data (this publication) or their combination. This is formalised in the following three approaches.
 \begin{itemize}
 \item approach 1: normalisation from $90\un{m}$ data, results presented in the previous section (in particular Table~\ref{tab:rho ref fits}),
 \item approach 2: normalisation adjusted with $2500\un{m}$ data within the constraint (mean, RMS) from the $90\un{m}$ data,
 \item approach 3: normalisation entirely from $2500\un{m}$ data.
 \end{itemize}
 
-Since the QED normalisation is performed at very low $|t|$, the presentation in this section will focus on fits with $N_b = 1$. Fits with $N_b = 3$ were tested, too, without significant changes in the results. For the sake of simplicity, only the medium binning will be used in this section. The previous section has shown that results do not depend on the choice of binning.
+Since the Coulomb normalisation is performed at very low $|t|$, the presentation in this section will focus on fits with $N_b = 1$. Fits with $N_b = 3$ were tested, too, without significant changes in the results. For the sake of simplicity, only the medium binning will be used in this section. The previous section has shown that results do not depend on the choice of binning.
 
 Since the nuclear-amplitude component cannot be neglected even at the lowest $|t|$ points of the available dataset, Table~\ref{tab:data}, the normalisation determination must be performed with care. It has been found preferable to make the fits part by part, using dedicated and physics-motivated fit configurations for each parameter. The parameters of the nuclear amplitude are determined from a ``golden nuclear $|t|$ range'' where $|t|$ is large enough for CNI effects to be small while $|t|$ is small enough for the $N_b = 1$ parametrisation to be suitable. For example, analysing Eq.~(\ref{eq:int kl}) one finds that CNI effects contribute to the full cross-section less than $1\un{\%}$ for $|t| \gtrsim 0.015\un{GeV^2}$. In the nuclear range, the CNI effects can be ignored (charging the residual effects on systematics), making the fit independent of interference modelling. The normalisation $\eta$, in contrary, is determined from the lowest $|t|$ points which are the only ones having sensitivity to the Coulomb-amplitude component. The $\rho$ parameter is derived from a $|t|$ range where CNI effects are significant, thus complementing the nuclear range, $|t| \lesssim 0.015\un{GeV^2}$.
 
@@ -177,7 +184,7 @@ The $\rho$ and total cross-section results are listed in Table~\ref{tab:rho si t
 
 Approach 3 was implemented via the following sequence of fits:
 \begin{itemize}
-\item step a (determination of $\eta a^2$ and $b_1$): fit over range $0.015 < |t| < 0.05\un{GeV^2}$, CNI effects ignored, therefore the fit is only sensitive to the product $\eta a^2$, \TODO{see Eq ...}
+\item step a (determination of $\eta a^2$ and $b_1$): fit over range $0.015 < |t| < 0.05\un{GeV^2}$, CNI effects ignored, therefore the fit is only sensitive to the product $\eta a^2$, cf.~Eqs.~(\ref{eq:fit fcn eta}) and (\ref{eq:nuc mod}),
 \item step b (determination of $\eta$): fit over range $|t| < 0.0023\un{GeV^2}$, $b_1$ and product $\eta a^2$ fixed from step a, $a$ is also determined in this step,
 \item step c (determination of $\rho$): fit over range $|t| < 0.015\un{GeV^2}$, $b_1$ fixed from step a, $\eta$ and $a$ fixed from step b,
 \end{itemize}
