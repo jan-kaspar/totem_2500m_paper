@@ -145,16 +145,6 @@ number & cut & std.~dev.~($\equiv 1\sigma$)\cr\hline
 
 Within the ``2RP'' analysis one may apply the cuts requiring the reconstructed-track collinearity between the left and the right arm, see Table~\ref{tab:cuts}. The correlation plots corresponding to these cuts are shown in Figure~\ref{fig:cuts}. 
 
-\begin{figure}
-\begin{center}
-\includegraphics{fig/cut_example.pdf}
-\caption{%
-Correlation plots for the elastic event selection cuts presented in Table~\ref{tab:cuts} (``2RP'' analysis), showing events from the LHC fill 5313 and with diagonal topology 45 bottom -- 56 top. The solid black lines delimit the signal region within $\pm 4\un{\sigma}$.
-}
-\label{fig:cuts}
-\end{center}
-\end{figure}
-
 In order to limit the selection inefficiency, the thresholds for the cuts are set to $4\un{\sigma}$. Applying the cuts at the $5\un{\sigma}$-level would yield about $0.1\un{\%}$ more events almost uniformly in every $|t|$-bin. This kind of inefficiency only contributes to a global scale factor, which is irrelevant for this analysis because the normalisation is taken from a different data set (cf. Section~\ref{sec:normalisation}).
 
 In the ``4RP'' analysis, thanks to the additional information from the 210-fr units, more cuts can be applied (cf.~Table~2 in~\cite{totem-7tev-el}). In particular the left-right comparison of the reconstructed horizontal vertex position, $x^*$, and the vertical position-angle correlation in each arm. Furthermore, since the single-arm reconstruction can disentangle the contributions from $x^*$ and $\theta^*_x$, the angular resolution is better compared with the ``2RP'' analysis and consequently cut 1 in the ``4RP'' analysis is more efficient against background.
@@ -164,6 +154,16 @@ In the ``4RP'' analysis, thanks to the additional information from the 210-fr un
 % cut condition: |th_x_R - th_x_L| < 4sigma ~ 56 urad
 % that means that the cut is effective for |xi_R + xi_L| > L_x * T / D_x = 51m * 56 urad / 3cm ~ 0.09
 
+
+\begin{figure}
+\begin{center}
+\includegraphics{fig/cut_example.pdf}
+\caption{%
+Correlation plots for the elastic event selection cuts presented in Table~\ref{tab:cuts} (``2RP'' analysis), showing events from the LHC fill 5313 and with diagonal topology 45 bottom -- 56 top. The solid black lines delimit the signal region within $\pm 4\un{\sigma}$.
+}
+\label{fig:cuts}
+\end{center}
+\end{figure}
 
 
 %-------------------------
@@ -273,6 +273,16 @@ The first term in the parentheses sums the contributions from the diagonal RPs u
 \subsubsection{Unfolding of Resolution Effects}
 \label{sec:unfolding}
 
+\begin{figure}
+\begin{center}
+\includegraphics{fig/unfolding_num_int_model_cmp.pdf}
+\caption{%
+Unfolding correction as a function of $|t|$. The vertical dashed line indicates the position of the acceptance cut. The two correction curves were obtained with different fit parametrisations used in step 1 (see text).
+}
+\label{fig:unfolding}
+\end{center}
+\end{figure}
+
 Thanks to the very good resolution (see Section~\ref{sec:resolution}), the following iterative procedure can be safely used to evaluate the correction for resolution effects.
 \begin{itemize}
 \item[1.] The differential cross-section data are fitted by a smooth curve.
@@ -285,16 +295,6 @@ As the estimate of the true $t$-distribution improves, the difference between th
 The final correction $\mathcal{U}$ is significantly different from $1$ only at very low $|t|$ (where a rapid cross-section growth occurs, see Figure~\ref{fig:unfolding}). The relative effect is never greater than $0.4\un{\%}$.
 
 Several fit parametrisations were tested, however yielding negligible difference in the final correction $\mathcal{U}$ for $|t| \lesssim 0.3\un{GeV^2}$. Figure~\ref{fig:unfolding} shows the case for two of those.
-
-\begin{figure}
-\begin{center}
-\includegraphics{fig/unfolding_num_int_model_cmp.pdf}
-\caption{%
-Unfolding correction as a function of $|t|$. The vertical dashed line indicates the position of the acceptance cut. The two correction curves were obtained with different fit parametrisations used in step 1 (see text).
-}
-\label{fig:unfolding}
-\end{center}
-\end{figure}
 
 For the uncertainty estimate, the uncertainties of the $\theta_x^*$ and $\theta_y^*$ resolutions (see Section~\ref{sec:resolution}) as well as fit-model dependence have been taken into account. Altogether, the uncertainty is smaller than $0.1\un{\%}$.
 
@@ -327,16 +327,6 @@ The bin sizes are set according to the $t$ resolution. Three different binnings 
 
 After analysing the data in each diagonal and LHC fill separately, the individual differential cross-section distributions are merged. This is accomplished by a per-bin weighted average, with the weight given by inverse squared statistical uncertainty. The final cross-section values are listed in Table~\ref{tab:data} and are visualised in Figure~\ref{fig:dsdt}. The figure clearly shows a rapid cross-section rise below $|t| \lesssim 0.002\un{GeV^2}$ which, as interpreted later, is an effect due to the electromagnetic interaction.
 
-\begin{figure*}
-\vskip-5mm
-\begin{center}
-\includegraphics{fig/t_dist_tabulated.pdf}
-\caption{%
-Differential cross-section from Table \ref{tab:data} with statistical (bars) and systematic uncertainties (bands). The yellow band represents all systematic uncertainties, the green one all but normalisation. The bands are centred around the bin content. {\bf Inset}: a low-$|t|$ zoom of cross-section rise due to the Coulomb interaction.
-}
-\label{fig:dsdt}
-\end{center}
-\end{figure*}
 
 
 %----------------------------------------------------------------------------------------------------
@@ -425,5 +415,16 @@ Collection of cross-check plots (medium binning, only statistical uncertainties 
 \end{figure*}
 
 %----------------------------------------------------------------------------------------------------
+
+\begin{figure*}
+\vskip-5mm
+\begin{center}
+\includegraphics{fig/t_dist_tabulated.pdf}
+\caption{%
+Differential cross-section from Table \ref{tab:data} with statistical (bars) and systematic uncertainties (bands). The yellow band represents all systematic uncertainties, the green one all but normalisation. The bands are centred around the bin content. {\bf Inset}: a low-$|t|$ zoom of cross-section rise due to the Coulomb interaction.
+}
+\label{fig:dsdt}
+\end{center}
+\end{figure*}
 
 \input data_table.tex
