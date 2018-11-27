@@ -80,7 +80,7 @@ fsh = +1.0fshu; DrawPoint(7e3, 98.6, 2.2, red, mCi+2pt+red);
 fsh = -1.0fshu; DrawPoint(8e3, 101.5, 2.1, red, mCi+2pt+red);
 fsh = +1.0fshu; DrawPoint(8e3, 102.9, 2.3, red, mCi+2pt+red);
 
-fsh = 0fshu; DrawPoint(13e3, 110.6, 3.4, red, mCi+2pt+red);
+fsh = 0fshu; DrawPoint(13e3, 110.5, 2.4, red, mCi+2pt+red);
 //fsh = +1fshu; DrawPoint(13e3, 112.1, 3.0, red, mCi+2pt+red);
 
 limits((1e2, 35), (2e4, 120), Crop);
