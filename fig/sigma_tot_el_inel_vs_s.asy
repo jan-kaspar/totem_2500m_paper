@@ -182,10 +182,10 @@ fsh = +0fshu; DrawPoint(13e3,  79.5, 1.8, p_inel, m_TOTEM+p_inel);
 fsh = +0fshu; DrawPoint(13e3,  31.0, 1.7, p_el+1pt, m_TOTEM+p_el);
 
 // TOTEM; 2.5km analysis, approach 3, step d, preliminary, not yet published
-fsh = -1.1fshu; DrawPoint(13e3, 110.32, 3.95, p_tot, m_TOTEM+false+p_tot);
+fsh = -1.1fshu; DrawPoint(13e3, 110.3, 3.5, p_tot, m_TOTEM+false+p_tot);
 
 // TOTEM; 90m + 2.5km combination, preliminary, not yet published
-fsh = +0fshu; DrawPoint(13e3, 110.48, 2.58, p_tot, m_TOTEM+p_tot);
+fsh = +0fshu; DrawPoint(13e3, 110.5, 2.4, p_tot, m_TOTEM+p_tot);
 
 
 // -------------------- arrows --------------------
