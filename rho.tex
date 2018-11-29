@@ -186,7 +186,7 @@ In detail, approach 2 was implemented via the following sequence of fits:
 \item step b (determination of $\eta$): fit over range $|t| < 0.0015\un{GeV^2}$, $b_1$ fixed from step a, the overall $\chi^2$ receives an additional term $(\eta - 1)^2/ \sigma_\eta^2$, $\sigma_\eta = 0.055$,  which reflects the constraint from the $\beta^* = 90\un{m}$ data,
 \item step c (determination of $\rho$ and $a$): fit over range $|t| < 0.07\un{GeV^2}$, $b_1$ fixed from step a, $\eta$ fixed from step b.
 \end{itemize}
-The $\rho$ and total cross-section results are listed in Table~\ref{tab:rho si tot summary}. $\eta$ was found to be $1.005$ thus deviating by a fraction of sigma ($\sigma_\eta = 0.055$) from the $\beta^* = 90\un{m}$ normalisation. The fit quality (step c) is good: normalised $\chi^2 = 0.90$ for $77$ degrees of freedom.
+The $\rho$ and total cross-section results are listed in Table~\ref{tab:rho si tot summary}. $\eta$ was found to be $1.005$ thus deviating by a fraction of sigma ($\sigma_\eta = 0.055$) from the $\beta^* = 90\un{m}$ normalisation.
 
 Approach 3 was implemented via the following sequence of fits:
 \begin{itemize}
@@ -194,9 +194,9 @@ Approach 3 was implemented via the following sequence of fits:
 \item step b (determination of $\eta$): fit over range $|t| < 0.0023\un{GeV^2}$, $b_1$ and product $\eta a^2$ fixed from step a; therefore $a$ is also determined in this step,
 \item step c (determination of $\rho$): fit over range $|t| < 0.015\un{GeV^2}$, $b_1$ fixed from step a, $\eta$ and $a$ fixed from step b.
 \end{itemize}
-The $\rho$ and total cross-section results are listed in Table~\ref{tab:rho si tot summary}. $\eta$ was found to be $1.020$ thus deviating by less than half a sigma ($\sigma_\eta$) from the $\beta^* = 90\un{m}$ normalisation. The data description quality with parameters collected from steps a, b and c over the range $|t| < 0.05\un{GeV^2}$ is good: normalised $\chi^2 = 1.2$ for $65$ degrees of freedom.
+The $\rho$ and total cross-section results are listed in Table~\ref{tab:rho si tot summary}. $\eta$ was found to be $1.020$ thus deviating by less than half a sigma ($\sigma_\eta$) from the $\beta^* = 90\un{m}$ normalisation. The data description quality with parameters collected from steps a, b and c over the range $|t| < 0.05\un{GeV^2}$ is good: p-value of $0.13$.
 
-As a test we tried approach 3 implementation with a single fit over $|t| < 0.05\un{GeV^2}$, where all parameters ($\eta$, $a$, $b_1$ and $\rho$) are free and initialised to the values obtained in the previous paragraph. As anticipated above, such fit might have encountered problems due to non-optimal parameter sensitivities on the available $|t|$ range, however, the results listed in Table~\ref{tab:rho si tot summary} are reasonable. $\eta$ was found to be $1.005$ thus deviating by less than a sigma ($\sigma_\eta$) from the $\beta^* = 90\un{m}$ normalisation. The fit quality is good: normalised $\chi^2 = 0.90$ for $61$ degrees of freedom.
+As a test we tried approach 3 implementation with a single fit over $|t| < 0.05\un{GeV^2}$, where all parameters ($\eta$, $a$, $b_1$ and $\rho$) are free and initialised to the values obtained in the previous paragraph. As anticipated above, such fit might have encountered problems due to non-optimal parameter sensitivities on the available $|t|$ range, however, the results listed in Table~\ref{tab:rho si tot summary} are reasonable. $\eta$ was found to be $1.005$ thus deviating by less than a sigma ($\sigma_\eta$) from the $\beta^* = 90\un{m}$ normalisation. The fit quality is good: p-value of $0.70$.
 
 \begin{table}
 \caption{%
