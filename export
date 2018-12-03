@@ -1,0 +1,22 @@
+#!/bin/bash
+
+tar czvf paper_elastic_2500m_cern.tar.gz\
+	style/cern/cernphprep.cls \
+	fig/*.pdf \
+	elastic_2500m_cern.tex \
+	authorlist_data.tex \
+	authorlist_cern.tex \
+	abstract.tex \
+	introduction.tex \
+	experimental_apparatus.tex \
+	beam_optics.tex \
+	data_taking.tex \
+	differential_cross_section.tex \
+	data_table.tex \
+	rho.tex \
+	discussion.tex \
+	conclusions.tex \
+	acknowledgements.tex \
+	h-elsevier.bst \
+	bibliography.bib \
+	makefile
