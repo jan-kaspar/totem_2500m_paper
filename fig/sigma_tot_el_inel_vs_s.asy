@@ -171,10 +171,13 @@ fsh = +0fshu; DrawPointE(8e3, 0, 0, 24.33, 0.39, 0.39, p_el, m_ATLAS+p_el);
 // -------------------- LHC, 13 TeV --------------------
 
 // ATLAS; Phys. Rev. Lett. 117, 182002
-fsh = -0.01; DrawPoint(13e3, 78.1, 2.9, p_inel, m_ATLAS+p_inel);
+fsh = -1fshu; DrawPoint(13e3, 78.1, 2.9, p_inel, m_ATLAS+p_inel);
 
 // CMS; CMS-PAS-FSQ-15-005 also arXiv:1607.02033; uncertainties summed in quadrature
-fsh = +0.01; DrawPoint(13e3, 71.3, 3.5, p_inel, m_CMS+p_inel);
+fsh = +0fshu; DrawPoint(13e3, 71.3, 3.5, p_inel, m_CMS+p_inel);
+
+// LHCb; https://doi.org/10.1007/JHEP06(2018)100; uncertainties summed in quadrature
+fsh = +1fshu; DrawPoint(13e3, 75.4, 5.4, p_inel, m_LHCb+p_inel);
 
 // TOTEM; 90m analysis, for rho=0.10, preliminary, not yet published
 fsh = +1.1fshu; DrawPoint(13e3, 110.6, 3.4, p_tot, m_TOTEM+false+p_tot);
