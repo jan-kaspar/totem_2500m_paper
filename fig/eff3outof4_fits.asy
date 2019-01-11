@@ -2,8 +2,8 @@ import root;
 import pad_layout;
 import style;
 
-xSizeDef = 4.8cm;
-ySizeDef = 4.8cm;
+xSizeDef = 7.0cm;
+ySizeDef = 5cm;
 
 string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/4rp/";
 
@@ -18,8 +18,6 @@ string rps[], rp_labels[];
 //rps.push("R_1_F"); rp_labels.push("R-210-fr");
 rps.push("R_2_F"); rp_labels.push("R-220-fr" );
 
-xSizeDef = 6cm;
-ySizeDef = 5cm;
 yTicksDef = RightTicks(5., 1.);
 
 int gx=0, gy=0;

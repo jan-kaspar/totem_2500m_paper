@@ -2,8 +2,8 @@ import root;
 import pad_layout;
 import style;
 
-xSizeDef = 4.8cm;
-ySizeDef = 4.8cm;
+xSizeDef = 5.5cm;
+ySizeDef = 5.5cm;
 
 string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/2rp/";
 
@@ -33,6 +33,8 @@ for (int ci : cuts.keys)
 	int idx = cut - 1;
 
 	string f = topDir + dataset+"/distributions_" + diagonal + ".root";
+
+	NewRow();
 	
 	NewPad(label_x[idx], label_y[idx]);
 	scale(Linear, Linear, Log);
@@ -46,4 +48,4 @@ for (int ci : cuts.keys)
 	AttachLegend(format("cut %u", cuts[ci]), NW, NW);
 }
 
-GShipout(margin=0mm, hSkip=5mm);
+GShipout(margin=0mm, hSkip=5mm, vSkip=1mm);
