@@ -14,50 +14,50 @@
 	\ifFirstAuthor
 		\FirstAuthorfalse
 	\else
-		,
+		\and
 	\fi
-	%
+	%	
 	\ifx\PriAf\empty
 		% no primary affiliation, only external
-		#1\Aref{#4}%
+		#1\thanksref{#4}%
 	\else
 		\ifx\SecAf\empty
 			\ifx\ExtAf\empty
 				% only primary affiliation
-				#1\Iref{#2}%
+				#1\thanksref{#2}%
 			\else
 				% primary and external affiliation
-				#1\IAref{#2}{#4}%
+				#1\thanksref{#2,#4}%
 			\fi
 		\else
 			\ifx\ExtAf\empty
 				% primary and secondary affiliation
-				#1\IIref{#2}{#3}%
+				#1\thanksref{#2,#3}%
 			\else
 				% primary, secondary and external affiliation
-				#1\IIAref{#2}{#3}{#4}%
-				\relax
+				#1\thanksref{#2,#3,#4}%
 			\fi
 		\fi
 	\fi
 }
 
 %----------------------------------------------------------------------------------------------------
-% Add an author
-% USAGE: \AddCorrespondingAuthor{name}{primary affiliation}{secondary affiliation}{external affiliation}{footnote text}{email}
-
-\def\AddCorrespondingAuthor#1#2#3#4#5#6{%
-	\AddAuthor{#1}{#2}{#3}{*}%
-	\Anotfoot{*}{#5 E-mail address: #6.}
-}
-
-%----------------------------------------------------------------------------------------------------
 % Add a TOTEM institute
 % USAGE: \AddInstitute{reference as in AddAuthor}{address}
 
+%	First Address, Street, City, Country\label{addr1} \and
+
+\newif\ifFirstInstitute
+\FirstInstitutetrue
+
 \def\AddInstitute#1#2{%
-	\expandafter\write1{\string\newlabel{#1}{{#1}{}}}%
-	\hbox to\hsize{\strut\hss$^{#1}$#2\hss}%
+	\ifFirstInstitute
+		\FirstInstitutefalse
+	\else
+		\and
+	\fi
+	%	
+	#2\label{#1}%
 }
 
 %----------------------------------------------------------------------------------------------------
@@ -65,7 +65,7 @@
 % USAGE: \AddExternalInstitute{reference as in AddAuthor}{address}
 
 \def\AddExternalInstitute#1#2{%
-	\Anotfoot{#1}{#2}%
+	\thankstext{#1}{#2}
 }
 
 %----------------------------------------------------------------------------------------------------
@@ -74,10 +74,14 @@
 
 \input authorlist_data
 
-\begin{Authlist}
-	\DeclareAuthors
-\end{Authlist}
 
-\DeclareInstitutes
-\hbox to\hsize{\strut\hss} % trick to make institute list stop on the front page
+\author{%
+	The TOTEM Collaboration\\
+	\DeclareAuthors
+}
+
 \DeclareExternalInstitutes
+
+\institute{%
+	\DeclareInstitutes
+}

@@ -1,8 +1,11 @@
-\documentclass[TOTEM]{style/cern/cernphprep}
+\documentclass[pdftex,twocolumn,epjc3]{svjour3}
 
-\usepackage[utf8]{inputenc}
-\usepackage{color}
-\usepackage{mathptmx}
+\RequirePackage[utf8]{inputenc}
+
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\RequirePackage{mathptmx}      % use Times fonts if available on your TeX system
+\RequirePackage{flushend}
 \RequirePackage[numbers,sort&compress]{natbib}
 \RequirePackage[colorlinks,citecolor=blue,urlcolor=blue,linkcolor=blue]{hyperref}
 \RequirePackage{amsmath}
@@ -46,70 +49,42 @@
 \def\Name#1{#1, }
 \def\Review#1#2#3#4{{\it #1} {\bf #2} (#3) #4}
 
-
-\newskip\itskip \itskip2mm
-\newskip\iitskip \iitskip0mm
-\newskip\iiitskip \iiitskip0mm
-
-\newdimen\itindent \itindent4mm
-\newdimen\iitindent \iitindent8mm
-\newdimen\iiitindent \iiitindent12mm
-
-\bgroup
-\catcode`\>=11
-
-\gdef\>{%
-	\par\vskip1mm
-	\par\noindent\hbox to 2mm{\hss $\bullet$}
-}
-
-\gdef\>>{%
-	\par
-	\noindent\hbox to 7mm{\hss $\circ$}
-}
-
-\gdef\>>>{%
-	\par
-	\noindent\hbox to 12mm{\hss --}
-}
-
-\egroup
-
 %----------------------------------------------------------------------------------------------------
+
+\journalname{Eur. Phys. J. C}
 
 \begin{document}
 
-\begin{titlepage}
-
-\renewcommand{\EXPLOGO}{fig/logo_totem_black.pdf}
-
-\PHnumber{CERN-EP-2017-335}
-\PHdate{19 December 2017}
-
-\EXPnumber{TOTEM-2017-002}
-\EXPdate{30 November 2018}
+% TODO
+%\PHnumber{CERN-EP-2017-335}
 
 \title{First determination of the $\mathbf{\rho}$ parameter at $\mathbf{\sqrt s = 13}$ TeV -- probing the existence of a colourless three-gluon bound state}
 
-\ShortTitle{First determination of $\rho$ at $\sqrt s = 13$ TeV -- probing a colourless 3-gluon bound state}
+\titlerunning{First determination of $\rho$ at $\sqrt s = 13$ TeV -- probing a colourless 3-gluon bound state}
 
-\Collaboration{The TOTEM Collaboration}
+\input authorlist_epjc
 
-\ShortAuthor{The TOTEM Collaboration (G.~Antchev \emph{\etal})}
+\authorrunning{The TOTEM Collaboration}
 
-\input authorlist_cern
+\date{Manuscript date: \today}
 
+\maketitle
 
 \begin{abstract}
 \input abstract
+\keywords{proton-proton interactions \and elastic scattering \and Coulomb-Nuclear Interference \and total cross-section \and rho parameter \and TOTEM \and LHC}
+\PACS{
+13.85.Dz % Elastic scattering
+\and
+13.85.Lg % Total cross sections
+\and
+13.40.Ks % Electromagnetic corrections to strong- and weak-interaction processes
+}
 \end{abstract}
-\end{titlepage}
 
 %--------------------------------------------------
 
 %\linenumbers
-
-\catcode`\>=11
 
 \input introduction.tex
 
@@ -127,8 +102,9 @@
 
 \input conclusions.tex
 
-\section*{Acknowledgements}
+\begin{acknowledgements}
 \input acknowledgements.tex
+\end{acknowledgements}
 
 %--------------------------------------------------
 

@@ -1,11 +1,11 @@
-all: elastic_2500m_cern.bbl
-	pdflatex elastic_2500m_cern.tex
+all: elastic_2500m_epjc.bbl
+	pdflatex elastic_2500m_epjc.tex
 
-elastic_2500m_cern.bbl : bibliography.bib
-	bibtex elastic_2500m_cern.aux
+elastic_2500m_epjc.bbl : bibliography.bib
+	bibtex elastic_2500m_epjc.aux
 
 full:
-	pdflatex elastic_2500m_cern.tex
-	bibtex elastic_2500m_cern.aux
-	pdflatex elastic_2500m_cern.tex
-	pdflatex elastic_2500m_cern.tex
+	pdflatex elastic_2500m_epjc.tex
+	bibtex elastic_2500m_epjc.aux
+	pdflatex elastic_2500m_epjc.tex
+	pdflatex elastic_2500m_epjc.tex
