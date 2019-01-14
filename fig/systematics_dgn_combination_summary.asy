@@ -3,7 +3,7 @@ import pad_layout;
 import style;
 
 xSizeDef = 6.8cm;
-ySizeDef = 5cm;
+ySizeDef = 4.8cm;
 
 string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/2rp/";
 
@@ -87,11 +87,12 @@ void PlotAllModes()
 	AddToLegend("$\pm 1\un{\si}$ envelope", p_envelope);
 }
 
-
 //----------------------------------------------------------------------------------------------------
 
 for (int zi : z_t_maxs.keys)
 {
+	NewRow();
+
 	NewPad("$|t|\ung{GeV^2}$", "systematic effect$\ung{\%}$");
 
 	PlotAllModes();
@@ -118,4 +119,4 @@ for (int zi : z_t_maxs.keys)
 		AttachLegend(BuildLegend(lineLength=5mm, NE, vSkip=-1.1mm, ymargin=0.2mm), NE);
 }
 
-GShipout(hSkip=5mm, margin=0mm);
+GShipout(hSkip=5mm, vSkip=0mm, margin=0mm);

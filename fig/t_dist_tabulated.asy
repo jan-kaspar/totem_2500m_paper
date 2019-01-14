@@ -3,7 +3,7 @@ import pad_layout;
 import style;
 
 xSizeDef = 15.8cm;
-ySizeDef = 7cm;
+ySizeDef = 6.5cm;
 
 string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/2rp/";
 
@@ -99,7 +99,7 @@ yaxis(LeftRight, RightTicks(100., 20.).GetTicks());
 NewPad("$|t|\ung{GeV^2}$", "$\d\si/\d t\ung{mb/GeV^2}$");
 scale(Linear, Log);
 
-attach(bbox(inset, 1mm, nullpen, FillDraw(white)), (0.129, 0.95));
+attach(bbox(inset, 1mm, nullpen, FillDraw(white)), (0.129, 0.85));
 
 PlotEverything();
 

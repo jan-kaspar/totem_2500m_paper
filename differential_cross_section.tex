@@ -275,18 +275,8 @@ The first term in the parentheses sums the contributions from the diagonal RPs u
 \subsubsection{Unfolding of Resolution Effects}
 \label{sec:unfolding}
 
-\begin{figure}
-\begin{center}
-\includegraphics{fig/unfolding_num_int_model_cmp.pdf}
-\caption{%
-Unfolding correction as a function of $|t|$. The vertical dashed line indicates the position of the acceptance cut. The two correction curves were obtained with different fit parametrisations used in step 1 (see text).
-}
-\label{fig:unfolding}
-\end{center}
-\end{figure}
-
 Thanks to the very good resolution (see Section~\ref{sec:resolution}), the following iterative procedure can be safely used to evaluate the correction for resolution effects.
-\begin{itemize}
+\begin{itemize}[noitemsep,topsep=0pt]
 \item[1.] The differential cross-section data are fitted by a smooth curve.
 \item[2.] The fit is used in a numerical-integration calculation of the smeared $t$-distribution (using the resolution parameters determined in Section~\ref{sec:resolution}). The ratio between the smeared and the non-smeared $t$-distributions gives a set of per-bin correction factors.
 \item[3.] The corrections are applied to the observed (yet uncorrected) differential cross-section yielding a better estimate of the true $t$-distribution.
@@ -299,6 +289,16 @@ The final correction $\mathcal{U}$ is significantly different from $1$ only at v
 Several fit parametrisations were tested, however yielding negligible difference in the final correction $\mathcal{U}$ for $|t| \lesssim 0.3\un{GeV^2}$. Figure~\ref{fig:unfolding} shows the case for two of those.
 
 For the uncertainty estimate, the uncertainties of the $\theta_x^*$ and $\theta_y^*$ resolutions (see Section~\ref{sec:resolution}) as well as fit-model dependence have been taken into account. Altogether, the uncertainty is smaller than $0.1\un{\%}$.
+
+\begin{figure}
+\begin{center}
+\includegraphics{fig/unfolding_num_int_model_cmp.pdf}
+\caption{%
+Unfolding correction as a function of $|t|$. The vertical dashed line indicates the position of the acceptance cut. The two correction curves were obtained with different fit parametrisations used in step 1 (see text).
+}
+\label{fig:unfolding}
+\end{center}
+\end{figure}
 
 
 
@@ -375,8 +375,7 @@ The leading uncertainties (except normalisation) are shown in Figure~\ref{fig:sy
 \end{equation}
 where $i$ and $j$ are bin indices (row numbers in Table~\ref{tab:data}) and the sum goes over the leading error contributions $q$ (five rightmost columns in the table).
 
-
-\begin{figure*}
+\begin{figure}
 \begin{center}
 \includegraphics{fig/systematics_dgn_combination_summary.pdf}
 \caption{%
@@ -384,8 +383,8 @@ Relative variation of the final differential cross-section due to systematic unc
 }
 \label{fig:syst unc}
 \end{center}
-\end{figure*}
-
+\vskip-4mm
+\end{figure}
 
 
 
@@ -398,8 +397,8 @@ Compatible results have been obtained by analysing data subsets of events from d
 
 Figure~\ref{fig:dsdt checks}, bottom right, shows an excellent agreement between the data from this analysis and previous results obtained with $\beta^* = 90\un{m}$ optics \cite{totem-13tev-90m}.
 
-
 \begin{figure*}
+\vskip-3mm
 \begin{center}
 \includegraphics{fig/t_dist_cross_checks.pdf}
 \caption{%
@@ -423,6 +422,8 @@ Differential cross-section from Table \ref{tab:data} with statistical (bars) and
 }
 \label{fig:dsdt}
 \end{center}
+\vskip-5mm
 \end{figure*}
+
 
 \input data_table.tex
