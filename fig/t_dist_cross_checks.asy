@@ -2,8 +2,8 @@ import root;
 import pad_layout;
 import style;
 
-xSizeDef = 6.3cm;
-ySizeDef = 4.8cm;
+xSizeDef = 6.8cm;
+ySizeDef = 5cm;
 
 string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/2rp/";
 string topDir_2RP = topDir;
@@ -80,4 +80,4 @@ AttachLegend();
 
 //----------------------------------------------------------------------------------------------------
 
-GShipout(hSkip=1mm, vSkip=1mm, margin=0mm);
+GShipout(hSkip=5mm, vSkip=1mm, margin=0mm);

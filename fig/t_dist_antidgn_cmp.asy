@@ -2,8 +2,8 @@ import root;
 import pad_layout;
 import style;
 
-xSizeDef = 4.8cm;
-ySizeDef = 4.8cm;
+xSizeDef = 6.9cm;
+ySizeDef = 5cm;
 
 string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/2rp/";
 
@@ -36,6 +36,6 @@ for (int dsi : datasets.keys)
 		draw(RootGetObject(f, "acceptance correction/" + binning + "/h_t_after"), "d0,vl,eb", dgn_pens[dgni], dgn_labels[dgni]);
 	}
 
-	limits((8e-4, 1e2), (0.2, 1e8), Crop);
-	AttachLegend(BuildLegend("cuts 1 and 2:", NW, lineLength=10mm), NE);
+	limits((8e-4, 1e1), (0.2, 1e8), Crop);
+	AttachLegend(BuildLegend("cuts 1 and 2:", SW, lineLength=10mm, vSkip=-1mm, ymargin=-0.2mm), SW);
 }

@@ -106,7 +106,7 @@ void MakeRelativePlot(string f, string binning, real t_max)
 	TGraph_x_max = t_max * 1.1;
 	TH1_x_max = t_max * 1.1;
 
-	xSizeDef = 7.5cm;
+	xSizeDef = 6.4cm;
 
 	NewPad("$|t|\ung{GeV^2}$", "${\d\sigma/\d t - \hbox{ref}\over\hbox{ref}}\ ,\quad " + ref_label + "$");
 	currentpad.xTicks = LeftTicks(0.05, 0.01);
@@ -130,7 +130,7 @@ void MakeRelativePlot(string f, string binning, real t_max)
 
 	limits((0, -0.15), (t_max, 0.05), Crop);
 
-	AttachLegend(shift(0, 10)*BuildLegend(SE, vSkip=-1mm), SE);
+	AttachLegend(shift(0, 10)*BuildLegend(SE, vSkip=-0.9mm), SE);
 }
 
 //----------------------------------------------------------------------------------------------------

@@ -2,8 +2,8 @@ import root;
 import pad_layout;
 import style;
 
-xSizeDef = 6.5cm;
-ySizeDef = 4.8cm;
+xSizeDef = 7.3cm;
+ySizeDef = 5cm;
 
 string topDir = "/home/jkaspar/publications/elastic figures/";
 
@@ -202,7 +202,7 @@ AddToLegend(GetModelsByGroup(20), GroupPen(20));
 AddToLegend(GetModelsByGroup(30), GroupPen(30));
 AddToLegend(GetModelsByGroup(31), GroupPen(31));
 
-AttachLegend(BuildLegend(SE, vSkip=-1mm, colWidth=14.2cm));
-FixPad(317, 75);
+AttachLegend(BuildLegend(SE, vSkip=-1mm, lineLength=8mm));
+FixPad(354, 76);
 
-GShipout(margin=1mm, hSkip=3mm);
+GShipout(margin=1mm, hSkip=5mm);

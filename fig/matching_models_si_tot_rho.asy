@@ -4,8 +4,8 @@ import style;
 
 string topDir = "/home/jkaspar/publications/elastic figures/nicolescu/";
 
-xSizeDef = 6.6cm;
-ySizeDef = 4.8cm;
+xSizeDef = 7.3cm;
+ySizeDef = 5cm;
 
 drawGridDef = false;
 
@@ -90,9 +90,9 @@ DrawAxes(47);
 //AddToLegend("ref.~TOTEM meas.", red, mCi+2pt+red);
 AddToLegend("Nicolescu et al. (2007)", p_Nico_2007);
 AddToLegend("Nicolescu et al. (2017)", p_Nico_2017);
-AddToLegend("Durham, no 3g exch.", p_Durh);
-AddToLegend("Durham, 3g exch.~$0.8\un{mb}$\hskip-1mm", p_Durh_odd08);
-AddToLegend("Durham, 3g exch.~$1.3\un{mb}$\hskip-1mm", p_Durh_odd13);
+AddToLegend("Durham, no 3 gluon exch.", p_Durh);
+AddToLegend("Durham, 3 gluon exch.~$0.8\un{mb}$\hskip-1mm", p_Durh_odd08);
+AddToLegend("Durham, 3 gluon exch.~$1.3\un{mb}$\hskip-1mm", p_Durh_odd13);
 AttachLegend(BuildLegend(NW, vSkip=-1mm, lineLength=4.5mm, ymargin=0mm), NW);
 
 
@@ -148,4 +148,4 @@ AttachLegend(BuildLegend(NE, vSkip=-1mm, lineLength=6mm, ymargin=0), NE);
 
 //----------------------------------------------------------------------------------------------------
 
-GShipout(margin=1mm, hSkip=3mm);
+GShipout(margin=1mm, hSkip=5mm);

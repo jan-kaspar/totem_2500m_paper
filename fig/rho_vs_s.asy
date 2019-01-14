@@ -9,7 +9,7 @@ string base_dir = "/home/jkaspar/publications/elastic figures/pdg/";
 
 fit_file = topDir + "build_uncertainty_bands.root";
 
-xSizeDef = 10cm;
+xSizeDef = 12cm;
 ySizeDef = 5.5cm;
 
 drawGridDef = false;

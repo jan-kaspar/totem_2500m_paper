@@ -54,7 +54,7 @@ yaxis(LeftRight, RightTicks(5., 1.).GetTicks());
 
 // -------------------- main pad --------------------
 
-NewPad("$\sqrt s\ung{GeV}$", "$\si_{\rm el}$ (green), $\si_{\rm inel}$ (blue) and  $\si_{\rm tot}$ (red) $\ung{mb}$", 14.5cm, 10cm);
+NewPad("$\sqrt s\ung{GeV}$", "$\si_{\rm el}$ (green), $\si_{\rm inel}$ (blue) and  $\si_{\rm tot}$ (red) $\ung{mb}$", 15.9cm, 10cm);
 
 scale(Log, Linear);
 
@@ -253,6 +253,6 @@ AddToLegend("$\si_{\rm tot}$ fits by COMPETE", black);
 AddToLegend("(pre-LHC model $\rm RRP_{\rm nf}L2_{\rm u}$)");
 AddToLegend("$\si_{\rm el}$ fit by TOTEM", dashed);
 AddToLegend("($11.84 - 1.617\ln s + 0.1359\ln^2 s$)");
-AttachLegend(shift(0, 60.7)*BuildLegend(W), W);
+AttachLegend(shift(0, 67.9)*BuildLegend(W), W);
 
 GShipout();

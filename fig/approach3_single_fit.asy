@@ -6,7 +6,7 @@ string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/combined/c
 
 TGraph_errorBar = None;
 	
-xSizeDef = 10cm;
+xSizeDef = 15.7cm;
 ySizeDef = 6cm;
 
 //----------------------------------------------------------------------------------------------------

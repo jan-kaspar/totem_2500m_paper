@@ -76,10 +76,12 @@ In each arm, the residual errors induce a bias in the reconstructed scattering a
 where the biases $b_x$ and $b_y$ have uncertainties of $0.17\un{\%}$ and $0.15\un{\%}$, respectively, and a correlation factor of $-0.90$. To evaluate the impact on the $t$-distribution, it is convenient to decompose the correlated biases $b_x$ and $b_y$ into eigenvectors of the covariance matrix:
 \begin{equation}
 \label{eq:opt bias modes}
-\begin{pmatrix} b_x^{\rm L}\cr b_y^{\rm L} \cr b_x^{\rm R}\cr b_y^{\rm R} \end{pmatrix} =
-	   \eta_1 \underbrace{\begin{pmatrix} -1.608\times10^{-3}\cr +1.473\times10^{-3}\cr -1.630\times10^{-3}\cr +1.477\times10^{-3} \end{pmatrix}}_{\rm mode\ 1}
-  \ +\ \eta_2 \underbrace{\begin{pmatrix} -5.157\times10^{-4}\cr +2.541\times10^{-5}\cr +5.566\times10^{-4}\cr +2.746\times10^{-5} \end{pmatrix}}_{\rm mode\ 2}
-  \ +\ \eta_3 \underbrace{\begin{pmatrix} +3.617\times10^{-4}\cr +3.625\times10^{-4}\cr +3.006\times10^{-4}\cr +3.641\times10^{-4} \end{pmatrix}}_{\rm mode\ 3}\ ,
+	\begin{aligned}
+		\begin{pmatrix} b_x^{\rm L}\cr b_y^{\rm L} \cr b_x^{\rm R}\cr b_y^{\rm R} \end{pmatrix} =\ &
+			\eta_1 \underbrace{\begin{pmatrix} -1.608\times10^{-3}\cr +1.473\times10^{-3}\cr -1.630\times10^{-3}\cr +1.477\times10^{-3} \end{pmatrix}}_{\rm mode\ 1}
+  			\ +\ \eta_2 \underbrace{\begin{pmatrix} -5.157\times10^{-4}\cr +2.541\times10^{-5}\cr +5.566\times10^{-4}\cr +2.746\times10^{-5} \end{pmatrix}}_{\rm mode\ 2} \cr
+  		&+\ \eta_3 \underbrace{\begin{pmatrix} +3.617\times10^{-4}\cr +3.625\times10^{-4}\cr +3.006\times10^{-4}\cr +3.641\times10^{-4} \end{pmatrix}}_{\rm mode\ 3}\ ,\cr
+	\end{aligned}
 \end{equation}
 where the factors $\eta_{1,2,3}$ have zero mean and unit variance. The fourth eigenmode has a negligible contribution and therefore is not explicitly listed.
 
@@ -377,7 +379,6 @@ where $i$ and $j$ are bin indices (row numbers in Table~\ref{tab:data}) and the 
 \begin{figure*}
 \begin{center}
 \includegraphics{fig/systematics_dgn_combination_summary.pdf}
-\vskip-2mm
 \caption{%
 Relative variation of the final differential cross-section due to systematic uncertainties (medium binning). The colourful histograms represent the leading uncertainties, each of them corresponds to a $1\un{\sigma}$ bias, cf.~Eq.~(\ref{eq:syst mode}). The envelope is determined by summing all considered contributions (except normalisation) in quadrature for each $|t|$ value.
 }

@@ -38,12 +38,12 @@ We have used the most general interference formula available in the literature -
 \begin{equation}
 \label{eq:int kl}
 	\begin{aligned}
-		{\d\sigma\over \d t}^{\rm C+N} =& {\pi (\hbar c)^2 \over s p^2} \left | {\alpha s\over t} {\cal F}^2
+		{\d\sigma\over \d t}^{\rm C+N} =\ & {\pi (\hbar c)^2 \over s p^2} \left | {\alpha s\over t} {\cal F}^2
 			+ {\cal A}^{\rm N}\, \Big[1 - \I\alpha G(t)\Big] \right |^2\ ,\cr
-		G(t) =& \int\limits_{-4p^2}^0 \d t'\, \log {t'\over t} {\d\phantom{t'}\over \d t'} {\cal F}^2(t')
-			  - \int\limits_{-4p^2}^0 \d t' \left( {{\cal A}^{\rm N}(t') \over {\cal A}^{\rm N}(t)} - 1 \right) { I(t, t')\over 2\pi }\ , \cr
-		I(t, t') =& \int_0^{2\pi} \d\phi\ {{\cal F}^2(t'')\over t''}\ ,\cr
-		t'' =& t + t' + 2\sqrt{t\, t'} \cos\phi\ ,\cr
+		G(t) =\ & \int\limits_{-4p^2}^0 \d t'\, \log {t'\over t} {\d\phantom{t'}\over \d t'} {\cal F}^2(t')\cr
+			  & - \int\limits_{-4p^2}^0 \d t' \left( {{\cal A}^{\rm N}(t') \over {\cal A}^{\rm N}(t)} - 1 \right) { I(t, t')\over 2\pi }\ , \cr
+		I(t, t') =\ & \int_0^{2\pi} \d\phi\ {{\cal F}^2(t'')\over t''}\ ,\cr
+		t'' =\ & t + t' + 2\sqrt{t\, t'} \cos\phi\ ,\cr
 	\end{aligned}
 \end{equation}
 which is numerically almost identical to the formula by Cahn \cite{cahn82} as shown in Ref.~\cite{totem-8tev-1km}. The CNI effects were calculated by the computer code from Ref.~\cite{elegent}.
@@ -56,9 +56,11 @@ which is numerically almost identical to the formula by Cahn \cite{cahn82} as sh
 The fits of the data from Table~\ref{tab:data} have been carried out with the standard least-squares method, minimising
 \begin{equation}
 \label{eq:chi sq A}
-	\chi^2 = \Delta^\T \mat V^{-1} \Delta\ ,\quad
-	\Delta_i = \left.{\d\sigma\over \d t}\right|_{{\rm bin}\ i} - {\d\sigma^{\rm C+N}\over\d t}\left(t^{\rm rep}_{{\rm bin}\ i}\right)\ ,\quad
-	\mat V = \mat V_{\rm stat} + \mat V_{\rm syst}\ ,\
+	\begin{aligned}
+		\chi^2 =\ & \Delta^\T \mat V^{-1} \Delta\ ,\quad
+			\Delta_i = \left.{\d\sigma\over \d t}\right|_{{\rm bin}\ i} - {\d\sigma^{\rm C+N}\over\d t}\left(t^{\rm rep}_{{\rm bin}\ i}\right)\ ,\cr
+		\mat V =\ & \mat V_{\rm stat} + \mat V_{\rm syst}\ ,\cr
+	\end{aligned}
 \end{equation}
 where $\Delta$ is a vector of differences between the differential cross-section data and a fit function $\d\sigma^{\rm C+N}/\d t$ evaluated at the representative point $t^{\rm rep}$ of each bin~\cite{lafferty94}. The minimisation is repeated several times, and the representative points are updated between iterations. The covariance matrix $\mat V$ has two components. The diagonal of $\mat V_{\rm stat}$ contains the statistical uncertainty squared from Table~\ref{tab:data}, $\mat V_{\rm syst}$ includes all systematic uncertainty contributions except the normalisation, see Eq.~(\ref{eq:covar mat}). For improved fit stability, the normalisation uncertainty is not included in the $\chi^2$ definition. In order to propagate this uncertainty to the fit results, the fit is repeated with the normalisation adjusted by $+5.5\un{\%}$ and $-5.5\un{\%}$. For each fit parameter the mean deviation from the fit result with no normalisation adjustment is taken as the effect of normalisation uncertainty, which is then added quadratically to the uncertainty reported by the fit with no bias.
 
@@ -68,11 +70,10 @@ The fits have been found to have negligible dependence on the binning used (see 
 
 Since the extracted value of $\rho$ may depend on the assumed fit parametrisation etc., an exploration with various fit configurations has been performed: several degrees of the hadronic modulus polynomial, $N_b = 1, 2, 3$, and different sub-samples of the data, constraining them by a maximal value of $|t|$, $|t|_{\rm max}$. For the latter, two values have been chosen. $|t|_{\rm max} = 0.15\un{GeV^2}$ corresponds to the largest interval before the differential cross-section accelerates its decrease towards the dip. It is the largest interval where application of parametrisation from Eq.~(\ref{eq:nuc mod}) is sensible. The other choice, $|t|_{\rm max} = 0.07\un{GeV^2}$, reflects an interval where purely-exponential ($N_b = 1$) nuclear amplitude is expected to provide a good fit. A summary of the fit results is shown in Table~\ref{tab:rho ref fits}. The fit with $N_b = 1$ on the larger $|t|$ range has bad quality, thus the $\rho$ value is not displayed. This shows that the data are not compatible with a pure exponential, similarly to the previous observation at $\sqrt s = 8\un{TeV}$ \cite{totem-8tev-90m,totem-8tev-1km}. Except for this case, all other fit configurations yield good quality and $\rho$ values constrained to a narrow range.
 
-\begin{table}
+\begin{table*}
 \caption{%
 Summary of results for various fit configurations (medium binning).
 }%
-\vskip-5mm
 \label{tab:rho ref fits}
 \begin{center}
 \setlength{\tabcolsep}{5pt}
@@ -89,13 +90,11 @@ $N_b$ && $\chi^2/\hbox{ndf}$ & $\rho$ & $\sigma_{\rm tot}\ung{mb}$ && $\chi^2/\h
 \hline
 \end{tabular}
 \end{center}
-\end{table}
+\end{table*}
 
 \begin{figure}
-\vskip-5mm
 \begin{center}
 \includegraphics{fig/fit_details_exp3_0p15.pdf}
-\vskip-2mm
 \caption{%
 Details of fit with $N_b = 3$ and $|t|_{\rm max} = 0.15\un{GeV^2}$. The fit parameters read: $a = (648\pm 34)\un{mb/GeV^2}$, $b_1 = (10.64 \pm 0.08)\un{GeV^{-2}}$, $b_2 = (4.1 \pm 1.1)\un{GeV^{-4}}$, $b_3 = (10.3 \pm 4.9)\un{GeV^{-6}}$ and $\rho = 0.10 \pm 0.01$.
 }
@@ -105,10 +104,8 @@ Details of fit with $N_b = 3$ and $|t|_{\rm max} = 0.15\un{GeV^2}$. The fit para
 
 
 \begin{figure}
-\vskip-5mm
 \begin{center}
 \includegraphics{fig/fit_details_exp1_0p07.pdf}
-\vskip-2mm
 \caption{%
 Details of fit with $N_b = 1$ and $|t|_{\rm max} = 0.07\un{GeV^2}$. The fit parameters read: $a = (643\pm 35)\un{mb/GeV^2}$, $b_1 = (10.39 \pm 0.03)\un{GeV^{-2}}$ and $\rho = 0.09 \pm 0.01$.
 }
@@ -122,7 +119,6 @@ The fit configuration $N_b=1$ with $|t|_{\rm max} = 0.07\un{GeV^2}$ has another 
 with the preferred COMPETE model (blue curve in the figure).
 
 \begin{figure*}
-\vskip-5mm
 \begin{center}
 \includegraphics{fig/rho_vs_s.pdf}
 \caption{%
@@ -134,18 +130,15 @@ Dependence of the $\rho$ parameter on energy. The $\rm pp$ (blue) and $\rm p\bar
 
 Further tests were performed in order to probe the stability of the $\rho$ extraction. Since at higher $|t|$ values the effects of CNI are limited, one may conceive a two-step fit: first, use only the higher $|t|$ data to determine the parameters of the hadronic modulus, cf.~Eq.~(\ref{eq:nuc mod}), and second, optimise only $\rho$ with all the data but the hadronic modulus fixed from the first step. Figure~\ref{fig:fit exp3 0.15} indicates that for the first step one needs to include points down to about $|t| = 0.04\un{GeV^2}$ in order to describe correctly the concavity of the data. Performing the two-step fit with $N_b=3$ and with ansatz $\rho = 0.10$ (or $0.14$) yields, at the end, $\rho = 0.103$ (or $0.116$). Although there is a non-zero $\rho$ difference (CNI effects cannot be fully neglected at higher $|t|$), these results demonstrate the pull of the data towards $\rho \approx 0.10$. A logical counterpart of the procedure just described would be to give the higher-$|t|$ data less weight. In its extreme, where the higher-$|t|$ data are not used at all, this has already been covered by fits with $|t|_{\rm max} = 0.07\un{GeV^2}$ discussed above, also showing the preference for lower $\rho$ values.
 
-\begin{figure*}
-\vskip-5mm
+\begin{figure}
 \begin{center}
 \includegraphics{fig/si_el_rho_solution.pdf}
-\vskip-3mm
 \caption{%
 Constraints to the relation between $\rho$ and $\sigma_{\rm el}$ derived from this data set (red line) and from Ref.~\cite{totem-13tev-90m} (blue line). The solution consistent with both constraints is marked with a green dot.
 }
 \label{fig:si_el rho sol}
 \end{center}
-\vskip-2mm
-\end{figure*}
+\end{figure}
 
 Figure \ref{fig:si_el rho sol} illustrates a small correction due to a conceptual improvement in combining the data from this publication and from Ref.~\cite{totem-13tev-90m}. The latter assumes certain values of $\rho$ in order to evaluate cross-section estimates which are in turn used in this analysis (see Section~\ref{sec:normalisation}) to estimate $\rho$. This circular dependence can be resolved by considering simultaneously the $\rho$ dependence of $\sigma_{\rm el}$ in Ref.~\cite{totem-13tev-90m} (blue line) and the $\sigma_{\rm el}$ dependence of $\rho$ determined in this analysis (red line). The latter is done as linear interpolation of $\rho$ values extracted assuming $\sigma_{\rm el} = 30.9$ and $31.1\un{mb}$. The linear dependence is confirmed with Monte-Carlo studies. The solution consistent with both datasets (green dot) brings negligible correction to $\rho$ and $-0.03\un{\%}$ correction to the value of $\sigma_{\rm el}$ published in Ref.~\cite{totem-13tev-90m} for $\rho=0.10$.
 
@@ -200,23 +193,19 @@ As a test we tried approach 3 implementation with a single fit over $|t| < 0.05\
 
 
 \begin{figure*}
-\vskip-5mm
 \begin{center}
 \includegraphics{fig/approach3_single_fit.pdf}
-\vskip-3mm
 \caption{Illustration of approach 3, single fit. The data come from Table~\ref{tab:data}, the normalisation uncertainty is not shown as it is not relevant for this fit.
 }
 \label{fig:approach 3 single fit}
 \end{center}
-\vskip-3mm
 \end{figure*}
 
 
-\begin{table}
+\begin{table*}
 \caption{%
 Summary of $\rho$ and total cross-section results.
 }%
-\vskip-5mm
 \label{tab:rho si tot summary}
 \begin{center}
 \setlength{\tabcolsep}{5pt}
@@ -236,7 +225,7 @@ $\beta^* = 90$ and $2500\un{m}$	& Ref.~\cite{totem-13tev-90m} $\oplus$ \hbox{app
 \hline
 \end{tabular}
 \end{center}
-\end{table}
+\end{table*}
 
 The uncertainties for the fits presented above were determined with the following procedure. The experimentally determined $\d\sigma/\d t$ histogram was modified by adding randomly generated fluctuations reflecting the statistical, systematic and normalisation uncertainties (see Section~\ref{sec:systematics}). This was done $100$ times with different random seeds. Each of the modified histograms was fitted by the above sequences, yielding fit parameter samples to determine the parameter fluctuations, i.e.~uncertainties. Histogram modifications resulting in excessive parameter deviations from the unmodified fit ($\Delta\rho > 0.05$ or $\Delta\sigma_{\rm tot} > 10\un{mb}$) were disregarded since such cases would not be accepted in the analysis. This estimation method gives consistent results with Section~\ref{sec:rho anal} (for approach 1) and $\chi^2$-based estimate (from approach 3, single fit). The $\rho$ and $\sigma_{\rm tot}$ uncertainties were cross-checked and adjusted by varying one of the variables with its uncertainty at a time for the steps where several variables were determined.
 
@@ -251,14 +240,11 @@ Figure~\ref{fig:si tot inel el} compares selected total cross-section measuremen
 
 
 \begin{figure*}
-\vskip-5mm
 \begin{center}
 \includegraphics{fig/sigma_tot_el_inel_vs_s.pdf}
-\vskip-3mm
 \caption{%
 Total (red), inelastic (blue) and elastic (green) cross-section as a function of energy, $\sqrt s$. The data are taken from Ref.~\cite{totem-13tev-90m} (and references therein) and Table~\ref{tab:rho si tot summary}. At $\sqrt s = 13\un{TeV}$, three total cross-section points are shown: left hollow corresponds to approach 3, right hollow to Ref.~\cite{totem-13tev-90m} and central filled to the average in Eq.~(\ref{eq:si tot comb}).
 }
 \label{fig:si tot inel el}
 \end{center}
-\vskip-3mm
 \end{figure*}

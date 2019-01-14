@@ -2,7 +2,7 @@ import root;
 import pad_layout;
 import style;
 
-xSizeDef = 6.3cm;
+xSizeDef = 6.8cm;
 ySizeDef = 5cm;
 
 string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/2rp/";
@@ -115,7 +115,7 @@ for (int zi : z_t_maxs.keys)
 	//yaxis(XEquals(8e-4, false), dashed);
 
 	if (zi == 0)
-		AttachLegend(BuildLegend(lineLength=5mm, NE, vSkip=-1.5mm, ymargin=0mm), NE);
+		AttachLegend(BuildLegend(lineLength=5mm, NE, vSkip=-1.1mm, ymargin=0.2mm), NE);
 }
 
-GShipout(hSkip=0mm, margin=0mm);
+GShipout(hSkip=5mm, margin=0mm);
