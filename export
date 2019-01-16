@@ -1,11 +1,13 @@
 #!/bin/bash
 
-tar czvf paper_elastic_2500m_cern.tar.gz\
-	style/cern/cernphprep.cls \
+tar czvf paper_elastic_2500m_epjc.tar.gz\
+	svepjc3.clo \
+	svglov3.clo \
+	svjour3.cls \
 	fig/*.pdf \
-	elastic_2500m_cern.tex \
+	elastic_2500m_epjc.tex \
 	authorlist_data.tex \
-	authorlist_cern.tex \
+	authorlist_epjc.tex \
 	abstract.tex \
 	introduction.tex \
 	experimental_apparatus.tex \
