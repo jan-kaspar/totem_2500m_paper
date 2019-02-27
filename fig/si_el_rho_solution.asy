@@ -28,6 +28,7 @@ string MakeLabel()
 	return format("$\rh^0 = %#.4f$, ", rho_0) + format("$\si_{\rm el}^0 = %#.3f\un{mb}$", si_el_0);
 }
 
+
 //----------------------------------------------------------------------------------------------------
 
 NewPad("$\si_{\rm el}\ung{mb}$", "$\rh$");
@@ -35,6 +36,8 @@ currentpad.xTicks = LeftTicks(0.1, 0.02);
 
 real si_el_min = 30.7;
 real si_el_max = 31.3;
+
+filldraw((30.7, 0.08)--(31.3, 0.08)--(31.3, 0.15)--(30.7, 0.15)--cycle, blue+opacity(0.3), nullpen);
 
 //--------------------
 
@@ -48,6 +51,11 @@ real rho_2500_2 = 0.10132;
 
 real a_2500 = (rho_2500_2 - rho_2500_1) / (si_el_2500_2 - si_el_2500_1);
 real b_2500 = rho_2500_2 - a_2500 * si_el_2500_2;
+
+real unc_2500 = 0.01;
+filldraw((si_el_min, a_2500*si_el_min + b_2500 + unc_2500)--(si_el_max, a_2500*si_el_max + b_2500 + unc_2500)
+  --(si_el_max, a_2500*si_el_max + b_2500 - unc_2500)
+  --(si_el_min, a_2500*si_el_min + b_2500 - unc_2500)--cycle, red+opacity(0.3), nullpen);
 
 draw((si_el_min, a_2500*si_el_min + b_2500)--(si_el_max, a_2500*si_el_max + b_2500), red);
 
@@ -92,8 +100,10 @@ write("rho_sol = ", rho_sol);
 //real si_inel_sol = 79.5394 * scale_factor;
 
 //string label_sol = format("$\rh = %#.4f$, ", rho_sol) + format("$\si_{\rm el} = %#.3f\un{mb}$", si_el_sol);
-string label_sol = "consistent combination";
-draw((si_el_sol, rho_sol), nullpen, label_sol, mCi+heavygreen+2pt);
+//string label_sol = "consistent combination";
+//draw((si_el_sol, rho_sol), nullpen, label_sol, mCi+heavygreen+2pt);
+
+//draw((si_el_sol, rho_sol - 0.01)--(si_el_sol, rho_sol + 0.01), heavygreen+1.5pt+squarecap);
 
 //AddToLegend(format("$\si_{\rm tot} = %#.3f\un{mb}$", si_tot_sol));
 //AddToLegend(format("$\si_{\rm inel} = %#.3f\un{mb}$", si_inel_sol));
