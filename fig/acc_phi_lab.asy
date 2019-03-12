@@ -2,7 +2,7 @@ import root;
 import pad_layout;
 import style;
 
-xSizeDef = 5.5cm;
+xSizeDef = 5cm;
 ySizeDef = 5cm;
 
 string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/2rp/";
@@ -114,4 +114,4 @@ for (int dsi : dataSets.keys)
 	//AttachLegend(dataSets[dsi]);
 }
 
-GShipout(margin=0mm);
+GShipout("acc_phi_lab", margin=0mm);
