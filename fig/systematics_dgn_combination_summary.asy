@@ -93,7 +93,7 @@ for (int zi : z_t_maxs.keys)
 {
 	NewRow();
 
-	NewPad("$|t|\ung{GeV^2}$", "systematic effect$\ung{\%}$");
+	NewPad("$|t|\ung{GeV^2}$", "relative cross-section variation$\ung{\%}$");
 
 	PlotAllModes();
 
@@ -119,4 +119,4 @@ for (int zi : z_t_maxs.keys)
 		AttachLegend(BuildLegend(lineLength=5mm, NE, vSkip=-1.1mm, ymargin=0.2mm), NE);
 }
 
-GShipout(hSkip=5mm, vSkip=0mm, margin=0mm);
+GShipout("systematics_dgn_combination_summary", hSkip=5mm, vSkip=0mm, margin=0mm);
