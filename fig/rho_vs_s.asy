@@ -114,14 +114,14 @@ PlotRho("pp_elastic_reim.dat", blue, mTD+2pt+true);
 // TOTEM measurements
 
 // 7 TeV
-DrawPoint(7e3, 0.145, 0.091, red+0.8pt, mCi+false+2pt+red);
+DrawPoint(7e3, 0.145, 0.091, red+0.8pt, mTL+false+2.5pt+red);
 
 // 8 TeV
 DrawPoint(8e3, 0.12, 0.03, red+0.8pt, mCi+true+2pt+red);
 
 // 13 TeV
-fsh = -0.02; DrawPoint(13e3, 0.10, 0.01, red+0.8pt, mCi+true+2pt+red);	// exp3
-fsh = +0.02; DrawPoint(13e3, 0.09, 0.01, red+0.8pt, mCi+true+2pt+red);	// exp1
+fsh = -0.02; DrawPoint(13e3, 0.10, 0.01, red+0.8pt, mTU+true+2.5pt+red);	// exp3
+fsh = +0.02; DrawPoint(13e3, 0.09, 0.01, red+0.8pt, mTD+true+2.5pt+red);	// exp1
 
 // fits
 DrawFitUncBand("rho_p_ap", heavygreen+opacity(0.1));
@@ -156,13 +156,13 @@ label(rotate(90)*Label("\SmallerFonts$13\un{TeV}$"), Scale((13e3, y_label)), Fil
 
 // legend
 AddToLegend("<PDG:");
-AddToLegend("$\rm \overline pp$", mTU+false+3pt+heavygreen);
-AddToLegend("$\rm pp$", mTD+true+3pt+blue);
+AddToLegend("$\rm \overline pp$", mTU+false+2.5pt+heavygreen);
+AddToLegend("$\rm pp$", mTD+true+2.5pt+blue);
 //AddToLegend("\break");
 
 AddToLegend("<TOTEM:");
-AddToLegend("indirect", mCi+false+3pt+red);
-AddToLegend("via CNI", mCi+true+3pt+red);
+AddToLegend("indirect", mTL+false+2.5pt+red);
+AddToLegend("via CNI", MarkerArray(mCi+true+2pt+red, mTU+true+2.5pt+red, mTD+true+2.5pt+red, sep=2mm, shift=-1.9mm));
 //AddToLegend("\break");
 
 AddToLegend("<COMPETE");
@@ -170,6 +170,6 @@ AddToLegend("<(pre-LHC model $\rm RRP_{nf}L2_{u}$):");
 AddToLegend("$\rm\overline pp$", heavygreen);
 AddToLegend("$\rm pp$", blue);
 
-AttachLegend(shift(0, 0)*BuildLegend(1, NW, stretch=false, hSkip=5mm, lineLength=5mm), NE);
+AttachLegend(shift(0, 0)*BuildLegend(1, NW, stretch=false, hSkip=5mm, lineLength=8mm), NE);
 
 GShipout(margin=0.5mm, hSkip=5mm);

@@ -153,15 +153,15 @@ DrawAll("g_si_p_p");
 // TOTEM measurements
 real fshu = 0.02;
 
-fsh = +0fshu; DrawPoint(2.76e3, 84.7, 3.3, red, mCi+2pt+red);
+fsh = +0fshu; DrawPoint(2.76e3, 84.7, 3.3, red, mSt+2.5pt+red);
 
-fsh = -1.0fshu; DrawPoint(7e3, 98.0, 2.5, red, mCi+2pt+red);
-fsh = +1.0fshu; DrawPoint(7e3, 98.6, 2.2, red, mCi+2pt+red);
+fsh = -1.0fshu; DrawPoint(7e3, 98.0, 2.5, red, mTL+2.5pt+red);
+fsh = +1.0fshu; DrawPoint(7e3, 98.6, 2.2, red, mTR+2.5pt+red);
 
-fsh = -1.0fshu; DrawPoint(8e3, 101.5, 2.1, red, mCi+2pt+red);
+fsh = -1.0fshu; DrawPoint(8e3, 101.5, 2.1, red, mCr2+2.5pt+red);
 fsh = +1.0fshu; DrawPoint(8e3, 102.9, 2.3, red, mCi+2pt+red);
 
-fsh = 0fshu; DrawPoint(13e3, 110.5, 2.4, red, mCi+2pt+red);
+fsh = 0fshu; DrawPoint(13e3, 110.5, 2.4, red, mSq+2.5pt+red);
 //fsh = +1fshu; DrawPoint(13e3, 112.1, 3.0, red, mCi+2pt+red);
 
 limits((1e2, 35), (2e4, 120), Crop);
@@ -181,8 +181,8 @@ DrawAll("g_rho_p_p");
 // TOTEM measurements
 DrawPoint(8e3, 0.12, 0.03, red+0.8pt, mCi+true+2pt+red);
 
-fsh = -1fshu; DrawPoint(13e3, 0.10, 0.01, red+0.8pt, mCi+true+2pt+red);
-fsh = +1fshu; DrawPoint(13e3, 0.09, 0.01, red+0.8pt, mCi+true+2pt+red);
+fsh = -1fshu; DrawPoint(13e3, 0.10, 0.01, red+0.8pt, mTU+true+2.5pt+red);
+fsh = +1fshu; DrawPoint(13e3, 0.09, 0.01, red+0.8pt, mTD+true+2.5pt+red);
 
 limits((1e2, 0.04), (2e4, 0.16), Crop);
 
