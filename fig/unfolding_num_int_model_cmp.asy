@@ -23,6 +23,7 @@ pen m_pens[] = { blue, red+dashed};
 string dataset = "DS-fill5313";
 
 TGraph_x_min = 8e-4;
+TGraph_x_max = 0.011;
 
 //----------------------------------------------------------------------------------------------------
 
@@ -45,4 +46,4 @@ for (int dgni : diagonals.keys)
 	AttachLegend(E, E);
 }
 
-GShipout(margin=1mm);
+GShipout("unfolding_num_int_model_cmp", margin=1mm);
