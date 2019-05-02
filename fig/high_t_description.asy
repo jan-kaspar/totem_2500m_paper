@@ -2,9 +2,10 @@ import root;
 import pad_layout;
 import style;
 
-ySizeDef = 4.5cm;
+xSizeDef = 6.8cm;
+ySizeDef = 5cm;
 
-string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/combined/coulomb_analysis_1/";
+string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/combined/coulomb_analysis_1/attempts/11_22/app1/";
 
 string it_dir = "F_C+H, iteration 2";
 
@@ -100,8 +101,6 @@ void DrawRelUncBand(RootObject bc, RootObject relUnc, RootObject ref, pen p)
 
 void MakeRelativePlot(string f, string binning, real t_max)
 {
-	xSizeDef = 7.5cm;
-
 	NewPad("$|t|\ung{GeV^2}$", "${\d\sigma/\d t - \hbox{ref}\over\hbox{ref}}\ ,\quad " + ref_label + "$");
 	currentpad.xTicks = LeftTicks(0.05, 0.01);
 	currentpad.yTicks = RightTicks(0.05, 0.01);
@@ -131,8 +130,6 @@ void MakeRelativePlot(string f, string binning, real t_max)
 
 void MakeFitPlots(string f, string binning)
 {
-	xSizeDef = 7.5cm;
-
 	TH1_x_max = 0.99;
 
 	RootObject data_ih = RootGetObject(f, "h_input_dataset_0");
@@ -140,7 +137,7 @@ void MakeFitPlots(string f, string binning)
 	//RootObject data_unc_full = RootGetObject(f, "g_data_coll_unc_full");
 	RootObject fit = RootGetObject(f, "fit canvas|g_fit_CH");
 
-	NewPad("$|t|\ung{GeV^2}$", "$\d\sigma/\d t \ung{mb/GeV^2}$");
+	NewPad("$|t|\ung{GeV^2}$", "$\d\sigma/\d t \ung{mb/GeV^2}$", axesAbove=false);
 	scale(Linear, Log);
 	//currentpad.xTicks = LeftTicks(0.005, 0.001);
 
@@ -153,12 +150,33 @@ void MakeFitPlots(string f, string binning)
 	}
 	*/
 
-	draw(fit, "l", red+1pt, "fit");
-	draw(data_ih, "eb", black, "data with statistical uncertainty");
+	guide g_u, g_b;
+	for (real t = 0.3; t <= 1.1; t += 0.01)
+	{
+		real f = fit.rExec("Eval", t);
+		real rel_unc = -(1. - 0.3) / (0.25 - 1.0) * (t - 0.3);
+
+		real f_u = f * (1. + rel_unc);
+		real f_b = f * (1. - rel_unc);
+
+		g_u = g_u -- Scale((t, f_u));
+		g_b = g_b -- Scale((t, f_b));
+	}
+
+	g_b = reverse(g_b);
+	filldraw(g_u--g_b--cycle, yellow, nullpen);
+
+	draw(fit, "l", red+1pt);
+	draw(data_ih, "eb", black);
 	//draw(data_unc_full, "p", heavygreen+squarecap+3pt);
 	//draw(data_unc_stat, "p", blue+squarecap, mCi+blue+1pt);
 
 	limits((0.2, 1e-2), (1., 1e1), Crop);
+
+	AddToLegend("data with statistical uncertainty", mPl + 4pt);
+	AddToLegend("uncertainty due to detection", mSq+5.5pt+yellow);
+	AddToLegend("inefficiency at high $|t|$");
+	AddToLegend("fit", red+1pt);
 
 	AttachLegend(BuildLegend(NE, lineLength=6mm, vSkip=-1mm), NE);
 }
@@ -182,6 +200,6 @@ void PlotOne(string expn, string binning, string tmax, real t_max, string f_out)
 
 string binning = "ob-2-10-0.05";
 
-//PlotOne("exp1", binning, "0.07", 0.07, "fit_details_exp1_0p07.pdf");
+PlotOne("exp1", binning, "0.07", 0.07, "fit_details_exp1_0p07.pdf");
 
-PlotOne("exp3", binning, "0.15", 0.15, "fit_details_exp3_0p15.pdf");
+//PlotOne("exp3", binning, "0.15", 0.15, "fit_details_exp3_0p15.pdf");
