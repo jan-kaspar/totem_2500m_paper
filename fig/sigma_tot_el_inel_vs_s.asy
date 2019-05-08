@@ -180,15 +180,15 @@ fsh = +0fshu; DrawPoint(13e3, 71.3, 3.5, p_inel, m_CMS+p_inel);
 fsh = +1fshu; DrawPoint(13e3, 75.4, 5.4, p_inel, m_LHCb+p_inel);
 
 // TOTEM; 90m analysis, for rho=0.10, preliminary, not yet published
-fsh = +1.1fshu; DrawPoint(13e3, 110.6, 3.4, p_tot, m_TOTEM+false+p_tot);
+fsh = +1.7fshu; DrawPoint(13e3, 110.6, 3.4, p_tot, m_TOTEM+1.3pt+p_tot);
 fsh = +0fshu; DrawPoint(13e3,  79.5, 1.8, p_inel, m_TOTEM+p_inel);
 fsh = +0fshu; DrawPoint(13e3,  31.0, 1.7, p_el+1pt, m_TOTEM+p_el);
 
 // TOTEM; 2.5km analysis, approach 3, step d, preliminary, not yet published
-fsh = -1.1fshu; DrawPoint(13e3, 110.3, 3.5, p_tot, m_TOTEM+false+p_tot);
+fsh = -1.7fshu; DrawPoint(13e3, 110.3, 3.5, p_tot, m_TOTEM+1.3pt+p_tot);
 
 // TOTEM; 90m + 2.5km combination, preliminary, not yet published
-fsh = +0fshu; DrawPoint(13e3, 110.5, 2.4, p_tot, m_TOTEM+p_tot);
+fsh = +0fshu; DrawPoint(13e3, 110.5, 2.4, p_tot, m_TOTEM+false+p_tot);
 
 
 // -------------------- arrows --------------------
@@ -237,15 +237,16 @@ AddToLegend("Auger (+ Glauber)", m_Auger+3pt);
 AddToLegend("STAR (prelim.)", m_STAR+3pt);
 AddToLegend("ALICE", m_ALICE+3pt);
 AddToLegend("ATLAS/ALFA", m_ATLAS+3pt);
-AddToLegend("{\bf TOTEM}", nullpen, m_TOTEM+3pt);
 AddToLegend("LHCb", m_LHCb+3pt);
 AddToLegend("CMS", m_CMS+3pt);
+AddToLegend("{\bf TOTEM -- single measurement}", nullpen, m_TOTEM+3pt);
+AddToLegend("{\bf TOTEM -- combination}", nullpen, m_TOTEM+false+3pt);
 
 label("$\si_{\rm tot}$", (3.1, 78), p_tot, Fill(white));
 label("$\si_{\rm inel}$", (3.1, 50), p_inel, Fill(white));
 label("$\si_{\rm el}$", (3.1, 11), p_el, Fill(white));
 
-AttachLegend(BuildLegend(3, NW, lineLength=5mm), NW);
+AttachLegend(BuildLegend(2, NW, lineLength=5mm), NW);
 
 // fit labels
 currentpicture.legend.delete();
@@ -253,6 +254,6 @@ AddToLegend("$\si_{\rm tot}$ fits by COMPETE", black);
 AddToLegend("(pre-LHC model $\rm RRP_{\rm nf}L2_{\rm u}$)");
 AddToLegend("$\si_{\rm el}$ fit by TOTEM", dashed);
 AddToLegend("($11.84 - 1.617\ln s + 0.1359\ln^2 s$)");
-AttachLegend(shift(0, 67.9)*BuildLegend(W), W);
+AttachLegend(shift(0, 42)*BuildLegend(W), W);
 
 GShipout();
