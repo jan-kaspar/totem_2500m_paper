@@ -2,7 +2,7 @@ import root;
 import pad_layout;
 import style;
 
-xSizeDef = 6.8cm;
+xSizeDef = 6.95cm;
 ySizeDef = 4.8cm;
 
 string topDir = "/afs/cern.ch/work/j/jkaspar/analyses/elastic/6500GeV/beta2500/2rp/";
@@ -91,7 +91,7 @@ void PlotAllModes()
 
 for (int zi : z_t_maxs.keys)
 {
-	NewRow();
+	//NewRow();
 
 	NewPad("$|t|\ung{GeV^2}$", "relative cross-section variation$\ung{\%}$");
 

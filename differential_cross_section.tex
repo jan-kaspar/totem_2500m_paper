@@ -92,10 +92,6 @@ where the factors $\eta_{1,2,3}$ have zero mean and unit variance. The fourth ei
 \subsubsection{Resolution}
 \label{sec:resolution}
 
-Two kinds of resolution can be distinguished: the resolution of the single-arm angular reconstruction, Eq.~(\ref{eq:kin 1a}), used for selection cuts and near-edge acceptance correction, and the resolution of the double-arm reconstruction, Eq.~(\ref{eq:kin 2a}), used for the unsmearing correction of the final $t$-distribution. Since the single-arm reconstruction is biased by the vertex term in the horizontal plane, the corresponding resolution is significantly worse than the double-arm reconstruction.
-
-The single-arm resolution can be studied by comparing the angles reconstructed from the left and right arm, see an example in Figure~\ref{fig:resol x 1a}. The width of the distributions was found to grow slightly during the fills, compatible with the effect of beam emittance growth. The typical range was from $10.0$ to $14.5\un{\mu rad}$ for the horizontal projection and from $0.36$ to $0.38\un{\mu rad}$ for the vertical. The associated uncertainties were $0.3$ and $0.007$, respectively. As illustrated in Figure~\ref{fig:resol x 1a}, the shape of the distributions is very close to Gaussian, especially at the beginning of each fill.
-
 \begin{figure}
 \begin{center}
 \includegraphics{fig/resolution_non_gaussianity.pdf}
@@ -105,6 +101,10 @@ Difference between horizontal scattering angles reconstructed in the right and l
 \label{fig:resol x 1a}
 \end{center}
 \end{figure}
+
+Two kinds of resolution can be distinguished: the resolution of the single-arm angular reconstruction, Eq.~(\ref{eq:kin 1a}), used for selection cuts and near-edge acceptance correction, and the resolution of the double-arm reconstruction, Eq.~(\ref{eq:kin 2a}), used for the unsmearing correction of the final $t$-distribution. Since the single-arm reconstruction is biased by the vertex term in the horizontal plane, the corresponding resolution is significantly worse than the double-arm reconstruction.
+
+The single-arm resolution can be studied by comparing the angles reconstructed from the left and right arm, see an example in Figure~\ref{fig:resol x 1a}. The width of the distributions was found to grow slightly during the fills, compatible with the effect of beam emittance growth. The typical range was from $10.0$ to $14.5\un{\mu rad}$ for the horizontal projection and from $0.36$ to $0.38\un{\mu rad}$ for the vertical. The associated uncertainties were $0.3$ and $0.007$, respectively. As illustrated in Figure~\ref{fig:resol x 1a}, the shape of the distributions is very close to Gaussian, especially at the beginning of each fill.
 
 Since in the vertical plane the resolution is driven by the beam divergence, the double-arm resolution can simply be scaled from the single-arm value: $\sigma(\theta^*_y) = (0.185 \pm 0.010)\un{\mu rad}$ where the uncertainty accounts for the full variation in time. In the horizontal plane the estimation is more complex due to several contributing smearing mechanisms. Therefore, a MC study was performed with two extreme sets of beam divergence, vertex size and sensor resolution values. These parameters were tuned within the ``4RP'' analysis where they are accessible thanks to the additional information from the 210-fr units. The study yielded $\sigma(\theta^*_x) =  (0.29 \pm 0.04)\un{\mu rad}$ where the uncertainty accounts for the full time variation.
 
@@ -336,6 +336,19 @@ After analysing the data in each diagonal and LHC fill separately, the individua
 \subsection{Systematic Uncertainties}
 \label{sec:systematics}
 
+\begin{figure*}
+\vskip-5mm
+\begin{center}
+\includegraphics{fig/t_dist_tabulated.pdf}
+\caption{%
+Differential cross-section from Table \ref{tab:data} with statistical (bars) and systematic uncertainties (bands). The yellow band represents all systematic uncertainties, the green one all but normalisation. The bands are centred around the bin content. {\bf Inset}: a low-$|t|$ zoom of cross-section rise due to the Coulomb interaction.
+}
+\label{fig:dsdt}
+\end{center}
+\vskip-5mm
+\end{figure*}
+
+
 The following sources of systematic uncertainties have been considered.
 \begin{itemize}[noitemsep,topsep=0pt]
 
@@ -368,14 +381,10 @@ where $\delta q$ corresponds to a $1\un{\sigma}$ bias in the quantity $q$ respon
 
 The systematic uncertainty corresponding to the final differential cross-section merged from all the analysed LHC fills and both diagonals is propagated according to the same method as applied to the data, see Section~\ref{sec:data merging}. To be conservative, the systematic errors are assumed fully correlated among the four analysed LHC fills. The correlations between the two diagonals are respected for each systematic effect. This is particularly important for the vertical (mis)-alignment, as already noted in Ref.~\cite{totem-8tev-1km}. The relative position between the top and bottom RPs is known precisely from track-based alignment (see Sec.~\ref{sec:alignment}) and the leading component of residual misalignment is thus between the beam and a RP. Furthermore, whenever the beam were closer to a top RP, it would be further away from the corresponding bottom RP and vice versa. Consequently, the effect of the misalignment is predominantly anti-correlated between the diagonals. While the misalignment uncertainty in the lowest $|t|$ bin reaches about $7\un{\%}$ for a single diagonal, once the diagonals are merged the impact drops to about $1.2\un{\%}$.
 
-The leading uncertainties (except normalisation) are shown in Figure~\ref{fig:syst unc}. At low $|t|$ they include the vertical alignment (left-right symmetric, top-bottom correlated) and the uncertainty of the vertical beam divergence. At higher $|t|$ values, the uncertainties are dominated by the beam momentum and optics uncertainties (mode 3 in Eq.~(\ref{eq:opt bias modes})). These leading effects are listed in Table~\ref{tab:data} which can be used to approximate the covariance matrix of systematic uncertainties:
-\begin{equation}
-\label{eq:covar mat}
-\mat V_{ij} = \sum_{q} \delta s_{q}(i)\ \delta s_{q}(j)\: ,
-\end{equation}
-where $i$ and $j$ are bin indices (row numbers in Table~\ref{tab:data}) and the sum goes over the leading error contributions $q$ (five rightmost columns in the table).
 
-\begin{figure}
+
+
+\begin{figure*}
 \begin{center}
 \includegraphics{fig/systematics_dgn_combination_summary.pdf}
 \caption{%
@@ -384,21 +393,12 @@ Relative variation of the final differential cross-section due to systematic unc
 \label{fig:syst unc}
 \end{center}
 \vskip-4mm
-\end{figure}
+\end{figure*}
 
 
-
-%----------------------------------------------------------------------------------------------------
-
-\subsection{Systematic Cross-Checks}
-\label{sec:cross checks}
-
-Compatible results have been obtained by analysing data subsets of events from different bunches, different diagonals (Figure~\ref{fig:dsdt checks}, top left), different fills and different time periods -- in particular those right after and right before the beam cleanings (Figure~\ref{fig:dsdt checks}, top right). Figure~\ref{fig:dsdt checks}, bottom left, shows that both analysis approaches, ``2RP'' and ``4RP'', yield compatible results. The relatively large difference between the diagonals at very low $|t|$ (Figure~\ref{fig:dsdt checks}, top left) is fully within the uncertainty due to the vertical misalignment, see Section~\ref{sec:systematics}.
-
-Figure~\ref{fig:dsdt checks}, bottom right, shows an excellent agreement between the data from this analysis and previous results obtained with $\beta^* = 90\un{m}$ optics \cite{totem-13tev-90m}.
 
 \begin{figure*}
-\vskip-3mm
+%\vskip-3mm
 \begin{center}
 \includegraphics{fig/t_dist_cross_checks.pdf}
 \caption{%
@@ -412,18 +412,28 @@ Collection of cross-check plots (medium binning, only statistical uncertainties 
 \end{center}
 \end{figure*}
 
+
+
+The leading uncertainties (except normalisation) are shown in Figure~\ref{fig:syst unc}. At low $|t|$ they include the vertical alignment (left-right symmetric, top-bottom correlated) and the uncertainty of the vertical beam divergence. At higher $|t|$ values, the uncertainties are dominated by the beam momentum and optics uncertainties (mode 3 in Eq.~(\ref{eq:opt bias modes})). These leading effects are listed in Table~\ref{tab:data} which can be used to approximate the covariance matrix of systematic uncertainties:
+\begin{equation}
+\label{eq:covar mat}
+\mat V_{ij} = \sum_{q} \delta s_{q}(i)\ \delta s_{q}(j)\: ,
+\end{equation}
+where $i$ and $j$ are bin indices (row numbers in Table~\ref{tab:data}) and the sum goes over the leading error contributions $q$ (five rightmost columns in the table).
+
+
 %----------------------------------------------------------------------------------------------------
 
-\begin{figure*}
-\begin{center}
-\includegraphics{fig/t_dist_tabulated.pdf}
-\caption{%
-Differential cross-section from Table \ref{tab:data} with statistical (bars) and systematic uncertainties (bands). The yellow band represents all systematic uncertainties, the green one all but normalisation. The bands are centred around the bin content. {\bf Inset}: a low-$|t|$ zoom of cross-section rise due to the Coulomb interaction.
-}
-\label{fig:dsdt}
-\end{center}
-\vskip-5mm
-\end{figure*}
+\subsection{Systematic Cross-Checks}
+\label{sec:cross checks}
+
+Compatible results have been obtained by analysing data subsets of events from different bunches, different diagonals (Figure~\ref{fig:dsdt checks}, top left), different fills and different time periods -- in particular those right after and right before the beam cleanings (Figure~\ref{fig:dsdt checks}, top right). Figure~\ref{fig:dsdt checks}, bottom left, shows that both analysis approaches, ``2RP'' and ``4RP'', yield compatible results. The relatively large difference between the diagonals at very low $|t|$ (Figure~\ref{fig:dsdt checks}, top left) is fully within the uncertainty due to the vertical misalignment, see Section~\ref{sec:systematics}.
+
+Figure~\ref{fig:dsdt checks}, bottom right, shows an excellent agreement between the data from this analysis and previous results obtained with $\beta^* = 90\un{m}$ optics \cite{totem-13tev-90m}.
+
+
+%----------------------------------------------------------------------------------------------------
+
 
 
 \input data_table.tex
