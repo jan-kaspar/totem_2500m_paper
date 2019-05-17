@@ -329,15 +329,8 @@ The bin sizes are set according to the $t$ resolution. Three different binnings 
 
 After analysing the data in each diagonal and LHC fill separately, the individual differential cross-section distributions are merged. This is accomplished by a per-bin weighted average, with the weight given by inverse squared statistical uncertainty. The final cross-section values are listed in Table~\ref{tab:data} and are visualised in Figure~\ref{fig:dsdt}. The figure clearly shows a rapid cross-section rise below $|t| \lesssim 0.002\un{GeV^2}$ which, as interpreted later, is an effect due to the electromagnetic interaction.
 
-
-
-%----------------------------------------------------------------------------------------------------
-
-\subsection{Systematic Uncertainties}
-\label{sec:systematics}
-
 \begin{figure*}
-\vskip-5mm
+%\vskip-5mm
 \begin{center}
 \includegraphics{fig/t_dist_tabulated.pdf}
 \caption{%
@@ -345,9 +338,13 @@ Differential cross-section from Table \ref{tab:data} with statistical (bars) and
 }
 \label{fig:dsdt}
 \end{center}
-\vskip-5mm
+%\vskip-5mm
 \end{figure*}
 
+%----------------------------------------------------------------------------------------------------
+
+\subsection{Systematic Uncertainties}
+\label{sec:systematics}
 
 The following sources of systematic uncertainties have been considered.
 \begin{itemize}[noitemsep,topsep=0pt]
@@ -372,16 +369,6 @@ The following sources of systematic uncertainties have been considered.
 
 \end{itemize}
 
-For each error source, its effect on the $|t|$-distribution is evaluated with a Monte-Carlo simulation. It uses a fit of the final differential cross-section data to generate the true $t$-distribution and, in parallel, builds another $t$-distribution where the systematic error at $1\un{\sigma}$ level is introduced. The difference between the two $t$-distributions gives the systematic effect on the differential cross-section. This procedure is formally equivalent to evaluating
-\begin{equation}
-\label{eq:syst mode}
-\delta s_{q}(t) \equiv \frac{\partial(\d\sigma/\d t)}{\partial q}\ \delta q\ ,
-\end{equation}
-where $\delta q$ corresponds to a $1\un{\sigma}$ bias in the quantity $q$ responsible for a given systematic effect.
-
-The systematic uncertainty corresponding to the final differential cross-section merged from all the analysed LHC fills and both diagonals is propagated according to the same method as applied to the data, see Section~\ref{sec:data merging}. To be conservative, the systematic errors are assumed fully correlated among the four analysed LHC fills. The correlations between the two diagonals are respected for each systematic effect. This is particularly important for the vertical (mis)-alignment, as already noted in Ref.~\cite{totem-8tev-1km}. The relative position between the top and bottom RPs is known precisely from track-based alignment (see Sec.~\ref{sec:alignment}) and the leading component of residual misalignment is thus between the beam and a RP. Furthermore, whenever the beam were closer to a top RP, it would be further away from the corresponding bottom RP and vice versa. Consequently, the effect of the misalignment is predominantly anti-correlated between the diagonals. While the misalignment uncertainty in the lowest $|t|$ bin reaches about $7\un{\%}$ for a single diagonal, once the diagonals are merged the impact drops to about $1.2\un{\%}$.
-
-
 
 
 \begin{figure*}
@@ -392,13 +379,13 @@ Relative variation of the final differential cross-section due to systematic unc
 }
 \label{fig:syst unc}
 \end{center}
-\vskip-4mm
+%\vskip-4mm
 \end{figure*}
 
 
 
 \begin{figure*}
-%\vskip-3mm
+%\vskip-10mm
 \begin{center}
 \includegraphics{fig/t_dist_cross_checks.pdf}
 \caption{%
@@ -410,9 +397,17 @@ Collection of cross-check plots (medium binning, only statistical uncertainties 
 }
 \label{fig:dsdt checks}
 \end{center}
+%\vskip-10mm
 \end{figure*}
 
+For each error source, its effect on the $|t|$-distribution is evaluated with a Monte-Carlo simulation. It uses a fit of the final differential cross-section data to generate the true $t$-distribution and, in parallel, builds another $t$-distribution where the systematic error at $1\un{\sigma}$ level is introduced. The difference between the two $t$-distributions gives the systematic effect on the differential cross-section. This procedure is formally equivalent to evaluating
+\begin{equation}
+\label{eq:syst mode}
+\delta s_{q}(t) \equiv \frac{\partial(\d\sigma/\d t)}{\partial q}\ \delta q\ ,
+\end{equation}
+where $\delta q$ corresponds to a $1\un{\sigma}$ bias in the quantity $q$ responsible for a given systematic effect.
 
+The systematic uncertainty corresponding to the final differential cross-section merged from all the analysed LHC fills and both diagonals is propagated according to the same method as applied to the data, see Section~\ref{sec:data merging}. To be conservative, the systematic errors are assumed fully correlated among the four analysed LHC fills. The correlations between the two diagonals are respected for each systematic effect. This is particularly important for the vertical (mis)-alignment, as already noted in Ref.~\cite{totem-8tev-1km}. The relative position between the top and bottom RPs is known precisely from track-based alignment (see Sec.~\ref{sec:alignment}) and the leading component of residual misalignment is thus between the beam and a RP. Furthermore, whenever the beam were closer to a top RP, it would be further away from the corresponding bottom RP and vice versa. Consequently, the effect of the misalignment is predominantly anti-correlated between the diagonals. While the misalignment uncertainty in the lowest $|t|$ bin reaches about $7\un{\%}$ for a single diagonal, once the diagonals are merged the impact drops to about $1.2\un{\%}$.
 
 The leading uncertainties (except normalisation) are shown in Figure~\ref{fig:syst unc}. At low $|t|$ they include the vertical alignment (left-right symmetric, top-bottom correlated) and the uncertainty of the vertical beam divergence. At higher $|t|$ values, the uncertainties are dominated by the beam momentum and optics uncertainties (mode 3 in Eq.~(\ref{eq:opt bias modes})). These leading effects are listed in Table~\ref{tab:data} which can be used to approximate the covariance matrix of systematic uncertainties:
 \begin{equation}

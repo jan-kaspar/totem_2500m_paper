@@ -3,7 +3,7 @@
 \begin{center}
 \includegraphics{fig/high_t_description.pdf}
 \caption{%
-Differential cross-section at higher $|t|$ values as determined in the ``2RP'' analysis (black points) with a fit (red line) used for the evaluation of the CNI effects. The fit also allows for a first dip-bump characterisation at $13\un{TeV}$: the dip is located at $|t| \approx 0.47\un{GeV^2}$, the bump at $|t|\approx 0.62\un{GeV^2}$ and the bump/dip cross-section ratio is about $1.8$ (a more recent and precise quantification can be found in Ref.~\cite{totem-13tev-el-diff}). For comparison: at $7\un{TeV}$ the dip was found at $0.53\un{GeV^2}$ and the bump/dip ratio $\lesssim 1.7$ \cite{totem-7tev-first}.
+Differential cross-section at higher $|t|$ values as determined in the ``2RP'' analysis (black points) with a fit (red line) used for the evaluation of the CNI effects. The fit also allows for a first dip-bump characterisation at $13\un{TeV}$: the dip is located at $|t| \approx 0.47\un{GeV^2}$, the bump at $|t|\approx 0.62\un{GeV^2}$ and the bump/dip cross-section ratio is about $1.8$ (a more recent and precise quantification can be found in Ref.~\cite{totem-13tev-el-diff}). For comparison: at $7\un{TeV}$ the dip was found at $0.53\un{GeV^2}$ \cite{totem-7tev-first} and the bump/dip ratio $1.7\pm 0.1$ (local polynomial fit of the data in Table 5 in Ref.~\cite{totem-7tev-el}).
 }
 \label{fig:high t desc}
 \end{center}
@@ -135,6 +135,7 @@ Dependence of the $\rho$ parameter on energy. The $\rm pp$ (blue) and $\rm p\bar
 }
 \label{fig:rho_vs_s}
 \end{center}
+\vskip-5mm
 \end{figure*}
 
 The fit configuration $N_b=1$ with $|t|_{\rm max} = 0.07\un{GeV^2}$ has another important meaning. Considering the shrinkage of the ``forward-cone'', this $|t|$ range is similar to the one used in the UA4/2 analysis \cite{ua4-rho}. This fact may suggest why UA4/2 could not observe deviations of the differential cross-section from pure exponential: the $|t|$ range was too narrow, as it would be for the present data, had the acceptance stopped at $|t| = 0.07\un{GeV^2}$, see Figure~\ref{fig:fit exp1 0.07}. Beyond the $|t|$ range, this fit combination shares more similarities with the UA4/2 fit (and in general with many other past experiments): purely exponential fit and assumption of constant hadronic phase. Moreover, as shown in Ref.~\cite{totem-8tev-1km}, the ``KL'' interference formula \cite{kl94} used in this report gives for this fit configuration very similar $\rho$ results as the ``SWY'' interference formula \cite{wy68} used in many past data analyses. From this point of view this fit combination corresponds to the most fair comparison to previous $\rho$ determinations and their extrapolations, as e.g.~in Figure \ref{fig:rho_vs_s}. It is worth noting that this fit configuration yields a $\rho$ value incompatible at the level of about $4.7\un{\sigma}$
@@ -150,6 +151,7 @@ Constraints to the relation between $\rho$ and $\sigma_{\rm el}$ derived from th
 }
 \label{fig:si_el rho sol}
 \end{center}
+\vskip-5mm
 \end{figure}
 
 Figure \ref{fig:si_el rho sol} illustrates a small correction due to a conceptual improvement in combining the data from this publication and from Ref.~\cite{totem-13tev-90m}. The latter assumes certain values of $\rho$ in order to evaluate cross-section estimates which are in turn used in this analysis (see Section~\ref{sec:normalisation}) to estimate $\rho$. This circular dependence can be resolved by considering simultaneously the $\rho$ dependence of $\sigma_{\rm el}$ in Ref.~\cite{totem-13tev-90m} (blue line) and the $\sigma_{\rm el}$ dependence of $\rho$ determined in this analysis (red line). The latter is done as linear interpolation of $\rho$ values extracted assuming $\sigma_{\rm el} = 30.9$ and $31.1\un{mb}$. The linear dependence is confirmed with Monte-Carlo studies. The solution consistent with both datasets (the crossing of the red and blue curves) brings negligible correction to $\rho$ and $-0.03\un{\%}$ correction to the value of $\sigma_{\rm el}$ published in Ref.~\cite{totem-13tev-90m} for $\rho=0.10$.
@@ -179,7 +181,7 @@ which represents normalisation adjustments with respect to the $\beta^* = 90\un{
 In turn, the normalisation can be determined from the $\beta^* = 90\un{m}$ data (Ref.~\cite{totem-13tev-90m} and Section~\ref{sec:normalisation}), from the $\beta^* = 2500\un{m}$ data (this publication) or their combination. This is formalised in the following three approaches.
 \begin{itemize}[noitemsep,topsep=0pt]
 \item approach 1: normalisation from $90\un{m}$ data, results presented in the previous section (in particular Table~\ref{tab:rho ref fits}),
-\item approach 2: normalisation estimated with $2500\un{m}$ data under the constraint (mean, RMS) from the $90\un{m}$ data,
+\item approach 2: normalisation estimated with $2500\un{m}$ data under the constraint (mean and standard deviation) from the $90\un{m}$ data,
 \item approach 3: normalisation estimated only from $2500\un{m}$ data.
 \end{itemize}
 
@@ -239,7 +241,7 @@ Approach 3 was implemented via the following sequence of fits.
 \end{itemize}
 The $\rho$ and total cross-section results are listed in Table~\ref{tab:rho si tot summary}. $\eta$ was found to be $1.020$ thus deviating by less than half a sigma ($\sigma_\eta$) from the $\beta^* = 90\un{m}$ normalisation.
 
-As a test we tried approach 3 implementation with a single fit over $|t| < 0.05\un{GeV^2}$, where all parameters ($\eta$, $a$, $b_1$ and $\rho$) are free and initialised to the values obtained in the previous paragraph. As anticipated above, such fit might have encountered problems due to non-optimal parameter sensitivities on the available $|t|$ range, however, the results listed in Table~\ref{tab:rho si tot summary} are reasonable. $\eta$ was found to be $1.05$ thus deviating by less than a sigma ($\sigma_\eta$) from the $\beta^* = 90\un{m}$ normalisation. The fit quality is good: p-value of $0.70$, see also the illustration in Figure~\ref{fig:approach 3 single fit}.
+As a test we tried approach 3 implementation with a single fit over $|t| < 0.05\un{GeV^2}$, where all parameters ($\eta$, $a$, $b_1$ and $\rho$) are free and initialised to the values obtained in the previous paragraph. As anticipated above, such fit might have encountered problems due to non-optimal parameter sensitivities on the available $|t|$ range, however, the results listed in Table~\ref{tab:rho si tot summary} are reasonable. $\eta$ was found to be $1.05$ thus deviating by less than a sigma ($\sigma_\eta$) from the $\beta^* = 90\un{m}$ normalisation. The fit quality is good: p-value of $0.70$, see also the illustration in Figure~\ref{fig:approach 3 single fit}. The single fit is also able to show the correlations between the fitted parameters. As expected, $\eta$ and $a$ are essentially fully anticorrelated. Both $\eta$ and $a$ are strongly correlated with $\rho$ with correlation coefficients of about $0.85$, whereas the correlation of these parameters to $b_1$ is weak, the correlation coefficient is about $0.4$. Finally the correlation coefficient between $\rho$ and $b_1$ is in between with a correlation coefficient about 0.6. These correlations confirm the necessity of the step-wise determination of the parameters using the ranges with most sensitivity for the parameter concerned to minimize the influence of the value of the other parameters to the determination.
 
 The uncertainties for the fits presented above were determined with the following procedure. The experimentally determined $\d\sigma/\d t$ histogram was modified by adding randomly generated fluctuations reflecting the statistical, systematic and normalisation uncertainties (see Section~\ref{sec:systematics}). This was done $100$ times with different random seeds. Each of the modified histograms was fitted by the above sequences, yielding fit parameter samples to determine the parameter fluctuations, i.e.~uncertainties. Histogram modifications resulting in excessive parameter deviations from the unmodified fit ($\Delta\rho > 0.05$ or $\Delta\sigma_{\rm tot} > 10\un{mb}$) were disregarded since such cases would not be accepted in the analysis. This estimation method gives consistent results with Section~\ref{sec:rho anal} (for approach 1) and $\chi^2$-based estimate (from approach 3, single fit). The $\rho$ and $\sigma_{\rm tot}$ uncertainties were cross-checked and adjusted by varying one of the variables with its uncertainty at a time for the steps where several variables were determined.
 
