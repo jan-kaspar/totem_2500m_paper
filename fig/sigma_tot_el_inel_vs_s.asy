@@ -2,9 +2,9 @@ import root;
 import pad_layout;
 import style;
 
-include "/home/jkaspar/publications/elastic figures/common_code.asy";
+include "/home/jkaspar/work/publications/elastic figures/common_code.asy";
 
-string topDir = "/home/jkaspar/publications/elastic figures/";
+string topDir = "/home/jkaspar/work/publications/elastic figures/";
 fit_file = topDir + "build_uncertainty_bands.root";
 
 drawGridDef = false;
@@ -236,11 +236,12 @@ AddToLegend("$\rm pp$ (PDG 2010)", nullpen, m_PDG_pp+3pt);
 AddToLegend("Auger (+ Glauber)", m_Auger+3pt);
 AddToLegend("STAR (prelim.)", m_STAR+3pt);
 AddToLegend("ALICE", m_ALICE+3pt);
+
+AddToLegend("{\bf TOTEM -- single measurement}", nullpen, m_TOTEM+3pt);
+AddToLegend("{\bf TOTEM -- combination}", nullpen, m_TOTEM+false+3pt);
 AddToLegend("ATLAS/ALFA", m_ATLAS+3pt);
 AddToLegend("LHCb", m_LHCb+3pt);
 AddToLegend("CMS", m_CMS+3pt);
-AddToLegend("{\bf TOTEM -- single measurement}", nullpen, m_TOTEM+3pt);
-AddToLegend("{\bf TOTEM -- combination}", nullpen, m_TOTEM+false+3pt);
 
 label("$\si_{\rm tot}$", (3.1, 78), p_tot, Fill(white));
 label("$\si_{\rm inel}$", (3.1, 50), p_inel, Fill(white));
